@@ -1,0 +1,16 @@
+:root {
+  --primary: #00C2FF;
+  --primary-dark: #0095cc;
+
+  --secondary: #00E5B0;
+
+  --dark: #08111F;
+  --dark-light: #101C2E;
+
+  --card-bg: #15243A;
+
+  --text: #FFFFFF;
+  --text-secondary: #B5C1D1;
+
+  --border: #20344E;
+}
