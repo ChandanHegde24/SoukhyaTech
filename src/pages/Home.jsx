@@ -129,7 +129,7 @@ const Home = () => {
             ))}
           </div>
         </section>
-
+        
         <section className="home-content-section" aria-labelledby="solutions-title">
           <div className="section-heading">
             <p>Our Solutions</p>

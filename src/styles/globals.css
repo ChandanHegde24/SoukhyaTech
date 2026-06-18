@@ -52,6 +52,8 @@ p {
 .home-page {
   padding: 0;
   background: #111111;
+  margin: auto;
+  overflow: hidden;
 }
 
 .home-stage {
