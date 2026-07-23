@@ -5,7 +5,8 @@ import "./Navbar.css";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = () => setIsMenuOpen((current) => !current);
+  const closeMenu = () => setIsMenuOpen(false);
 
   // Prevent scrolling on the body when the menu is open
   useEffect(() => {
@@ -31,14 +32,14 @@ export default function Navbar() {
         </Link>
 
         <div className={`nav-links ${isMenuOpen ? "mobile-menu-open" : ""}`}>
-          <Link to="/" onClick={toggleMenu}>Home</Link>
-          <Link to="/about" onClick={toggleMenu}>About</Link>
-          <Link to="/solutions" onClick={toggleMenu}>Solutions</Link>
-          <Link to="/product" onClick={toggleMenu}>Product</Link>
-          <Link to="/services" onClick={toggleMenu}>Services</Link>
+          <Link to="/" onClick={closeMenu}>Home</Link>
+          <Link to="/about" onClick={closeMenu}>About</Link>
+          <Link to="/solutions" onClick={closeMenu}>Solutions</Link>
+          <Link to="/product" onClick={closeMenu}>Product</Link>
+          <Link to="/services" onClick={closeMenu}>Services</Link>
         </div>
 
-        <Link to="/contact" className="nav-cta">
+        <Link to="/contact" className="nav-cta" onClick={closeMenu}>
           Contact
         </Link>
 
@@ -46,6 +47,7 @@ export default function Navbar() {
           className={`menu-toggle ${isMenuOpen ? "open" : ""}`} 
           onClick={toggleMenu} 
           aria-label="Toggle Navigation"
+          aria-expanded={isMenuOpen}
         >
           <span className="hamburger-line"></span>
           <span className="hamburger-line"></span>
