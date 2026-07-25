@@ -12,7 +12,11 @@ const AppRoutes = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={
+          <MainLayout>
+            <Home />
+          </MainLayout>
+        } />
         <Route path="/*" element={
           <MainLayout>
             <Routes>

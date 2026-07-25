@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar/Navbar';
 import heroImage from '../assets/images/hero-ai-visor.png';
 import {
   expertServices,
@@ -13,7 +12,6 @@ import {
 const Home = () => {
   return (
     <div className="home-page">
-      <Navbar />
       <section className="home-stage" aria-labelledby="home-title">
         <div className="home-hero-card">
           <div className="hero-copy">
