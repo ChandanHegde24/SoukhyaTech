@@ -1,3 +1,7 @@
+import customIoTSolutionsImage from '../assets/images/Custom IoT Solutions for Connected Industries.png';
+import smartSystemsImage from '../assets/images/Smart Systems.png';
+import dataCenterSolutionsImage from '../assets/images/Data Center Solutions.png';
+
 export const contactInfo = {
   email: 'sales@soukhyatech.com',
   phone: '+91 97317 47999',
@@ -107,16 +111,19 @@ export const solutions = [
     title: 'Custom IoT Solutions for Connected Industries',
     description:
       'Custom IoT and IIoT systems built around secure architecture, reliable data collection, real-time monitoring, device-to-cloud communication, edge computing, and AI-driven analytics.',
+    image: customIoTSolutionsImage,
   },
   {
     title: 'Smart Systems',
     description:
       'Smart energy, agriculture, retail, city, and community systems that use live sensor data to improve efficiency, sustainability, automation, and user experience.',
+    image: smartSystemsImage,
   },
   {
     title: 'Data Center Solutions',
     description:
       'Reliable hardware, storage, networking, endpoint, and infrastructure support for organizations that need durable, scalable, high-performance IT environments.',
+    image: dataCenterSolutionsImage,
   },
 ];
 

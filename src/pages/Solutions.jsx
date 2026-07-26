@@ -16,8 +16,19 @@ const Solutions = () => {
         {solutions.map((solution, index) => (
           <article className="page-card solution-detail-card" key={solution.title}>
             <span className="card-index">{String(index + 1).padStart(2, '0')}</span>
-            <h2>{solution.title}</h2>
-            <p>{solution.description}</p>
+            <div className="solution-detail-content">
+              <div className="solution-detail-media">
+                <img
+                  src={solution.image}
+                  alt={solution.title}
+                  className="solution-detail-image"
+                />
+              </div>
+              <div className="solution-detail-copy">
+                <h2>{solution.title}</h2>
+                <p>{solution.description}</p>
+              </div>
+            </div>
           </article>
         ))}
       </section>

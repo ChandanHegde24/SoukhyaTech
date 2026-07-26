@@ -136,6 +136,11 @@ const Home = () => {
           <div className="content-card-grid solutions-preview-grid">
             {solutions.map((solution) => (
               <article className="content-card solution-preview-card" key={solution.title}>
+                <img
+                  src={solution.image}
+                  alt={solution.title}
+                  className="solution-preview-image"
+                />
                 <h3>{solution.title}</h3>
                 <p>{solution.description}</p>
               </article>
