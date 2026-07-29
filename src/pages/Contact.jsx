@@ -2,6 +2,10 @@ import React from 'react';
 import { contactInfo, product } from '../data/siteContent';
 
 const Contact = () => {
+  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(
+    contactInfo.addressShort
+  )}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+
   return (
     <div className="page-shell contact-page">
       <section className="page-hero">
@@ -37,6 +41,18 @@ const Contact = () => {
               <li key={line}>{line}</li>
             ))}
           </ul>
+          <div className="map-wrapper" style={{ marginTop: '1rem' }}>
+            <iframe
+              title="Soukhya Tech location"
+              src={mapSrc}
+              width="100%"
+              height="300"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </article>
       </section>
     </div>
