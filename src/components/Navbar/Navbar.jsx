@@ -24,24 +24,29 @@ export default function Navbar() {
     <nav className="site-navbar" aria-label="Primary navigation">
       <div className="navbar-shell">
         <Link to="/" className="navbar-brand" aria-label="Soukhya Tech home">
-          <span className="brand-mark" aria-hidden="true">
-            <span />
-            <span />
-          </span>
-          <span>Soukhya Tech</span>
+          <img className="logo" src="src/assets/icons/logo@2x.png" alt="Soukhya Tech" />
         </Link>
 
         <div className={`nav-links ${isMenuOpen ? "mobile-menu-open" : ""}`}>
-          <Link to="/" onClick={closeMenu}>Home</Link>
-          <Link to="/about" onClick={closeMenu}>About</Link>
-          <Link to="/solutions" onClick={closeMenu}>Solutions</Link>
-          <Link to="/product" onClick={closeMenu}>Product</Link>
-          <Link to="/services" onClick={closeMenu}>Services</Link>
+          <Link to="/" className="nav-link" onClick={closeMenu}>
+            Home
+          </Link>
+          <Link to="/about" className="nav-link" onClick={closeMenu}>
+            About
+          </Link>
+          <Link to="/solutions" className="nav-link" onClick={closeMenu}>
+            Solutions
+          </Link>
+          <Link to="/product" className="nav-link" onClick={closeMenu}>
+            Product
+          </Link>
+          <Link to="/services" className="nav-link" onClick={closeMenu}>
+            Services
+          </Link>
+          <Link to="/contact" className="nav-link" onClick={closeMenu}>
+            Contact
+          </Link>
         </div>
-
-        <Link to="/contact" className="nav-cta" onClick={closeMenu}>
-          Contact
-        </Link>
 
         <button 
           className={`menu-toggle ${isMenuOpen ? "open" : ""}`} 

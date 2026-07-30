@@ -58,6 +58,11 @@
   transform: scaleX(-1);
 }
 
+.logo {
+  width: 245px;
+  height: auto;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
