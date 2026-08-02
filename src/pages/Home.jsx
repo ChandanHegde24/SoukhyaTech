@@ -48,8 +48,19 @@ const Home = () => {
             alt="Professional wearing an augmented reality visor against a blue technology backdrop"
           />
 
-          <span className="floating-tag tag-one">IoT / IIoT</span>
+          {/* <span className="floating-tag tag-one">IoT / IIoT</span>
           <span className="floating-tag tag-two">Predictive Insights</span>
+          <span className="floating-tag tag-three">Real-time Analytics</span> */}
+
+  return (
+    <div className="page-container">
+      {/* Animated Background Rings */}
+      <div className="bg-ring ring-outer"></div>
+      <div className="bg-ring ring-middle"></div>
+      <div className="bg-ring ring-inner"></div>
+    </div>
+  );
+
         </div>
 
         <div className="home-grid">

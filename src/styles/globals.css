@@ -250,8 +250,59 @@ p {
   object-position: center;
   z-index: 0;
 }
+/* --- Global Styles --- */
 
-.floating-tag {
+.page-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Animated Background Rings --- */
+.bg-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 40px solid transparent;
+  /* Using borders to create the segmented circle look */
+  border-top-color: #8c52ff;
+  border-left-color: #38b6ff;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.ring-outer {
+  width: 140vw;
+  height: 140vw;
+  animation: spinRight 60s linear infinite;
+  border-width: 80px;
+}
+
+.ring-middle {
+  width: 90vw;
+  height: 90vw;
+  animation: spinLeft 45s linear infinite;
+  border-width: 60px;
+  border-bottom-color: #8c52ff;
+}
+
+.ring-inner {
+  width: 50vw;
+  height: 50vw;
+  animation: spinRight 30s linear infinite;
+}
+
+@keyframes spinRight {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spinLeft {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* .floating-tag {
   position: absolute;
   z-index: 3;
   min-height: 30px;
@@ -289,7 +340,10 @@ p {
   right: 6%;
   top: 58%;
 }
-
+.tag-three {
+  right :20%;
+  top:10%;
+} */
 .home-grid {
   width: 100%;
   margin: 8px 0 0;
@@ -985,6 +1039,11 @@ textarea {
     right: 18px;
     top: auto;
     bottom: 46px;
+  }
+  .tag-three {
+    left: 18px;
+    top: auto;
+    bottom: 90px;
   }
 
   .home-grid {
