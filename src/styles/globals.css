@@ -267,7 +267,7 @@ p {
   /* Using borders to create the segmented circle look */
   border-top-color: #8c52ff;
   border-left-color: #38b6ff;
-  opacity: 0.15;
+  opacity: 0.35;
   z-index: 0;
 }
 
