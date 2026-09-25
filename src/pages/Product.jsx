@@ -1,32 +1,26 @@
-import React from 'react';
-import { product } from '../data/siteContent';
+import ProductShowcase from '../components/ProductShowcase/ProductShowcase';
+import IntelligenceFlow from '../components/IntelligenceFlow/IntelligenceFlow';
+import CTA from '../components/CTA/CTA';
+import './Product.css';
 
-const Product = () => {
+export default function Product() {
   return (
-    <div className="page-shell product-page">
-      <section className="page-hero">
-        <p>Product</p>
-        <h1>{product.title}</h1>
-        <span>{product.subtitle}</span>
-      </section>
-
-      <section className="page-split">
-        <article className="page-panel product-summary">
-          <h2>Earth pit intelligence</h2>
-          <p>{product.description}</p>
-        </article>
-
-        <article className="page-panel">
-          <h2>Benefits</h2>
-          <ul className="benefit-list">
-            {product.benefits.map((benefit) => (
-              <li key={benefit}>{benefit}</li>
-            ))}
-          </ul>
-        </article>
-      </section>
+    <div className="product-page">
+      <ProductShowcase />
+      <div className="product-story-connector" aria-hidden="true">
+        <span className="product-story-connector__line" />
+        <span className="product-story-connector__particle" />
+      </div>
+      <IntelligenceFlow />
+      <CTA
+        eyebrow="Have any questions?"
+        heading="Securing Assets, Protecting People, Driving Efficiency..."
+        description="Contact our experts at + 91 97317 47999 or sales@soukhyatech.com to deploy the Intelligent Earth Pit Monitoring System (I-ES)."
+        primaryLabel="Contact a Soukhya Expert"
+        primaryTo="/contact"
+        secondaryLabel="Explore Our Solutions"
+        secondaryTo="/solutions"
+      />
     </div>
   );
-};
-
-export default Product;
+}

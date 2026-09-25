@@ -1,0 +1,406 @@
+/* ============================================================
+   I-ES HERO ANIMATION — 8-Second Cinematic Industrial Loop
+   ============================================================ */
+
+.ies-anim-container {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.4s var(--ease-out);
+}
+
+.ies-anim-container:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* 1. CINEMATIC CAMERA WRAPPER (8s Smooth Push-In & Parallax Loop) */
+.ies-anim-camera {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: cinematicCameraLoop 8s infinite ease-in-out;
+  transform-origin: 57% 50%;
+  will-change: transform;
+}
+
+@keyframes cinematicCameraLoop {
+  0% {
+    transform: scale(1.0) translate3d(0, 0, 0);
+  }
+  35% {
+    transform: scale(1.035) translate3d(-4px, -2px, 0);
+  }
+  70% {
+    transform: scale(1.02) translate3d(3px, 1px, 0);
+  }
+  100% {
+    transform: scale(1.0) translate3d(0, 0, 0);
+  }
+}
+
+/* 2. BASE IMAGE — EXACT hero 1.png PRESERVED */
+.ies-base-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 3. ATMOSPHERIC & VOLUMETRIC LIGHTING */
+.ies-atmosphere {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 57% 45%, rgba(0, 124, 196, 0.14) 0%, transparent 60%),
+              radial-gradient(circle at 87% 10%, rgba(0, 229, 255, 0.15) 0%, transparent 40%),
+              linear-gradient(180deg, transparent 75%, rgba(23, 32, 51, 0.4) 100%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  animation: atmosphereBreathe 8s infinite ease-in-out;
+}
+
+@keyframes atmosphereBreathe {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+.ies-subtle-scan {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 229, 255, 0.7) 50%, transparent 100%);
+  animation: scanSweep 6s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes scanSweep {
+  0% { transform: translateY(0); opacity: 0; }
+  25% { opacity: 0.8; }
+  75% { opacity: 0.8; }
+  100% { transform: translateY(420px); opacity: 0; }
+}
+
+/* 4. SVG OVERLAY FOR PRECISION SIGNAL TRACES */
+.ies-svg-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* Grounding Ripple Waves */
+.ies-ground-wave {
+  fill: none;
+  stroke: rgba(0, 229, 255, 0.6);
+  stroke-width: 2;
+  transform-origin: 1100px 840px;
+  animation: groundWavePulse 3.6s infinite ease-out;
+}
+
+.wave-1 { animation-delay: 0s; }
+.wave-2 { animation-delay: 1.2s; }
+.wave-3 { animation-delay: 2.4s; }
+
+@keyframes groundWavePulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+    stroke: rgba(0, 229, 255, 0.8);
+  }
+  50% {
+    opacity: 0.6;
+    stroke: rgba(37, 164, 73, 0.6);
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+    stroke: rgba(44, 54, 148, 0);
+  }
+}
+
+/* Vertical Electrode Beam */
+.ies-electrode-beam {
+  stroke: url(#cyanStream);
+  stroke-width: 3.5;
+  stroke-dasharray: 12 8;
+  animation: electrodeFlow 1.8s infinite linear;
+  filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.8));
+}
+
+@keyframes electrodeFlow {
+  from { stroke-dashoffset: 40; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* Signal Stream Lines */
+.ies-stream-line {
+  fill: none;
+  stroke-width: 2;
+  stroke-dasharray: 6 4;
+  opacity: 0.85;
+}
+
+.ies-stream-resistance {
+  stroke: url(#cyanStream);
+  animation: streamFlow 2.4s infinite linear;
+}
+
+.ies-stream-voltage {
+  stroke: rgba(44, 54, 148, 0.8);
+  animation: streamFlow 3s infinite linear;
+}
+
+.ies-stream-current {
+  stroke: url(#orangeStream);
+  animation: streamFlow 2.6s infinite linear;
+}
+
+.ies-stream-fault {
+  stroke: rgba(237, 28, 36, 0.7);
+  animation: streamFlow 3.2s infinite linear;
+}
+
+.ies-stream-cloud {
+  stroke: url(#cloudUplink);
+  stroke-width: 2.5;
+  stroke-dasharray: 8 6;
+  animation: streamFlow 2.8s infinite linear;
+  filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.9));
+}
+
+@keyframes streamFlow {
+  from { stroke-dashoffset: 48; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* Data Packets (Travelling Particle Dots) */
+.ies-data-packet {
+  fill: #FFFFFF;
+  filter: drop-shadow(0 0 6px #00E5FF);
+}
+
+.packet-ground {
+  fill: #00E5FF;
+  filter: drop-shadow(0 0 8px #00E5FF);
+}
+
+.packet-cloud {
+  fill: #FFFFFF;
+  filter: drop-shadow(0 0 8px #FFFFFF);
+}
+
+.packet-resistance {
+  fill: #00E5FF;
+}
+
+.packet-current {
+  fill: #FFA000;
+  filter: drop-shadow(0 0 6px #FFA000);
+}
+
+/* 5. I-ES DEVICE BEACON INDICATOR */
+.ies-device-beacon {
+  position: absolute;
+  top: 36%;
+  left: 63%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.beacon-core {
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: #25A449;
+  box-shadow: 0 0 8px #25A449;
+}
+
+.beacon-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid #25A449;
+  animation: beaconPulse 2s infinite ease-out;
+}
+
+@keyframes beaconPulse {
+  0% { transform: scale(0.6); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* 6. TELEMETRY HUD OVERLAY (DEMO / SIMULATED) */
+.ies-hud-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ies-hud-tag {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 4px 10px;
+  background: rgba(23, 32, 51, 0.78);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(220, 229, 240, 0.25);
+  border-radius: var(--radius-full);
+}
+
+.ies-hud-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 6px var(--green);
+  animation: beaconPulse 1.5s infinite;
+}
+
+.ies-hud-tag-title {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.08em;
+}
+
+.ies-demo-badge {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  font-weight: 700;
+  color: #FFA000;
+  background: rgba(230, 131, 36, 0.2);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.05em;
+}
+
+/* Metric Chips Floating in Corner */
+.ies-metric-chip {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 16px rgba(20, 60, 110, 0.12);
+  font-family: var(--font-mono);
+}
+
+.chip-resistance {
+  top: 14%;
+  left: 3%;
+}
+
+.chip-current {
+  top: 14%;
+  right: 18%;
+}
+
+.chip-cloud {
+  top: 3%;
+  right: 3%;
+}
+
+.metric-label {
+  font-size: 0.5625rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.metric-val {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.metric-status {
+  font-size: 0.5rem;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: 0.04em;
+}
+
+/* Early Warning Banner at Bottom */
+.ies-early-warning-banner {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 4px 14px;
+  background: rgba(44, 54, 148, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 12px rgba(44, 54, 148, 0.3);
+}
+
+.early-warning-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00E5FF;
+  box-shadow: 0 0 6px #00E5FF;
+  animation: beaconPulse 1.2s infinite;
+}
+
+.early-warning-text {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.06em;
+}
+
+/* Reduced-Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .ies-anim-camera,
+  .ies-atmosphere,
+  .ies-subtle-scan,
+  .ies-ground-wave,
+  .ies-electrode-beam,
+  .ies-stream-line,
+  .ies-data-packet,
+  .beacon-ring,
+  .early-warning-pulse {
+    animation: none !important;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ies-metric-chip {
+    display: none;
+  }
+
+  .ies-early-warning-banner {
+    padding: 3px 8px;
+  }
+
+  .early-warning-text {
+    font-size: 0.5rem;
+  }
+}

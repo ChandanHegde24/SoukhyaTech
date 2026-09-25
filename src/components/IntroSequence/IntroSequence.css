@@ -1,0 +1,84 @@
+/* ============================================================
+   INTRO SEQUENCE — Branded Startup Animation (1.2s max)
+   ============================================================ */
+
+.intro-sequence {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.intro-sequence__grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(0, 124, 196, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 124, 196, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.intro-sequence__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  z-index: 10;
+}
+
+.intro-sequence__svg {
+  width: 180px;
+  height: 100px;
+}
+
+.intro-sequence__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.intro-sequence__logo {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+
+.intro-sequence__tag {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--brand-indigo);
+  background: rgba(44, 54, 148, 0.06);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.intro-sequence__pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 6px var(--green);
+  animation: pulseDot 1s infinite alternate;
+}
+
+@keyframes pulseDot {
+  from { opacity: 0.5; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1.2); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-sequence {
+    display: none !important;
+  }
+}

@@ -1,0 +1,812 @@
+/* ============================================================
+   HOME PAGE — INDUSTRIAL TECHNOLOGY EDITORIAL DESIGN SYSTEM
+   1. Technical Mastery: Cinematic Engineering Scene (40/60)
+   2. Enterprise Solutions: Enterprise Solution Showcase (Signal Rail + Visual Stage)
+   3. Our Strengths: The Soukhya Engineering DNA (Layered Technical Panel)
+   ============================================================ */
+
+.home-page {
+  width: 100%;
+  background: #FFFFFF;
+  overflow-x: hidden;
+}
+
+/* ── Global Editorial Tokens & Shared Elements ── */
+.editorial-block {
+  position: relative;
+  width: 100%;
+  padding: 56px 0 64px;
+}
+
+.editorial-block--mastery {
+  background: #FFFFFF;
+}
+
+.editorial-block--solutions {
+  background: #F8FAFD;
+  border-top: 1px solid #DCE5F0;
+  border-bottom: 1px solid #DCE5F0;
+}
+
+.editorial-block--strengths {
+  background: #FFFFFF;
+}
+
+/* Typography Hierarchy */
+.editorial-main-heading {
+  font-size: clamp(2.1rem, 3.4vw, 3.15rem);
+  font-weight: 800;
+  color: #172033;
+  line-height: 1.13;
+  letter-spacing: -0.028em;
+  margin: 6px 0 10px;
+}
+
+.editorial-main-desc {
+  font-size: clamp(14.5px, 1.15vw, 16.5px);
+  color: #4F5D70;
+  line-height: 1.6;
+  margin: 0 0 14px;
+  max-width: 580px;
+}
+
+.editorial-inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #007CC4;
+  text-decoration: none;
+  transition: color 200ms ease, transform 200ms ease;
+  width: fit-content;
+}
+
+.editorial-inline-link svg {
+  transition: transform 200ms ease;
+}
+
+.editorial-inline-link:hover {
+  color: #2C3694;
+}
+
+.editorial-inline-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* ============================================================
+   SECTION 02: ENTERPRISE SOLUTIONS — "ENTERPRISE SOLUTION SHOWCASE"
+   ============================================================ */
+
+.solutions-showcase-top {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: clamp(1.8rem, 3.5vw, 3.5rem);
+  align-items: flex-end;
+  margin-bottom: 28px;
+}
+
+.solutions-showcase-top__heading-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.solutions-showcase-top__desc-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.solutions-showcase-top__desc-group .editorial-main-desc {
+  margin-bottom: 6px;
+}
+
+/* Arena Split: 42% Index/Signal Rail + 58% Visual Stage */
+.solutions-showcase-arena {
+  display: grid;
+  grid-template-columns: 1fr 1.32fr;
+  gap: clamp(2rem, 3.8vw, 3.5rem);
+  align-items: stretch;
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid #DCE5F0;
+  padding: 24px;
+  box-shadow: 0 10px 30px -10px rgba(23, 32, 51, 0.06);
+}
+
+/* Left Column with Signature Enterprise Signal Rail */
+.solutions-showcase-rail-col {
+  display: flex;
+  gap: 16px;
+  position: relative;
+}
+
+.enterprise-signal-rail {
+  position: relative;
+  width: 3px;
+  background: #E2E8F0;
+  border-radius: 999px;
+  margin: 12px 0;
+  flex-shrink: 0;
+}
+
+.enterprise-signal-rail__tracker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(180deg, #007CC4, #2C3694);
+  border-radius: 999px;
+  transition: transform 380ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.enterprise-signal-rail__glow-node {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #007CC4;
+  box-shadow: 0 0 10px rgba(0, 124, 196, 0.75), 0 0 0 2px #FFFFFF;
+}
+
+/* Solution Index Rows */
+.solutions-showcase-index {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0;
+}
+
+.solution-showcase-row {
+  position: relative;
+  padding: 14px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  transition: background 200ms ease;
+}
+
+.solution-showcase-row:hover,
+.solution-showcase-row:focus-visible {
+  background: rgba(0, 124, 196, 0.03);
+}
+
+.solution-showcase-row.is-active {
+  background: rgba(0, 124, 196, 0.05);
+}
+
+.solution-showcase-row__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.solution-showcase-row__num {
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  font-weight: 800;
+  color: #7B8798;
+  margin-top: 3px;
+  flex-shrink: 0;
+  transition: color 200ms ease;
+}
+
+.solution-showcase-row.is-active .solution-showcase-row__num {
+  color: #007CC4;
+}
+
+.solution-showcase-row__title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.solution-showcase-row__code {
+  font-family: var(--font-mono, monospace);
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #7B8798;
+  letter-spacing: 0.06em;
+}
+
+.solution-showcase-row.is-active .solution-showcase-row__code {
+  color: #007CC4;
+}
+
+.solution-showcase-row__title {
+  font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+  font-weight: 700;
+  color: #172033;
+  line-height: 1.3;
+  margin: 0;
+  transition: color 200ms ease;
+}
+
+.solution-showcase-row.is-active .solution-showcase-row__title {
+  color: #2C3694;
+}
+
+.solution-showcase-row__node {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #CBD5E1;
+  margin-top: 8px;
+  flex-shrink: 0;
+  transition: background 200ms ease, box-shadow 200ms ease;
+}
+
+.solution-showcase-row.is-active .solution-showcase-row__node {
+  background: #007CC4;
+  box-shadow: 0 0 8px rgba(0, 124, 196, 0.6);
+}
+
+/* Expanded Narrative for Active Solution */
+.solution-showcase-row__narrative {
+  overflow: hidden;
+  padding: 10px 0 4px 24px;
+}
+
+.solution-showcase-row__paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.solution-showcase-row__desc {
+  font-size: 13.5px;
+  color: #4F5D70;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.solution-showcase-row__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.solution-tech-chip {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 600;
+  color: #007CC4;
+  background: rgba(0, 124, 196, 0.08);
+  border: 1px solid rgba(0, 124, 196, 0.2);
+  padding: 3px 8px;
+  border-radius: 9999px;
+}
+
+.solution-showcase-row__line {
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  right: 12px;
+  height: 1px;
+  background: #E8EEF5;
+}
+
+.solution-showcase-row:last-child .solution-showcase-row__line {
+  display: none;
+}
+
+/* Right Column: Dominant Editorial Visual Stage */
+.solutions-showcase-visual-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.solution-visual-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 380px;
+  background: #0C1424;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px -10px rgba(12, 20, 36, 0.25);
+  border: 1px solid #1E2A44;
+}
+
+.solution-visual-stage__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: #080D18;
+  border-bottom: 1px solid #1A263D;
+  z-index: 2;
+}
+
+.solution-visual-stage__signal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.solution-visual-stage__pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00E5FF;
+  box-shadow: 0 0 8px #00E5FF;
+}
+
+.solution-visual-stage__sys-id {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 700;
+  color: #7DD3FC;
+  letter-spacing: 0.08em;
+}
+
+.solution-visual-stage__index {
+  font-family: var(--font-mono, monospace);
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #64748B;
+  letter-spacing: 0.06em;
+}
+
+.solution-visual-stage__canvas {
+  position: relative;
+  flex: 1;
+  min-height: 280px;
+  overflow: hidden;
+  background: #060A12;
+}
+
+.solution-visual-stage__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.solution-visual-stage__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 70%, rgba(8, 13, 24, 0.75) 100%);
+  pointer-events: none;
+}
+
+.solution-visual-stage__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: #080D18;
+  border-top: 1px solid #1A263D;
+  z-index: 2;
+}
+
+.solution-visual-stage__caption-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #F8FAFD;
+}
+
+.solution-visual-stage__meta {
+  font-family: var(--font-mono, monospace);
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #00E5FF;
+  letter-spacing: 0.06em;
+}
+
+/* ============================================================
+   SECTION 03: OUR STRENGTHS — "THE SOUKHYA ENGINEERING DNA"
+   Asymmetric Composition:
+   - 35-40% Left: Editorial Introduction + Signature Engineering Mark
+   - 60-65% Right: Layered Engineering DNA Panel (9 Integrated Layers)
+   ============================================================ */
+
+/* Section Transition Trace */
+.strengths-transition-trace {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.strengths-transition-trace__line {
+  height: 1px;
+  width: 48px;
+  background: linear-gradient(90deg, #DCE5F0, #007CC4);
+}
+
+.strengths-transition-trace__dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #007CC4;
+}
+
+/* Asymmetric 38% Left / 62% Right Layout */
+.strengths-dna-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.55fr;
+  gap: clamp(2.5rem, 4.5vw, 4.5rem);
+  align-items: start;
+}
+
+.strengths-dna-editorial {
+  display: flex;
+  flex-direction: column;
+}
+
+.strengths-dna-editorial__sticky {
+  position: sticky;
+  top: calc(var(--nav-height, 80px) + 28px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Engineering Signature Badge */
+.strengths-dna-signature {
+  margin-top: 24px;
+  padding: 16px 20px;
+  background: #F8FAFD;
+  border: 1px solid #DCE5F0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.strengths-dna-signature__mark {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.strengths-dna-signature__node {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #007CC4;
+  box-shadow: 0 0 6px #007CC4;
+}
+
+.strengths-dna-signature__text {
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #2C3694;
+  letter-spacing: 0.08em;
+}
+
+.strengths-dna-signature__metric {
+  font-family: var(--font-mono, monospace);
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #7B8798;
+  letter-spacing: 0.06em;
+}
+
+/* Right: Layered Engineering DNA Panel */
+.strengths-dna-panel {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid #DCE5F0;
+  border-radius: 18px;
+  padding: 20px 24px;
+  box-shadow: 0 8px 30px -8px rgba(23, 32, 51, 0.06);
+  overflow: hidden;
+}
+
+/* Precision Engineering Grid Background (Very subtle) */
+.strengths-dna-panel__grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(0, 124, 196, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 124, 196, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+/* Panel Header */
+.strengths-dna-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #E5EDF6;
+  position: relative;
+  z-index: 2;
+}
+
+.strengths-dna-panel__coord {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono, monospace);
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #7B8798;
+  letter-spacing: 0.08em;
+}
+
+.strengths-dna-panel__plus {
+  color: #007CC4;
+  font-weight: 800;
+}
+
+.strengths-dna-panel__status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono, monospace);
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #007CC4;
+  letter-spacing: 0.06em;
+}
+
+.strengths-dna-panel__status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #007CC4;
+  box-shadow: 0 0 6px rgba(0, 124, 196, 0.6);
+}
+
+/* 9 Integrated Engineering Layers */
+.strengths-dna-layers {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  margin-top: 6px;
+}
+
+.strength-dna-layer {
+  position: relative;
+  padding: 13px 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  outline: none;
+  transition: background 200ms ease, transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.strength-dna-layer:hover,
+.strength-dna-layer:focus-visible {
+  background: rgba(0, 124, 196, 0.035);
+}
+
+.strength-dna-layer.is-active {
+  background: rgba(0, 124, 196, 0.06);
+}
+
+.strength-dna-layer__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  position: relative;
+}
+
+.strength-dna-layer__prefix {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.strength-dna-layer__num {
+  font-family: var(--font-mono, monospace);
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #7B8798;
+  transition: color 200ms ease;
+}
+
+.strength-dna-layer.is-active .strength-dna-layer__num {
+  color: #007CC4;
+}
+
+.strength-dna-layer__node {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #CBD5E1;
+  transition: background 200ms ease, box-shadow 200ms ease;
+}
+
+.strength-dna-layer.is-active .strength-dna-layer__node {
+  background: #007CC4;
+  box-shadow: 0 0 6px #007CC4;
+}
+
+.strength-dna-layer__title {
+  font-size: clamp(0.98rem, 1.22vw, 1.15rem);
+  font-weight: 700;
+  color: #172033;
+  line-height: 1.32;
+  margin: 0;
+  flex: 1;
+  transition: color 200ms ease, transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.strength-dna-layer.is-active .strength-dna-layer__title {
+  color: #2C3694;
+  font-weight: 800;
+  transform: translateX(4px);
+}
+
+.strength-dna-layer__suffix {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  opacity: 0.5;
+  transition: opacity 200ms ease;
+}
+
+.strength-dna-layer.is-active .strength-dna-layer__suffix {
+  opacity: 1;
+}
+
+.strength-dna-layer__tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  font-weight: 700;
+  color: #7B8798;
+  letter-spacing: 0.06em;
+}
+
+.strength-dna-layer.is-active .strength-dna-layer__tag {
+  color: #007CC4;
+}
+
+.strength-dna-layer__arrow {
+  color: #94A3B8;
+  font-size: 13px;
+  transition: transform 200ms ease, color 200ms ease;
+}
+
+.strength-dna-layer.is-active .strength-dna-layer__arrow {
+  color: #007CC4;
+  transform: translateX(3px);
+}
+
+/* Signature Travelling Engineering Signal Line */
+.strength-dna-layer__signal-track {
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  right: 12px;
+  height: 1px;
+  background: #E8EEF5;
+  overflow: hidden;
+}
+
+.strength-dna-layer__signal-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #007CC4, #2C3694);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.strength-dna-layer.is-active .strength-dna-layer__signal-line {
+  transform: scaleX(1);
+}
+
+/* Panel Footer */
+.strengths-dna-panel__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid #E5EDF6;
+  margin-top: 6px;
+  position: relative;
+  z-index: 2;
+}
+
+.strengths-dna-panel__footer-brand {
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  font-weight: 700;
+  color: #94A3B8;
+  letter-spacing: 0.08em;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .solutions-showcase-top,
+  .solutions-showcase-arena,
+  .strengths-dna-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .strengths-dna-editorial__sticky {
+    position: static;
+  }
+
+  .solutions-showcase-arena {
+    padding: 18px;
+  }
+
+  .solution-visual-stage {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 640px) {
+  .editorial-block {
+    padding: 40px 0 46px;
+  }
+
+  .solutions-showcase-top {
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .solutions-showcase-arena {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .enterprise-signal-rail {
+    display: none;
+  }
+
+  .solution-showcase-row {
+    padding: 12px 6px;
+  }
+
+  .solution-showcase-row__narrative {
+    padding-left: 0;
+  }
+
+  .solution-visual-stage {
+    min-height: 240px;
+  }
+
+  .solution-visual-stage__canvas {
+    min-height: 200px;
+  }
+
+  .strengths-dna-panel {
+    padding: 16px 14px;
+  }
+
+  .strength-dna-layer {
+    padding: 11px 8px;
+  }
+
+  .strength-dna-layer__suffix {
+    display: none;
+  }
+}
+
+/* Reduced Motion Mode */
+@media (prefers-reduced-motion: reduce) {
+  .editorial-inline-link,
+  .editorial-inline-link svg,
+  .enterprise-signal-rail__tracker,
+  .strength-dna-layer,
+  .strength-dna-layer__title,
+  .strength-dna-layer__signal-line {
+    transition: none !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,273 @@
+/* ============================================================
+   ADVANCED COMPACT FOOTER — Bright Enterprise Layout
+   ============================================================ */
+
+.footer {
+  background: #F8FAFD;
+  border-top: 1px solid #DCE5F0;
+  position: relative;
+  width: 100%;
+}
+
+/* Subtle compact network line */
+.footer__network-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  overflow: hidden;
+  background: #DCE5F0;
+}
+
+.footer__network-pulse {
+  height: 100%;
+  width: 25%;
+  background: linear-gradient(90deg, transparent, #007CC4, #25A449, transparent);
+  animation: footer-shimmer 6s linear infinite;
+}
+
+@keyframes footer-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(400%); }
+}
+
+/* Main Section */
+.footer__main {
+  padding: 48px 0 32px;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.35fr 2fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+
+/* Brand Column */
+.footer__brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer__logo-link {
+  display: inline-block;
+  width: fit-content;
+}
+
+.footer__logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  object-position: left;
+}
+
+.footer__tagline {
+  font-size: 12.5px;
+  color: #5F6B7A;
+  line-height: 1.55;
+  max-width: 360px;
+}
+
+.footer__direct-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.footer__channel-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #172033;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 180ms ease;
+  width: fit-content;
+}
+
+.footer__channel-item svg {
+  color: #007CC4;
+  flex-shrink: 0;
+}
+
+.footer__channel-item:hover {
+  color: #007CC4;
+}
+
+.footer__address-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  color: #7B8798;
+  line-height: 1.45;
+  max-width: 380px;
+}
+
+.footer__address-row svg {
+  color: #007CC4;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Navigation Columns */
+.footer__nav-cols {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1.1fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer__col-heading {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #172033;
+}
+
+.footer__col-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer__link {
+  font-size: 13.5px;
+  color: #5F6B7A;
+  text-decoration: none;
+  transition: all 180ms ease;
+  display: inline-block;
+  line-height: 1.4;
+}
+
+.footer__link:hover {
+  color: #007CC4;
+  transform: translateX(2px);
+}
+
+/* Bottom Bar */
+.footer__bar {
+  border-top: 1px solid #DCE5F0;
+  padding: 16px 0;
+  background: #FFFFFF;
+}
+
+.footer__bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.footer__copyright {
+  font-size: 12px;
+  color: #7B8798;
+  font-family: var(--font-mono);
+}
+
+/* Social Buttons */
+.footer__social-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer__social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  transition: all 200ms ease;
+  text-decoration: none;
+  position: relative;
+}
+
+/* LinkedIn Raw Brand Color (#0A66C2) */
+.footer__social-btn--linkedin {
+  color: #0A66C2;
+  background: rgba(10, 102, 194, 0.08);
+  border: 1.5px solid rgba(10, 102, 194, 0.22);
+}
+
+.footer__social-btn--linkedin:hover {
+  color: #FFFFFF;
+  background: #0A66C2;
+  border-color: #0A66C2;
+  transform: scale(1.1);
+  box-shadow: 0 4px 14px rgba(10, 102, 194, 0.35);
+}
+
+.footer__social-btn--linkedin:focus-visible {
+  outline: 2px solid #0A66C2;
+  outline-offset: 2px;
+}
+
+/* Instagram Raw Brand Color (#E1306C / Gradient) */
+.footer__social-btn--instagram {
+  color: #E1306C;
+  background: rgba(225, 48, 108, 0.08);
+  border: 1.5px solid rgba(225, 48, 108, 0.22);
+}
+
+.footer__social-btn--instagram:hover {
+  color: #FFFFFF;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-color: transparent;
+  transform: scale(1.1);
+  box-shadow: 0 4px 14px rgba(225, 48, 108, 0.35);
+}
+
+.footer__social-btn--instagram:focus-visible {
+  outline: 2px solid #E1306C;
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------
+   RESPONSIVE DESIGN BREAKPOINTS
+   ------------------------------------------------------------ */
+@media (max-width: 1024px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer__main {
+    padding: 36px 0 24px;
+  }
+
+  .footer__nav-cols {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .footer__bar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 440px) {
+  .footer__nav-cols {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

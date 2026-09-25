@@ -1,0 +1,835 @@
+/* ============================================================
+   HERO CINEMATIC — Double-Buffered Zero-Blank Architecture
+   7s Auto-Slide + Hover Pause + Exact Remaining Time Resume
+   ============================================================ */
+
+.hero-cinematic {
+  position: relative;
+  width: 100%;
+  height: calc(100svh - var(--navbar-height));
+  min-height: 580px;
+  max-height: 880px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background: #080D1A;
+}
+
+/* ============================================================
+   1. DOUBLE-BUFFERED PERSISTENT CANVAS (ZERO BLANK STATE)
+   ============================================================ */
+
+.hero-cinematic__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-cinematic__slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform, opacity, clip-path;
+}
+
+.hero-cinematic__slide.is-active-layer {
+  z-index: 2;
+}
+
+.hero-cinematic__slide.is-under-layer {
+  z-index: 1;
+}
+
+/* 100% Full-bleed edge-to-edge foreground image */
+.hero-cinematic__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.hero-cinematic__img--ies {
+  object-position: center center;
+}
+
+.hero-cinematic__img--network {
+  object-position: center center;
+}
+
+/* Atmospheric Ambient Glow */
+.hero-cinematic__ambient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 65% 45%, rgba(0, 124, 196, 0.1) 0%, transparent 60%),
+              radial-gradient(circle at 88% 15%, rgba(0, 229, 255, 0.08) 0%, transparent 40%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Diagonal Data Sweep Wave during transition */
+.hero-cinematic__data-sweep {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 229, 255, 0.45) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0;
+}
+
+.sweep--next {
+  animation: dataSweepRight 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.sweep--prev {
+  animation: dataSweepLeft 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes dataSweepRight {
+  0% { left: -150px; opacity: 0; }
+  30% { opacity: 0.8; }
+  70% { opacity: 0.8; }
+  100% { left: 110%; opacity: 0; }
+}
+
+@keyframes dataSweepLeft {
+  0% { right: -150px; left: auto; opacity: 0; }
+  30% { opacity: 0.8; }
+  70% { opacity: 0.8; }
+  100% { right: 110%; left: auto; opacity: 0; }
+}
+
+/* ============================================================
+   ENHANCED SVG ANIMATIONS (SLIDE 01 & SLIDE 02)
+   ============================================================ */
+
+.hero-cinematic__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ── Slide 01: Soil Grounding Concentric Waves ── */
+.hero-soil-wave {
+  fill: none;
+  stroke-width: 1.75;
+  transform-origin: 1100px 830px;
+  animation: soilWavePulse 3.6s infinite cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+.wave-1 {
+  stroke: rgba(0, 229, 255, 0.85);
+  animation-delay: 0s;
+}
+
+.wave-2 {
+  stroke: rgba(37, 164, 73, 0.7);
+  animation-delay: 1.2s;
+}
+
+.wave-3 {
+  stroke: rgba(236, 0, 140, 0.6);
+  animation-delay: 2.4s;
+}
+
+@keyframes soilWavePulse {
+  0% { transform: scale(0.65); opacity: 0.9; }
+  60% { opacity: 0.55; }
+  100% { transform: scale(1.28); opacity: 0; }
+}
+
+/* ── Slide 01: Electrode Energy Core ── */
+.hero-electrode-core {
+  stroke-width: 3.5;
+  stroke-dasharray: 12 6;
+  animation: electrodeFlow 1.6s infinite linear;
+  filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.85));
+}
+
+.hero-electrode-subline {
+  stroke-width: 1.5;
+  stroke-dasharray: 6 4;
+  opacity: 0.75;
+  animation: electrodeFlow 2s infinite linear;
+}
+
+.delay-sub {
+  animation-delay: 0.5s;
+}
+
+@keyframes electrodeFlow {
+  from { stroke-dashoffset: 36; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* Rising Ion Particles */
+.hero-ion-dot {
+  fill: #00E5FF;
+  filter: drop-shadow(0 0 6px #00E5FF);
+}
+
+.ion-2 { fill: #EC008C; filter: drop-shadow(0 0 6px #EC008C); }
+.ion-3 { fill: #25A449; filter: drop-shadow(0 0 6px #25A449); }
+
+/* ── Slide 01: Telemetry Cloud Pathways & Packets ── */
+.hero-cloud-path {
+  fill: none;
+  stroke-width: 2.2;
+  stroke-dasharray: 8 5;
+  animation: cloudTraceDash 2.4s infinite linear;
+  filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.75));
+}
+
+.path-secondary {
+  stroke-width: 1.5;
+  opacity: 0.65;
+  animation-duration: 3.2s;
+}
+
+@keyframes cloudTraceDash {
+  from { stroke-dashoffset: 39; }
+  to { stroke-dashoffset: 0; }
+}
+
+.hero-data-packet {
+  fill: #FFFFFF;
+  filter: drop-shadow(0 0 8px #00E5FF) drop-shadow(0 0 14px #00E5FF);
+}
+
+.hero-cloud-halo {
+  fill: none;
+  stroke: rgba(0, 229, 255, 0.6);
+  stroke-width: 1.5;
+  transform-origin: 1670px 100px;
+  animation: cloudHaloPulse 2.8s infinite alternate ease-in-out;
+}
+
+.halo-outer {
+  stroke: rgba(56, 189, 248, 0.35);
+  animation-delay: 0.8s;
+}
+
+@keyframes cloudHaloPulse {
+  from { transform: scale(0.9); opacity: 0.4; }
+  to { transform: scale(1.15); opacity: 0.9; }
+}
+
+/* ── Slide 01: Diagnostic Micro Beacons ── */
+.hero-beacon-ring {
+  fill: none;
+  stroke-width: 1.5;
+  animation: beaconPulse 2s infinite ease-out;
+}
+
+.cyan-beacon { stroke: #00E5FF; transform-origin: 850px 225px; }
+.blue-beacon { stroke: #38BDF8; transform-origin: 800px 425px; animation-delay: 0.5s; }
+.amber-beacon { stroke: #E68324; transform-origin: 1380px 225px; animation-delay: 1.0s; }
+.coral-beacon { stroke: #EC008C; transform-origin: 1380px 425px; animation-delay: 1.5s; }
+
+.hero-beacon-dot {
+  animation: beaconDotPulse 1.5s infinite alternate ease-in-out;
+}
+
+.cyan-dot { fill: #00E5FF; filter: drop-shadow(0 0 6px #00E5FF); }
+.blue-dot { fill: #38BDF8; filter: drop-shadow(0 0 6px #38BDF8); }
+.amber-dot { fill: #E68324; filter: drop-shadow(0 0 6px #E68324); }
+.coral-dot { fill: #EC008C; filter: drop-shadow(0 0 6px #EC008C); }
+
+@keyframes beaconPulse {
+  0% { transform: scale(0.6); opacity: 0.95; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+@keyframes beaconDotPulse {
+  from { opacity: 0.6; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1.3); }
+}
+
+/* Central I-ES Hardware Status Aura */
+.hero-hardware-aura {
+  fill: none;
+  stroke: rgba(0, 229, 255, 0.45);
+  stroke-width: 1.5;
+  stroke-dasharray: 8 6;
+  animation: hardwareAuraGlow 3s infinite alternate ease-in-out;
+}
+
+@keyframes hardwareAuraGlow {
+  from { opacity: 0.3; stroke: rgba(0, 124, 196, 0.35); }
+  to { opacity: 0.85; stroke: rgba(0, 229, 255, 0.7); filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.5)); }
+}
+
+/* ── Slide 02: Global Orbital Arcs & Particles ── */
+.hero-orbital-arc {
+  fill: none;
+  stroke-width: 1.75;
+  stroke-dasharray: 8 6;
+  animation: orbitDash 3s infinite linear;
+}
+
+.arc-2 { stroke-width: 1.5; animation-duration: 3.8s; }
+.arc-3 { stroke-width: 1.5; animation-duration: 4.4s; }
+
+@keyframes orbitDash {
+  from { stroke-dashoffset: 42; }
+  to { stroke-dashoffset: 0; }
+}
+
+.hero-orbit-dot {
+  fill: #00E5FF;
+  filter: drop-shadow(0 0 8px #00E5FF);
+}
+
+/* ── Slide 02: Central Shield Radar Pulse & Platform ── */
+.hero-shield-pulse {
+  fill: none;
+  stroke: rgba(0, 229, 255, 0.7);
+  stroke-width: 1.5;
+  transform-origin: 1380px 495px;
+  animation: shieldPulse 3s infinite cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+.pulse-2 { stroke: rgba(56, 189, 248, 0.5); animation-delay: 1s; }
+.pulse-3 { stroke: rgba(44, 54, 148, 0.4); animation-delay: 2s; }
+
+@keyframes shieldPulse {
+  0% { transform: scale(0.6); opacity: 0.9; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.hero-platform-ring {
+  fill: none;
+  stroke: rgba(0, 229, 255, 0.5);
+  stroke-width: 1.5;
+  transform-origin: 1380px 600px;
+  animation: platformRingPulse 3.5s infinite alternate ease-in-out;
+}
+
+.ring-2 {
+  stroke: rgba(37, 164, 73, 0.45);
+  animation-delay: 1.5s;
+}
+
+@keyframes platformRingPulse {
+  from { opacity: 0.35; transform: scale(0.96); }
+  to { opacity: 0.85; transform: scale(1.04); filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.6)); }
+}
+
+/* ── Slide 02: Fiber Optic Highways & Busbars ── */
+.hero-fiber-stream {
+  fill: none;
+  stroke-width: 2.2;
+  stroke-dasharray: 8 5;
+  animation: fiberStreamDash 2s infinite linear;
+  filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.8));
+}
+
+.busbar-2 { animation-duration: 2.4s; }
+.busbar-3 { animation-duration: 2.8s; }
+
+@keyframes fiberStreamDash {
+  from { stroke-dashoffset: 39; }
+  to { stroke-dashoffset: 0; }
+}
+
+.hero-busbar-pulse {
+  fill: #FFFFFF;
+  filter: drop-shadow(0 0 6px #00E5FF) drop-shadow(0 0 12px #00E5FF);
+}
+
+.hero-edge-beacon {
+  fill: #00E5FF;
+  filter: drop-shadow(0 0 6px #00E5FF);
+  animation: edgeBeaconPulse 1.8s infinite alternate ease-in-out;
+}
+
+@keyframes edgeBeaconPulse {
+  from { opacity: 0.4; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1.35); }
+}
+
+/* Subtle Local Contrast Guard */
+.hero-cinematic__contrast-guard {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(8, 13, 26, 0.55) 0%,
+    rgba(8, 13, 26, 0.35) 35%,
+    rgba(8, 13, 26, 0.08) 58%,
+    transparent 75%
+  );
+  pointer-events: none;
+  z-index: 3;
+}
+
+.hero-cinematic__grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(0, 229, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 229, 255, 0.02) 1px, transparent 1px);
+  background-size: 56px 56px;
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* ============================================================
+   2. LAYERED HTML CONTENT OVERLAY
+   ============================================================ */
+
+.hero-cinematic__container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: var(--container-wide, 1440px);
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-6);
+  padding-bottom: var(--space-8);
+}
+
+.hero-cinematic__content {
+  max-width: 580px;
+  width: 100%;
+  position: relative;
+}
+
+.hero-cinematic__text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  position: relative;
+}
+
+/* ── Signal Trace Geometry (Subtle horizontal trace) ── */
+.hero-signal-trace {
+  position: absolute;
+  top: -16px;
+  left: -8px;
+  width: 240px;
+  height: 32px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.65;
+}
+
+.hero-signal-trace__svg {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-signal-node {
+  fill: #00E5FF;
+  filter: drop-shadow(0 0 6px #00E5FF);
+}
+
+.hero-signal-path {
+  stroke: #00E5FF;
+  stroke-width: 1.2;
+  stroke-dasharray: 4 3;
+  opacity: 0.6;
+}
+
+.hero-signal-node-end {
+  fill: #38BDF8;
+  opacity: 0.8;
+}
+
+/* ── Micro-Particles (Subtle intelligence activation) ── */
+.hero-micro-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 1;
+}
+
+.hero-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: #00E5FF;
+  box-shadow: 0 0 8px #00E5FF;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-particle--1 {
+  width: 3.5px;
+  height: 3.5px;
+  top: 15%;
+  right: -20px;
+  animation: heroParticleFloat1 3.5s ease-in-out infinite;
+}
+
+.hero-particle--2 {
+  width: 2.5px;
+  height: 2.5px;
+  top: 55%;
+  right: 10px;
+  background: #25A449;
+  box-shadow: 0 0 6px #25A449;
+  animation: heroParticleFloat2 4s ease-in-out 0.8s infinite;
+}
+
+.hero-particle--3 {
+  width: 3px;
+  height: 3px;
+  bottom: 20%;
+  left: 40%;
+  animation: heroParticleFloat3 3.8s ease-in-out 1.5s infinite;
+}
+
+@keyframes heroParticleFloat1 {
+  0% { transform: translate(0, 0); opacity: 0; }
+  30% { opacity: 0.85; }
+  80% { opacity: 0.4; }
+  100% { transform: translate(24px, -18px); opacity: 0; }
+}
+
+@keyframes heroParticleFloat2 {
+  0% { transform: translate(0, 0); opacity: 0; }
+  30% { opacity: 0.75; }
+  80% { opacity: 0.3; }
+  100% { transform: translate(-18px, -24px); opacity: 0; }
+}
+
+@keyframes heroParticleFloat3 {
+  0% { transform: translate(0, 0); opacity: 0; }
+  30% { opacity: 0.7; }
+  80% { opacity: 0.2; }
+  100% { transform: translate(16px, 14px); opacity: 0; }
+}
+
+/* ── 01: Eyebrow Signal Node & Line ── */
+.hero-cinematic__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #38BDF8;
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+  position: relative;
+  z-index: 2;
+}
+
+.hero-cinematic__eyebrow-node {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00E5FF;
+  box-shadow: 0 0 8px #00E5FF;
+  animation: eyebrowGlow 1.8s infinite alternate ease-in-out;
+}
+
+@keyframes eyebrowGlow {
+  from { opacity: 0.6; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1.2); }
+}
+
+.hero-cinematic__eyebrow-line {
+  width: 24px;
+  height: 1.5px;
+  background: linear-gradient(90deg, #00E5FF, rgba(56, 189, 248, 0.2));
+}
+
+.hero-cinematic__eyebrow-text {
+  text-transform: uppercase;
+}
+
+/* ── 02: Line-Masked Headline System ── */
+.hero-cinematic__headline {
+  font-size: clamp(2.3rem, 4vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: #FFFFFF;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7), 0 1px 4px rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Line Mask to contain the slide-up animation */
+.hero-headline-line-mask {
+  overflow: hidden;
+  display: block;
+  padding-bottom: 2px;
+}
+
+.hero-headline-line {
+  display: inline-block;
+  color: #FFFFFF;
+  position: relative;
+  will-change: transform, opacity, filter;
+}
+
+.hero-headline-line--highlight {
+  color: #00E5FF;
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.5), 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Network slide specific subtle animated underline trace */
+.hero-headline-word-trace {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00E5FF, transparent);
+  transform-origin: left;
+  animation: headlineTraceDraw 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes headlineTraceDraw {
+  0% { transform: scaleX(0); opacity: 0; }
+  40% { opacity: 0.9; }
+  100% { transform: scaleX(1); opacity: 0.6; }
+}
+
+/* ── 03: Direct CTAs with Data Pulse ── */
+.hero-cinematic__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  padding-top: var(--space-2);
+  position: relative;
+  z-index: 2;
+}
+
+.hero-actions-pulse-line {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, #00E5FF, transparent);
+  opacity: 0.6;
+}
+
+.hero-cinematic__btn-primary {
+  background: var(--brand-blue);
+  color: #FFFFFF;
+  box-shadow: 0 4px 18px rgba(0, 124, 196, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-btn-arrow {
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-cinematic__btn-primary:hover {
+  background: #0096E8;
+  box-shadow: 0 8px 24px rgba(0, 124, 196, 0.6);
+  transform: translateY(-2.5px);
+}
+
+.hero-cinematic__btn-primary:hover .hero-btn-arrow {
+  transform: translateX(4.5px);
+}
+
+.hero-cinematic__btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  color: #FFFFFF;
+  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-cinematic__btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   3. MINIMALIST DUAL-NODE PROGRESS INDICATOR (●━━━━   ○)
+      (7000ms display duration with pause & exact resume)
+   ============================================================ */
+
+.hero-cinematic__nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 12;
+  padding-bottom: var(--space-5);
+  pointer-events: none;
+}
+
+.hero-cinematic__nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-cinematic__nodes {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 6px 14px;
+  background: rgba(8, 13, 26, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-full);
+  pointer-events: auto;
+}
+
+.hero-cinematic__node {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-cinematic__node-circle {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-cinematic__node:hover .hero-cinematic__node-circle {
+  border-color: #00E5FF;
+  background: rgba(0, 229, 255, 0.3);
+}
+
+.hero-cinematic__node.is-active .hero-cinematic__node-circle {
+  width: 9px;
+  height: 9px;
+  border-color: #00E5FF;
+  background: #00E5FF;
+  box-shadow: 0 0 10px #00E5FF;
+}
+
+.hero-cinematic__node-track {
+  display: block;
+  width: 52px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-cinematic__node-fill {
+  display: block;
+  height: 100%;
+  background: #00E5FF;
+  box-shadow: 0 0 6px #00E5FF;
+  border-radius: var(--radius-full);
+  width: 0%;
+}
+
+/* ============================================================
+   4. RESPONSIVE COMPOSITION
+   ============================================================ */
+
+@media (max-width: 960px) {
+  .hero-cinematic {
+    height: calc(100svh - var(--navbar-height));
+    min-height: 520px;
+    max-height: 720px;
+  }
+
+  .hero-cinematic__content {
+    max-width: 440px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-cinematic {
+    height: calc(100svh - var(--navbar-height));
+    min-height: 480px;
+    max-height: none;
+  }
+
+  .hero-cinematic__img {
+    object-position: 58% center;
+  }
+
+  .hero-cinematic__contrast-guard {
+    background: linear-gradient(
+      180deg,
+      rgba(8, 13, 26, 0.65) 0%,
+      rgba(8, 13, 26, 0.45) 55%,
+      rgba(8, 13, 26, 0.15) 80%,
+      transparent 100%
+    );
+  }
+
+  .hero-cinematic__container {
+    padding-top: var(--space-2);
+    padding-bottom: var(--space-10);
+  }
+
+  .hero-cinematic__content {
+    max-width: 100%;
+  }
+
+  .hero-cinematic__headline {
+    font-size: clamp(1.85rem, 6.2vw, 2.5rem);
+  }
+
+  .hero-cinematic__nav {
+    padding-bottom: var(--space-3);
+  }
+}
+
+/* Reduced-Motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-soil-wave,
+  .hero-electrode-core,
+  .hero-electrode-subline,
+  .hero-cloud-path,
+  .hero-cloud-halo,
+  .hero-beacon-ring,
+  .hero-beacon-dot,
+  .hero-hardware-aura,
+  .hero-orbital-arc,
+  .hero-shield-pulse,
+  .hero-platform-ring,
+  .hero-fiber-stream,
+  .hero-edge-beacon,
+  .hero-cinematic__data-sweep,
+  .hero-cinematic__eyebrow-dot {
+    animation: none !important;
+  }
+}
