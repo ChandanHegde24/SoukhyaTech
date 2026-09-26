@@ -1,33 +1,8 @@
-import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import CTA from '../components/CTA/CTA';
-import { solutions } from '../data/siteContent';
-import customIoTImg from '../assets/images/Custom IoT Solutions for Connected Industries.png';
-import smartSystemsImg from '../assets/images/Smart Systems.png';
-import dataCenterImg from '../assets/images/Data Center Solutions.png';
+import Breadcrumb from '../components/shared/Breadcrumb/Breadcrumb';
+import Reveal from '../components/shared/Reveal/Reveal';
+import { solutionShowcase } from '../data/solutionCatalog';
 import './Solutions.css';
-
-const solutionMeta = [
-  {
-    ...solutions[0], img: customIoTImg, chip: 'IOT & IIOT ARCHITECTURE',
-    code: 'SOL-01 // CONNECTED INDUSTRIES',
-    tags: ['Secure Architecture', 'Real-time Monitoring', 'Device-to-Cloud', 'Edge Computing', 'AI Analytics'],
-    accent: '#25A449', accentLight: 'rgba(37, 164, 73, 0.12)', shortTitle: 'CUSTOM IOT & IIOT', metric: 'EDGE TO CLOUD',
-  },
-  {
-    ...solutions[1], img: smartSystemsImg, chip: 'ADAPTIVE ECOSYSTEMS',
-    code: 'SOL-02 // SMART ENVIRONMENTS',
-    tags: ['Energy Management', 'Agriculture Optimization', 'Retail Automation', 'Smart City', 'Sensors'],
-    accent: '#007CC4', accentLight: 'rgba(0, 124, 196, 0.12)', shortTitle: 'SMART SYSTEMS', metric: 'RESPONSIVE AI',
-  },
-  {
-    ...solutions[2], img: dataCenterImg, chip: 'MISSION-CRITICAL HARDWARE',
-    code: 'SOL-03 // PHYSICAL SYSTEMS',
-    tags: ['Hardware Infrastructure', 'Storage & Compute', 'Networking', 'High Performance'],
-    accent: '#2C3694', accentLight: 'rgba(44, 54, 148, 0.12)', shortTitle: 'DATA CENTER INFRASTRUCTURE', metric: 'HIGH-RELIABILITY',
-  },
-];
 
 const technologyJourney = [
   { step: '01', title: 'DEVICES & SENSORS', desc: 'Hardware design, embedded telemetry & rugged physical instrumentation', color: '#25A449' },
@@ -36,18 +11,6 @@ const technologyJourney = [
   { step: '04', title: 'DECISION INTELLIGENCE', desc: 'AI-driven analytics, anomaly detection & operational dashboards', color: '#E68324' },
   { step: '05', title: 'SUSTAINED VALUE', desc: 'Continuous uptime, reduced operational waste & asset longevity', color: '#EC008C' },
 ];
-
-function Reveal({ children, delay = 0, className = '', style = {} }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-8% 0px' });
-  return (
-    <motion.div ref={ref} className={className} style={style} initial={{ opacity: 0, y: 24 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ delay, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}>
-      {children}
-    </motion.div>
-  );
-}
 
 /* ── Reusable Solution Visual Component (Supports Image, Hover, Parallax) ── */
 function SolutionVisual({ solution, index }) {
@@ -95,11 +58,7 @@ export default function Solutions() {
             {/* Left Content */}
             <div className="solutions-hero__content">
               <Reveal>
-                <div className="breadcrumb-nav">
-                  <Link to="/">Home</Link>
-                  <span className="breadcrumb-sep">/</span>
-                  <span className="breadcrumb-current">Solutions</span>
-                </div>
+                <Breadcrumb currentPage="Solutions" />
 
                 <div className="solutions-hero__eyebrow">
                   <span className="solutions-hero__eyebrow-dot" />
@@ -132,7 +91,7 @@ export default function Solutions() {
           4. MAIN CINEMATIC SOLUTION CHAPTERS (ALTERNATING ASYMMETRIC)
           ============================================================ */}
       <section className="solutions-chapters" aria-label="Solutions Detailed Chapters">
-        {solutionMeta.map((solution, idx) => {
+        {solutionShowcase.map((solution, idx) => {
           const isReversed = idx % 2 === 1;
 
           return (

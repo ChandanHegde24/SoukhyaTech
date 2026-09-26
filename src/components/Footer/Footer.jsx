@@ -1,40 +1,8 @@
 import { Link } from 'react-router-dom';
 import logoSrc from '../../assets/icons/logo@2x.png';
 import { contactInfo, socialLinks } from '../../data/siteContent';
+import { footerNavigation } from '../../config/navigation';
 import './Footer.css';
-
-const navGroups = [
-  {
-    label: 'Navigation',
-    links: [
-      { to: '/',          label: 'Home' },
-      { to: '/services',  label: 'Services' },
-      { to: '/solutions', label: 'Solutions' },
-      { to: '/product',   label: 'Product' },
-      { to: '/about',     label: 'About' },
-      { to: '/contact',   label: 'Contact' },
-    ],
-  },
-  {
-    label: 'Services',
-    links: [
-      { to: '/services', label: 'IT Audit & Advisory' },
-      { to: '/services', label: 'Managed Security Services' },
-      { to: '/services', label: 'Managed Network Services' },
-      { to: '/services', label: 'Managed Cloud Services' },
-      { to: '/services', label: 'Remote Monitoring and Management' },
-    ],
-  },
-  {
-    label: 'Solutions',
-    links: [
-      { to: '/solutions', label: 'Custom IoT Solutions' },
-      { to: '/solutions', label: 'Smart Systems' },
-      { to: '/solutions', label: 'Data Center Solutions' },
-      { to: '/product',   label: 'Earth-Pit Monitoring (I-ES)' },
-    ],
-  },
-];
 
 export default function Footer() {
   return (
@@ -84,7 +52,7 @@ export default function Footer() {
 
           {/* Navigation link columns */}
           <div className="footer__nav-cols">
-            {navGroups.map((group) => (
+            {footerNavigation.map((group) => (
               <div key={group.label} className="footer__col">
                 <h4 className="footer__col-heading">{group.label}</h4>
                 <ul className="footer__col-links">

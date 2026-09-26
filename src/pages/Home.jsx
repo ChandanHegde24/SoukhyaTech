@@ -4,43 +4,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Hero from '../components/Hero/Hero';
 import CTA from '../components/CTA/CTA';
 import TechnicalMastery from '../components/TechnicalMastery/TechnicalMastery';
-import {
-  solutions,
-  whyChooseSoukhya,
-} from '../data/siteContent';
-import customIoTImg from '../assets/images/Custom IoT Solutions for Connected Industries.png';
-import smartSystemsImg from '../assets/images/Smart Systems.png';
-import dataCenterImg from '../assets/images/Data Center Solutions.png';
+import { whyChooseSoukhya } from '../data/siteContent';
+import { homeSolutionShowcase } from '../data/solutionCatalog';
 import './Home.css';
-
-const solutionsData = [
-  {
-    ...solutions[0],
-    img: customIoTImg,
-    secondaryImg: smartSystemsImg,
-    code: 'SYS-IOT-01',
-    tags: ['Secure Architecture', 'Edge Computing', 'Device-to-Cloud', 'AI Analytics'],
-  },
-  {
-    ...solutions[1],
-    img: smartSystemsImg,
-    secondaryImg: dataCenterImg,
-    code: 'SYS-SMT-02',
-    tags: ['Energy Management', 'Agriculture', 'Retail Automation', 'Smart City'],
-  },
-  {
-    ...solutions[2],
-    img: dataCenterImg,
-    secondaryImg: customIoTImg,
-    code: 'SYS-DTC-03',
-    tags: ['Hardware Infrastructure', 'Storage & Compute', 'Networking', 'High Performance'],
-  },
-];
 
 export default function Home() {
   // Preload all solution images for instantaneous, 0-blank-frame switching
   useEffect(() => {
-    [customIoTImg, smartSystemsImg, dataCenterImg].forEach((src) => {
+    homeSolutionShowcase.map(({ img }) => img).forEach((src) => {
       const img = new Image();
       img.src = src;
     });
@@ -86,7 +57,7 @@ function EnterpriseSolutionsSection() {
   const [prevIdx, setPrevIdx] = useState(0);
   const sectionRef = useRef(null);
 
-  const activeSolution = solutionsData[activeIdx];
+  const activeSolution = homeSolutionShowcase[activeIdx];
 
   const handleSelect = (index) => {
     if (index !== activeIdx) {
@@ -133,7 +104,7 @@ function EnterpriseSolutionsSection() {
                 className="enterprise-signal-rail__tracker"
                 style={{
                   transform: `translateY(${activeIdx * 100}%)`,
-                  height: `${100 / solutionsData.length}%`,
+                  height: `${100 / homeSolutionShowcase.length}%`,
                 }}
               >
                 <span className="enterprise-signal-rail__glow-node" />
@@ -142,7 +113,7 @@ function EnterpriseSolutionsSection() {
 
             {/* Interactive Solution Rows */}
             <div className="solutions-showcase-index" role="tablist" aria-label="Enterprise Solutions">
-              {solutionsData.map((sol, index) => {
+              {homeSolutionShowcase.map((sol, index) => {
                 const isActive = activeIdx === index;
                 return (
                   <div

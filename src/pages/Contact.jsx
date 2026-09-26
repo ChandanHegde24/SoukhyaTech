@@ -1,37 +1,11 @@
-import React, { useState, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { contactInfo } from '../data/siteContent';
+import { inquiryTypes } from '../config/contact';
+import Breadcrumb from '../components/shared/Breadcrumb/Breadcrumb';
+import Reveal from '../components/shared/Reveal/Reveal';
 import './Contact.css';
 
-const inquiryTypes = [
-  'Custom IoT / IIoT Engineering',
-  'Intelligent Earth Pit Monitoring System (I-ES)',
-  'Managed Security Services',
-  'Managed Network Services',
-  'Managed Cloud Services',
-  'Remote Monitoring and Management',
-  'IT Audit & Advisory',
-];
-
 /* ── Reveal Animation Wrapper ── */
-function Reveal({ children, delay = 0, className = '', style = {} }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-8% 0px' });
-  return (
-    <motion.div
-      ref={ref}
-      className={className}
-      style={style}
-      initial={{ opacity: 0, y: 24 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ delay, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 /* ── Contact Hero Visual Component ── */
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -77,11 +51,7 @@ export default function Contact() {
             {/* Left Content */}
             <div className="contact-hero__content">
               <Reveal>
-                <div className="breadcrumb-nav">
-                  <Link to="/">Home</Link>
-                  <span className="breadcrumb-sep">/</span>
-                  <span className="breadcrumb-current">Contact</span>
-                </div>
+                <Breadcrumb currentPage="Contact" />
 
                 <div className="contact-hero__eyebrow">
                   <span className="contact-hero__eyebrow-dot" />

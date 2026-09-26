@@ -1,8 +1,8 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { productContent } from '../../data/siteContent';
 import IESHeroAnimation from '../IESHeroAnimation/IESHeroAnimation';
+import Breadcrumb from '../shared/Breadcrumb/Breadcrumb';
 import './ProductShowcase.css';
 
 export default function ProductShowcase() {
@@ -23,11 +23,7 @@ export default function ProductShowcase() {
             transition={{ duration: 0.5 }}
             className="product-showcase__breadcrumbs"
           >
-            <div className="breadcrumb-nav">
-              <Link to="/">Home</Link>
-              <span className="breadcrumb-sep">/</span>
-              <span className="breadcrumb-current">Product</span>
-            </div>
+            <Breadcrumb currentPage="Product" />
           </motion.div>
 
           <motion.div

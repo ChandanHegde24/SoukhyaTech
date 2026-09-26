@@ -2,12 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import MainLayout from '../layouts/MainLayout';
-import Home from '../pages/Home';
-import About from '../pages/About';
-import Services from '../pages/Services';
-import Solutions from '../pages/Solutions';
-import Product from '../pages/Product';
-import Contact from '../pages/Contact';
+import { routeDefinitions } from './routeDefinitions';
 
 function PageRouteTracker() {
   const { pathname } = useLocation();
@@ -53,12 +48,9 @@ const AppRoutes = () => {
       <PageRouteTracker />
       <MainLayout>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/solutions" element={<Solutions />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/contact" element={<Contact />} />
+          {routeDefinitions.map(({ path, Page }) => (
+            <Route key={path} path={path} element={<Page />} />
+          ))}
         </Routes>
       </MainLayout>
     </Router>

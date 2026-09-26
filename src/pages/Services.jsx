@@ -1,27 +1,10 @@
-import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import CTA from '../components/CTA/CTA';
+import Breadcrumb from '../components/shared/Breadcrumb/Breadcrumb';
+import Reveal from '../components/shared/Reveal/Reveal';
 import { managedServices } from '../data/siteContent';
 import './Services.css';
 
 /* ── Reveal Animation Wrapper ── */
-function Reveal({ children, delay = 0, className = '' }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-8% 0px' });
-  return (
-    <motion.div
-      ref={ref}
-      className={className}
-      initial={{ opacity: 0, y: 24 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ delay, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 /* ── Service Visuals (Bespoke Interactive SVG Technology Diagrams) ── */
 function ServiceVisual({ type, index, activeTab, title }) {
   return (
@@ -264,11 +247,7 @@ export default function Services() {
             {/* Left Content */}
             <div className="services-hero__content">
               <Reveal>
-                <div className="breadcrumb-nav">
-                  <Link to="/">Home</Link>
-                  <span className="breadcrumb-sep">/</span>
-                  <span className="breadcrumb-current">Services</span>
-                </div>
+                <Breadcrumb currentPage="Services" />
 
                 <div className="services-hero__eyebrow">
                   <span className="services-hero__eyebrow-dot" />

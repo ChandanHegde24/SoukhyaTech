@@ -1,28 +1,10 @@
-import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import CTA from '../components/CTA/CTA';
+import Breadcrumb from '../components/shared/Breadcrumb/Breadcrumb';
+import Reveal from '../components/shared/Reveal/Reveal';
 import { aboutContent } from '../data/siteContent';
 import './About.css';
 
 /* ── Reveal Animation Wrapper ── */
-function Reveal({ children, delay = 0, className = '', style = {} }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-8% 0px' });
-  return (
-    <motion.div
-      ref={ref}
-      className={className}
-      style={style}
-      initial={{ opacity: 0, y: 24 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ delay, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 /* ── About Hero Interactive Geometric Network Visual ── */
 function EngineeringDnaVisual() {
   const steps = [
@@ -73,11 +55,7 @@ export default function About() {
             {/* Left Content */}
             <div className="about-hero__content">
               <Reveal>
-                <div className="breadcrumb-nav">
-                  <Link to="/">Home</Link>
-                  <span className="breadcrumb-sep">/</span>
-                  <span className="breadcrumb-current">About</span>
-                </div>
+                <Breadcrumb currentPage="About" />
 
                 <div className="about-hero__eyebrow">
                   <span className="about-hero__eyebrow-dot" />

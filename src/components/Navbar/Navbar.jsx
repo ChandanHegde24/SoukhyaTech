@@ -2,16 +2,8 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import logoSrc from '../../assets/icons/logo@2x.png';
+import { primaryNavigation } from '../../config/navigation';
 import './Navbar.css';
-
-const navLinks = [
-  { to: '/',          label: 'Home' },
-  { to: '/services',  label: 'Services' },
-  { to: '/solutions', label: 'Solutions' },
-  { to: '/product',   label: 'Product' },
-  { to: '/about',     label: 'About' },
-  { to: '/contact',   label: 'Contact' },
-];
 
 const menuVariants = {
   closed: { opacity: 0, x: '100%' },
@@ -65,7 +57,7 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <div className="navbar__links" role="list">
-          {navLinks.map(({ to, label }) => (
+          {primaryNavigation.map(({ to, label }) => (
             <Link
               key={to}
               to={to}
@@ -121,7 +113,7 @@ export default function Navbar() {
             <div className="navbar__mobile-glow" aria-hidden="true" />
 
             <div className="navbar__mobile-links">
-              {navLinks.map(({ to, label }, i) => (
+              {primaryNavigation.map(({ to, label }, i) => (
                 <motion.div
                   key={to}
                   custom={i}

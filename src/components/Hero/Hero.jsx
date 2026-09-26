@@ -8,7 +8,7 @@ import './Hero.css';
 const slidesData = [
   {
     id: 'ies',
-    index: 0,
+    index: 1,
     badge: 'I-ES PLATFORM',
     words: ['Intelligent', 'Earth-Pit Monitoring', 'System (I-ES)'],
     primaryCTA: { label: 'Know More', to: '/product' },
@@ -19,7 +19,7 @@ const slidesData = [
   },
   {
     id: 'network',
-    index: 1,
+    index: 0,
     badge: 'CONNECTED INFRASTRUCTURE',
     words: ['VISIBILITY', 'CONTROL', 'EFFICIENCY'],
     primaryCTA: { label: 'Know More', to: '/services' },
