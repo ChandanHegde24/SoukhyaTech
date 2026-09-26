@@ -1,15 +1,26 @@
-import Home from '../pages/Home';
-import About from '../pages/About';
-import Services from '../pages/Services';
-import Solutions from '../pages/Solutions';
-import Product from '../pages/Product';
-import Contact from '../pages/Contact';
+import Home from '../pages/Home.jsx';
+import About from '../pages/About.jsx';
+import Services from '../pages/Services.jsx';
+import Solutions from '../pages/Solutions.jsx';
+import Product from '../pages/Product.jsx';
+import Contact from '../pages/Contact.jsx';
+import { primaryNavigation } from '../config/navigation.js';
 
-export const routeDefinitions = [
-  { path: '/', Page: Home },
-  { path: '/about', Page: About },
-  { path: '/services', Page: Services },
-  { path: '/solutions', Page: Solutions },
-  { path: '/product', Page: Product },
-  { path: '/contact', Page: Contact },
-];
+const pagesByPath = {
+  '/': Home,
+  '/about': About,
+  '/services': Services,
+  '/solutions': Solutions,
+  '/product': Product,
+  '/contact': Contact,
+};
+
+export const routeDefinitions = primaryNavigation.map(({ to: path }) => {
+  const Page = pagesByPath[path];
+
+  if (!Page) {
+    throw new Error(`Navigation path "${path}" does not have a page component.`);
+  }
+
+  return { path, Page };
+});
