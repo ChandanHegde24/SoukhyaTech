@@ -15,7 +15,7 @@
    ------------------------------------------------------------ */
 .about-hero {
   position: relative;
-  padding: calc(var(--nav-height) + var(--space-8)) 0 var(--space-10);
+  padding: var(--space-12) 0 var(--space-12);
   background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FC 60%, #EEF5FB 100%);
   border-bottom: 1px solid var(--border-light);
   overflow: hidden;
@@ -50,7 +50,7 @@
 
 .about-hero__grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 720px);
   align-items: start;
 }
 
@@ -58,7 +58,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
-  max-width: 640px;
+  max-width: 680px;
 }
 
 .about-hero__eyebrow {
@@ -98,7 +98,7 @@
   font-weight: 800;
   line-height: 1.1;
   color: var(--text-primary);
-  letter-spacing: -0.025em;
+  letter-spacing: 0;
   margin: var(--space-2) 0;
 }
 
@@ -445,9 +445,9 @@
    ------------------------------------------------------------ */
 .about-overview__grid {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
   gap: clamp(var(--space-8), 5vw, var(--space-16));
-  align-items: center;
+  align-items: start;
   position: relative;
   z-index: 1;
 }
@@ -456,6 +456,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
+  max-width: 68ch;
 }
 
 .about-overview__title {
@@ -463,7 +464,7 @@
   font-size: clamp(2rem, 3.2vw, 2.8rem);
   font-weight: 800;
   line-height: 1.2;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .about-overview__paragraph {
@@ -645,9 +646,9 @@
    ------------------------------------------------------------ */
 .about-vision__grid {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
   gap: clamp(var(--space-8), 5vw, var(--space-16));
-  align-items: center;
+  align-items: start;
   position: relative;
   z-index: 1;
 }
@@ -656,6 +657,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
+  max-width: 62ch;
 }
 
 .about-vision__title {
@@ -827,7 +829,7 @@
 
 @media (max-width: 640px) {
   .about-hero {
-    padding: calc(var(--nav-height) + var(--space-8)) 0 var(--space-12);
+    padding: var(--space-8) 0 var(--space-10);
   }
 
   .about-nav-bar__label {

@@ -14,7 +14,7 @@
    ------------------------------------------------------------ */
 .services-hero {
   position: relative;
-  padding: calc(var(--nav-height) + var(--space-8)) 0 var(--space-10);
+  padding: var(--space-12) 0 var(--space-12);
   background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FC 60%, #EEF5FB 100%);
   border-bottom: 1px solid var(--border-light);
   overflow: hidden;
@@ -49,7 +49,7 @@
 
 .services-hero__grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 720px);
   align-items: start;
 }
 
@@ -57,7 +57,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
-  max-width: 640px;
+  max-width: 680px;
 }
 
 .breadcrumb-nav {
@@ -128,7 +128,7 @@
   font-weight: 800;
   line-height: 1.1;
   color: var(--text-primary);
-  letter-spacing: -0.025em;
+  letter-spacing: 0;
   margin: var(--space-2) 0;
 }
 
@@ -387,15 +387,15 @@
 
 .service-chapter__grid {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
   gap: clamp(var(--space-8), 5vw, var(--space-16));
-  align-items: center;
+  align-items: start;
   position: relative;
   z-index: 1;
 }
 
 .service-chapter--reversed .service-chapter__grid {
-  grid-template-columns: 1fr 1.15fr;
+  grid-template-columns: minmax(360px, 0.9fr) minmax(0, 1.1fr);
 }
 
 .service-chapter--reversed .service-chapter__text-col {
@@ -410,6 +410,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-5);
+  min-width: 0;
 }
 
 .service-chapter__badge {
@@ -441,7 +442,7 @@
   font-size: clamp(1.8rem, 2.8vw, 2.4rem);
   font-weight: 800;
   line-height: 1.2;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .service-chapter__paragraphs {
@@ -475,6 +476,7 @@
   flex-direction: column;
   gap: var(--space-4);
   transition: all var(--trans-base);
+  min-width: 0;
 }
 
 .service-visual-box:hover {
@@ -1031,7 +1033,7 @@
 
 @media (max-width: 640px) {
   .services-hero {
-    padding: calc(var(--nav-height) + var(--space-8)) 0 var(--space-12);
+    padding: var(--space-8) 0 var(--space-10);
   }
 
   .services-nav-bar__label {
