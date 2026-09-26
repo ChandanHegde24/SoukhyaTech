@@ -1,0 +1,154 @@
+/* ============================================================
+   CONNECTED INTELLIGENCE — CLEAN EDITORIAL CONTENT SECTION
+   Pure typography, balanced spacing, and subtle brand accents
+   ============================================================ */
+
+.connected-intel {
+  position: relative;
+  width: 100%;
+  background: #F8FAFD;
+  padding: 60px 0 56px;
+  border-top: 1px solid #E5EDF6;
+  border-bottom: 1px solid #E5EDF6;
+}
+
+.connected-intel__container {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+/* ── Eyebrow Header ── */
+.connected-intel__eyebrow-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.connected-intel__node {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #007CC4;
+  box-shadow: 0 0 8px rgba(0, 124, 196, 0.6);
+}
+
+.connected-intel__eyebrow {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #2C3694;
+  text-transform: uppercase;
+}
+
+.connected-intel__rule {
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, #CBD5E1, transparent);
+}
+
+/* ── Statement Typography (Clean & Premium) ── */
+.connected-intel__statement {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sentence 1: Primary Editorial Lead */
+.connected-intel__sentence-lead {
+  font-size: clamp(1.5rem, 2.3vw, 2.2rem);
+  font-weight: 700;
+  color: #172033;
+  line-height: 1.34;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+/* Sentence 2: Secondary Visual Hierarchy */
+.connected-intel__sentence-body {
+  font-size: clamp(1.1rem, 1.42vw, 1.32rem);
+  font-weight: 450;
+  color: #4F5D70;
+  line-height: 1.62;
+  letter-spacing: -0.012em;
+  margin: 18px 0 0;
+  max-width: 960px;
+}
+
+/* ── Subtle Keyword Highlights ── */
+.intel-kw {
+  transition: color 200ms ease;
+}
+
+.intel-kw--blue {
+  color: #007CC4;
+  font-weight: 750;
+}
+
+.intel-kw--indigo {
+  color: #2C3694;
+  font-weight: 750;
+}
+
+.intel-kw--underline-blue {
+  color: #172033;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(0, 124, 196, 0.45);
+}
+
+.intel-kw--underline-green {
+  color: #172033;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(37, 164, 73, 0.5);
+}
+
+.intel-kw--gradient {
+  font-weight: 800;
+  background: linear-gradient(135deg, #007CC4 0%, #2C3694 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border-bottom: 2px solid rgba(44, 54, 148, 0.35);
+}
+
+.intel-kw--dark {
+  color: #172033;
+  font-weight: 650;
+  border-bottom: 1.5px solid rgba(44, 54, 148, 0.35);
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .connected-intel {
+    padding: 48px 0 44px;
+  }
+
+  .connected-intel__eyebrow-wrap {
+    margin-bottom: 18px;
+  }
+
+  .connected-intel__sentence-lead {
+    font-size: clamp(1.3rem, 4.2vw, 1.65rem);
+    line-height: 1.38;
+  }
+
+  .connected-intel__sentence-body {
+    font-size: clamp(1rem, 3.2vw, 1.15rem);
+    line-height: 1.58;
+    margin-top: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .connected-intel {
+    padding: 40px 0 36px;
+  }
+
+  .connected-intel__rule {
+    display: none;
+  }
+}

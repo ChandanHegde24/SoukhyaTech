@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Hero from '../components/Hero/Hero';
+import ConnectedIntelligence from '../components/ConnectedIntelligence/ConnectedIntelligence';
 import CTA from '../components/CTA/CTA';
 import TechnicalMastery from '../components/TechnicalMastery/TechnicalMastery';
 import { whyChooseSoukhya } from '../data/siteContent';
@@ -22,7 +23,10 @@ export default function Home() {
       {/* 1. Hero Section (Untouched) */}
       <Hero />
 
-      {/* 2. SECTION 01: Technical Mastery — Cinematic Engineering Scene */}
+      {/* 2. Brand Statement: Connected Intelligence */}
+      <ConnectedIntelligence />
+
+      {/* 3. SECTION 01: Technical Mastery — Cinematic Engineering Scene */}
       <TechnicalMastery />
 
       {/* 3. SECTION 02: Enterprise Solutions — Enterprise Solution Showcase */}
