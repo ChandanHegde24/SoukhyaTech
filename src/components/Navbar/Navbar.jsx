@@ -5,6 +5,8 @@ import logoSrc from '../../assets/icons/logo@2x.png';
 import { primaryNavigation } from '../../config/navigation';
 import './Navbar.css';
 
+const mobileNavigationQuery = '(max-width: 1100px)';
+
 const menuVariants = {
   closed: { opacity: 0, x: '100%' },
   open:   { opacity: 1, x: 0, transition: { type: 'tween', duration: 0.35, ease: [0.16, 1, 0.3, 1] } },
@@ -32,6 +34,27 @@ export default function Navbar() {
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(mobileNavigationQuery);
+    const closeMenuOnDesktop = (event) => {
+      if (!event.matches) setIsMenuOpen(false);
+    };
+
+    mediaQuery.addEventListener('change', closeMenuOnDesktop);
+    return () => mediaQuery.removeEventListener('change', closeMenuOnDesktop);
+  }, []);
+
+  useEffect(() => {
+    if (!isMenuOpen) return undefined;
+
+    const closeMenuOnEscape = (event) => {
+      if (event.key === 'Escape') setIsMenuOpen(false);
+    };
+
+    window.addEventListener('keydown', closeMenuOnEscape);
+    return () => window.removeEventListener('keydown', closeMenuOnEscape);
   }, [isMenuOpen]);
 
   // Close menu on route change
