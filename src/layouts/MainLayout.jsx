@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import IntroSequence from '../components/IntroSequence/IntroSequence';
+import ClickRipple from '../components/shared/ClickRipple/ClickRipple';
 
 const MainLayout = ({ children }) => {
   return (
@@ -12,6 +13,7 @@ const MainLayout = ({ children }) => {
         {children}
       </main>
       <Footer />
+      <ClickRipple />
     </div>
   );
 };
