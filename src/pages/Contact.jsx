@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import { contactInfo } from '../data/siteContent';
 import { inquiryTypes } from '../config/contact';

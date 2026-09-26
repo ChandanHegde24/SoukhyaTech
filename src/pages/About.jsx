@@ -1,3 +1,4 @@
+import React from 'react';
 import CTA from '../components/CTA/CTA';
 import { Link } from 'react-router-dom';
 import Breadcrumb from '../components/shared/Breadcrumb/Breadcrumb';

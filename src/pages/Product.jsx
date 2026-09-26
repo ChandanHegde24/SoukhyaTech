@@ -1,3 +1,4 @@
+import React from 'react';
 import ProductShowcase from '../components/ProductShowcase/ProductShowcase';
 import IntelligenceFlow from '../components/IntelligenceFlow/IntelligenceFlow';
 import CTA from '../components/CTA/CTA';

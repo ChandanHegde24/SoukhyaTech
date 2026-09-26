@@ -5,7 +5,7 @@ import logoSrc from '../../assets/icons/logo@2x.png';
 import { primaryNavigation } from '../../config/navigation';
 import './Navbar.css';
 
-const mobileNavigationQuery = '(max-width: 1100px)';
+const mobileNavigationQuery = '(max-width: 900px)';
 
 const menuVariants = {
   closed: { opacity: 0, x: '100%' },
