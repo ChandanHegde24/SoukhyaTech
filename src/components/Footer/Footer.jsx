@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import logoSrc from '../../assets/icons/logo@2x.png';
 import { contactInfo, socialLinks } from '../../data/siteContent';

@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { expertServices } from '../../data/siteContent';
 import './technicalMastery.css';
