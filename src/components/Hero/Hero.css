@@ -55,10 +55,6 @@
   display: block;
 }
 
-.hero-cinematic__img--ies {
-  object-position: center center;
-}
-
 .hero-cinematic__img--network {
   object-position: center center;
 }
@@ -114,257 +110,7 @@
   100% { right: 110%; left: auto; opacity: 0; }
 }
 
-/* ============================================================
-   ENHANCED SVG ANIMATIONS (SLIDE 01 & SLIDE 02)
-   ============================================================ */
 
-.hero-cinematic__svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* ── Slide 01: Soil Grounding Concentric Waves ── */
-.hero-soil-wave {
-  fill: none;
-  stroke-width: 1.75;
-  transform-origin: 1100px 830px;
-  animation: soilWavePulse 3.6s infinite cubic-bezier(0.2, 0.8, 0.4, 1);
-}
-
-.wave-1 {
-  stroke: rgba(0, 229, 255, 0.85);
-  animation-delay: 0s;
-}
-
-.wave-2 {
-  stroke: rgba(37, 164, 73, 0.7);
-  animation-delay: 1.2s;
-}
-
-.wave-3 {
-  stroke: rgba(236, 0, 140, 0.6);
-  animation-delay: 2.4s;
-}
-
-@keyframes soilWavePulse {
-  0% { transform: scale(0.65); opacity: 0.9; }
-  60% { opacity: 0.55; }
-  100% { transform: scale(1.28); opacity: 0; }
-}
-
-/* ── Slide 01: Electrode Energy Core ── */
-.hero-electrode-core {
-  stroke-width: 3.5;
-  stroke-dasharray: 12 6;
-  animation: electrodeFlow 1.6s infinite linear;
-  filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.85));
-}
-
-.hero-electrode-subline {
-  stroke-width: 1.5;
-  stroke-dasharray: 6 4;
-  opacity: 0.75;
-  animation: electrodeFlow 2s infinite linear;
-}
-
-.delay-sub {
-  animation-delay: 0.5s;
-}
-
-@keyframes electrodeFlow {
-  from { stroke-dashoffset: 36; }
-  to { stroke-dashoffset: 0; }
-}
-
-/* Rising Ion Particles */
-.hero-ion-dot {
-  fill: #00E5FF;
-  filter: drop-shadow(0 0 6px #00E5FF);
-}
-
-.ion-2 { fill: #EC008C; filter: drop-shadow(0 0 6px #EC008C); }
-.ion-3 { fill: #25A449; filter: drop-shadow(0 0 6px #25A449); }
-
-/* ── Slide 01: Telemetry Cloud Pathways & Packets ── */
-.hero-cloud-path {
-  fill: none;
-  stroke-width: 2.2;
-  stroke-dasharray: 8 5;
-  animation: cloudTraceDash 2.4s infinite linear;
-  filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.75));
-}
-
-.path-secondary {
-  stroke-width: 1.5;
-  opacity: 0.65;
-  animation-duration: 3.2s;
-}
-
-@keyframes cloudTraceDash {
-  from { stroke-dashoffset: 39; }
-  to { stroke-dashoffset: 0; }
-}
-
-.hero-data-packet {
-  fill: #FFFFFF;
-  filter: drop-shadow(0 0 8px #00E5FF) drop-shadow(0 0 14px #00E5FF);
-}
-
-.hero-cloud-halo {
-  fill: none;
-  stroke: rgba(0, 229, 255, 0.6);
-  stroke-width: 1.5;
-  transform-origin: 1670px 100px;
-  animation: cloudHaloPulse 2.8s infinite alternate ease-in-out;
-}
-
-.halo-outer {
-  stroke: rgba(56, 189, 248, 0.35);
-  animation-delay: 0.8s;
-}
-
-@keyframes cloudHaloPulse {
-  from { transform: scale(0.9); opacity: 0.4; }
-  to { transform: scale(1.15); opacity: 0.9; }
-}
-
-/* ── Slide 01: Diagnostic Micro Beacons ── */
-.hero-beacon-ring {
-  fill: none;
-  stroke-width: 1.5;
-  animation: beaconPulse 2s infinite ease-out;
-}
-
-.cyan-beacon { stroke: #00E5FF; transform-origin: 850px 225px; }
-.blue-beacon { stroke: #38BDF8; transform-origin: 800px 425px; animation-delay: 0.5s; }
-.amber-beacon { stroke: #E68324; transform-origin: 1380px 225px; animation-delay: 1.0s; }
-.coral-beacon { stroke: #EC008C; transform-origin: 1380px 425px; animation-delay: 1.5s; }
-
-.hero-beacon-dot {
-  animation: beaconDotPulse 1.5s infinite alternate ease-in-out;
-}
-
-.cyan-dot { fill: #00E5FF; filter: drop-shadow(0 0 6px #00E5FF); }
-.blue-dot { fill: #38BDF8; filter: drop-shadow(0 0 6px #38BDF8); }
-.amber-dot { fill: #E68324; filter: drop-shadow(0 0 6px #E68324); }
-.coral-dot { fill: #EC008C; filter: drop-shadow(0 0 6px #EC008C); }
-
-@keyframes beaconPulse {
-  0% { transform: scale(0.6); opacity: 0.95; }
-  100% { transform: scale(1.6); opacity: 0; }
-}
-
-@keyframes beaconDotPulse {
-  from { opacity: 0.6; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1.3); }
-}
-
-/* Central I-ES Hardware Status Aura */
-.hero-hardware-aura {
-  fill: none;
-  stroke: rgba(0, 229, 255, 0.45);
-  stroke-width: 1.5;
-  stroke-dasharray: 8 6;
-  animation: hardwareAuraGlow 3s infinite alternate ease-in-out;
-}
-
-@keyframes hardwareAuraGlow {
-  from { opacity: 0.3; stroke: rgba(0, 124, 196, 0.35); }
-  to { opacity: 0.85; stroke: rgba(0, 229, 255, 0.7); filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.5)); }
-}
-
-/* ── Slide 02: Global Orbital Arcs & Particles ── */
-.hero-orbital-arc {
-  fill: none;
-  stroke-width: 1.75;
-  stroke-dasharray: 8 6;
-  animation: orbitDash 3s infinite linear;
-}
-
-.arc-2 { stroke-width: 1.5; animation-duration: 3.8s; }
-.arc-3 { stroke-width: 1.5; animation-duration: 4.4s; }
-
-@keyframes orbitDash {
-  from { stroke-dashoffset: 42; }
-  to { stroke-dashoffset: 0; }
-}
-
-.hero-orbit-dot {
-  fill: #00E5FF;
-  filter: drop-shadow(0 0 8px #00E5FF);
-}
-
-/* ── Slide 02: Central Shield Radar Pulse & Platform ── */
-.hero-shield-pulse {
-  fill: none;
-  stroke: rgba(0, 229, 255, 0.7);
-  stroke-width: 1.5;
-  transform-origin: 1380px 495px;
-  animation: shieldPulse 3s infinite cubic-bezier(0.2, 0.8, 0.4, 1);
-}
-
-.pulse-2 { stroke: rgba(56, 189, 248, 0.5); animation-delay: 1s; }
-.pulse-3 { stroke: rgba(44, 54, 148, 0.4); animation-delay: 2s; }
-
-@keyframes shieldPulse {
-  0% { transform: scale(0.6); opacity: 0.9; }
-  100% { transform: scale(1.4); opacity: 0; }
-}
-
-.hero-platform-ring {
-  fill: none;
-  stroke: rgba(0, 229, 255, 0.5);
-  stroke-width: 1.5;
-  transform-origin: 1380px 600px;
-  animation: platformRingPulse 3.5s infinite alternate ease-in-out;
-}
-
-.ring-2 {
-  stroke: rgba(37, 164, 73, 0.45);
-  animation-delay: 1.5s;
-}
-
-@keyframes platformRingPulse {
-  from { opacity: 0.35; transform: scale(0.96); }
-  to { opacity: 0.85; transform: scale(1.04); filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.6)); }
-}
-
-/* ── Slide 02: Fiber Optic Highways & Busbars ── */
-.hero-fiber-stream {
-  fill: none;
-  stroke-width: 2.2;
-  stroke-dasharray: 8 5;
-  animation: fiberStreamDash 2s infinite linear;
-  filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.8));
-}
-
-.busbar-2 { animation-duration: 2.4s; }
-.busbar-3 { animation-duration: 2.8s; }
-
-@keyframes fiberStreamDash {
-  from { stroke-dashoffset: 39; }
-  to { stroke-dashoffset: 0; }
-}
-
-.hero-busbar-pulse {
-  fill: #FFFFFF;
-  filter: drop-shadow(0 0 6px #00E5FF) drop-shadow(0 0 12px #00E5FF);
-}
-
-.hero-edge-beacon {
-  fill: #00E5FF;
-  filter: drop-shadow(0 0 6px #00E5FF);
-  animation: edgeBeaconPulse 1.8s infinite alternate ease-in-out;
-}
-
-@keyframes edgeBeaconPulse {
-  from { opacity: 0.4; transform: scale(0.85); }
-  to { opacity: 1; transform: scale(1.35); }
-}
 
 /* Subtle Local Contrast Guard */
 .hero-cinematic__contrast-guard {
@@ -379,17 +125,6 @@
   );
   pointer-events: none;
   z-index: 3;
-}
-
-.hero-cinematic__grid {
-  position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(to right, rgba(0, 229, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 229, 255, 0.02) 1px, transparent 1px);
-  background-size: 56px 56px;
-  pointer-events: none;
-  z-index: 4;
 }
 
 /* ============================================================
@@ -422,110 +157,10 @@
   position: relative;
 }
 
-/* ── Signal Trace Geometry (Subtle horizontal trace) ── */
-.hero-signal-trace {
-  position: absolute;
-  top: -16px;
-  left: -8px;
-  width: 240px;
-  height: 32px;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.65;
-}
-
-.hero-signal-trace__svg {
-  width: 100%;
-  height: 100%;
-}
-
-.hero-signal-node {
-  fill: #00E5FF;
-  filter: drop-shadow(0 0 6px #00E5FF);
-}
-
-.hero-signal-path {
-  stroke: #00E5FF;
-  stroke-width: 1.2;
-  stroke-dasharray: 4 3;
-  opacity: 0.6;
-}
-
-.hero-signal-node-end {
-  fill: #38BDF8;
-  opacity: 0.8;
-}
-
-/* ── Micro-Particles (Subtle intelligence activation) ── */
-.hero-micro-particles {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: visible;
-  z-index: 1;
-}
-
-.hero-particle {
-  position: absolute;
-  border-radius: 50%;
-  background: #00E5FF;
-  box-shadow: 0 0 8px #00E5FF;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.hero-particle--1 {
-  width: 3.5px;
-  height: 3.5px;
-  top: 15%;
-  right: -20px;
-  animation: heroParticleFloat1 3.5s ease-in-out infinite;
-}
-
-.hero-particle--2 {
-  width: 2.5px;
-  height: 2.5px;
-  top: 55%;
-  right: 10px;
-  background: #25A449;
-  box-shadow: 0 0 6px #25A449;
-  animation: heroParticleFloat2 4s ease-in-out 0.8s infinite;
-}
-
-.hero-particle--3 {
-  width: 3px;
-  height: 3px;
-  bottom: 20%;
-  left: 40%;
-  animation: heroParticleFloat3 3.8s ease-in-out 1.5s infinite;
-}
-
-@keyframes heroParticleFloat1 {
-  0% { transform: translate(0, 0); opacity: 0; }
-  30% { opacity: 0.85; }
-  80% { opacity: 0.4; }
-  100% { transform: translate(24px, -18px); opacity: 0; }
-}
-
-@keyframes heroParticleFloat2 {
-  0% { transform: translate(0, 0); opacity: 0; }
-  30% { opacity: 0.75; }
-  80% { opacity: 0.3; }
-  100% { transform: translate(-18px, -24px); opacity: 0; }
-}
-
-@keyframes heroParticleFloat3 {
-  0% { transform: translate(0, 0); opacity: 0; }
-  30% { opacity: 0.7; }
-  80% { opacity: 0.2; }
-  100% { transform: translate(16px, 14px); opacity: 0; }
-}
-
-/* ── 01: Eyebrow Signal Node & Line ── */
+/* ── 01: Eyebrow Badge ── */
 .hero-cinematic__eyebrow {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   font-weight: 700;
@@ -534,26 +169,6 @@
   text-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
   position: relative;
   z-index: 2;
-}
-
-.hero-cinematic__eyebrow-node {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #00E5FF;
-  box-shadow: 0 0 8px #00E5FF;
-  animation: eyebrowGlow 1.8s infinite alternate ease-in-out;
-}
-
-@keyframes eyebrowGlow {
-  from { opacity: 0.6; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1.2); }
-}
-
-.hero-cinematic__eyebrow-line {
-  width: 24px;
-  height: 1.5px;
-  background: linear-gradient(90deg, #00E5FF, rgba(56, 189, 248, 0.2));
 }
 
 .hero-cinematic__eyebrow-text {
@@ -594,25 +209,7 @@
   text-shadow: 0 0 20px rgba(0, 229, 255, 0.5), 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
-/* Network slide specific subtle animated underline trace */
-.hero-headline-word-trace {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #00E5FF, transparent);
-  transform-origin: left;
-  animation: headlineTraceDraw 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes headlineTraceDraw {
-  0% { transform: scaleX(0); opacity: 0; }
-  40% { opacity: 0.9; }
-  100% { transform: scaleX(1); opacity: 0.6; }
-}
-
-/* ── 03: Direct CTAs with Data Pulse ── */
+/* ── 03: Direct CTAs ── */
 .hero-cinematic__actions {
   display: flex;
   align-items: center;
@@ -621,16 +218,6 @@
   padding-top: var(--space-2);
   position: relative;
   z-index: 2;
-}
-
-.hero-actions-pulse-line {
-  position: absolute;
-  top: -4px;
-  left: 0;
-  width: 80px;
-  height: 1px;
-  background: linear-gradient(90deg, #00E5FF, transparent);
-  opacity: 0.6;
 }
 
 .hero-cinematic__btn-primary {
@@ -815,21 +402,7 @@
 
 /* Reduced-Motion */
 @media (prefers-reduced-motion: reduce) {
-  .hero-soil-wave,
-  .hero-electrode-core,
-  .hero-electrode-subline,
-  .hero-cloud-path,
-  .hero-cloud-halo,
-  .hero-beacon-ring,
-  .hero-beacon-dot,
-  .hero-hardware-aura,
-  .hero-orbital-arc,
-  .hero-shield-pulse,
-  .hero-platform-ring,
-  .hero-fiber-stream,
-  .hero-edge-beacon,
-  .hero-cinematic__data-sweep,
-  .hero-cinematic__eyebrow-dot {
+  .hero-cinematic__data-sweep {
     animation: none !important;
   }
 }

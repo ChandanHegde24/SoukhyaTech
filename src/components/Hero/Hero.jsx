@@ -274,147 +274,15 @@ export default function Hero() {
               {isTransitioning && isCurrent && (
                 <div className={`hero-cinematic__data-sweep sweep--${transitionDir}`} />
               )}
-
-              {/* Slide 01: Enhanced I-ES Grounding & Telemetry SVG */}
-              {s.type === 'ies' && (
-                <svg
-                  className="hero-cinematic__svg"
-                  viewBox="0 0 1920 1080"
-                  preserveAspectRatio="xMidYMid slice"
-                >
-                  <defs>
-                    <linearGradient id="cloudStreamGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.9" />
-                      <stop offset="50%" stopColor="#38BDF8" stopOpacity="0.75" />
-                      <stop offset="100%" stopColor="#007CC4" stopOpacity="0.2" />
-                    </linearGradient>
-                    <linearGradient id="electrodeCoreGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.95" />
-                      <stop offset="40%" stopColor="#EC008C" stopOpacity="0.8" />
-                      <stop offset="80%" stopColor="#25A449" stopOpacity="0.85" />
-                      <stop offset="100%" stopColor="#00E5FF" stopOpacity="1" />
-                    </linearGradient>
-                  </defs>
-
-                  <ellipse cx="1100" cy="830" rx="340" ry="105" className="hero-soil-wave wave-3" />
-                  <ellipse cx="1100" cy="830" rx="250" ry="78" className="hero-soil-wave wave-2" />
-                  <ellipse cx="1100" cy="830" rx="160" ry="50" className="hero-soil-wave wave-1" />
-
-                  <line x1="1100" y1="520" x2="1100" y2="920" stroke="url(#electrodeCoreGrad)" className="hero-electrode-core" />
-                  <line x1="1092" y1="530" x2="1092" y2="910" stroke="#00E5FF" className="hero-electrode-subline" />
-                  <line x1="1108" y1="530" x2="1108" y2="910" stroke="#00E5FF" className="hero-electrode-subline delay-sub" />
-
-                  <circle r="3" className="hero-ion-dot ion-1">
-                    <animateMotion path="M 1100 900 L 1100 520" dur="2.2s" repeatCount="indefinite" />
-                  </circle>
-                  <circle r="2.5" className="hero-ion-dot ion-2">
-                    <animateMotion path="M 1093 880 L 1093 540" dur="1.8s" repeatCount="indefinite" />
-                  </circle>
-                  <circle r="2.5" className="hero-ion-dot ion-3">
-                    <animateMotion path="M 1107 890 L 1107 530" dur="2.5s" repeatCount="indefinite" />
-                  </circle>
-
-                  <path d="M 1140 320 C 1220 210, 1380 140, 1670 100" stroke="url(#cloudStreamGrad)" className="hero-cloud-path path-primary" />
-                  <path d="M 1130 330 C 1240 240, 1420 160, 1670 110" stroke="url(#cloudStreamGrad)" className="hero-cloud-path path-secondary" />
-
-                  <circle r="4" className="hero-data-packet">
-                    <animateMotion path="M 1140 320 C 1220 210, 1380 140, 1670 100" dur="2.8s" repeatCount="indefinite" />
-                  </circle>
-                  <circle r="3" className="hero-data-packet packet-alt">
-                    <animateMotion path="M 1130 330 C 1240 240, 1420 160, 1670 110" dur="3.4s" repeatCount="indefinite" />
-                  </circle>
-
-                  <circle cx="1670" cy="100" r="45" className="hero-cloud-halo" />
-                  <circle cx="1670" cy="100" r="60" className="hero-cloud-halo halo-outer" />
-
-                  <circle cx="850" cy="225" r="18" className="hero-beacon-ring cyan-beacon" />
-                  <circle cx="850" cy="225" r="3.5" className="hero-beacon-dot cyan-dot" />
-
-                  <circle cx="800" cy="425" r="18" className="hero-beacon-ring blue-beacon" />
-                  <circle cx="800" cy="425" r="3.5" className="hero-beacon-dot blue-dot" />
-
-                  <circle cx="1380" cy="225" r="18" className="hero-beacon-ring amber-beacon" />
-                  <circle cx="1380" cy="225" r="3.5" className="hero-beacon-dot amber-dot" />
-
-                  <circle cx="1380" cy="425" r="18" className="hero-beacon-ring coral-beacon" />
-                  <circle cx="1380" cy="425" r="3.5" className="hero-beacon-dot coral-dot" />
-
-                  <rect x="1035" y="240" width="130" height="180" rx="12" className="hero-hardware-aura" />
-                </svg>
-              )}
-
-              {/* Slide 02: Enhanced Global Network & Cyber Shield SVG */}
-              {s.type === 'network' && (
-                <svg
-                  className="hero-cinematic__svg"
-                  viewBox="0 0 1920 1080"
-                  preserveAspectRatio="xMidYMid slice"
-                >
-                  <defs>
-                    <linearGradient id="globalArcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.85" />
-                      <stop offset="100%" stopColor="#2C3694" stopOpacity="0.2" />
-                    </linearGradient>
-                    <linearGradient id="cyberBusbarGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#38BDF8" stopOpacity="0.9" />
-                      <stop offset="50%" stopColor="#00E5FF" stopOpacity="1" />
-                      <stop offset="100%" stopColor="#25A449" stopOpacity="0.8" />
-                    </linearGradient>
-                  </defs>
-
-                  <path d="M 850 320 C 1050 180, 1400 160, 1680 260" stroke="url(#globalArcGrad)" className="hero-orbital-arc arc-1" />
-                  <path d="M 1000 380 C 1220 220, 1500 240, 1720 360" stroke="url(#globalArcGrad)" className="hero-orbital-arc arc-2" />
-                  <path d="M 720 440 C 950 280, 1300 300, 1580 440" stroke="url(#globalArcGrad)" className="hero-orbital-arc arc-3" />
-
-                  <circle r="3.5" className="hero-orbit-dot dot-1">
-                    <animateMotion path="M 850 320 C 1050 180, 1400 160, 1680 260" dur="3.6s" repeatCount="indefinite" />
-                  </circle>
-                  <circle r="3" className="hero-orbit-dot dot-2">
-                    <animateMotion path="M 1000 380 C 1220 220, 1500 240, 1720 360" dur="4.2s" repeatCount="indefinite" />
-                  </circle>
-                  <circle r="3" className="hero-orbit-dot dot-3">
-                    <animateMotion path="M 720 440 C 950 280, 1300 300, 1580 440" dur="3.0s" repeatCount="indefinite" />
-                  </circle>
-
-                  <circle cx="1380" cy="495" r="40" className="hero-shield-pulse pulse-1" />
-                  <circle cx="1380" cy="495" r="70" className="hero-shield-pulse pulse-2" />
-                  <circle cx="1380" cy="495" r="105" className="hero-shield-pulse pulse-3" />
-
-                  <ellipse cx="1380" cy="600" rx="280" ry="85" className="hero-platform-ring ring-1" />
-                  <ellipse cx="1380" cy="600" rx="200" ry="60" className="hero-platform-ring ring-2" />
-
-                  <path d="M 820 570 L 1180 610 L 1380 600" stroke="url(#cyberBusbarGrad)" className="hero-fiber-stream busbar-1" />
-                  <path d="M 1380 670 L 1400 780 L 1640 810" stroke="url(#cyberBusbarGrad)" className="hero-fiber-stream busbar-2" />
-                  <path d="M 1480 580 L 1660 420" stroke="url(#cyberBusbarGrad)" className="hero-fiber-stream busbar-3" />
-
-                  <circle r="3.5" className="hero-busbar-pulse">
-                    <animateMotion path="M 820 570 L 1180 610 L 1380 600" dur="2.4s" repeatCount="indefinite" />
-                  </circle>
-                  <circle r="3.5" className="hero-busbar-pulse">
-                    <animateMotion path="M 1380 670 L 1400 780 L 1640 810" dur="2.1s" repeatCount="indefinite" />
-                  </circle>
-                  <circle r="3" className="hero-busbar-pulse">
-                    <animateMotion path="M 1480 580 L 1660 420" dur="2.6s" repeatCount="indefinite" />
-                  </circle>
-
-                  <circle cx="780" cy="520" r="4" className="hero-edge-beacon" />
-                  <circle cx="950" cy="680" r="4" className="hero-edge-beacon" />
-                  <circle cx="1060" cy="710" r="3.5" className="hero-edge-beacon" />
-                  <circle cx="1660" cy="380" r="4.5" className="hero-edge-beacon cyan-beacon" />
-                  <circle cx="1780" cy="760" r="4" className="hero-edge-beacon" />
-                </svg>
-              )}
             </motion.div>
           );
         })}
 
-        {/* ULTRA-SUBTLE LOCAL READABILITY TREATMENT */}
         <div className="hero-cinematic__contrast-guard" />
-        <div className="hero-cinematic__grid" />
       </div>
 
       {/* ============================================================
-          2. LAYERED HTML CONTENT OVERLAY — INTELLIGENCE SIGNAL REVEAL
+          2. LAYERED HTML CONTENT OVERLAY
           ============================================================ */}
       <div className="container hero-cinematic__container">
         <div className="hero-cinematic__content">
@@ -426,23 +294,7 @@ export default function Hero() {
               animate="animate"
               exit="exit"
             >
-              {/* Subtle Signal Trace Geometry behind content */}
-              <div className="hero-signal-trace" aria-hidden="true">
-                <svg viewBox="0 0 240 32" fill="none" className="hero-signal-trace__svg">
-                  <circle cx="4" cy="12" r="3" className="hero-signal-node" />
-                  <path d="M 4 12 L 60 12 L 95 24 L 200 24" className="hero-signal-path" />
-                  <circle cx="200" cy="24" r="2" className="hero-signal-node-end" />
-                </svg>
-              </div>
-
-              {/* Micro-Particles */}
-              <div className="hero-micro-particles" aria-hidden="true">
-                <span className="hero-particle hero-particle--1" />
-                <span className="hero-particle hero-particle--2" />
-                <span className="hero-particle hero-particle--3" />
-              </div>
-
-              {/* 01: Eyebrow with Signal Node & Line */}
+              {/* 01: Eyebrow Badge */}
               <motion.div
                 className="hero-cinematic__eyebrow"
                 variants={{
@@ -459,8 +311,6 @@ export default function Hero() {
                   },
                 }}
               >
-                <span className="hero-cinematic__eyebrow-node" />
-                <span className="hero-cinematic__eyebrow-line" />
                 <span className="hero-cinematic__eyebrow-text">{currentSlideData.badge}</span>
               </motion.div>
 
@@ -504,16 +354,13 @@ export default function Hero() {
                         }}
                       >
                         {line}
-                        {currentSlideData.type === 'network' && (
-                          <span className="hero-headline-word-trace" aria-hidden="true" />
-                        )}
                       </motion.span>
                     </div>
                   );
                 })}
               </h1>
 
-              {/* 03: Direct CTAs with Data Pulse */}
+              {/* 03: Direct CTAs */}
               <motion.div
                 className="hero-cinematic__actions"
                 variants={{
@@ -536,8 +383,6 @@ export default function Hero() {
                   },
                 }}
               >
-                <div className="hero-actions-pulse-line" aria-hidden="true" />
-
                 <Link to={currentSlideData.primaryCTA.to} className="btn btn--primary hero-cinematic__btn-primary">
                   <span>{currentSlideData.primaryCTA.label}</span>
                   <svg className="hero-btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
