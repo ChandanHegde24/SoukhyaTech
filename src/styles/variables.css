@@ -39,8 +39,8 @@
   --red:               #ED1C24;
 
   /* ── Typography ── */
-  --font-display:      'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
-  --font-body:         'Inter', system-ui, sans-serif;
+  --font-display:       'Object Sans', sans-serif;
+  --font-body:          'Ubuntu', sans-serif;
   --font-mono:         'JetBrains Mono', monospace;
 
   --text-xs:           0.75rem;    /* 12px */

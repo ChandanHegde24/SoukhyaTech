@@ -6,4 +6,5 @@ export const inquiryTypes = [
   'Managed Cloud Services',
   'Remote Monitoring and Management',
   'IT Audit & Advisory',
+  'Other'
 ];
