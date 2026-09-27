@@ -63,6 +63,7 @@
   align-items: center;
   height: 38px;
   padding: 0 var(--space-4);
+  font-family: var(--font-display);
   font-size: var(--text-sm);
   font-weight: 500;
   color: var(--text-primary);
@@ -102,6 +103,7 @@
 .navbar__cta {
   flex-shrink: 0;
   margin-left: auto;
+  font-family: var(--font-display);
   background: var(--brand-indigo);
   color: var(--text-white);
   border: 1px solid var(--brand-indigo);
