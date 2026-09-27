@@ -77,6 +77,8 @@ export default function Footer() {
           </p>
 
           <div className="footer__social-group">
+            <span className="footer__social-label">Follow Us On</span>
+
             {/* LinkedIn */}
             <a
               href={socialLinks.linkedin}
