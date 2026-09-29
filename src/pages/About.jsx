@@ -58,14 +58,14 @@ export default function About() {
             <div className="about-hero__content">
               <Reveal>
                 <Breadcrumb currentPage="About" />
-
+                <br />
                 <div className="about-hero__eyebrow">
                   <span className="about-hero__eyebrow-dot" />
                   <span className="about-hero__eyebrow-line" />
                   <span>WHO WE ARE · SOUKHYA TECH</span>
                 </div>
 
-                <h1 id="about-title" className="heading-display about-hero__heading">
+                <h1 id="about-title" className="heading-display about-hero__heading ">
                   About Soukhya Tech
                 </h1>
 
