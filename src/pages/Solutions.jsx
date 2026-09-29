@@ -170,7 +170,7 @@ export default function Solutions() {
       <section className="section section--white solution-lifecycle-section" aria-labelledby="lifecycle-title">
         <div className="container">
           <Reveal className="text-center" style={{ marginBottom: 'var(--space-12)' }}>
-            <span className="eyebrow">End-to-End Technology Pipeline</span>
+            <span className="eyebrow">End-to-End Technology Pipeline <span className="eyebrow"></span></span>
             <h2 id="lifecycle-title" className="heading-xl">
               From Connectivity to Operational Intelligence
             </h2>

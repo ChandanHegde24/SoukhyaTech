@@ -22,7 +22,7 @@ export default function TechnicalMastery() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: reduceMotion ? 0 : 0.25 }}
           >
-            Technical Mastery
+            Technical Mastery <span className="eyebrow"></span>
           </motion.span>
           <div className="technical-mastery__heading-clip">
             <motion.h2

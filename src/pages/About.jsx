@@ -19,7 +19,7 @@ function EngineeringDnaVisual() {
   return (
     <div className="engineering-dna-box">
       <div className="engineering-dna-box__header">
-        <span className="dna-chip">ENGINEERING DNA // CONTINUOUS LOOP</span>
+        <span className="dna-chip">ENGINEERING DNA CONTINUOUS LOOP</span>
         <span className="dna-sub">DEVICE TO DECISION</span>
       </div>
 
@@ -97,7 +97,7 @@ export default function About() {
               <Reveal>
                 <div className="about-section__badge">
                   <span className="about-section__badge-dot dot--blue" />
-                  <span>01 // {aboutContent.overviewTitle}</span>
+                  <span>{aboutContent.overviewTitle}</span>
                 </div>
 
                 <h2 id="overview-heading" className="heading-xl about-overview__title">
@@ -131,7 +131,7 @@ export default function About() {
           <Reveal>
             <div className="about-section__badge">
               <span className="about-section__badge-dot dot--green" />
-              <span>02 // OUR PURPOSE</span>
+              <span>OUR PURPOSE</span>
             </div>
 
             <h2 id="mission-heading" className="heading-xl about-mission__title">
@@ -172,7 +172,7 @@ export default function About() {
               <Reveal>
                 <div className="about-section__badge">
                   <span className="about-section__badge-dot dot--indigo" />
-                  <span>03 // FUTURE HORIZON</span>
+                  <span> FUTURE HORIZON</span>
                 </div>
 
                 <h2 id="vision-heading" className="heading-xl about-vision__title">

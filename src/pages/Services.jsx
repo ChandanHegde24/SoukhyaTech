@@ -16,7 +16,7 @@ function ServiceVisual({ type, index, activeTab, title }) {
 
       {/* Visual Header Badge */}
       <div className="service-visual-box__header">
-        <span className="service-visual-box__chip">SYS 0{index + 1} // ARCHITECTURE</span>
+        <span className="service-visual-box__chip">ARCHITECTURE</span>
         <span className="service-visual-box__status">
           <span className="service-visual-box__status-dot" />
           ACTIVE
@@ -299,7 +299,7 @@ export default function Services() {
                     <Reveal>
                       <div className="service-chapter__badge">
                         <span className="service-chapter__badge-dot" />
-                        <span>CHAPTER 0{idx + 1} // MANAGED SERVICE</span>
+                        <span>CHAPTER 0{idx + 1} : MANAGED SERVICE</span>
                       </div>
 
                       <h2 className="heading-xl service-chapter__title">

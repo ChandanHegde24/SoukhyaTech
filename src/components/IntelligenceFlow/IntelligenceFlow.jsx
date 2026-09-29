@@ -56,7 +56,7 @@ export default function IntelligenceFlow() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="eyebrow">Connected Intelligence Story</span>
+          <span className="eyebrow">Connected Intelligence Story <span className='eyebrow'></span></span>
           <h2 id="intel-flow-title" className="heading-xl">
             From Raw Physical Signal to&nbsp;
             <span className="text-brand-blue">Automated Decision</span>

@@ -80,7 +80,7 @@ function EnterpriseSolutionsSection() {
         {/* Compact Top Header */}
         <div className="solutions-showcase-top">
           <div className="solutions-showcase-top__heading-group">
-            <span className="eyebrow">ENTERPRISE SOLUTIONS</span>
+            <span className="eyebrow">ENTERPRISE SOLUTIONS <span className="eyebrow"></span></span>
             <h2 id="enterprise-solutions-title" className="editorial-main-heading">
               Our Solutions
             </h2>
@@ -192,9 +192,8 @@ function EnterpriseSolutionsSection() {
               <div className="solution-visual-stage__header">
                 <div className="solution-visual-stage__signal">
                   <span className="solution-visual-stage__pulse-dot" />
-                  <span className="solution-visual-stage__sys-id">{activeSolution.code} / ACTIVE ARCHITECTURE</span>
+                  <span className="solution-visual-stage__sys-id">ACTIVE ARCHITECTURE</span>
                 </div>
-                <span className="solution-visual-stage__index">STAGE // 0{activeIdx + 1}</span>
               </div>
 
               {/* Main Image Viewport with 0-flash preloaded crossfade */}
@@ -269,7 +268,7 @@ function OurStrengthsSection() {
             transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="strengths-dna-editorial__sticky">
-              <span className="eyebrow">OUR STRENGTHS</span>
+              <span className="eyebrow">OUR STRENGTHS <span className="eyebrow"></span></span>
               <h2 id="our-strengths-title" className="editorial-main-heading">
                 Why Choose Soukhya
               </h2>
@@ -362,8 +361,7 @@ function OurStrengthsSection() {
 
             {/* Engineering Panel Footer */}
             <div className="strengths-dna-panel__footer" aria-hidden="true">
-              <span className="strengths-dna-panel__footer-brand">SOUKHYA TECH // PRECISION ENGINEERING</span>
-              <span className="strengths-dna-panel__plus">+</span>
+              <span className="strengths-dna-panel__footer-brand">SOUKHYA TECH PRECISION ENGINEERING</span>
             </div>
           </motion.div>
         </div>

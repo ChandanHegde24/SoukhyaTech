@@ -66,7 +66,6 @@ export default function ProductShowcase() {
             transition={{ delay: 0.32, duration: 0.6 }}
           >
             <div className="product-showcase__benefits-header">
-              <span className="benefits-header__badge">CORE ADVANTAGES</span>
               <p className="product-showcase__benefits-intro">
                 <strong>{productContent.benefitsIntro}</strong>
               </p>
