@@ -19,6 +19,8 @@
   background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FC 60%, #EEF5FB 100%);
   border-bottom: 1px solid var(--border-light);
   overflow: hidden;
+  background-image: url(/public/image.png);
+  background-size: 15px 15px 15px 15px;
 }
 
 .solutions-hero__bg-grid {
