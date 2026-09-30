@@ -280,7 +280,7 @@ function OurStrengthsSection() {
               <div className="strengths-dna-signature" aria-hidden="true">
                 <div className="strengths-dna-signature__mark">
                   <span className="strengths-dna-signature__node" />
-                  <span className="strengths-dna-signature__text">SOUKHYA TECH // ENGINEERING DNA</span>
+                  <span className="strengths-dna-signature__text">SOUKHYA TECH ENGINEERING DNA</span>
                 </div>
                 <span className="strengths-dna-signature__metric">9 INTEGRATED CORE DISCIPLINES</span>
               </div>

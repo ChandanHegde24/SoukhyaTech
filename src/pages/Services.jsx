@@ -251,11 +251,11 @@ export default function Services() {
               <Reveal>
                 <Breadcrumb currentPage="Services" />
 
-                <div className="services-hero__eyebrow">
+                {/* <div className="services-hero__eyebrow">
                   <span className="services-hero__eyebrow-dot" />
                   <span className="services-hero__eyebrow-line" />
                   <span>FROM INFRASTRUCTURE TO INTELLIGENCE</span>
-                </div>
+                </div> */}
 
                 <h1 id="services-hero-title" className="heading-display services-hero__heading">
                   Our Services
@@ -297,10 +297,10 @@ export default function Services() {
                   {/* Text Column */}
                   <div className="service-chapter__text-col">
                     <Reveal>
-                      <div className="service-chapter__badge">
+                      {/* <div className="service-chapter__badge">
                         <span className="service-chapter__badge-dot" />
                         <span>CHAPTER 0{idx + 1} : MANAGED SERVICE</span>
-                      </div>
+                      </div> */}
 
                       <h2 className="heading-xl service-chapter__title">
                         {service.title}

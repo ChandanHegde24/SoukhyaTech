@@ -15,7 +15,7 @@ export default function ConnectedIntelligence() {
     >
       <div className="container connected-intel__container">
         {/* Subtle Eyebrow Label */}
-        <motion.div
+        {/* <motion.div
           className="connected-intel__eyebrow-wrap"
           initial={{ opacity: 0, y: 8 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -26,7 +26,7 @@ export default function ConnectedIntelligence() {
             CONNECTED INTELLIGENCE
           </span>
           <span className="connected-intel__rule" aria-hidden="true" />
-        </motion.div>
+        </motion.div> */}
 
         {/* Clean Editorial Statement Content */}
         <div className="connected-intel__statement">
@@ -65,7 +65,7 @@ export default function ConnectedIntelligence() {
             <span className="intel-kw intel-kw--indigo">operational efficiency</span>, enable{' '}
             <span className="intel-kw intel-kw--blue">predictive insights</span>, and support
             meaningful{' '}
-            <span className="intel-kw intel-kw--dark">digital transformation</span> across
+            <span className="intel-kw intel-kw--dark">brand digital transformation</span> across
             industries.
           </motion.p>
         </div>

@@ -54,11 +54,11 @@ export default function Contact() {
               <Reveal>
                 <Breadcrumb currentPage="Contact" />
 
-                <div className="contact-hero__eyebrow">
+                {/* <div className="contact-hero__eyebrow">
                   <span className="contact-hero__eyebrow-dot" />
                   <span className="contact-hero__eyebrow-line" />
                   <span>LET'S CONNECT · SOUKHYA TECH</span>
-                </div>
+                </div> */}
 
                 <h1 id="contact-title" className="heading-display contact-hero__heading">
                   Contact

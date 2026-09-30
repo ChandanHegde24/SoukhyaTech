@@ -27,7 +27,7 @@ export default function ProductShowcase() {
             <Breadcrumb currentPage="Product" />
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             className="product-showcase__eyebrow"
             initial={{ opacity: 0, x: -16 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -36,7 +36,7 @@ export default function ProductShowcase() {
             <span className="product-showcase__eyebrow-dot" />
             <span className="product-showcase__eyebrow-line" />
             <span>FLAGSHIP PRODUCT · I-ES</span>
-          </motion.div>
+          </motion.div> */}
 
           <motion.h1
             id="product-title"

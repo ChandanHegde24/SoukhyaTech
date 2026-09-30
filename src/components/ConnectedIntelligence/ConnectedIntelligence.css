@@ -10,6 +10,10 @@
   padding: 60px 0 56px;
   border-top: 1px solid #E5EDF6;
   border-bottom: 1px solid #E5EDF6;
+  background-image: url('/image.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .connected-intel__container {
@@ -116,6 +120,8 @@
   color: #172033;
   font-weight: 650;
   border-bottom: 1.5px solid rgba(44, 54, 148, 0.35);
+  margin:18px auto 0;
+  text-align: center;
 }
 
 /* ============================================================

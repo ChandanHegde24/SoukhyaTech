@@ -62,11 +62,11 @@ export default function Solutions() {
               <Reveal>
                 <Breadcrumb currentPage="Solutions" />
 
-                <div className="solutions-hero__eyebrow">
+                {/* <div className="solutions-hero__eyebrow">
                   <span className="solutions-hero__eyebrow-dot" />
                   <span className="solutions-hero__eyebrow-line" />
                   <span>INTELLIGENT SOLUTIONS FOR CONNECTED SYSTEMS</span>
-                </div>
+                </div> */}
 
                 <h1 id="solutions-hero-title" className="heading-display solutions-hero__heading">
                   Our Solutions
@@ -114,10 +114,10 @@ export default function Solutions() {
                   {/* Text Column */}
                   <div className="solution-chapter__text-col">
                     <Reveal>
-                      <div className="solution-chapter__badge">
+                      {/* <div className="solution-chapter__badge">
                         <span className="solution-chapter__badge-dot" style={{ background: solution.accent }} />
                         <span>{solution.code}</span>
-                      </div>
+                      </div> */}
 
                       <h2 className="heading-xl solution-chapter__title">
                         {solution.title}

@@ -58,12 +58,12 @@ export default function About() {
             <div className="about-hero__content">
               <Reveal>
                 <Breadcrumb currentPage="About" />
-                <br />
+                {/* <br />
                 <div className="about-hero__eyebrow">
                   <span className="about-hero__eyebrow-dot" />
                   <span className="about-hero__eyebrow-line" />
                   <span>WHO WE ARE · SOUKHYA TECH</span>
-                </div>
+                </div> */}
 
                 <h1 id="about-title" className="heading-display about-hero__heading ">
                   About Soukhya Tech
@@ -95,10 +95,10 @@ export default function About() {
           <div className="about-overview__grid">
             <div className="about-overview__text-col">
               <Reveal>
-                <div className="about-section__badge">
+                {/* <div className="about-section__badge">
                   <span className="about-section__badge-dot dot--blue" />
                   <span>{aboutContent.overviewTitle}</span>
-                </div>
+                </div> */}
 
                 <h2 id="overview-heading" className="heading-xl about-overview__title">
                   {aboutContent.overviewTitle}
@@ -129,10 +129,10 @@ export default function About() {
           </div>
 
           <Reveal>
-            <div className="about-section__badge">
+            {/* <div className="about-section__badge">
               <span className="about-section__badge-dot dot--green" />
               <span>OUR PURPOSE</span>
-            </div>
+            </div> */}
 
             <h2 id="mission-heading" className="heading-xl about-mission__title">
               {aboutContent.missionTitle}
@@ -170,10 +170,10 @@ export default function About() {
           <div className="about-vision__grid">
             <div className="about-vision__text-col">
               <Reveal>
-                <div className="about-section__badge">
+                {/* <div className="about-section__badge">
                   <span className="about-section__badge-dot dot--indigo" />
                   <span> FUTURE HORIZON</span>
-                </div>
+                </div> */}
 
                 <h2 id="vision-heading" className="heading-xl about-vision__title">
                   {aboutContent.visionTitle}
