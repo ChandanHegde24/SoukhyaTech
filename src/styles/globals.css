@@ -71,6 +71,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   line-height: var(--leading-relaxed);
   color: var(--text-secondary);
+  text-align: justify;
 }
 
 /* ── App Layout ── */
