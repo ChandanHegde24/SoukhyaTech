@@ -6,7 +6,7 @@
 .hero-cinematic {
   position: relative;
   width: 100%;
-  height: calc(100svh - var(--navbar-height));
+  height: 100svh;
   min-height: 580px;
   max-height: 880px;
   display: flex;
@@ -351,7 +351,7 @@
 
 @media (max-width: 960px) {
   .hero-cinematic {
-    height: calc(100svh - var(--navbar-height));
+    height: 100svh;
     min-height: 520px;
     max-height: 720px;
   }
@@ -363,7 +363,7 @@
 
 @media (max-width: 768px) {
   .hero-cinematic {
-    height: calc(100svh - var(--navbar-height));
+    height: 100svh;
     min-height: 480px;
     max-height: none;
   }
@@ -383,7 +383,6 @@
   }
 
   .hero-cinematic__container {
-    padding-top: var(--space-2);
     padding-bottom: var(--space-10);
   }
 

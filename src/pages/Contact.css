@@ -14,8 +14,8 @@
    1. EDITORIAL CONTACT HERO
    ------------------------------------------------------------ */
 .contact-hero {
+  padding: var(--hero-nav-offset) 0 var(--space-10);
   position: relative;
-  padding: calc(var(--nav-height) + var(--space-8)) 0 var(--space-10);
   background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FC 60%, #EEF5FB 100%);
   border-bottom: 1px solid var(--border-light);
   overflow: hidden;
@@ -604,7 +604,7 @@
 
 @media (max-width: 640px) {
   .contact-hero {
-    padding: calc(var(--nav-height) + var(--space-8)) 0 var(--space-12);
+    padding: var(--hero-nav-offset) 0 var(--space-12);
   }
 
   .contact-main-section {

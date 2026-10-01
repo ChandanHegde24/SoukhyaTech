@@ -112,6 +112,19 @@
   /* ── Navbar ── */
   --navbar-height:     76px;
   --nav-height:        76px;
+  --hero-nav-offset:   calc(var(--navbar-height) + var(--space-8));
+}
+
+@media (max-width: 900px) {
+  :root {
+    --hero-nav-offset: calc(var(--navbar-height) + var(--space-6));
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --hero-nav-offset: calc(var(--navbar-height) + var(--space-4));
+  }
 }
 
 /* Reduced-motion support */

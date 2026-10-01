@@ -8,6 +8,7 @@
   overflow-x: hidden;
   position: relative;
   width: 100%;
+  padding: 0;
 }
 
 /* ------------------------------------------------------------
@@ -15,7 +16,7 @@
    ------------------------------------------------------------ */
 .about-hero {
   position: relative;
-  padding: var(--space-12) 0 var(--space-12);
+  padding: var(--hero-nav-offset) 0 var(--space-10);
   background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FC 60%, #EEF5FB 100%);
   border-bottom: 1px solid var(--border-light);
   overflow: hidden;
@@ -829,7 +830,7 @@
 
 @media (max-width: 640px) {
   .about-hero {
-    padding: var(--space-8) 0 var(--space-10);
+    padding: var(--hero-nav-offset) 0 var(--space-10);
   }
 
   .about-nav-bar__label {

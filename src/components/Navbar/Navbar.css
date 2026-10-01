@@ -4,24 +4,17 @@
 
 .navbar {
   position: fixed;
-  top: 0;
+  top: 14px;
   left: 0;
   right: 0;
   z-index: var(--z-navbar);
   height: var(--navbar-height);
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid transparent;
+  pointer-events: none;
   transition: all var(--trans-base);
 }
 
 .navbar--scrolled {
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--border-light);
-  box-shadow: 0 4px 20px rgba(20, 60, 110, 0.05);
+  top: 10px;
 }
 
 .navbar__inner {
@@ -33,6 +26,19 @@
   display: flex;
   align-items: center;
   gap: var(--space-8);
+  pointer-events: auto;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-full);
+  box-shadow: 0 12px 30px rgba(20, 60, 110, 0.12), 0 2px 8px rgba(20, 60, 110, 0.06);
+  transition: all var(--trans-base);
+}
+
+.navbar--scrolled .navbar__inner {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 16px 36px rgba(20, 60, 110, 0.16), 0 2px 8px rgba(20, 60, 110, 0.08);
 }
 
 /* ── Brand / Logo ── */
@@ -166,11 +172,11 @@
 /* ── Mobile Menu ── */
 .navbar__mobile {
   position: fixed;
-  top: var(--navbar-height);
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: calc(var(--z-navbar) - 1);
+  z-index: calc(var(--z-navbar) + 1);
   background: var(--white);
   display: flex;
   flex-direction: column;
@@ -178,6 +184,7 @@
   padding: var(--space-6) max(var(--space-5), env(safe-area-inset-right)) max(var(--space-6), env(safe-area-inset-bottom)) max(var(--space-5), env(safe-area-inset-left));
   overflow-y: auto;
   overscroll-behavior: contain;
+  pointer-events: auto;
 }
 
 .navbar__mobile-links {
@@ -200,6 +207,8 @@
   letter-spacing: 0;
   color: var(--text-primary);
   border: 1px solid transparent;
+  pointer-events: auto;
+  touch-action: manipulation;
   transition: all var(--trans-base);
 }
 
@@ -255,9 +264,31 @@
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
+  .navbar {
+    position: fixed;
+    top: 10px;
+    padding: 0 12px;
+  }
+
+  .navbar--scrolled {
+    top: 8px;
+  }
+
+  .navbar__inner {
+    padding: 0 1rem;
+    gap: var(--space-4);
+  }
+
   .navbar__links { display: none; }
   .navbar__cta   { display: none; }
-  .navbar__hamburger { display: flex; margin-left: auto; }
+  .navbar__hamburger {
+    display: flex;
+    margin-left: auto;
+    position: relative;
+    z-index: calc(var(--z-navbar) + 2);
+    pointer-events: auto;
+    touch-action: manipulation;
+  }
 }
 
 @media (max-width: 480px) {

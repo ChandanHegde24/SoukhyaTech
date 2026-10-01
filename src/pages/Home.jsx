@@ -299,7 +299,7 @@ function OurStrengthsSection() {
             <div className="strengths-dna-panel__header" aria-hidden="true">
               <div className="strengths-dna-panel__coord">
                 <span className="strengths-dna-panel__plus">+</span>
-                <span>ARCHITECTURE MATRIX // LAYERED DISCIPLINE</span>
+                <span>ARCHITECTURE MATRIX LAYERED DISCIPLINE</span>
               </div>
               <div className="strengths-dna-panel__status">
                 <span className="strengths-dna-panel__status-dot" />
@@ -345,7 +345,7 @@ function OurStrengthsSection() {
 
                       {/* Right Active Indicator */}
                       <div className="strength-dna-layer__suffix" aria-hidden="true">
-                        <span className="strength-dna-layer__tag">DISCIPLINE_0{index + 1}</span>
+                        <span className="strength-dna-layer__tag">DISCIPLINE 0{index + 1}</span>
                         <span className="strength-dna-layer__arrow">→</span>
                       </div>
                     </div>
