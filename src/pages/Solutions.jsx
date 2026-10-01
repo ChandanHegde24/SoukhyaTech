@@ -184,15 +184,9 @@ export default function Solutions() {
               <Reveal key={step.step} delay={idx * 0.08} className="lifecycle-step-card">
                 <div className="lifecycle-step-card__top">
                   <span className="lifecycle-step-card__num">{step.step}</span>
-                  <span className="lifecycle-step-card__dot" style={{ background: step.color }} />
                 </div>
                 <h3 className="lifecycle-step-card__title">{step.title}</h3>
                 <p className="lifecycle-step-card__desc">{step.desc}</p>
-                {idx < technologyJourney.length - 1 && (
-                  <div className="lifecycle-step-card__arrow" aria-hidden="true">
-                    →
-                  </div>
-                )}
               </Reveal>
             ))}
           </div>

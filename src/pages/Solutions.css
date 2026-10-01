@@ -742,14 +742,29 @@
 }
 
 .solution-lifecycle-grid {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: var(--space-4);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-3) 64px;
+  max-width: 1040px;
   margin-top: var(--space-8);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.solution-lifecycle-grid::before {
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
+  left: 50%;
+  width: 1px;
+  background: var(--border-medium);
+  content: '';
+  background-color: #2d599a;
 }
 
 .lifecycle-step-card {
-  background: #F8FAFD;
+  z-index: 1;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-xl);
   padding: var(--space-6);
@@ -759,6 +774,20 @@
   gap: var(--space-3);
   transition: all var(--trans-base);
 }
+
+.lifecycle-step-card:nth-child(odd) {
+  grid-column: 1;
+}
+
+.lifecycle-step-card:nth-child(even) {
+  grid-column: 2;
+}
+
+.lifecycle-step-card:nth-child(1) { grid-row: 1; }
+.lifecycle-step-card:nth-child(2) { grid-row: 2; }
+.lifecycle-step-card:nth-child(3) { grid-row: 3; }
+.lifecycle-step-card:nth-child(4) { grid-row: 4; }
+.lifecycle-step-card:nth-child(5) { grid-row: 5; }
 
 .lifecycle-step-card:hover {
   background: #FFFFFF;
@@ -770,7 +799,6 @@
 .lifecycle-step-card__top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .lifecycle-step-card__num {
@@ -778,12 +806,6 @@
   font-size: var(--text-sm);
   font-weight: 800;
   color: var(--brand-indigo);
-}
-
-.lifecycle-step-card__dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
 }
 
 .lifecycle-step-card__title {
@@ -800,15 +822,20 @@
   line-height: 1.6;
 }
 
-.lifecycle-step-card__arrow {
+.lifecycle-step-card::before {
   position: absolute;
-  right: -16px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--brand-blue);
-  font-size: var(--text-base);
-  font-weight: 800;
-  z-index: 3;
+  top: 28px;
+  right: -32px;
+  width: 32px;
+  height: 1px;
+  background: var(--border-medium);
+  content: '';
+  background-color: #2d599a;
+}
+
+.lifecycle-step-card:nth-child(even)::before {
+  right: auto;
+  left: -32px;
 }
 
 /* ------------------------------------------------------------
@@ -842,13 +869,6 @@
     justify-content: flex-start;
   }
 
-  .solution-lifecycle-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .lifecycle-step-card__arrow {
-    display: none;
-  }
 }
 
 @media (max-width: 900px) {
@@ -870,9 +890,6 @@
     grid-template-columns: 1fr;
   }
 
-  .solution-lifecycle-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (max-width: 640px) {
@@ -886,6 +903,25 @@
 
   .solution-lifecycle-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-3);
+    max-width: none;
+  }
+
+  .solution-lifecycle-grid::before {
+    left: 18px;
+  }
+
+  .lifecycle-step-card:nth-child(odd),
+  .lifecycle-step-card:nth-child(even) {
+    grid-column: 1;
+    grid-row: auto;
+    margin-left: 36px;
+    margin-right: 0;
+  }
+
+  .lifecycle-step-card:nth-child(even)::before {
+    right: auto;
+    left: -18px;
   }
 
   .solution-chapter {

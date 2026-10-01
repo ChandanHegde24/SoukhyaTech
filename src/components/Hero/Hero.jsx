@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import hero1Img from '../../assets/images/hero 1.png';
-import hero2Img from '../../assets/images/hero 2.png';
+import hero1Img from '../../assets/images/image2.png';
+import hero2Img from '../../assets/images/image.png';
 import './Hero.css';
 
 const slidesData = [
