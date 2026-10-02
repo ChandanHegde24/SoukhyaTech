@@ -273,8 +273,35 @@ function OurStrengthsSection() {
                 Why Choose Soukhya
               </h2>
               <p className="editorial-main-desc">
-                Engineering excellence, rugged reliability, and full-stack integration across devices, data, and decisions.
+                Built to endure. Engineered to excel. Connected from devices to data, turning every decision into a smarter one.
               </p>
+
+              <div className="strengths-system-map" role="img" aria-label="An integrated engineering system connecting rugged devices, secure data, and decisive outcomes">
+                <div className="strengths-system-map__header">
+                  <span className="strengths-system-map__eyebrow">ENGINEERED AS ONE SYSTEM</span>
+                  <span className="strengths-system-map__status"><i /> ALWAYS ON</span>
+                </div>
+                <div className="strengths-system-map__flow">
+                  <div className="strengths-system-map__line" aria-hidden="true" />
+                  <div className="strengths-system-map__node">
+                    <span className="strengths-system-map__node-mark strengths-system-map__node-mark--device" aria-hidden="true" />
+                    <span>Rugged devices</span>
+                  </div>
+                  <div className="strengths-system-map__node">
+                    <span className="strengths-system-map__node-mark strengths-system-map__node-mark--data" aria-hidden="true" />
+                    <span>Trusted data</span>
+                  </div>
+                  <div className="strengths-system-map__node">
+                    <span className="strengths-system-map__node-mark strengths-system-map__node-mark--decision" aria-hidden="true" />
+                    <span>Clear decisions</span>
+                  </div>
+                </div>
+                <div className="strengths-system-map__caption">
+                  <span>FIELD-READY</span>
+                  <strong>RELIABLE BY DESIGN</strong>
+                  <span>FULL-STACK</span>
+                </div>
+              </div>
 
               {/* Engineering Signature Badge */}
               <div className="strengths-dna-signature" aria-hidden="true">

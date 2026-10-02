@@ -449,6 +449,113 @@
   flex-direction: column;
 }
 
+/* Connected system map: devices, data, and decisions */
+.strengths-system-map {
+  margin-top: 26px;
+  padding: 15px 16px 13px;
+  background: #F8FAFD;
+  border: 1px solid #DCE5F0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.strengths-system-map__header,
+.strengths-system-map__caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+}
+
+.strengths-system-map__eyebrow {
+  color: #2C3694;
+}
+
+.strengths-system-map__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #55708B;
+  white-space: nowrap;
+}
+
+.strengths-system-map__status i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #119B6C;
+  box-shadow: 0 0 0 3px rgba(17, 155, 108, 0.12);
+}
+
+.strengths-system-map__flow {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 19px 0 15px;
+}
+
+.strengths-system-map__line {
+  position: absolute;
+  top: 9px;
+  left: 13%;
+  right: 13%;
+  height: 1px;
+  background: linear-gradient(90deg, #007CC4, #2C3694, #119B6C);
+}
+
+.strengths-system-map__node {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  color: #31455B;
+  font-size: 10px;
+  font-weight: 750;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.strengths-system-map__node-mark {
+  width: 18px;
+  height: 18px;
+  border: 4px solid #F8FAFD;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px currentColor;
+}
+
+.strengths-system-map__node-mark--device {
+  color: #007CC4;
+  background: #007CC4;
+}
+
+.strengths-system-map__node-mark--data {
+  color: #2C3694;
+  background: #2C3694;
+}
+
+.strengths-system-map__node-mark--decision {
+  color: #119B6C;
+  background: #119B6C;
+}
+
+.strengths-system-map__caption {
+  padding-top: 10px;
+  border-top: 1px solid #E1EAF3;
+  color: #7B8798;
+}
+
+.strengths-system-map__caption strong {
+  color: #2C3694;
+  font-size: 8.5px;
+}
+
 /* Engineering Signature Badge */
 .strengths-dna-signature {
   margin-top: 24px;
@@ -787,6 +894,25 @@
 
   .strengths-dna-panel {
     padding: 16px 14px;
+  }
+
+  .strengths-system-map {
+    margin-top: 20px;
+    padding: 14px 12px 12px;
+  }
+
+  .strengths-system-map__header,
+  .strengths-system-map__caption {
+    font-size: 8px;
+    gap: 7px;
+  }
+
+  .strengths-system-map__node {
+    font-size: 9px;
+  }
+
+  .strengths-system-map__caption strong {
+    font-size: 7.5px;
   }
 
   .strength-dna-layer {

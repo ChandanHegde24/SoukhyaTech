@@ -73,7 +73,7 @@ export default function Footer() {
       <div className="footer__bar">
         <div className="container footer__bar-inner">
           <p className="footer__copyright">
-            &copy; 2026 Soukhya Tech. All Rights Reserved.
+            &copy; {new Date().getFullYear()} Soukhya Tech. All Rights Reserved.
           </p>
 
           <div className="footer__social-group">
