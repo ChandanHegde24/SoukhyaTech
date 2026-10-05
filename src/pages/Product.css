@@ -1,52 +1,100 @@
+/* ============================================================
+   PRODUCT PAGE STYLES — Consistent with Services / Solutions / About
+   ============================================================ */
+
 .product-page {
   position: relative;
-  padding: 0;
-  background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FC 60%, #EEF5FB 100%);
-  border-bottom: 1px solid var(--border-light);
-  overflow: clip;
-  background-size: 15px 15px 15px 15px;
+  width: 100%;
+  overflow-x: hidden;
+  background: #FFFFFF;
 }
 
-.product-story-connector {
+/* ------------------------------------------------------------
+   1. EDITORIAL PRODUCT HERO SECTION
+   ------------------------------------------------------------ */
+.product-hero {
   position: relative;
-  z-index: 1;
-  height: 48px;
-  margin-top: -1px;
-  background: linear-gradient(180deg, var(--section-product), var(--section-bg));
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: var(--hero-nav-offset) 0 var(--space-10);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FC 60%, #EAF4FB 100%);
+  border-bottom: 1px solid rgba(8, 125, 185, 0.15);
   overflow: hidden;
 }
 
-.product-story-connector__line {
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(0, 124, 196, 0.12), rgba(0, 124, 196, 0.65), rgba(0, 124, 196, 0.12));
-}
-
-.product-story-connector__particle {
+.product-hero__bg-grid {
   position: absolute;
-  top: 0;
-  left: calc(50% - 3px);
-  width: 6px;
-  height: 6px;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(8, 125, 185, 0.08) 1px, transparent 0),
+    linear-gradient(90deg, rgba(8, 125, 185, 0.02) 1px, transparent 1px),
+    linear-gradient(rgba(8, 125, 185, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px, 64px 64px, 64px 64px;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.product-hero__bg-ambient {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 650px;
+  height: 650px;
+  background:
+    radial-gradient(circle at 60% 40%, rgba(8, 125, 185, 0.10) 0%, transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(32, 164, 216, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(37, 164, 73, 0.05) 0%, transparent 40%);
   border-radius: 50%;
-  background: var(--brand-blue);
-  box-shadow: 0 0 12px rgba(0, 124, 196, 0.7);
-  animation: product-story-flow 1.8s ease-in infinite;
+  filter: blur(50px);
+  pointer-events: none;
 }
 
-@keyframes product-story-flow {
-  from { transform: translateY(0); opacity: 0; }
-  15% { opacity: 1; }
-  85% { opacity: 1; }
-  to { transform: translateY(48px); opacity: 0; }
+.product-hero__container {
+  position: relative;
+  z-index: 2;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .product-story-connector__particle {
-    animation: none;
-    top: calc(50% - 3px);
+.product-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 760px);
+  align-items: start;
+}
+
+.product-hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 720px;
+}
+
+.product-hero__heading {
+  margin: 0;
+  color: #173B8F;
+  letter-spacing: -0.02em;
+}
+
+.product-hero__desc {
+  color: var(--text-secondary);
+  line-height: 1.68;
+  max-width: 640px;
+}
+
+/* ------------------------------------------------------------
+   2. FLAGSHIP PRODUCT SECTION — ELECTRICAL FIELD SUBSTRATE
+   ------------------------------------------------------------ */
+.product-flagship-section {
+  position: relative;
+  background-color: #F4F8FC;
+  background-image:
+    radial-gradient(circle at 75% 45%, transparent 90px, rgba(8, 125, 185, 0.05) 91px, transparent 92px, transparent 180px, rgba(32, 164, 216, 0.045) 181px, transparent 182px),
+    radial-gradient(circle at 20% 60%, rgba(8, 125, 185, 0.06) 0%, transparent 45%),
+    linear-gradient(90deg, rgba(8, 125, 185, 0.025) 1px, transparent 1px),
+    linear-gradient(rgba(8, 125, 185, 0.025) 1px, transparent 1px),
+    radial-gradient(circle at 1px 1px, rgba(32, 164, 216, 0.05) 1.2px, transparent 0);
+  background-size: 100% 100%, 100% 100%, 64px 64px, 64px 64px, 32px 32px;
+  border-bottom: 1px solid rgba(8, 125, 185, 0.12);
+}
+
+@media (max-width: 900px) {
+  .product-hero {
+    padding: calc(var(--hero-nav-offset) * 0.9) 0 var(--space-8);
   }
 }

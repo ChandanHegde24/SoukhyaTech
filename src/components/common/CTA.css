@@ -1,0 +1,175 @@
+/* ============================================================
+   CTA SECTION — "DIGITAL INFRASTRUCTURE" BACKGROUND
+   Brand Deep Indigo (#173B8F) with Fine Network Topology
+   ============================================================ */
+
+.cta-section {
+  position: relative;
+  background: var(--brand-indigo, #173B8F);
+  color: var(--text-white);
+  padding: 52px 0 48px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.cta-section__network-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 18% 30%, rgba(32, 164, 216, 0.22) 0%, transparent 50%),
+    radial-gradient(circle at 82% 70%, rgba(37, 164, 73, 0.16) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 60%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    radial-gradient(circle at 1px 1px, rgba(32, 164, 216, 0.15) 1.2px, transparent 0);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px, 24px 24px;
+  pointer-events: none;
+}
+
+.cta-section__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.cta-section__header-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.cta-section__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 13px; /* 12-14px */
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.05em; /* 0.03-0.06em */
+  text-transform: uppercase;
+  line-height: 1.35;
+}
+
+.cta-section__heading {
+  color: #FFFFFF;
+  font-size: clamp(2.25rem, 3.2vw, 2.75rem); /* 36px - 44px */
+  font-weight: 750;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.cta-section__desc {
+  font-size: clamp(16.5px, 1.15vw, 17.5px); /* 16-18px */
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.62;
+  max-width: 680px;
+}
+
+.cta-section__actions-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.cta-section__btn-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.cta-btn-primary {
+  background: var(--green);
+  color: #FFFFFF;
+  border: 1px solid var(--green);
+  font-weight: 650;
+  font-size: 15.5px; /* 15-16px */
+  height: 48px;
+  padding: 0 26px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-btn-primary:hover {
+  background: var(--secondary-tech-blue);
+  border-color: var(--secondary-tech-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(8, 125, 185, 0.35);
+  color: #FFFFFF;
+}
+
+.cta-btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+  font-size: 15.5px; /* 15-16px */
+  height: 48px;
+  padding: 0 24px;
+  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-btn-secondary:hover {
+  background: var(--secondary-tech-blue);
+  border-color: var(--secondary-tech-blue);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.cta-section__contact-inline {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cta-section__contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  font-family: var(--font-mono);
+  transition: all 180ms ease;
+  text-decoration: none;
+}
+
+.cta-section__contact-item:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.cta-section__contact-divider {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 640px) {
+  .cta-section {
+    padding: 38px 0 34px;
+  }
+
+  .cta-section__contact-inline {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cta-section__contact-divider {
+    display: none;
+  }
+}

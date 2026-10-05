@@ -16,11 +16,9 @@
 .solutions-hero {
   position: relative;
   padding: var(--hero-nav-offset) 0 var(--space-10);
-  background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FC 60%, #EEF5FB 100%);
-  border-bottom: 1px solid var(--border-light);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FC 60%, #EAF4FB 100%);
+  border-bottom: 1px solid rgba(8, 125, 185, 0.15);
   overflow: hidden;
-  background-size: 15px 15px 15px 15px;
-  background-image: url(/public/image.png);
 }
 
 .solutions-hero__bg-grid {
@@ -127,19 +125,19 @@
 }
 
 .solutions-hero__heading {
-  font-size: clamp(2.5rem, 4.2vw, 3.8rem);
-  font-weight: 800;
+  font-size: clamp(3.5rem, 4.2vw, 4rem); /* 56px - 64px Hero H1 */
+  font-weight: 750;
   line-height: 1.1;
-  color: var(--text-primary);
-  letter-spacing: 0;
+  color: var(--primary-deep-blue);
+  letter-spacing: -0.025em;
   margin: var(--space-2) 0;
 }
 
 .solutions-hero__desc {
   color: var(--text-secondary);
-  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
-  line-height: 1.7;
-  max-width: 580px;
+  font-size: clamp(18px, 1.2vw, 19.5px); /* 18px - 20px */
+  line-height: 1.6;
+  max-width: 650px;
 }
 
 /* Solutions Hero Card Component */
@@ -234,8 +232,8 @@
 }
 
 .sol-center-core {
-  fill: #2C3694;
-  stroke: #007CC4;
+  fill: #173B8F;
+  stroke: #087DB9;
   stroke-width: 2.5;
   filter: drop-shadow(0 4px 14px rgba(44, 54, 148, 0.4));
 }
@@ -254,8 +252,8 @@
 }
 
 .sol-satellite.sat--iot { fill: #25A449; stroke: #FFFFFF; }
-.sol-satellite.sat--smart { fill: #007CC4; stroke: #FFFFFF; }
-.sol-satellite.sat--datacenter { fill: #2C3694; stroke: #FFFFFF; }
+.sol-satellite.sat--smart { fill: #087DB9; stroke: #FFFFFF; }
+.sol-satellite.sat--datacenter { fill: #173B8F; stroke: #FFFFFF; }
 
 .sol-sat-text {
   fill: #FFFFFF;
@@ -278,8 +276,8 @@
 }
 
 .sol-packet.packet--green { fill: #25A449; }
-.sol-packet.packet--blue { fill: #007CC4; }
-.sol-packet.packet--indigo { fill: #2C3694; }
+.sol-packet.packet--blue { fill: #087DB9; }
+.sol-packet.packet--indigo { fill: #173B8F; }
 
 .solutions-hero-card__footer {
   display: flex;
@@ -381,9 +379,9 @@
 }
 
 .solutions-nav-bar__btn.is-active {
-  background: #2C3694;
+  background: #173B8F;
   color: #FFFFFF;
-  border-color: #2C3694;
+  border-color: #173B8F;
   box-shadow: 0 4px 14px rgba(44, 54, 148, 0.25);
 }
 
@@ -403,12 +401,19 @@
 }
 
 /* ------------------------------------------------------------
-   3. SOLUTION ECOSYSTEM INTERACTIVE MAP
+   3. SOLUTION ECOSYSTEM INTERACTIVE MAP — NETWORK SUBSTRATE
    ------------------------------------------------------------ */
 .solution-ecosystem-map {
-  padding: 64px 0;
-  border-bottom: 1px solid var(--border-light);
-  background: linear-gradient(180deg, #F8FAFD 0%, #F3F7FC 100%);
+  padding: 68px 0 76px;
+  border-bottom: 1px solid rgba(8, 125, 185, 0.12);
+  background-color: #F4F8FC;
+  background-image:
+    radial-gradient(circle at 18% 30%, rgba(8, 125, 185, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 82% 70%, rgba(32, 164, 216, 0.06) 0%, transparent 45%),
+    linear-gradient(90deg, rgba(8, 125, 185, 0.025) 1px, transparent 1px),
+    linear-gradient(rgba(8, 125, 185, 0.025) 1px, transparent 1px),
+    radial-gradient(circle at 1px 1px, rgba(8, 125, 185, 0.05) 1px, transparent 0);
+  background-size: 100% 100%, 100% 100%, 64px 64px, 64px 64px, 32px 32px;
 }
 
 .ecosystem-node-grid {
@@ -445,9 +450,9 @@
 
 .ecosystem-node-card__num {
   font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  font-weight: 800;
-  letter-spacing: 0.05em;
+  font-size: 15px; /* 14-16px */
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 .ecosystem-node-card__status-dot {
@@ -457,10 +462,10 @@
 }
 
 .ecosystem-node-card__title {
-  font-size: var(--text-lg);
+  font-size: 1.375rem; /* 22px Card H3 */
   font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1.35;
+  color: var(--primary-deep-blue);
+  line-height: 1.25;
 }
 
 .ecosystem-node-card__tags {
@@ -508,7 +513,7 @@
 }
 
 /* ------------------------------------------------------------
-   4. CINEMATIC SOLUTION CHAPTERS (ASYMMETRIC SPLIT)
+   4. CINEMATIC SOLUTION CHAPTERS — INFRASTRUCTURE NETWORK
    ------------------------------------------------------------ */
 .solutions-chapters {
   display: flex;
@@ -518,16 +523,45 @@
 .solution-chapter {
   position: relative;
   padding: clamp(var(--space-10), 5vw, var(--space-14)) 0;
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 1px solid rgba(8, 125, 185, 0.12);
   overflow: hidden;
 }
 
-.solution-chapter.section--bg {
-  background: linear-gradient(180deg, #F8FAFD 0%, #F3F7FC 100%);
+/* ── 1. CUSTOM IOT & IIOT ARCHITECTURES ── */
+#solution-custom-iot {
+  background-color: #FFFFFF;
+  background-image:
+    radial-gradient(circle at 80% 35%, transparent 120px, rgba(8, 125, 185, 0.04) 121px, transparent 122px, transparent 240px, rgba(32, 164, 216, 0.035) 241px, transparent 242px),
+    radial-gradient(circle at 80% 35%, rgba(32, 164, 216, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 20% 70%, rgba(37, 164, 73, 0.05) 0%, transparent 40%),
+    linear-gradient(90deg, rgba(8, 125, 185, 0.025) 1px, transparent 1px),
+    linear-gradient(rgba(8, 125, 185, 0.025) 1px, transparent 1px),
+    radial-gradient(circle at 1px 1px, rgba(8, 125, 185, 0.05) 1px, transparent 0);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 64px 64px, 64px 64px, 32px 32px;
 }
 
-.solution-chapter.section--white {
-  background: #FFFFFF;
+/* ── 2. RESPONSIVE SMART SYSTEMS ── */
+#solution-smart-systems {
+  background-color: #F4F8FC;
+  background-image:
+    radial-gradient(circle at 25% 45%, transparent 140px, rgba(8, 125, 185, 0.04) 141px, transparent 142px, transparent 260px, rgba(32, 164, 216, 0.035) 261px, transparent 262px),
+    radial-gradient(circle at 25% 45%, rgba(8, 125, 185, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 75% 65%, rgba(32, 164, 216, 0.06) 0%, transparent 45%),
+    linear-gradient(135deg, transparent 49.6%, rgba(8, 125, 185, 0.025) 50%, transparent 50.4%),
+    radial-gradient(circle at 1px 1px, rgba(32, 164, 216, 0.06) 1.2px, transparent 0);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 128px 128px, 32px 32px;
+}
+
+/* ── 3. DATA CENTER SOLUTIONS ── */
+#solution-data-center {
+  background-color: #FFFFFF;
+  background-image:
+    linear-gradient(90deg, rgba(8, 125, 185, 0.035) 1px, transparent 1px),
+    linear-gradient(rgba(8, 125, 185, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 50% 30%, rgba(32, 164, 216, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(23, 59, 143, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 1px 1px, rgba(8, 125, 185, 0.06) 1.2px, transparent 0);
+  background-size: 48px 48px, 48px 48px, 100% 100%, 100% 100%, 24px 24px;
 }
 
 .solution-chapter__container {
@@ -606,7 +640,7 @@
 }
 
 .solution-chapter__title {
-  color: var(--text-primary);
+  color: var(--primary-deep-blue);
   font-size: clamp(1.8rem, 2.8vw, 2.4rem);
   font-weight: 800;
   line-height: 1.2;
@@ -671,21 +705,24 @@
 .solution-visual-media {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
   overflow: hidden;
-  background: #F4F8FC;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .solution-visual-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
   display: block;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .solution-visual-frame:hover .solution-visual-img {
-  transform: scale(1.04);
+  transform: scale(1.02);
 }
 
 .solution-visual-overlay {
@@ -811,7 +848,7 @@
 .lifecycle-step-card__title {
   font-size: var(--text-sm);
   font-weight: 800;
-  color: var(--text-primary);
+  color: var(--primary-deep-blue);
   letter-spacing: 0.04em;
   line-height: 1.35;
 }

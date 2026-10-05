@@ -1,9 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
-import { contactInfo } from '../data/siteContent';
-import { inquiryTypes } from '../config/contact';
-import Breadcrumb from '../components/shared/Breadcrumb/Breadcrumb';
-import Reveal from '../components/shared/Reveal/Reveal';
+import { contactInfo, inquiryTypes } from '../data/contact';
+import Breadcrumb from '../components/common/Breadcrumb';
+import Reveal from '../components/common/Reveal';
 import './Contact.css';
 
 /* ── Reveal Animation Wrapper ── */
@@ -64,12 +63,15 @@ export default function Contact() {
                   Contact
                 </h1>
 
-                <p className="body-large contact-hero__tagline text-brand-indigo font-semibold">
+                <p className="contact-hero__tagline">
                   {contactInfo.tagline}
                 </p>
 
-                <p className="body-large contact-hero__prompt">
-                  {contactInfo.contactPrompt}
+                <p className="contact-hero__prompt">
+                  CONTACT A SOUKHYA TECH EXPERT TODAY AT{' '}
+                  <a href="tel:+919731747999" className="contact-hero__phone-highlight">
+                    + 91 97317 47999
+                  </a>
                 </p>
               </Reveal>
             </div>

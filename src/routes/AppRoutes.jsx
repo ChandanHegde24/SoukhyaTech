@@ -5,15 +5,26 @@ import MainLayout from '../layouts/MainLayout';
 import { routeDefinitions } from './routeDefinitions';
 
 function PageRouteTracker() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const [navigating, setNavigating] = useState(false);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (hash) {
+      const targetId = hash.replace('#', '');
+      const timer = setTimeout(() => {
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 120);
+      return () => clearTimeout(timer);
+    } else {
+      window.scrollTo(0, 0);
+    }
     setNavigating(true);
     const t = setTimeout(() => setNavigating(false), 300);
     return () => clearTimeout(t);
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return (
     <AnimatePresence>

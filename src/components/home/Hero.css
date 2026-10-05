@@ -1,0 +1,435 @@
+/* ============================================================
+   HERO CINEMATIC — Double-Buffered Zero-Blank Architecture
+   7s Auto-Slide + Hover Pause + Exact Remaining Time Resume
+   ============================================================ */
+
+.hero-cinematic {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 580px;
+  max-height: 880px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background: #0B1528;
+}
+
+/* ============================================================
+   1. DOUBLE-BUFFERED PERSISTENT CANVAS (ZERO BLANK STATE)
+   ============================================================ */
+
+.hero-cinematic__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-cinematic__slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform, opacity, clip-path;
+}
+
+.hero-cinematic__slide.is-active-layer {
+  z-index: 2;
+}
+
+.hero-cinematic__slide.is-under-layer {
+  z-index: 1;
+}
+
+/* 100% Full-bleed edge-to-edge foreground image */
+.hero-cinematic__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.hero-cinematic__img--network {
+  object-position: center center;
+}
+
+/* Atmospheric Ambient Glow & Connected Engineering Linework */
+.hero-cinematic__ambient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 68% 45%, rgba(8, 125, 185, 0.18) 0%, transparent 60%),
+    radial-gradient(circle at 25% 75%, rgba(32, 164, 216, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 85% 20%, rgba(37, 164, 73, 0.08) 0%, transparent 40%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Subtle Connected Engineering Grid & Node Matrix */
+.hero-cinematic__light-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(11, 21, 40, 0.28);
+  background-image:
+    radial-gradient(rgba(32, 164, 216, 0.08) 1.25px, transparent 1.25px),
+    linear-gradient(90deg, rgba(8, 125, 185, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(8, 125, 185, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px, 80px 80px, 80px 80px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Diagonal Data Sweep Wave during transition */
+.hero-cinematic__data-sweep {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(56, 189, 248, 0.35) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0;
+}
+
+.sweep--next {
+  animation: dataSweepRight 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.sweep--prev {
+  animation: dataSweepLeft 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes dataSweepRight {
+  0% { left: -150px; opacity: 0; }
+  30% { opacity: 0.7; }
+  70% { opacity: 0.7; }
+  100% { left: 110%; opacity: 0; }
+}
+
+@keyframes dataSweepLeft {
+  0% { right: -150px; left: auto; opacity: 0; }
+  30% { opacity: 0.7; }
+  70% { opacity: 0.7; }
+  100% { right: 110%; left: auto; opacity: 0; }
+}
+
+/* ============================================================
+   2. LAYERED HTML CONTENT OVERLAY
+   ============================================================ */
+
+.hero-cinematic__container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 clamp(1.25rem, 3.5vw, 3.5rem);
+  padding-bottom: var(--space-8);
+}
+
+.hero-cinematic__content {
+  max-width: 660px;
+  width: 100%;
+  position: relative;
+}
+
+.hero-cinematic__text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  position: relative;
+}
+
+/* ── 01: Eyebrow Badge ── */
+.hero-cinematic__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 5px 16px;
+  background: rgba(8, 125, 185, 0.16);
+  border: 1px solid rgba(8, 125, 185, 0.4);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 13px; /* 12-14px */
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #38BDF8;
+  box-shadow: 0 0 14px rgba(8, 125, 185, 0.2);
+  backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 2;
+  line-height: 1.35;
+}
+
+.hero-cinematic__eyebrow-text {
+  text-transform: uppercase;
+}
+
+/* ── 02: Line-Masked Headline System (56-64px Desktop, Line Height 1.05-1.15) ── */
+.hero-cinematic__headline {
+  font-size: clamp(3.25rem, 4.2vw, 4rem); /* 52px - 64px */
+  font-weight: 750;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: #00FF88;
+  text-shadow: 0 0 24px rgba(0, 255, 136, 0.35), 0 2px 16px rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-cinematic__headline--ies {
+  font-size: clamp(2.75rem, 3.8vw, 3.75rem);
+}
+
+/* Line Mask to contain the slide-up animation */
+.hero-headline-line-mask {
+  overflow: hidden;
+  display: block;
+  padding-bottom: 2px;
+}
+
+.hero-headline-line {
+  display: inline-block;
+  position: relative;
+  will-change: transform, opacity, filter;
+  color: #00FF88;
+  text-shadow: 0 0 24px rgba(0, 255, 136, 0.35), 0 2px 16px rgba(0, 0, 0, 0.85);
+  animation: neonBreathe 4s ease-in-out infinite alternate;
+}
+
+@keyframes neonBreathe {
+  0% {
+    text-shadow: 0 0 18px rgba(0, 255, 136, 0.3), 0 2px 14px rgba(0, 0, 0, 0.85);
+  }
+  100% {
+    text-shadow: 0 0 32px rgba(0, 255, 136, 0.6), 0 0 50px rgba(0, 255, 136, 0.25), 0 2px 16px rgba(0, 0, 0, 0.9);
+  }
+}
+
+/* ── 03: Direct CTAs (15-16px, 600-700 weight) ── */
+.hero-cinematic__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  padding-top: var(--space-2);
+  position: relative;
+  z-index: 2;
+}
+
+.hero-cinematic__btn-primary {
+  background: var(--green);
+  color: #FFFFFF;
+  border: 1px solid var(--green);
+  font-size: 15.5px;
+  font-weight: 650;
+  box-shadow: 0 4px 18px rgba(37, 164, 73, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-btn-arrow {
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-cinematic__btn-primary:hover {
+  background: var(--secondary-tech-blue);
+  border-color: var(--secondary-tech-blue);
+  box-shadow: 0 8px 24px rgba(8, 125, 185, 0.6);
+  transform: translateY(-2.5px);
+}
+
+.hero-cinematic__btn-primary:hover .hero-btn-arrow {
+  transform: translateX(4.5px);
+}
+
+.hero-cinematic__btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  color: #FFFFFF;
+  font-size: 15.5px;
+  font-weight: 600;
+  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-cinematic__btn-secondary:hover {
+  background: var(--secondary-tech-blue);
+  border-color: var(--secondary-tech-blue);
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(8, 125, 185, 0.5);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   3. MINIMALIST DUAL-NODE PROGRESS INDICATOR (●━━━━   ○)
+      (7000ms display duration with pause & exact resume)
+   ============================================================ */
+
+.hero-cinematic__nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 12;
+  padding-bottom: var(--space-5);
+  pointer-events: none;
+}
+
+.hero-cinematic__nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-cinematic__nodes {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 6px 14px;
+  background: rgba(11, 21, 40, 0.65);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(8, 125, 185, 0.3);
+  border-radius: var(--radius-full);
+  pointer-events: auto;
+}
+
+.hero-cinematic__node {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-cinematic__node-circle {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-cinematic__node:hover .hero-cinematic__node-circle {
+  border-color: #38BDF8;
+  background: rgba(56, 189, 248, 0.3);
+}
+
+.hero-cinematic__node.is-active .hero-cinematic__node-circle {
+  width: 9px;
+  height: 9px;
+  border-color: #25A449;
+  background: #25A449;
+  box-shadow: 0 0 10px #25A449;
+}
+
+.hero-cinematic__node-track {
+  display: block;
+  width: 52px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-cinematic__node-fill {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #087DB9, #25A449);
+  box-shadow: 0 0 8px rgba(37, 164, 73, 0.6);
+  border-radius: var(--radius-full);
+  width: 0%;
+}
+
+/* ============================================================
+   4. RESPONSIVE COMPOSITION
+   ============================================================ */
+
+@media (max-width: 960px) {
+  .hero-cinematic {
+    height: 100svh;
+    min-height: 520px;
+    max-height: 720px;
+  }
+
+  .hero-cinematic__content {
+    max-width: 540px;
+  }
+
+  .hero-cinematic__headline {
+    font-size: clamp(2.75rem, 4.5vw, 3.25rem); /* 44px - 52px Tablet H1 */
+    line-height: 1.12;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-cinematic {
+    height: 100svh;
+    min-height: 480px;
+    max-height: none;
+  }
+
+  .hero-cinematic__img {
+    object-position: 58% center;
+  }
+
+  .hero-cinematic__container {
+    padding-bottom: var(--space-10);
+  }
+
+  .hero-cinematic__content {
+    max-width: 100%;
+  }
+
+  .hero-cinematic__headline {
+    font-size: clamp(2.25rem, 6.8vw, 2.75rem); /* 36px - 44px Mobile H1 */
+    line-height: 1.15;
+  }
+
+  .hero-cinematic__eyebrow {
+    font-size: 12px;
+  }
+
+  .hero-cinematic__btn-primary,
+  .hero-cinematic__btn-secondary {
+    font-size: 14.5px;
+  }
+
+  .hero-cinematic__nav {
+    padding-bottom: var(--space-3);
+  }
+}
+
+/* Reduced-Motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-cinematic__data-sweep {
+    animation: none !important;
+  }
+}

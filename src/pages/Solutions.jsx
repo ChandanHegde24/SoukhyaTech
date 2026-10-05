@@ -1,25 +1,25 @@
 import React from 'react';
-import CTA from '../components/CTA/CTA';
+import CTA from '../components/common/CTA';
 import { Link } from 'react-router-dom';
-import Breadcrumb from '../components/shared/Breadcrumb/Breadcrumb';
-import Reveal from '../components/shared/Reveal/Reveal';
-import { solutionShowcase } from '../data/solutionCatalog';
+import Breadcrumb from '../components/common/Breadcrumb';
+import Reveal from '../components/common/Reveal';
+import { solutionShowcase } from '../data/solutions';
 import './Solutions.css';
 
 const technologyJourney = [
   { step: '01', title: 'DEVICES & SENSORS', desc: 'Hardware design, embedded telemetry & rugged physical instrumentation', color: '#25A449' },
-  { step: '02', title: 'EDGE & GATEWAYS', desc: 'Secure local processing, OTA firmware management & protocol bridging', color: '#007CC4' },
-  { step: '03', title: 'CONNECTED CLOUD', desc: 'Scalable cloud infrastructure, device fleet orchestration & storage', color: '#2C3694' },
+  { step: '02', title: 'EDGE & GATEWAYS', desc: 'Secure local processing, OTA firmware management & protocol bridging', color: '#087DB9' },
+  { step: '03', title: 'CONNECTED CLOUD', desc: 'Scalable cloud infrastructure, device fleet orchestration & storage', color: '#173B8F' },
   { step: '04', title: 'DECISION INTELLIGENCE', desc: 'AI-driven analytics, anomaly detection & operational dashboards', color: '#E68324' },
   { step: '05', title: 'SUSTAINED VALUE', desc: 'Continuous uptime, reduced operational waste & asset longevity', color: '#EC008C' },
 ];
 
-/* ── Reusable Solution Visual Component (Supports Image, Hover, Parallax) ── */
+/* ── Reusable Solution Visual Component ── */
 function SolutionVisual({ solution, index }) {
   return (
     <div className="solution-visual-wrapper">
       <div className="solution-visual-frame">
-        {/* Production Image Container */}
+        {/* Production Image Container (Full Image Without Overlays) */}
         <div className="solution-visual-media">
           <img
             src={solution.img}
@@ -29,16 +29,6 @@ function SolutionVisual({ solution, index }) {
             width="720"
             height="460"
           />
-          <div className="solution-visual-overlay" />
-        </div>
-
-        {/* Architectural Tech Meta Bar */}
-        <div className="solution-visual-meta">
-          <div className="solution-visual-meta__left">
-            <span className="solution-visual-meta__dot" style={{ background: solution.accent }} />
-            <span className="solution-visual-meta__chip">{solution.chip}</span>
-          </div>
-          <span className="solution-visual-meta__metric">{solution.metric}</span>
         </div>
       </div>
     </div>

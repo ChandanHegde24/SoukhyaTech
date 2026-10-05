@@ -1,9 +1,9 @@
 import React from 'react';
-import CTA from '../components/CTA/CTA';
+import CTA from '../components/common/CTA';
 import { Link } from 'react-router-dom';
-import Breadcrumb from '../components/shared/Breadcrumb/Breadcrumb';
-import Reveal from '../components/shared/Reveal/Reveal';
-import { aboutContent } from '../data/siteContent';
+import Breadcrumb from '../components/common/Breadcrumb';
+import Reveal from '../components/common/Reveal';
+import { aboutContent } from '../data/about';
 import './About.css';
 
 /* ── Reveal Animation Wrapper ── */
@@ -11,8 +11,8 @@ import './About.css';
 function EngineeringDnaVisual() {
   const steps = [
     { num: '01', title: 'DEVICES', desc: 'Hardware Design & Sensors', color: '#25A449' },
-    { num: '02', title: 'DATA', desc: 'Edge Telemetry & Transmission', color: '#007CC4' },
-    { num: '03', title: 'INTELLIGENCE', desc: 'Predictive Models & Analytics', color: '#2C3694' },
+    { num: '02', title: 'DATA', desc: 'Edge Telemetry & Transmission', color: '#087DB9' },
+    { num: '03', title: 'INTELLIGENCE', desc: 'Predictive Models & Analytics', color: '#173B8F' },
     { num: '04', title: 'OPERATIONS', desc: 'Automated Decisions & Action', color: '#E68324' },
   ];
 

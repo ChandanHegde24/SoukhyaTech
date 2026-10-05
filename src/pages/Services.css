@@ -6,33 +6,32 @@
 .services-page {
   position: relative;
   padding: 0;
-  background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FC 60%, #EEF5FB 100%);
+  background-color: #FFFFFF;
   border-bottom: 1px solid var(--border-light);
   overflow: hidden;
-  background-size: 15px 15px 15px 15px;
 }
 
 /* ------------------------------------------------------------
-   1. EDITORIAL HERO SECTION
+   1. EDITORIAL HERO SECTION — Subtle Network Trace Linework
    ------------------------------------------------------------ */
 .services-hero {
   position: relative;
   padding: var(--hero-nav-offset) 0 var(--space-10);
-  background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FC 60%, #EEF5FB 100%);
-  border-bottom: 1px solid var(--border-light);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FC 60%, #EAF4FB 100%);
+  border-bottom: 1px solid rgba(8, 125, 185, 0.15);
   overflow: hidden;
-  background-image: url(/public/image2.png);
-  background-size: 15px 15px 15px 15px;
 }
 
 .services-hero__bg-grid {
   position: absolute;
   inset: 0;
   background-image: 
-    radial-gradient(circle at 1px 1px, rgba(44, 54, 148, 0.07) 1px, transparent 0);
-  background-size: 32px 32px;
+    radial-gradient(circle at 1px 1px, rgba(8, 125, 185, 0.08) 1px, transparent 0),
+    linear-gradient(90deg, rgba(8, 125, 185, 0.02) 1px, transparent 1px),
+    linear-gradient(rgba(8, 125, 185, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px, 64px 64px, 64px 64px;
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .services-hero__bg-ambient {
@@ -41,9 +40,12 @@
   right: -10%;
   width: 650px;
   height: 650px;
-  background: radial-gradient(circle, rgba(0, 124, 196, 0.12) 0%, rgba(44, 54, 148, 0.04) 50%, transparent 75%);
+  background:
+    radial-gradient(circle at 60% 40%, rgba(8, 125, 185, 0.10) 0%, transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(32, 164, 216, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(37, 164, 73, 0.05) 0%, transparent 40%);
   border-radius: 50%;
-  filter: blur(60px);
+  filter: blur(50px);
   pointer-events: none;
 }
 
@@ -129,19 +131,19 @@
 }
 
 .services-hero__heading {
-  font-size: clamp(2.5rem, 4.2vw, 3.8rem);
-  font-weight: 800;
+  font-size: clamp(3.5rem, 4.2vw, 4rem); /* 56px - 64px Hero H1 */
+  font-weight: 750;
   line-height: 1.1;
-  color: var(--text-primary);
-  letter-spacing: 0;
+  color: var(--primary-deep-blue);
+  letter-spacing: -0.025em;
   margin: var(--space-2) 0;
 }
 
 .services-hero__desc {
   color: var(--text-secondary);
-  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
-  line-height: 1.7;
-  max-width: 580px;
+  font-size: clamp(18px, 1.2vw, 19.5px); /* 18px - 20px */
+  line-height: 1.6;
+  max-width: 650px;
 }
 
 .services-hero__actions {
@@ -219,8 +221,8 @@
   transition: all 0.3s ease;
 }
 
-.hero-svc-node.node-audit { fill: #007CC4; stroke: #FFFFFF; }
-.hero-svc-node.node-sec { fill: #2C3694; stroke: #FFFFFF; }
+.hero-svc-node.node-audit { fill: #087DB9; stroke: #FFFFFF; }
+.hero-svc-node.node-sec { fill: #173B8F; stroke: #FFFFFF; }
 .hero-svc-node.node-net { fill: #25A449; stroke: #FFFFFF; }
 .hero-svc-node.node-cloud { fill: #E68324; stroke: #FFFFFF; }
 .hero-svc-node.node-rmm { fill: #EC008C; stroke: #FFFFFF; }
@@ -235,8 +237,8 @@
 }
 
 .hero-center-core {
-  fill: #2C3694;
-  stroke: #007CC4;
+  fill: #173B8F;
+  stroke: #087DB9;
   stroke-width: 2;
   filter: drop-shadow(0 4px 12px rgba(44, 54, 148, 0.35));
 }
@@ -322,9 +324,9 @@
 }
 
 .services-nav-bar__btn.is-active {
-  background: #2C3694;
+  background: #173B8F;
   color: #FFFFFF;
-  border-color: #2C3694;
+  border-color: #173B8F;
   box-shadow: 0 4px 14px rgba(44, 54, 148, 0.25);
 }
 
@@ -344,7 +346,7 @@
 }
 
 /* ------------------------------------------------------------
-   3. CINEMATIC SERVICE CHAPTERS (ASYMMETRIC SPLIT)
+   3. CINEMATIC SERVICE CHAPTERS — DISTINCT ENGINEERING IDENTITIES
    ------------------------------------------------------------ */
 .services-chapters {
   display: flex;
@@ -354,16 +356,80 @@
 .service-chapter {
   position: relative;
   padding: clamp(var(--space-10), 5vw, var(--space-14)) 0;
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 1px solid rgba(8, 125, 185, 0.12);
   overflow: hidden;
 }
 
-.service-chapter.section--bg {
-  background: linear-gradient(180deg, #F8FAFD 0%, #F3F7FC 100%);
+/* ── 1. IT AUDIT & ADVISORY: Blueprint / Process-Flow Background ── */
+#service-it-audit {
+  background-color: #FFFFFF;
+  background-image:
+    linear-gradient(90deg, rgba(8, 125, 185, 0.045) 1px, transparent 1px),
+    linear-gradient(rgba(8, 125, 185, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(32, 164, 216, 0.02) 1px, transparent 1px),
+    linear-gradient(rgba(32, 164, 216, 0.02) 1px, transparent 1px),
+    radial-gradient(circle at 85% 30%, rgba(8, 125, 185, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 15% 75%, rgba(32, 164, 216, 0.04) 0%, transparent 45%);
+  background-size: 48px 48px, 48px 48px, 12px 12px, 12px 12px, 100% 100%, 100% 100%;
 }
 
-.service-chapter.section--white {
-  background: #FFFFFF;
+#service-it-audit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(45deg, transparent 49.6%, rgba(8, 125, 185, 0.03) 50%, transparent 50.4%);
+  background-size: 144px 144px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── 2. MANAGED SECURITY SERVICES: Security Pulse / Concentric Rings ── */
+#service-managed-security {
+  background-color: #F4F8FC;
+  background-image:
+    radial-gradient(circle at 75% 50%, transparent 80px, rgba(8, 125, 185, 0.05) 81px, transparent 82px, transparent 160px, rgba(32, 164, 216, 0.045) 161px, transparent 162px, transparent 260px, rgba(8, 125, 185, 0.035) 261px, transparent 262px, transparent 380px, rgba(37, 164, 73, 0.03) 381px, transparent 382px),
+    radial-gradient(circle at 75% 50%, rgba(32, 164, 216, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 20% 30%, rgba(8, 125, 185, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 1px 1px, rgba(8, 125, 185, 0.05) 1px, transparent 0);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 36px 36px;
+}
+
+/* ── 3. MANAGED NETWORK SERVICES: Network Topology / Signal Path ── */
+#service-managed-network {
+  background-color: #FFFFFF;
+  background-image:
+    linear-gradient(135deg, transparent 49.5%, rgba(8, 125, 185, 0.03) 50%, transparent 50.5%),
+    linear-gradient(-135deg, transparent 49.5%, rgba(32, 164, 216, 0.03) 50%, transparent 50.5%),
+    radial-gradient(circle at 25% 45%, rgba(37, 164, 73, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 80% 55%, rgba(8, 125, 185, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 1px 1px, rgba(8, 125, 185, 0.06) 1.2px, transparent 0);
+  background-size: 96px 96px, 96px 96px, 100% 100%, 100% 100%, 32px 32px;
+}
+
+/* ── 4. MANAGED CLOUD SERVICES: Cloud Connection / Infrastructure Grid ── */
+#service-managed-cloud {
+  background-color: #F4F8FC;
+  background-image:
+    linear-gradient(90deg, rgba(8, 125, 185, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(8, 125, 185, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at 50% 20%, rgba(32, 164, 216, 0.09) 0%, transparent 50%),
+    radial-gradient(circle at 75% 80%, rgba(8, 125, 185, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 25% 70%, rgba(230, 131, 36, 0.04) 0%, transparent 40%);
+  background-size: 64px 64px, 64px 64px, 100% 100%, 100% 100%, 100% 100%;
+}
+
+/* ── 5. REMOTE MONITORING & MANAGEMENT: Remote Signal / Telemetry Grid ── */
+#service-remote-monitoring {
+  background-color: #FFFFFF;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(8, 125, 185, 0.07) 1.25px, transparent 0),
+    linear-gradient(90deg, transparent 0%, rgba(8, 125, 185, 0.04) 50%, transparent 100%),
+    radial-gradient(circle at 20% 50%, rgba(32, 164, 216, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 80% 40%, rgba(236, 0, 140, 0.04) 0%, transparent 40%);
+  background-size: 28px 28px, 100% 1px, 100% 100%, 100% 100%;
+  background-position: 0 0, 0 50%, 0 0, 0 0;
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat;
 }
 
 .service-chapter__container {
@@ -452,11 +518,11 @@
 }
 
 .service-chapter__title {
-  color: var(--text-primary);
-  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: 0;
+  color: var(--primary-deep-blue);
+  font-size: clamp(2.5rem, 3.2vw, 3rem); /* 40px - 48px Section H2 */
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .service-chapter__paragraphs {
@@ -467,8 +533,8 @@
 
 .service-chapter__text {
   color: var(--text-secondary);
-  line-height: 1.8;
-  font-size: var(--text-base);
+  line-height: 1.68;
+  font-size: var(--text-base); /* 17px */
 }
 
 .service-chapter__action {
@@ -476,8 +542,444 @@
 }
 
 /* ------------------------------------------------------------
-   4. BESPOKE SERVICE VISUAL ARCHITECTURE BOX
+   4. REUSABLE SERVICE VISUAL COMPONENT (IMAGE + FRAME)
    ------------------------------------------------------------ */
+.service-visual-wrapper {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-visual-frame {
+  background: #FFFFFF;
+  border: 1px solid rgba(220, 229, 240, 0.85);
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 14px 38px rgba(23, 32, 51, 0.06), 0 2px 8px rgba(8, 125, 185, 0.03);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.service-visual-frame:hover {
+  border-color: rgba(8, 125, 185, 0.35);
+  box-shadow: 0 20px 48px rgba(23, 32, 51, 0.1), 0 4px 16px rgba(8, 125, 185, 0.08);
+}
+
+.service-visual-media {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-visual-img {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* ------------------------------------------------------------
+   INFOGRAPHIC-SPECIFIC FUNCTIONAL MICRO-ANIMATION OVERLAYS
+   (SERVICES PAGE ONLY)
+   ------------------------------------------------------------ */
+.service-anim-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-anim-svg {
+  width: 100%;
+  height: 100%;
+  max-height: 520px;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* ============================================================
+   1. IT AUDIT & ADVISORY: AUDIT LIFECYCLE PROGRESSION
+   ============================================================ */
+.audit-core-highlight {
+  fill: none;
+  stroke: rgba(8, 125, 185, 0.2);
+  stroke-width: 1.5;
+}
+
+.audit-track-base {
+  fill: none;
+  stroke: rgba(8, 125, 185, 0.12);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+}
+
+.audit-track-active {
+  fill: none;
+  stroke: url(#auditArcGrad);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 95 795;
+  animation: auditArcCycle 6.4s linear infinite;
+}
+
+.audit-stage-ring {
+  fill: none;
+  stroke: rgba(8, 125, 185, 0.3);
+  stroke-width: 1.5;
+  transform-origin: center;
+  opacity: 0.2;
+}
+
+/* Sequential node activations along the 8-stage audit cycle */
+.stage-1 .audit-stage-ring { animation: auditNodeAct 6.4s ease-in-out infinite 0s; }
+.stage-2 .audit-stage-ring { animation: auditNodeAct 6.4s ease-in-out infinite 0.8s; }
+.stage-3 .audit-stage-ring { animation: auditNodeAct 6.4s ease-in-out infinite 1.6s; }
+.stage-4 .audit-stage-ring { animation: auditNodeAct 6.4s ease-in-out infinite 2.4s; }
+.stage-5 .audit-stage-ring { animation: auditNodeAct 6.4s ease-in-out infinite 3.2s; }
+.stage-6 .audit-stage-ring { animation: auditNodeAct 6.4s ease-in-out infinite 4.0s; }
+.stage-7 .audit-stage-ring { animation: auditNodeAct 6.4s ease-in-out infinite 4.8s; }
+.stage-8 .audit-stage-ring { animation: auditNodeActGreen 6.4s ease-in-out infinite 5.6s; }
+
+@keyframes auditArcCycle {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -890; }
+}
+
+@keyframes auditNodeAct {
+  0%, 100% { opacity: 0.15; transform: scale(1); stroke: #087DB9; stroke-width: 1.5; }
+  8%, 18% { opacity: 0.95; transform: scale(1.035); stroke: #20A4D8; stroke-width: 2.5; }
+  28% { opacity: 0.15; transform: scale(1); }
+}
+
+@keyframes auditNodeActGreen {
+  0%, 100% { opacity: 0.15; transform: scale(1); stroke: #087DB9; stroke-width: 1.5; }
+  8%, 18% { opacity: 1; transform: scale(1.04); stroke: #25A449; stroke-width: 2.5; filter: drop-shadow(0 0 4px #25A449); }
+  28% { opacity: 0.15; transform: scale(1); }
+}
+
+/* ============================================================
+   2. MANAGED SECURITY SERVICES: PROTECTION LAYER SCAN
+   ============================================================ */
+.sec-shield-aura {
+  fill: rgba(8, 125, 185, 0.08);
+  stroke: rgba(32, 164, 216, 0.35);
+  stroke-width: 1.5;
+  animation: secShieldGlow 4.5s ease-in-out infinite;
+  transform-origin: 360px 230px;
+}
+
+.sec-scan-wave {
+  fill: none;
+  stroke: rgba(8, 125, 185, 0.35);
+  stroke-width: 1.5;
+  transform-origin: 360px 230px;
+}
+
+.wave-1 { animation: secScanExpand 5.5s cubic-bezier(0.1, 0.6, 0.2, 1) infinite 0s; }
+.wave-2 { animation: secScanExpand 5.5s cubic-bezier(0.1, 0.6, 0.2, 1) infinite 1.8s; }
+.wave-3 { animation: secScanExpand 5.5s cubic-bezier(0.1, 0.6, 0.2, 1) infinite 3.6s; }
+
+.sec-node-ring {
+  fill: none;
+  stroke: rgba(8, 125, 185, 0.3);
+  stroke-width: 1.5;
+  transform-origin: center;
+  opacity: 0.2;
+}
+
+.sec-node-1 .sec-node-ring { animation: secNodeGlow 5.5s ease-in-out infinite 0.9s; }
+.sec-node-2 .sec-node-ring { animation: secNodeGlow 5.5s ease-in-out infinite 1.8s; }
+.sec-node-3 .sec-node-ring { animation: secNodeGlowGreen 5.5s ease-in-out infinite 2.7s; }
+.sec-node-4 .sec-node-ring { animation: secNodeGlow 5.5s ease-in-out infinite 3.6s; }
+.sec-node-5 .sec-node-ring { animation: secNodeGlow 5.5s ease-in-out infinite 4.5s; }
+
+@keyframes secShieldGlow {
+  0%, 100% { opacity: 0.3; transform: scale(0.96); }
+  50% { opacity: 0.75; transform: scale(1.05); }
+}
+
+@keyframes secScanExpand {
+  0% { transform: scale(0.4); opacity: 0.8; }
+  70% { opacity: 0.35; }
+  100% { transform: scale(1.2); opacity: 0; }
+}
+
+@keyframes secNodeGlow {
+  0%, 100% { opacity: 0.15; transform: scale(1); stroke: #087DB9; }
+  10%, 20% { opacity: 0.9; transform: scale(1.035); stroke: #20A4D8; stroke-width: 2.25; }
+  30% { opacity: 0.15; transform: scale(1); }
+}
+
+@keyframes secNodeGlowGreen {
+  0%, 100% { opacity: 0.15; transform: scale(1); stroke: #087DB9; }
+  10%, 20% { opacity: 1; transform: scale(1.04); stroke: #25A449; stroke-width: 2.5; filter: drop-shadow(0 0 4px #25A449); }
+  30% { opacity: 0.15; transform: scale(1); }
+}
+
+/* ============================================================
+   3. MANAGED NETWORK SERVICES: NETWORK PATH SIGNALS
+   ============================================================ */
+.net-signal-path {
+  fill: none;
+  stroke: rgba(8, 125, 185, 0.4);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 12 18;
+  animation: netPathSignal 2.8s linear infinite;
+}
+
+.net-path--active {
+  stroke: #25A449;
+  stroke-width: 2.5;
+  stroke-dasharray: 14 12;
+  animation: netPathSignalFast 1.8s linear infinite;
+  filter: drop-shadow(0 0 3px rgba(37, 164, 73, 0.5));
+}
+
+.path-router { animation-delay: -0.5s; }
+.path-wifi { animation-delay: -1.0s; }
+.path-switch { animation-delay: -1.5s; }
+.path-wanopt { animation-delay: -2.0s; }
+
+.net-hub-aura {
+  fill: rgba(8, 125, 185, 0.08);
+  stroke: rgba(8, 125, 185, 0.25);
+  stroke-width: 1.5;
+  animation: netHubBreathe 3.2s ease-in-out infinite;
+  transform-origin: 360px 230px;
+}
+
+.net-wifi-arc {
+  stroke: #20A4D8;
+  stroke-width: 2;
+  stroke-linecap: round;
+  transform-origin: center;
+  opacity: 0;
+  animation: netWifiArcPulse 2.4s cubic-bezier(0.1, 0.8, 0.2, 1) infinite;
+}
+
+.arc-1 { animation-delay: 0s; }
+.arc-2 { animation-delay: 0.4s; }
+
+.net-node-highlight {
+  fill: none;
+  stroke: rgba(8, 125, 185, 0.3);
+  stroke-width: 1.5;
+  transform-origin: center;
+  animation: netNodeBreathe 3s ease-in-out infinite;
+}
+
+.node--active .net-node-highlight {
+  stroke: #25A449;
+  animation: netActiveGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes netPathSignal {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -30; }
+}
+
+@keyframes netPathSignalFast {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -26; }
+}
+
+@keyframes netWifiArcPulse {
+  0% { opacity: 0; transform: scale(0.7); }
+  40% { opacity: 0.9; }
+  100% { opacity: 0; transform: scale(1.3); }
+}
+
+@keyframes netHubBreathe {
+  0%, 100% { opacity: 0.3; transform: scale(0.96); }
+  50% { opacity: 0.7; transform: scale(1.04); }
+}
+
+@keyframes netNodeBreathe {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.75; transform: scale(1.03); stroke: #20A4D8; }
+}
+
+@keyframes netActiveGlow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.035); filter: drop-shadow(0 0 4px #25A449); }
+}
+
+/* ============================================================
+   4. MANAGED CLOUD SERVICES: CLOUD ORCHESTRATION
+   ============================================================ */
+.cloud-core-aura {
+  fill: rgba(8, 125, 185, 0.1);
+  stroke: rgba(32, 164, 216, 0.3);
+  stroke-width: 1.5;
+  animation: cloudCoreBreath 5s ease-in-out infinite;
+  transform-origin: 360px 225px;
+}
+
+.cloud-vector {
+  fill: none;
+  stroke: rgba(8, 125, 185, 0.35);
+  stroke-width: 2;
+  stroke-dasharray: 8 10;
+  stroke-linecap: round;
+  animation: cloudVectorSweep 3s linear infinite;
+}
+
+.cloud-vec--secure {
+  stroke: rgba(37, 164, 73, 0.55);
+}
+
+.cloud-node-glow {
+  fill: none;
+  stroke: rgba(8, 125, 185, 0.3);
+  stroke-width: 1.5;
+  transform-origin: center;
+  opacity: 0.2;
+}
+
+.node-pub .cloud-node-glow { animation: cloudNodeAct 5s ease-in-out infinite 0.6s; }
+.node-priv .cloud-node-glow { animation: cloudNodeAct 5s ease-in-out infinite 1.4s; }
+.node-infra .cloud-node-glow { animation: cloudNodeAct 5s ease-in-out infinite 2.2s; }
+.node--secure .cloud-node-glow { animation: cloudNodeActGreen 5s ease-in-out infinite 3.2s; }
+.node-bak .cloud-node-glow { animation: cloudNodeAct 5s ease-in-out infinite 4.2s; }
+
+@keyframes cloudCoreBreath {
+  0%, 100% { opacity: 0.25; transform: scale(0.96); }
+  50% { opacity: 0.65; transform: scale(1.06); }
+}
+
+@keyframes cloudVectorSweep {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -18; }
+}
+
+@keyframes cloudNodeAct {
+  0%, 100% { opacity: 0.15; transform: scale(1); stroke: #087DB9; }
+  12%, 24% { opacity: 0.9; transform: scale(1.035); stroke: #20A4D8; stroke-width: 2.25; }
+  36% { opacity: 0.15; transform: scale(1); }
+}
+
+@keyframes cloudNodeActGreen {
+  0%, 100% { opacity: 0.15; transform: scale(1); stroke: #087DB9; }
+  12%, 24% { opacity: 1; transform: scale(1.04); stroke: #25A449; stroke-width: 2.5; filter: drop-shadow(0 0 4px #25A449); }
+  36% { opacity: 0.15; transform: scale(1); }
+}
+
+/* ============================================================
+   5. REMOTE MONITORING & MANAGEMENT: 5-STAGE WORKFLOW
+   ============================================================ */
+.rmm-screen-frame {
+  fill: none;
+  stroke: rgba(8, 125, 185, 0.25);
+  stroke-width: 1.5;
+}
+
+.rmm-screen-scanline {
+  stroke: #20A4D8;
+  stroke-width: 1.5;
+  opacity: 0.7;
+  animation: rmmScreenScan 2.4s ease-in-out infinite alternate;
+}
+
+.rmm-path {
+  fill: none;
+  stroke: rgba(8, 125, 185, 0.35);
+  stroke-width: 2;
+  stroke-dasharray: 6 8;
+  animation: rmmPathFlow 2.8s linear infinite;
+}
+
+.rmm-node-ring {
+  fill: none;
+  stroke: rgba(8, 125, 185, 0.3);
+  stroke-width: 1.5;
+  transform-origin: center;
+  opacity: 0.2;
+}
+
+.node-discover .rmm-node-ring { animation: rmmStageAct 5.5s ease-in-out infinite 0s; }
+.node-deploy .rmm-node-ring { animation: rmmStageAct 5.5s ease-in-out infinite 1.1s; }
+.node-perf .rmm-node-ring { animation: rmmStageAct 5.5s ease-in-out infinite 2.2s; }
+.node--resolved .rmm-node-ring { animation: rmmStageActGreen 5.5s ease-in-out infinite 3.3s; }
+.node-report .rmm-node-ring { animation: rmmStageAct 5.5s ease-in-out infinite 4.4s; }
+
+.rmm-mini-bar {
+  stroke: #087DB9;
+  stroke-width: 2;
+  stroke-linecap: round;
+  animation: rmmBarMove 1.4s ease-in-out infinite alternate;
+}
+
+.bar-1 { animation-delay: 0s; stroke: #087DB9; }
+.bar-2 { animation-delay: 0.3s; stroke: #25A449; }
+.bar-3 { animation-delay: 0.6s; stroke: #20A4D8; }
+
+@keyframes rmmScreenScan {
+  0% { transform: translateY(0); opacity: 0.4; }
+  100% { transform: translateY(48px); opacity: 0.85; }
+}
+
+@keyframes rmmPathFlow {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -14; }
+}
+
+@keyframes rmmStageAct {
+  0%, 100% { opacity: 0.15; transform: scale(1); stroke: #087DB9; }
+  10%, 20% { opacity: 0.9; transform: scale(1.035); stroke: #20A4D8; stroke-width: 2.25; }
+  30% { opacity: 0.15; transform: scale(1); }
+}
+
+@keyframes rmmStageActGreen {
+  0%, 100% { opacity: 0.15; transform: scale(1); stroke: #087DB9; }
+  10%, 20% { opacity: 1; transform: scale(1.04); stroke: #25A449; stroke-width: 2.5; filter: drop-shadow(0 0 4px #25A449); }
+  30% { opacity: 0.15; transform: scale(1); }
+}
+
+@keyframes rmmBarMove {
+  0% { transform: scaleY(0.6); }
+  100% { transform: scaleY(1.35); }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .audit-track-active,
+  .audit-stage-ring,
+  .sec-shield-aura,
+  .sec-scan-wave,
+  .sec-node-ring,
+  .net-signal-path,
+  .net-path--active,
+  .net-wifi-arc,
+  .net-node-highlight,
+  .cloud-core-aura,
+  .cloud-vector,
+  .cloud-node-glow,
+  .rmm-screen-scanline,
+  .rmm-path,
+  .rmm-node-ring,
+  .rmm-mini-bar {
+    animation: none !important;
+  }
+}
+
 .service-visual-box {
   background: linear-gradient(135deg, #FFFFFF 0%, #F5F9FD 100%);
   border: 1px solid var(--border-light);
@@ -611,8 +1113,8 @@
   transition: all 0.3s ease;
 }
 
-.svg-node.node--blue { fill: #007CC4; stroke: #FFFFFF; }
-.svg-node.node--indigo { fill: #2C3694; stroke: #FFFFFF; }
+.svg-node.node--blue { fill: #087DB9; stroke: #FFFFFF; }
+.svg-node.node--indigo { fill: #173B8F; stroke: #FFFFFF; }
 .svg-node.node--green { fill: #25A449; stroke: #FFFFFF; }
 
 .svg-node-text {
@@ -633,8 +1135,8 @@
 }
 
 .svg-scanner-core {
-  fill: #2C3694;
-  stroke: #007CC4;
+  fill: #173B8F;
+  stroke: #087DB9;
   stroke-width: 2;
 }
 
@@ -663,13 +1165,13 @@
 }
 
 .svg-packet {
-  fill: #007CC4;
-  filter: drop-shadow(0 0 4px #007CC4);
+  fill: #087DB9;
+  filter: drop-shadow(0 0 4px #087DB9);
 }
 
 .svg-packet-blue {
-  fill: #007CC4;
-  filter: drop-shadow(0 0 4px #007CC4);
+  fill: #087DB9;
+  filter: drop-shadow(0 0 4px #087DB9);
 }
 
 .svg-packet-green {
@@ -693,16 +1195,16 @@
 }
 
 .svg-radar-sweep {
-  stroke: #007CC4;
+  stroke: #087DB9;
   stroke-width: 2;
   stroke-linecap: round;
   animation: rotate-forward 8s linear infinite;
   transform-origin: 300px 180px;
-  filter: drop-shadow(0 0 6px #007CC4);
+  filter: drop-shadow(0 0 6px #087DB9);
 }
 
 .svg-shield-core {
-  fill: #2C3694;
+  fill: #173B8F;
   stroke: #FFFFFF;
   stroke-width: 2;
 }
@@ -715,7 +1217,7 @@
 }
 
 .svg-perimeter-node {
-  fill: #007CC4;
+  fill: #087DB9;
   stroke: #FFFFFF;
   stroke-width: 2;
 }
@@ -744,7 +1246,7 @@
 }
 
 .svg-device-text {
-  fill: #2C3694;
+  fill: #173B8F;
   font-family: var(--font-mono);
   font-size: 9px;
   font-weight: 800;
@@ -765,8 +1267,8 @@
   stroke-width: 2;
 }
 
-.bubble--public { fill: #007CC4; stroke: #FFFFFF; }
-.bubble--private { fill: #2C3694; stroke: #FFFFFF; }
+.bubble--public { fill: #087DB9; stroke: #FFFFFF; }
+.bubble--private { fill: #173B8F; stroke: #FFFFFF; }
 .bubble--hybrid { fill: #E68324; stroke: #FFFFFF; }
 
 .svg-cloud-text {
@@ -809,7 +1311,7 @@
 }
 
 .svg-demo-text {
-  fill: #2C3694;
+  fill: #173B8F;
   font-family: var(--font-mono);
   font-size: 8.5px;
   font-weight: 700;
@@ -820,7 +1322,7 @@
    5. RMM FUNCTIONS CHECKLIST (LOCKED CONTENT)
    ------------------------------------------------------------ */
 .rmm-functions-block {
-  background: #F8FAFD;
+  background: #F4F8FC;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-xl);
   padding: var(--space-6);
@@ -869,18 +1371,27 @@
 }
 
 .rmm-concluding-text {
-  color: var(--text-primary);
-  font-weight: 500;
+  color: var(--text-secondary);
+  font-weight: 400;
   margin-top: var(--space-2);
 }
 
 /* ------------------------------------------------------------
    6. PROCESS JOURNEY: FROM INFRASTRUCTURE TO INTELLIGENCE
+   Continuous Lifecycle Pipeline Vector & Data Conduit
    ------------------------------------------------------------ */
 .process-journey-section {
-  padding: 64px 0;
-  border-bottom: 1px solid var(--border-light);
-  background: #FFFFFF;
+  padding: 72px 0 80px;
+  border-bottom: 1px solid rgba(8, 125, 185, 0.12);
+  background-color: #FFFFFF;
+  background-image:
+    linear-gradient(90deg, transparent 0%, rgba(8, 125, 185, 0.14) 15%, rgba(32, 164, 216, 0.25) 50%, rgba(37, 164, 73, 0.2) 85%, transparent 100%),
+    radial-gradient(circle at 1px 1px, rgba(8, 125, 185, 0.06) 1.2px, transparent 0),
+    linear-gradient(90deg, rgba(8, 125, 185, 0.02) 1px, transparent 1px),
+    linear-gradient(rgba(8, 125, 185, 0.02) 1px, transparent 1px);
+  background-size: 100% 2px, 32px 32px, 64px 64px, 64px 64px;
+  background-position: center 62%, 0 0, 0 0, 0 0;
+  background-repeat: no-repeat, repeat, repeat, repeat;
 }
 
 .process-journey-grid {
@@ -891,7 +1402,7 @@
 }
 
 .process-step-card {
-  background: #F8FAFD;
+  background: #F4F8FC;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-xl);
   padding: var(--space-5);
@@ -931,7 +1442,7 @@
 .process-step-card__title {
   font-size: var(--text-base);
   font-weight: 800;
-  color: var(--text-primary);
+  color: var(--primary-deep-blue);
   letter-spacing: 0.04em;
 }
 
@@ -956,9 +1467,16 @@
    7. EXPERTISED SERVICES (4 CAPABILITIES)
    ------------------------------------------------------------ */
 .expertised-services-section {
-  padding: 64px 0;
-  background: linear-gradient(180deg, #F8FAFD 0%, #F3F7FC 100%);
-  border-bottom: 1px solid var(--border-light);
+  padding: 68px 0 76px;
+  background-color: #F4F8FC;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(8, 125, 185, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(32, 164, 216, 0.05) 0%, transparent 45%),
+    linear-gradient(90deg, rgba(8, 125, 185, 0.025) 1px, transparent 1px),
+    linear-gradient(rgba(8, 125, 185, 0.025) 1px, transparent 1px),
+    radial-gradient(circle at 1px 1px, rgba(8, 125, 185, 0.05) 1px, transparent 0);
+  background-size: 100% 100%, 100% 100%, 64px 64px, 64px 64px, 32px 32px;
+  border-bottom: 1px solid rgba(8, 125, 185, 0.12);
 }
 
 .expertised-grid {
@@ -994,7 +1512,7 @@
 .expertised-card__title {
   font-size: var(--text-xl);
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--primary-deep-blue);
   margin-bottom: var(--space-3);
 }
 

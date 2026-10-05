@@ -16,8 +16,8 @@
 .contact-hero {
   padding: var(--hero-nav-offset) 0 var(--space-10);
   position: relative;
-  background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FC 60%, #EEF5FB 100%);
-  border-bottom: 1px solid var(--border-light);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FC 60%, #EAF4FB 100%);
+  border-bottom: 1px solid rgba(8, 125, 185, 0.15);
   overflow: hidden;
 }
 
@@ -25,21 +25,26 @@
   position: absolute;
   inset: 0;
   background-image: 
-    radial-gradient(circle at 1px 1px, rgba(44, 54, 148, 0.07) 1px, transparent 0);
-  background-size: 32px 32px;
+    radial-gradient(circle at 75% 45%, transparent 60px, rgba(8, 125, 185, 0.06) 61px, transparent 62px, transparent 120px, rgba(8, 125, 185, 0.05) 121px, transparent 122px, transparent 180px, rgba(32, 164, 216, 0.04) 181px, transparent 182px),
+    radial-gradient(circle at 1px 1px, rgba(8, 125, 185, 0.06) 1px, transparent 0),
+    radial-gradient(circle at 75% 45%, rgba(37, 164, 73, 0.08) 0%, transparent 15%);
+  background-size: 100% 100%, 36px 36px, 100% 100%;
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .contact-hero__bg-ambient {
   position: absolute;
-  top: -20%;
-  right: -10%;
+  top: -15%;
+  right: -5%;
   width: 650px;
   height: 650px;
-  background: radial-gradient(circle, rgba(0, 124, 196, 0.12) 0%, rgba(44, 54, 148, 0.04) 50%, transparent 75%);
+  background:
+    radial-gradient(circle at 60% 40%, rgba(8, 125, 185, 0.10) 0%, transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(32, 164, 216, 0.07) 0%, transparent 50%),
+    radial-gradient(circle at 75% 45%, rgba(37, 164, 73, 0.06) 0%, transparent 35%);
   border-radius: 50%;
-  filter: blur(60px);
+  filter: blur(55px);
   pointer-events: none;
 }
 
@@ -125,25 +130,42 @@
 }
 
 .contact-hero__heading {
-  font-size: clamp(2.5rem, 4.2vw, 3.8rem);
-  font-weight: 800;
+  font-size: clamp(3.5rem, 4.2vw, 4rem); /* 56px - 64px Hero H1 */
+  font-weight: 750;
   line-height: 1.1;
-  color: var(--text-primary);
+  color: var(--primary-deep-blue);
   letter-spacing: -0.025em;
   margin: var(--space-1) 0;
 }
 
 .contact-hero__tagline {
-  font-size: clamp(1.1rem, 1.35vw, 1.25rem);
-  line-height: 1.6;
+  font-size: clamp(16px, 1.1vw, 18px);
+  line-height: 1.55;
+  color: #087DB9; /* Distinct vibrant Technology Blue */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
 }
 
 .contact-hero__prompt {
   font-family: var(--font-mono);
   font-size: var(--text-sm);
-  color: var(--text-secondary);
+  color: var(--text-primary);
   font-weight: 700;
   letter-spacing: 0.04em;
+  margin-top: var(--space-2);
+}
+
+.contact-hero__phone-highlight {
+  color: #25A449; /* Distinct green color */
+  font-weight: 800;
+  text-decoration: none;
+  transition: color var(--trans-fast);
+}
+
+.contact-hero__phone-highlight:hover {
+  color: #1E8739;
+  text-decoration: underline;
 }
 
 /* Contact Hero Visual Component */
@@ -230,8 +252,8 @@
 .ring--inner { stroke: rgba(0, 124, 196, 0.25); }
 
 .contact-core-node {
-  fill: #2C3694;
-  stroke: #007CC4;
+  fill: #173B8F;
+  stroke: #087DB9;
   stroke-width: 2.5;
   filter: drop-shadow(0 4px 14px rgba(44, 54, 148, 0.4));
 }
@@ -250,8 +272,8 @@
 }
 
 .sat--phone { fill: #25A449; stroke: #FFFFFF; }
-.sat--email { fill: #007CC4; stroke: #FFFFFF; }
-.sat--location { fill: #2C3694; stroke: #FFFFFF; }
+.sat--email { fill: #087DB9; stroke: #FFFFFF; }
+.sat--location { fill: #173B8F; stroke: #FFFFFF; }
 .sat--portal { fill: #E68324; stroke: #FFFFFF; }
 
 .contact-sat-text {
@@ -275,7 +297,7 @@
 }
 
 .packet--green { fill: #25A449; }
-.packet--blue { fill: #007CC4; }
+.packet--blue { fill: #087DB9; }
 
 .contact-hero-card__footer {
   display: flex;
@@ -310,12 +332,23 @@
 }
 
 /* ------------------------------------------------------------
-   2. MAIN CONTACT SECTION (FORM & CHANNELS)
+   2. MAIN CONTACT SECTION — "CONNECTION / SIGNAL" PATTERN
+   Coordinate Points, Subtle Signal Rings, Fine Traces, Green Pulse
    ------------------------------------------------------------ */
 .contact-main-section {
-  padding: 64px 0;
-  border-bottom: 1px solid var(--border-light);
-  background: linear-gradient(180deg, #F8FAFD 0%, #F3F7FC 100%);
+  padding: 68px 0 76px;
+  border-bottom: 1px solid rgba(8, 125, 185, 0.12);
+  background-color: #F4F8FC;
+  background-image:
+    radial-gradient(circle at 80% 30%, transparent 110px, rgba(8, 125, 185, 0.045) 111px, transparent 112px, transparent 220px, rgba(32, 164, 216, 0.04) 221px, transparent 222px, transparent 340px, rgba(8, 125, 185, 0.03) 341px, transparent 342px),
+    radial-gradient(circle at 80% 30%, rgba(32, 164, 216, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 78% 28%, rgba(37, 164, 73, 0.4) 3px, transparent 4.5px),
+    radial-gradient(circle at 20% 70%, rgba(8, 125, 185, 0.06) 0%, transparent 45%),
+    linear-gradient(90deg, rgba(8, 125, 185, 0.025) 1px, transparent 1px),
+    linear-gradient(rgba(8, 125, 185, 0.025) 1px, transparent 1px),
+    radial-gradient(circle at 1px 1px, rgba(8, 125, 185, 0.06) 1.2px, transparent 0);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 64px 64px, 64px 64px, 32px 32px;
+  overflow: hidden;
 }
 
 .contact-layout {
@@ -351,7 +384,7 @@
 }
 
 .contact-card__title {
-  color: var(--text-primary);
+  color: var(--primary-deep-blue);
   font-size: clamp(1.6rem, 2.4vw, 2rem);
 }
 
@@ -480,7 +513,7 @@
 .contact-info-card__title {
   font-size: var(--text-lg);
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--primary-deep-blue);
   padding-bottom: var(--space-3);
   border-bottom: 1px solid var(--border-light);
 }

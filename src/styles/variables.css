@@ -4,62 +4,81 @@
    ============================================================ */
 
 :root {
-  /* ── Main Backgrounds ── */
+  /* ── Canonical Theme Tokens (Phase 7 Specification) ── */
+  --primary-blue:      #173B8F;
+  --technology-blue:   #087DB9;
+  --cyan:              #20A4D8;
+  --green:             #25A449;
   --white:             #FFFFFF;
-  --off-white:         #F8FAFD;
-  --section-bg:        #F3F7FC;
-  --section-product:   #EEF7FF;
-  --section-cyber:     #EEF6FF;
-  --section-solutions: #F5F8FC;
+  --light-blue:        #F4F8FC;
+  --very-light-blue:   #EAF4FB;
+  --heading:           #14213D;
+  --body-text:         #53657D;
+  --muted-text:        #7B8798;
+  --border:            #D9E5F0;
+
+  /* ── Background Aliases ── */
+  --off-white:         #F4F8FC;
+  --section-bg:        #F4F8FC;
+  --section-product:   #EAF4FB;
+  --section-cyber:     #F4F8FC;
+  --section-solutions: #F4F8FC;
+  --light-blue-bg:     #F4F8FC;
+  --green-highlight-bg:#EAF7EF;
 
   /* ── Core Brand Colors ── */
-  --brand-indigo:      #2C3694;
-  --brand-blue:        #007CC4;
-  --brand-blue-light:  #0096E8;
-  --brand-cyan:        #0284C7;
+  --primary-deep-blue: #173B8F;
+  --brand-indigo:      #173B8F;
+  --secondary-tech-blue:#087DB9;
+  --brand-blue:        #087DB9;
+  --brand-blue-light:  #20A4D8;
+  --cyan-accent:       #20A4D8;
+  --brand-cyan:        #20A4D8;
 
   /* ── Text Colors (High Contrast) ── */
-  --text-primary:      #172033;
-  --text-secondary:    #5F6B7A;
+  --text-primary:      #14213D;
+  --text-secondary:    #53657D;
   --text-light:        #7B8798;
   --text-muted:        #7B8798;
   --text-white:        #FFFFFF;
 
   /* ── Borders & Surfaces ── */
-  --border-light:      #DCE5F0;
-  --border-medium:     #C8D5E5;
-  --border-focus:      #007CC4;
+  --border-light:      #D9E5F0;
+  --border-medium:     #D9E5F0;
+  --border-focus:      #087DB9;
   --surface-white:     #FFFFFF;
 
   /* ── Logo Accent Colors (Used sparingly for highlights & nodes) ── */
   --green:             #25A449;
+  --green-highlight:   #25A449;
   --lime:              #A5CE39;
   --orange:            #E68324;
   --magenta:           #EC008C;
   --red:               #ED1C24;
 
-  /* ── Typography ── */
+  /* ── Typography Scale ── */
   --font-display:       'Object Sans', sans-serif;
   --font-body:          'Ubuntu', sans-serif;
   --font-mono:         'Ubuntu', sans-serif;
 
-  --text-xs:           0.75rem;    /* 12px */
-  --text-sm:           0.875rem;   /* 14px */
-  --text-base:         1rem;       /* 16px */
-  --text-lg:           1.125rem;   /* 18px */
-  --text-xl:           1.25rem;    /* 20px */
-  --text-2xl:          1.5rem;     /* 24px */
-  --text-3xl:          1.875rem;   /* 30px */
-  --text-4xl:          2.25rem;    /* 36px */
-  --text-5xl:          3rem;       /* 48px */
-  --text-6xl:          3.75rem;    /* 60px */
-  --text-7xl:          4.5rem;     /* 72px */
+  --text-xs:           0.8125rem;  /* 13px - Small labels / chips */
+  --text-sm:           0.9375rem;  /* 15px - Navigation / Buttons / Secondary */
+  --text-base:         1.0625rem;  /* 17px - Standard Body / Paragraph */
+  --text-lg:           1.1875rem;  /* 19px - Section Subheadings */
+  --text-xl:           1.375rem;   /* 22px - Subtitles */
+  --text-2xl:          1.5rem;     /* 24px - Card / Product H3 */
+  --text-3xl:          1.875rem;   /* 30px - Compact Headings */
+  --text-4xl:          2.25rem;    /* 36px - Mobile H1 / Tablet H2 */
+  --text-5xl:          2.75rem;    /* 44px - Section H2 */
+  --text-6xl:          3.5rem;     /* 56px - Hero H1 lower bound */
+  --text-7xl:          4rem;       /* 64px - Hero H1 max bound */
 
   /* Line Heights */
-  --leading-tight:     1.15;
-  --leading-snug:      1.3;
-  --leading-normal:    1.5;
-  --leading-relaxed:   1.65;
+  --leading-none:      1.0;
+  --leading-tight:     1.12;       /* Headings 1.05 - 1.2 */
+  --leading-snug:      1.25;       /* H3 / Subtitles 1.2 - 1.3 */
+  --leading-normal:    1.45;       /* Subheadings 1.4 - 1.5 */
+  --leading-relaxed:   1.68;       /* Body / Paragraph 1.6 - 1.75 */
 
   /* ── Spacing ── */
   --space-1:           0.25rem;
@@ -85,10 +104,10 @@
   --radius-2xl:        24px;
   --radius-full:       999px;
 
-  /* ── Layout ── */
-  --container:         1280px;
-  --container-wide:    1440px;
-  --container-sm:      880px;
+  /* ── Layout (Full Screen Fit) ── */
+  --container:         100%;
+  --container-wide:    100%;
+  --container-sm:      100%;
 
   /* ── Enterprise Soft Shadows ── */
   --shadow-sm:         0 2px 4px rgba(20, 60, 110, 0.04);

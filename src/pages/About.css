@@ -17,8 +17,8 @@
 .about-hero {
   position: relative;
   padding: var(--hero-nav-offset) 0 var(--space-10);
-  background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FC 60%, #EEF5FB 100%);
-  border-bottom: 1px solid var(--border-light);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FC 60%, #EAF4FB 100%);
+  border-bottom: 1px solid rgba(8, 125, 185, 0.15);
   overflow: hidden;
 }
 
@@ -26,21 +26,24 @@
   position: absolute;
   inset: 0;
   background-image: 
-    radial-gradient(circle at 1px 1px, rgba(44, 54, 148, 0.07) 1px, transparent 0);
-  background-size: 32px 32px;
+    radial-gradient(circle at 1px 1px, rgba(8, 125, 185, 0.06) 1px, transparent 0),
+    radial-gradient(ellipse at 50% 120%, rgba(8, 125, 185, 0.08) 0%, rgba(32, 164, 216, 0.04) 50%, transparent 80%);
+  background-size: 36px 36px, 100% 100%;
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .about-hero__bg-ambient {
   position: absolute;
-  top: -20%;
-  right: -10%;
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle, rgba(0, 124, 196, 0.12) 0%, rgba(44, 54, 148, 0.04) 50%, transparent 75%);
+  top: -15%;
+  right: -5%;
+  width: 700px;
+  height: 700px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(8, 125, 185, 0.09) 0%, transparent 65%),
+    radial-gradient(circle at 20% 80%, rgba(32, 164, 216, 0.06) 0%, transparent 55%);
   border-radius: 50%;
-  filter: blur(60px);
+  filter: blur(65px);
   pointer-events: none;
 }
 
@@ -95,19 +98,19 @@
 }
 
 .about-hero__heading {
-  font-size: clamp(2.5rem, 4.2vw, 3.8rem);
-  font-weight: 800;
+  font-size: clamp(3.5rem, 4.2vw, 4rem); /* 56px - 64px Hero H1 */
+  font-weight: 750;
   line-height: 1.1;
-  color: var(--text-primary);
-  letter-spacing: 0;
+  color: var(--primary-deep-blue);
+  letter-spacing: -0.025em;
   margin: var(--space-2) 0;
 }
 
 .about-hero__desc {
   color: var(--text-secondary);
-  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
-  line-height: 1.7;
-  max-width: 580px;
+  font-size: clamp(18px, 1.2vw, 19.5px); /* 18px - 20px */
+  line-height: 1.6;
+  max-width: 650px;
 }
 
 .about-hero__actions {
@@ -216,8 +219,8 @@
 }
 
 .about-core-hub {
-  fill: #2C3694;
-  stroke: #007CC4;
+  fill: #173B8F;
+  stroke: #087DB9;
   stroke-width: 2.5;
   filter: drop-shadow(0 4px 14px rgba(44, 54, 148, 0.4));
 }
@@ -236,8 +239,8 @@
 }
 
 .about-node.node--green { fill: #25A449; stroke: #FFFFFF; }
-.about-node.node--blue { fill: #007CC4; stroke: #FFFFFF; }
-.about-node.node--indigo { fill: #2C3694; stroke: #FFFFFF; }
+.about-node.node--blue { fill: #087DB9; stroke: #FFFFFF; }
+.about-node.node--indigo { fill: #173B8F; stroke: #FFFFFF; }
 .about-node.node--amber { fill: #E68324; stroke: #FFFFFF; }
 
 .about-node-text {
@@ -261,7 +264,7 @@
 }
 
 .about-particle.particle--green { fill: #25A449; }
-.about-particle.particle--blue { fill: #007CC4; }
+.about-particle.particle--blue { fill: #087DB9; }
 
 .about-hero-card__footer {
   display: flex;
@@ -363,36 +366,63 @@
 }
 
 .about-nav-bar__btn.is-active {
-  background: #2C3694;
+  background: #173B8F;
   color: #FFFFFF;
-  border-color: #2C3694;
+  border-color: #173B8F;
   box-shadow: 0 4px 14px rgba(44, 54, 148, 0.25);
 }
 
 /* ------------------------------------------------------------
-   3. ABOUT SECTIONS COMMON STYLES
+   3. CORPORATE & PREMIUM ABOUT SECTIONS
+   Calm, Trustworthy, Soft Blue Curves, Subtle Gradient Horizon
    ------------------------------------------------------------ */
 .about-section {
   position: relative;
   padding: clamp(var(--space-10), 5vw, var(--space-14)) 0;
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 1px solid rgba(8, 125, 185, 0.12);
   overflow: hidden;
 }
 
+/* ── 1. Overview Section: Soft Corporate Horizon ── */
 .about-section--overview {
-  background: linear-gradient(180deg, #F8FAFD 0%, #F3F7FC 100%);
+  background-color: #FFFFFF;
+  background-image:
+    radial-gradient(circle at 80% 25%, rgba(8, 125, 185, 0.05) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 100%, rgba(32, 164, 216, 0.04) 0%, transparent 60%),
+    linear-gradient(180deg, #FFFFFF 0%, #F8FAFD 100%),
+    radial-gradient(circle at 1px 1px, rgba(8, 125, 185, 0.04) 1px, transparent 0);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px;
 }
 
+/* ── 2. Mission Section: Calming Trust Light Blue ── */
 .about-section--mission-bg {
-  background: linear-gradient(180deg, #EEF5FB 0%, #E6EFF8 100%);
+  background-color: #F4F8FC;
+  background-image:
+    radial-gradient(circle at 15% 35%, rgba(8, 125, 185, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 85% 65%, rgba(37, 164, 73, 0.045) 0%, transparent 45%),
+    linear-gradient(90deg, rgba(8, 125, 185, 0.02) 1px, transparent 1px),
+    linear-gradient(rgba(8, 125, 185, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 96px 96px, 96px 96px;
 }
 
+/* ── 3. Vision Section: Expansive Open Horizon ── */
 .about-section--vision {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(8, 125, 185, 0.05) 0%, transparent 55%),
+    radial-gradient(circle at 80% 70%, rgba(32, 164, 216, 0.04) 0%, transparent 45%),
+    linear-gradient(180deg, #FFFFFF 0%, #F9FBFE 100%),
+    linear-gradient(90deg, rgba(8, 125, 185, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 64px 64px;
 }
 
 .about-section--strengths {
-  background: linear-gradient(180deg, #F8FAFD 0%, #F3F7FC 100%);
+  background-color: #F4F8FC;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(8, 125, 185, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(32, 164, 216, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 1px 1px, rgba(8, 125, 185, 0.04) 1px, transparent 0);
+  background-size: 100% 100%, 100% 100%, 36px 36px;
 }
 
 /* Watermarks */
@@ -437,9 +467,9 @@
   border-radius: 50%;
 }
 
-.about-section__badge-dot.dot--blue { background: #007CC4; }
+.about-section__badge-dot.dot--blue { background: #087DB9; }
 .about-section__badge-dot.dot--green { background: #25A449; }
-.about-section__badge-dot.dot--indigo { background: #2C3694; }
+.about-section__badge-dot.dot--indigo { background: #173B8F; }
 
 /* ------------------------------------------------------------
    4. OVERVIEW SECTION (EDITORIAL SPLIT)
@@ -461,17 +491,17 @@
 }
 
 .about-overview__title {
-  color: var(--text-primary);
-  font-size: clamp(2rem, 3.2vw, 2.8rem);
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: 0;
+  color: var(--primary-deep-blue);
+  font-size: clamp(2.5rem, 3.2vw, 3rem); /* 40px - 48px Section H2 */
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .about-overview__paragraph {
   color: var(--text-secondary);
-  line-height: 1.8;
-  font-size: var(--text-base);
+  line-height: 1.68;
+  font-size: var(--text-base); /* 17px */
 }
 
 /* Engineering DNA Box */
@@ -522,7 +552,7 @@
 }
 
 .engineering-dna-step {
-  background: #F8FAFD;
+  background: #F4F8FC;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   padding: var(--space-4);
@@ -578,17 +608,19 @@
    5. MISSION SECTION (EDITORIAL BLUE STATEMENT)
    ------------------------------------------------------------ */
 .about-mission__title {
-  color: var(--text-primary);
-  font-size: clamp(2rem, 3.2vw, 2.8rem);
-  font-weight: 800;
+  color: var(--primary-deep-blue);
+  font-size: clamp(2.5rem, 3.2vw, 3rem); /* 40px - 48px Section H2 */
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   margin-bottom: var(--space-3);
 }
 
 .about-mission__statement {
   color: var(--text-secondary);
-  line-height: 1.8;
-  font-size: clamp(1.1rem, 1.4vw, 1.3rem);
-  max-width: 900px;
+  line-height: 1.68;
+  font-size: clamp(18px, 1.2vw, 19.5px);
+  max-width: 780px;
   margin-bottom: var(--space-8);
 }
 
@@ -662,16 +694,17 @@
 }
 
 .about-vision__title {
-  color: var(--text-primary);
-  font-size: clamp(2rem, 3.2vw, 2.8rem);
-  font-weight: 800;
-  line-height: 1.2;
+  color: var(--primary-deep-blue);
+  font-size: clamp(2.5rem, 3.2vw, 3rem); /* 40px - 48px Section H2 */
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .about-vision__statement {
   color: var(--text-secondary);
-  line-height: 1.8;
-  font-size: clamp(1.1rem, 1.4vw, 1.3rem);
+  line-height: 1.68;
+  font-size: clamp(18px, 1.2vw, 19.5px);
 }
 
 .about-vision__action {
@@ -713,8 +746,8 @@
 .vision-orbit.orbit-3 { stroke: rgba(0, 124, 196, 0.25); }
 
 .vision-core-node {
-  fill: #2C3694;
-  stroke: #007CC4;
+  fill: #173B8F;
+  stroke: #087DB9;
   stroke-width: 2.5;
 }
 
@@ -730,9 +763,9 @@
   stroke-width: 2;
 }
 
-.vision-satellite.node--cyan { fill: #007CC4; stroke: #FFFFFF; }
+.vision-satellite.node--cyan { fill: #087DB9; stroke: #FFFFFF; }
 .vision-satellite.node--green { fill: #25A449; stroke: #FFFFFF; }
-.vision-satellite.node--blue { fill: #2C3694; stroke: #FFFFFF; }
+.vision-satellite.node--blue { fill: #173B8F; stroke: #FFFFFF; }
 .vision-satellite.node--amber { fill: #E68324; stroke: #FFFFFF; }
 
 .vision-axis-line {
