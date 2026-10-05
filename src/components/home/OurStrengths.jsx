@@ -2,6 +2,18 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { whyChooseSoukhya } from '../../data/home';
 
+const strengthIcons = {
+  code: <><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" /></>,
+  industry: <><path d="M3 21V5h5v6l4-3v5l5-3v11zM3 21h18" /></>,
+  lock: <><rect x="4" y="10" width="16" height="11" rx="2" /><path d="M8 10V7a4 4 0 1 1 8 0v3" /></>,
+  check: <><circle cx="12" cy="12" r="9" /><path d="m7.5 12 3 3 6-6" /></>,
+  chart: <><path d="M3 3v18h18M7 14l4-4 4 3 6-7M16 6h5v5" /></>,
+  cloud: <><path d="M7 18h11a4 4 0 0 0 .5-8A6.5 6.5 0 0 0 6 9a4.5 4.5 0 0 0 1 9Z" /></>,
+  trophy: <><path d="M8 21h8m-4-4v4M7 4h10v5a5 5 0 0 1-10 0V4ZM7 6H4v2a4 4 0 0 0 4 4m9-6h3v2a4 4 0 0 1-4 4" /></>,
+  gear: <><path d="m12 3 1.3 2.2 2.5.4.4 2.5 2.2 1.3-.8 2.4.8 2.4-2.2 1.3-.4 2.5-2.5.4L12 21l-1.3-2.2-2.5-.4-.4-2.5-2.2-1.3.8-2.4-.8-2.4 2.2-1.3.4-2.5 2.5-.4L12 3Z" /><circle cx="12" cy="12" r="3" /></>,
+  sliders: <><path d="M4 6h16M4 12h16M4 18h16M8 4v4m8 2v4m-5 2v4" /></>,
+};
+
 /* ============================================================
    OUR STRENGTHS — "THE SOUKHYA ENGINEERING DNA"
    Asymmetric Composition:
@@ -109,7 +121,7 @@ export default function OurStrengths() {
                 const isActive = activeIdx === index;
                 return (
                   <div
-                    key={strength}
+                    key={typeof strength === 'string' ? strength : strength.title}
                     role="listitem"
                     tabIndex={0}
                     className={`strength-dna-layer ${isActive ? 'is-active' : ''}`}
@@ -130,7 +142,16 @@ export default function OurStrengths() {
                       </div>
 
                       {/* Strength Title */}
-                      <h3 className="strength-dna-layer__title">{strength}</h3>
+                      {typeof strength === 'string' ? (
+                        <h3 className="strength-dna-layer__title">{strength}</h3>
+                      ) : (
+                        <>
+                          <span className="strength-dna-layer__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">{strengthIcons[strength.icon]}</svg>
+                          </span>
+                          <h3 className="strength-dna-layer__title">{strength.title}</h3>
+                        </>
+                      )}
 
                       {/* Right Active Indicator */}
                       <div className="strength-dna-layer__suffix" aria-hidden="true">

@@ -62,13 +62,13 @@ export const featuredOfferings = [
 ];
 
 export const whyChooseSoukhya = [
-  'Full-Stack IoT Development',
-  'Industry-Specific Expertise',
-  'Secure & Scalable IoT Architectures',
-  'Compliance management',
-  'AI & Data-Driven IoT Solutions',
-  'Seamless Cloud & Edge Computing Integration',
-  'Proven Track Record',
-  'Rugged Industrial Design',
-  'Customizable Solutions',
+  { title: 'Full-Stack IoT Development', icon: 'code' },
+  { title: 'Industry-Specific Expertise', icon: 'industry' },
+  { title: 'Secure & Scalable IoT Architectures', icon: 'lock' },
+  { title: 'Compliance Management', icon: 'check' },
+  { title: 'AI & Data-Driven IoT Solutions', icon: 'chart' },
+  { title: 'Seamless Cloud & Edge Computing Integration', icon: 'cloud' },
+  { title: 'Proven Track Record', icon: 'trophy' },
+  { title: 'Rugged Industrial Design', icon: 'gear' },
+  { title: 'Customizable Solutions', icon: 'sliders' },
 ];
