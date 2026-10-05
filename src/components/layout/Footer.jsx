@@ -28,8 +28,8 @@ export default function Footer() {
             
             <div className="footer__direct-channels">
               <a href={`tel:${contactInfo.phone.replace(/\s/g, '')}`} className="footer__channel-item">
-                <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M6.5 2.5c-.8-1.2-2.3-1.5-3.3-.5L2 3.2C.8 4.4 1.2 7 3.6 9.4 6 11.8 8.6 12.2 9.8 11L11 9.8c1-.9.7-2.5-.5-3.3l-4-4Z" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2Z"/>
                 </svg>
                 <span>{contactInfo.phone}</span>
               </a>

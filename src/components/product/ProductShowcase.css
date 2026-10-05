@@ -66,6 +66,15 @@
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
 }
 
+/* Keep the I-ES description on the left and its product image on the right. */
+.product-showcase__product-row .product-showcase__copy {
+  order: 0;
+}
+
+.product-showcase__product-row .product-showcase__image {
+  order: 1;
+}
+
 .product-showcase__image {
   min-width: 0;
   overflow: hidden;

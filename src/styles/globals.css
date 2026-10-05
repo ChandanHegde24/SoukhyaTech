@@ -267,6 +267,16 @@ p {
   flex-shrink: 0;
 }
 
+.eyebrow::after {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 2px;
+  background: var(--brand-blue);
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
 /* ── Typography Scale Classes ── */
 .heading-display {
   font-family: var(--font-display);

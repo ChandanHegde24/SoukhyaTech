@@ -68,6 +68,13 @@
   content: '';
 }
 
+.technical-mastery__eyebrow::after {
+  width: 20px;
+  height: 1px;
+  background: #087DB9;
+  content: '';
+}
+
 .technical-mastery__heading-clip {
   overflow: hidden;
 }

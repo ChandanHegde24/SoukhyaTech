@@ -30,7 +30,7 @@ export default function OurStrengths() {
             transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="strengths-dna-editorial__sticky">
-              <span className="eyebrow">OUR STRENGTHS <span className="eyebrow"></span></span>
+              <span className="eyebrow">OUR STRENGTHS</span>
               <h2 id="our-strengths-title" className="editorial-main-heading">
                 Why Choose Soukhya
               </h2>

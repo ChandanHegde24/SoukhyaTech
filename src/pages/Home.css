@@ -354,10 +354,12 @@
 }
 
 .solution-visual-stage__image {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
-  max-height: 500px;
-  object-fit: contain;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
   object-position: center;
   display: block;
 }

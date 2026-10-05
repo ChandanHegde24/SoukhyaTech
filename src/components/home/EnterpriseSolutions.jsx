@@ -34,7 +34,7 @@ export default function EnterpriseSolutions() {
         {/* Compact Top Header */}
         <div className="solutions-showcase-top">
           <div className="solutions-showcase-top__heading-group">
-            <span className="eyebrow">ENTERPRISE SOLUTIONS <span className="eyebrow"></span></span>
+            <span className="eyebrow">ENTERPRISE SOLUTIONS</span>
             <h2 id="enterprise-solutions-title" className="editorial-main-heading">
               Our Solutions
             </h2>

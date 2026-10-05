@@ -24,7 +24,7 @@ export default function ProductShowcase() {
         <div className="product-showcase__product-row">
           <motion.div
             className="product-showcase__image product-showcase__image--product"
-            initial={{ opacity: 0, x: -18 }}
+            initial={{ opacity: 0, x: 18 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.12, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
           >

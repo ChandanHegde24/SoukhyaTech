@@ -172,7 +172,7 @@ export default function Services() {
       <section className="section section--white process-journey-section" aria-labelledby="journey-title">
         <div className="container">
           <Reveal className="text-center" style={{ marginBottom: 'var(--space-12)' }}>
-            <span className="eyebrow">Continuous Operational Lifecycle</span> <span className="eyebrow"></span>
+            <span className="eyebrow">Continuous Operational Lifecycle</span>
             <h2 id="journey-title" className="heading-xl">
               From Infrastructure to Intelligence
             </h2>
