@@ -25,7 +25,7 @@
 .about-hero__bg-grid {
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     radial-gradient(circle at 1px 1px, rgba(8, 125, 185, 0.06) 1px, transparent 0),
     radial-gradient(ellipse at 50% 120%, rgba(8, 125, 185, 0.08) 0%, rgba(32, 164, 216, 0.04) 50%, transparent 80%);
   background-size: 36px 36px, 100% 100%;
@@ -98,7 +98,8 @@
 }
 
 .about-hero__heading {
-  font-size: clamp(3.5rem, 4.2vw, 4rem); /* 56px - 64px Hero H1 */
+  font-size: clamp(3.5rem, 4.2vw, 4rem);
+  /* 56px - 64px Hero H1 */
   font-weight: 750;
   line-height: 1.1;
   color: var(--primary-deep-blue);
@@ -108,7 +109,8 @@
 
 .about-hero__desc {
   color: var(--text-secondary);
-  font-size: clamp(18px, 1.2vw, 19.5px); /* 18px - 20px */
+  font-size: clamp(18px, 1.2vw, 19.5px);
+  /* 18px - 20px */
   line-height: 1.6;
   max-width: 650px;
 }
@@ -238,10 +240,25 @@
   transition: transform 0.3s ease;
 }
 
-.about-node.node--green { fill: #25A449; stroke: #FFFFFF; }
-.about-node.node--blue { fill: #087DB9; stroke: #FFFFFF; }
-.about-node.node--indigo { fill: #173B8F; stroke: #FFFFFF; }
-.about-node.node--amber { fill: #E68324; stroke: #FFFFFF; }
+.about-node.node--green {
+  fill: #25A449;
+  stroke: #FFFFFF;
+}
+
+.about-node.node--blue {
+  fill: #087DB9;
+  stroke: #FFFFFF;
+}
+
+.about-node.node--indigo {
+  fill: #173B8F;
+  stroke: #FFFFFF;
+}
+
+.about-node.node--amber {
+  fill: #E68324;
+  stroke: #FFFFFF;
+}
 
 .about-node-text {
   fill: #FFFFFF;
@@ -263,8 +280,13 @@
   filter: drop-shadow(0 0 5px currentColor);
 }
 
-.about-particle.particle--green { fill: #25A449; }
-.about-particle.particle--blue { fill: #087DB9; }
+.about-particle.particle--green {
+  fill: #25A449;
+}
+
+.about-particle.particle--blue {
+  fill: #087DB9;
+}
 
 .about-hero-card__footer {
   display: flex;
@@ -467,9 +489,17 @@
   border-radius: 50%;
 }
 
-.about-section__badge-dot.dot--blue { background: #087DB9; }
-.about-section__badge-dot.dot--green { background: #25A449; }
-.about-section__badge-dot.dot--indigo { background: #173B8F; }
+.about-section__badge-dot.dot--blue {
+  background: #087DB9;
+}
+
+.about-section__badge-dot.dot--green {
+  background: #25A449;
+}
+
+.about-section__badge-dot.dot--indigo {
+  background: #173B8F;
+}
 
 /* ------------------------------------------------------------
    4. OVERVIEW SECTION (EDITORIAL SPLIT)
@@ -492,7 +522,8 @@
 
 .about-overview__title {
   color: var(--primary-deep-blue);
-  font-size: clamp(2.5rem, 3.2vw, 3rem); /* 40px - 48px Section H2 */
+  font-size: clamp(2.5rem, 3.2vw, 3rem);
+  /* 40px - 48px Section H2 */
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -501,7 +532,8 @@
 .about-overview__paragraph {
   color: var(--text-secondary);
   line-height: 1.68;
-  font-size: var(--text-base); /* 17px */
+  font-size: var(--text-base);
+  /* 17px */
 }
 
 /* Engineering DNA Box */
@@ -609,7 +641,8 @@
    ------------------------------------------------------------ */
 .about-mission__title {
   color: var(--primary-deep-blue);
-  font-size: clamp(2.5rem, 3.2vw, 3rem); /* 40px - 48px Section H2 */
+  font-size: clamp(2.5rem, 3.2vw, 3rem);
+  /* 40px - 48px Section H2 */
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -695,7 +728,8 @@
 
 .about-vision__title {
   color: var(--primary-deep-blue);
-  font-size: clamp(2.5rem, 3.2vw, 3rem); /* 40px - 48px Section H2 */
+  font-size: clamp(2.5rem, 3.2vw, 3rem);
+  /* 40px - 48px Section H2 */
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -741,9 +775,21 @@
   fill: none;
 }
 
-.vision-orbit.orbit-1 { stroke-dasharray: 6 6; animation: rotate-forward 35s linear infinite; transform-origin: 240px 160px; }
-.vision-orbit.orbit-2 { stroke-dasharray: 4 4; animation: rotate-reverse 25s linear infinite; transform-origin: 240px 160px; }
-.vision-orbit.orbit-3 { stroke: rgba(0, 124, 196, 0.25); }
+.vision-orbit.orbit-1 {
+  stroke-dasharray: 6 6;
+  animation: rotate-forward 35s linear infinite;
+  transform-origin: 240px 160px;
+}
+
+.vision-orbit.orbit-2 {
+  stroke-dasharray: 4 4;
+  animation: rotate-reverse 25s linear infinite;
+  transform-origin: 240px 160px;
+}
+
+.vision-orbit.orbit-3 {
+  stroke: rgba(0, 124, 196, 0.25);
+}
 
 .vision-core-node {
   fill: #173B8F;
@@ -763,10 +809,25 @@
   stroke-width: 2;
 }
 
-.vision-satellite.node--cyan { fill: #087DB9; stroke: #FFFFFF; }
-.vision-satellite.node--green { fill: #25A449; stroke: #FFFFFF; }
-.vision-satellite.node--blue { fill: #173B8F; stroke: #FFFFFF; }
-.vision-satellite.node--amber { fill: #E68324; stroke: #FFFFFF; }
+.vision-satellite.node--cyan {
+  fill: #087DB9;
+  stroke: #FFFFFF;
+}
+
+.vision-satellite.node--green {
+  fill: #25A449;
+  stroke: #FFFFFF;
+}
+
+.vision-satellite.node--blue {
+  fill: #173B8F;
+  stroke: #FFFFFF;
+}
+
+.vision-satellite.node--amber {
+  fill: #E68324;
+  stroke: #FFFFFF;
+}
 
 .vision-axis-line {
   stroke: rgba(0, 124, 196, 0.15);
@@ -845,6 +906,7 @@
    RESPONSIVE DESIGN BREAKPOINTS
    ------------------------------------------------------------ */
 @media (max-width: 1120px) {
+
   .about-hero__grid,
   .about-overview__grid,
   .about-vision__grid {

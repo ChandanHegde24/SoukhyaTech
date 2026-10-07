@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
-import earthPitImg from '../../assets/images/earth-pit-monitoring.jpg';
+import earthPitImg from '../../assets/images/IES product.png';
 import digitalIntelImg from '../../assets/images/digital-intelligence.jpg';
 import docImg from '../../assets/images/digital-operation-center.jpg';
 import './CoreTechnologyCards.css';
@@ -16,8 +16,6 @@ const technologyModules = [
     buttonText: 'Learn more',
     image: earthPitImg,
     imageAlt: 'Earth Pit Monitoring System showing precision electrical grounding and telemetry sensor unit',
-    category: 'ELECTRICAL INFRASTRUCTURE',
-    status: 'Grounding Telemetry',
     iconType: 'lightning',
   },
   {
@@ -29,8 +27,6 @@ const technologyModules = [
     buttonText: 'Learn more',
     image: digitalIntelImg,
     imageAlt: 'Digital Intelligence operational analytics interface showing real-time IoT telemetry',
-    category: 'INDUSTRIAL ANALYTICS',
-    status: 'Decision Intelligence',
     iconType: 'intel',
   },
   {
@@ -42,8 +38,6 @@ const technologyModules = [
     buttonText: 'Learn more',
     image: docImg,
     imageAlt: 'Digital Operation Center enterprise hybrid infrastructure monitoring console',
-    category: 'HYBRID INFRASTRUCTURE',
-    status: 'Cloud Management',
     iconType: 'cloud',
   },
 ];
@@ -85,15 +79,6 @@ export default function CoreTechnologyCards() {
                   loading="lazy"
                 />
                 <div className="core-tech-card__visual-overlay" aria-hidden="true" />
-                
-                {/* Category & Green Status Highlight */}
-                <div className="core-tech-card__visual-badges">
-                  <span className="core-tech-card__badge-cat">{item.category}</span>
-                  <span className="core-tech-card__badge-status">
-                    <span className="core-tech-card__green-node" aria-hidden="true" />
-                    {item.status}
-                  </span>
-                </div>
               </div>
 
               {/* Card Body */}

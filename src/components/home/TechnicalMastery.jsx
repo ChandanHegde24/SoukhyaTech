@@ -52,6 +52,12 @@ export default function TechnicalMastery() {
           inView={inView}
           reduceMotion={reduceMotion}
         />
+        <Link to="/services" className="btn btn--primary technical-mastery__services-link">
+          <span>Explore All Services</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </Link>
       </div>
     </section>
   );
@@ -170,10 +176,6 @@ function EngineeringBlueprint({ services, inView, reduceMotion }) {
       aria-label="Interactive engineering blueprint showing our expert managed services operations platform"
       onPointerLeave={() => setActiveService(null)}
     >
-      <div className="engineering-blueprint__meta" aria-hidden="true">
-        <span className="engineering-blueprint__meta-tag" />
-        <span className="engineering-blueprint__meta-fig" />
-      </div>
 
       <motion.div
         className="engineering-blueprint__grid"
@@ -338,17 +340,6 @@ function EngineeringBlueprint({ services, inView, reduceMotion }) {
               <span className="engineering-service__copy">
                 <span className="engineering-service__title">{service.title}</span>
                 <span className="engineering-service__description">{service.description}</span>
-                <Link
-                  to={service.link || '/services'}
-                  className="engineering-service__cta"
-                  onClick={() => setActiveService(service.id)}
-                  aria-label={`Open ${service.title} service details`}
-                >
-                  <span className="engineering-service__cta-text">{service.ctaText || 'Explore Service'}</span>
-                  <svg className="engineering-service__cta-icon" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </Link>
               </span>
               <span
                 ref={(el) => (indicatorRefs.current[index] = el)}

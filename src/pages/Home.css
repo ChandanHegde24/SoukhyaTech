@@ -425,20 +425,19 @@
 
 /* Asymmetric 38% Left / 62% Right Layout */
 .strengths-dna-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.55fr;
-  gap: clamp(2.5rem, 4.5vw, 4.5rem);
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 2vw, 2.25rem);
 }
 
 .strengths-dna-editorial {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .strengths-dna-editorial__sticky {
-  position: sticky;
-  top: calc(var(--nav-height, 80px) + 28px);
+  position: static;
   display: flex;
   flex-direction: column;
 }

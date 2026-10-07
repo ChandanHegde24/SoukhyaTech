@@ -50,41 +50,7 @@ export default function OurStrengths() {
                 Built to endure. Engineered to excel. Connected from devices to data, turning every decision into a smarter one.
               </p>
 
-              <div className="strengths-system-map" role="img" aria-label="An integrated engineering system connecting rugged devices, secure data, and decisive outcomes">
-                <div className="strengths-system-map__header">
-                  <span className="strengths-system-map__eyebrow">ENGINEERED AS ONE SYSTEM</span>
-                  <span className="strengths-system-map__status"><i /> ALWAYS ON</span>
-                </div>
-                <div className="strengths-system-map__flow">
-                  <div className="strengths-system-map__line" aria-hidden="true" />
-                  <div className="strengths-system-map__node">
-                    <span className="strengths-system-map__node-mark strengths-system-map__node-mark--device" aria-hidden="true" />
-                    <span>Rugged devices</span>
-                  </div>
-                  <div className="strengths-system-map__node">
-                    <span className="strengths-system-map__node-mark strengths-system-map__node-mark--data" aria-hidden="true" />
-                    <span>Trusted data</span>
-                  </div>
-                  <div className="strengths-system-map__node">
-                    <span className="strengths-system-map__node-mark strengths-system-map__node-mark--decision" aria-hidden="true" />
-                    <span>Clear decisions</span>
-                  </div>
-                </div>
-                <div className="strengths-system-map__caption">
-                  <span>FIELD-READY</span>
-                  <strong>RELIABLE BY DESIGN</strong>
-                  <span>FULL-STACK</span>
-                </div>
-              </div>
 
-              {/* Engineering Signature Badge */}
-              <div className="strengths-dna-signature" aria-hidden="true">
-                <div className="strengths-dna-signature__mark">
-                  <span className="strengths-dna-signature__node" />
-                  <span className="strengths-dna-signature__text">SOUKHYA TECH ENGINEERING DNA</span>
-                </div>
-                <span className="strengths-dna-signature__metric">9 INTEGRATED CORE DISCIPLINES</span>
-              </div>
             </div>
           </motion.div>
 
@@ -96,18 +62,6 @@ export default function OurStrengths() {
             viewport={{ once: true, margin: '-30px' }}
             transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Engineering Panel Header */}
-            <div className="strengths-dna-panel__header" aria-hidden="true">
-              <div className="strengths-dna-panel__coord">
-                <span className="strengths-dna-panel__plus">+</span>
-                <span>ARCHITECTURE MATRIX LAYERED DISCIPLINE</span>
-              </div>
-              <div className="strengths-dna-panel__status">
-                <span className="strengths-dna-panel__status-dot" />
-                <span>ACTIVE SPEC: 0{activeIdx + 1} / 09</span>
-              </div>
-            </div>
-
             {/* Precision Engineering Grid Background */}
             <div className="strengths-dna-panel__grid" aria-hidden="true" />
 
@@ -154,10 +108,7 @@ export default function OurStrengths() {
                       )}
 
                       {/* Right Active Indicator */}
-                      <div className="strength-dna-layer__suffix" aria-hidden="true">
-                        <span className="strength-dna-layer__tag">DISCIPLINE 0{index + 1}</span>
-                        <span className="strength-dna-layer__arrow">→</span>
-                      </div>
+                      <div className="strength-dna-layer__suffix" aria-hidden="true" />
                     </div>
 
                     {/* Signature Travelling Engineering Signal Line */}

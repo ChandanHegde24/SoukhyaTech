@@ -75,19 +75,6 @@ export const homeSolutionShowcase = [
     secondaryImg: customIoTSolutionsImage,
     tags: ['Hardware Infrastructure', 'Storage & Compute', 'Networking', 'High Performance'],
   },
-  {
-    id: 'earth-pit-monitoring',
-    title: 'Intelligent Earth-Pit Monitoring System (I-ES)',
-    code: 'SAFETY & TELEMETRY',
-    shortDescription:
-      'Continuous 24/7 electrical grounding telemetry and advance fault detection to protect personnel, reduce downtime, and safeguard critical assets.',
-    paragraphs: [
-      'Continuous 24/7 electrical grounding telemetry and advance fault detection to protect personnel, reduce downtime, and safeguard critical assets.',
-    ],
-    img: earthPitImg,
-    secondaryImg: customIoTSolutionsImage,
-    tags: ['Grounding Telemetry', 'Fault Early Warning', 'Real-Time Monitoring', 'Asset Protection'],
-  },
 ];
 
 export const solutionShowcase = [

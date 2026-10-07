@@ -94,9 +94,7 @@ export default function ProductShowcase() {
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.38 + i * 0.05, duration: 0.5 }}
                 >
-                  <div className="product-showcase__check-wrap">
-                    <span className="product-showcase__benefit-num">0{i + 1}</span>
-                  </div>
+                  <span className="product-showcase__benefit-check">✓</span>
                   <span className="product-showcase__benefit-text">{b}</span>
                 </motion.li>
               ))}
