@@ -1,6 +1,5 @@
 import React from 'react';
 import CTA from '../components/common/CTA';
-import { Link } from 'react-router-dom';
 import Breadcrumb from '../components/common/Breadcrumb';
 import Reveal from '../components/common/Reveal';
 import { aboutContent } from '../data/about';
@@ -95,8 +94,43 @@ export default function About() {
       </section>
 
       {/* ============================================================
-          2. STICKY ABOUT NAVIGATION
+          2. VISION & MISSION
           ============================================================ */}
+      <section className="about-purpose section" aria-labelledby="purpose-heading">
+        <div className="container">
+          <div className="about-purpose__intro">
+            <span className="about-purpose__eyebrow">WHAT DRIVES US</span>
+            <h2 id="purpose-heading" className="heading-xl">Vision and Mission</h2>
+          </div>
+
+          <div className="about-purpose__grid">
+            <Reveal className="about-purpose-card about-purpose-card--vision">
+              <h3 className="about-purpose-card__title">{aboutContent.visionTitle}</h3>
+              <p className="about-purpose-card__text">{aboutContent.vision}</p>
+              {aboutContent.visionPoints && (
+                <ul className="about-purpose-card__points">
+                  {aboutContent.visionPoints.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+              )}
+            </Reveal>
+
+            <Reveal delay={0.12} className="about-purpose-card about-purpose-card--mission">
+              <h3 className="about-purpose-card__title">{aboutContent.missionTitle}</h3>
+              <p className="about-purpose-card__text">{aboutContent.mission}</p>
+              {aboutContent.missionPoints && (
+                <ul className="about-purpose-card__points">
+                  {aboutContent.missionPoints.slice(0, 4).map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+              )}
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* ============================================================
           3. OVERVIEW SECTION (EDITORIAL ASYMMETRIC SPLIT)
           ============================================================ */}
@@ -134,113 +168,10 @@ export default function About() {
       </section>
 
       {/* ============================================================
-          4. MISSION SECTION (EDITORIAL BLUE STATEMENT)
-          ============================================================ */}
-      <section id="about-mission" className="about-section about-section--mission section section--mission-bg" aria-labelledby="mission-heading">
-        <div className="container">
-          <div className="about-mission__watermark" aria-hidden="true">
-            02
-          </div>
-
-          <Reveal>
-            {/* <div className="about-section__badge">
-              <span className="about-section__badge-dot dot--green" />
-              <span>OUR PURPOSE</span>
-            </div> */}
-
-            <h2 id="mission-heading" className="heading-xl about-mission__title">
-              {aboutContent.missionTitle}
-            </h2>
-
-            <p className="about-mission__statement body-large">
-              {aboutContent.mission}
-            </p>
-          </Reveal>
-
-          {aboutContent.missionPoints && (
-            <div className="mission-points-grid">
-              {aboutContent.missionPoints.map((pt, idx) => (
-                <Reveal key={idx} delay={idx * 0.06} className="mission-point-card">
-                  <div className="mission-point-card__check">
-                    <span className="point-check-num">0{idx + 1}</span>
-                  </div>
-                  <span className="mission-point-card__text">{pt}</span>
-                </Reveal>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* ============================================================
-          5. VISION SECTION (EXPANSIVE OPEN CANVAS)
-          ============================================================ */}
-      <section id="about-vision" className="about-section about-section--vision section section--white" aria-labelledby="vision-heading">
-        <div className="container">
-          <div className="about-vision__watermark" aria-hidden="true">
-            03
-          </div>
-
-          <div className="about-vision__grid">
-            <div className="about-vision__text-col">
-              <Reveal>
-                {/* <div className="about-section__badge">
-                  <span className="about-section__badge-dot dot--indigo" />
-                  <span> FUTURE HORIZON</span>
-                </div> */}
-
-                <h2 id="vision-heading" className="heading-xl about-vision__title">
-                  {aboutContent.visionTitle}
-                </h2>
-
-                <p className="about-vision__statement body-large">
-                  {aboutContent.vision}
-                </p>
-
-                <div className="about-vision__action">
-                  <Link to="/contact" className="btn btn--secondary">
-                    <span>Partner with Soukhya</span>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </Link>
-                </div>
-              </Reveal>
-            </div>
-
-            <div className="about-vision__visual-col">
-              <Reveal delay={0.15}>
-                <div className="vision-network-card">
-                  <svg className="vision-network-svg" viewBox="0 0 480 320" fill="none">
-                    <circle cx="240" cy="160" r="120" className="vision-orbit orbit-1" />
-                    <circle cx="240" cy="160" r="80" className="vision-orbit orbit-2" />
-                    <circle cx="240" cy="160" r="40" className="vision-orbit orbit-3" />
-
-                    <circle cx="240" cy="160" r="24" className="vision-core-node" />
-                    <text x="240" y="164" textAnchor="middle" className="vision-core-text">FUTURE</text>
-
-                    <circle cx="120" cy="160" r="14" className="vision-satellite node--cyan" />
-                    <circle cx="360" cy="160" r="14" className="vision-satellite node--green" />
-                    <circle cx="240" cy="40" r="14" className="vision-satellite node--blue" />
-                    <circle cx="240" cy="280" r="14" className="vision-satellite node--amber" />
-
-                    <path d="M 120 160 L 360 160 M 240 40 L 240 280" className="vision-axis-line" />
-                  </svg>
-                  <div className="vision-network-card__caption">
-                    <span>AUTONOMOUS & INTERCONNECTED FUTURE</span>
-                  </div>
-                </div>
-              </Reveal>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================================
-          6. WHY CHOOSE SOUKHYA (OUR STRENGTHS — 9 AUTHENTIC ITEMS)
+          4. WHY CHOOSE SOUKHYA (OUR STRENGTHS — 9 AUTHENTIC ITEMS)
           ============================================================ */}
       {/* ============================================================
-          7. CTA SECTION (AUTHENTIC SOUKHYA INDIGO)
+          5. CTA SECTION (AUTHENTIC SOUKHYA INDIGO)
           ============================================================ */}
       <CTA
         eyebrow="Have any questions?"

@@ -19,6 +19,12 @@ export const aboutContent = {
   visionTitle: 'Our Vision',
   vision:
     'To enable a world where every object, machine, and environment intelligently interacts to elevate human potential and operational excellence.',
+  visionPoints: [
+    'Intelligent interaction between connected objects',
+    'Smarter machines that anticipate and adapt',
+    'Environments designed around human potential',
+    'Operational excellence through real-time intelligence',
+  ],
 };
 
 export const engineeringDnaSteps = [

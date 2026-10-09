@@ -192,6 +192,122 @@
   font-weight: 700;
   letter-spacing: 0.16em;
   white-space: nowrap;
+}
+
+/* ------------------------------------------------------------
+   2. VISION & MISSION
+   ------------------------------------------------------------ */
+.about-purpose {
+  position: relative;
+  background: #F4F8FC;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(8, 125, 185, 0.08) 0%, transparent 38%),
+    radial-gradient(circle at 90% 80%, rgba(37, 164, 73, 0.06) 0%, transparent 34%);
+  overflow: hidden;
+}
+
+.about-purpose__intro {
+  position: relative;
+  z-index: 1;
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+.about-purpose__eyebrow {
+  display: block;
+  margin-bottom: var(--space-3);
+  color: var(--brand-blue);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.about-purpose__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+  position: relative;
+  z-index: 1;
+}
+
+.about-purpose-card {
+  position: relative;
+  min-height: 300px;
+  padding: clamp(var(--space-6), 4vw, var(--space-10));
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-2xl);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 14px 36px rgba(23, 32, 51, 0.06);
+  overflow: hidden;
+}
+
+.about-purpose-card--vision {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5F9FD 100%);
+}
+
+.about-purpose-card--mission {
+  background: linear-gradient(135deg, #F8FCFF 0%, #FFFFFF 100%);
+}
+
+.about-purpose-card__number {
+  display: block;
+  margin-bottom: var(--space-8);
+  color: var(--brand-blue);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.about-purpose-card--mission .about-purpose-card__number {
+  color: var(--green);
+}
+
+.about-purpose-card__title {
+  margin-bottom: var(--space-4);
+  color: var(--primary-deep-blue);
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.about-purpose-card__text {
+  max-width: 52ch;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--text-lg);
+  line-height: 1.68;
+}
+
+.about-purpose-card__line {
+  position: absolute;
+  right: var(--space-10);
+  bottom: var(--space-8);
+  left: var(--space-10);
+  height: 2px;
+  background: linear-gradient(90deg, var(--brand-blue), transparent);
+  opacity: 0.45;
+}
+
+.about-purpose-card__points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-purpose-card__points li {
+  padding: 6px 10px;
+  border: 1px solid rgba(37, 164, 73, 0.2);
+  border-radius: var(--radius-full);
+  background: rgba(37, 164, 73, 0.06);
+  color: var(--text-primary);
+  font-size: var(--text-xs);
+  font-weight: 600;
 } */
 
 .about-hero-card {
@@ -1020,6 +1136,14 @@
 
   .about-hero-logo {
     width: min(68vw, 240px);
+  }
+
+  .about-purpose__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-purpose-card {
+    min-height: 0;
   }
 
   .dna-step__arrow {
