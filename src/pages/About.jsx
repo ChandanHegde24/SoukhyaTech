@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Breadcrumb from '../components/common/Breadcrumb';
 import Reveal from '../components/common/Reveal';
 import { aboutContent } from '../data/about';
+import soukhyaMark from '../assets/icons/favicon.png';
 import './About.css';
 
 /* ── Reveal Animation Wrapper ── */
@@ -73,6 +74,19 @@ export default function About() {
                   {aboutContent.overview}
                 </p>
 
+              </Reveal>
+            </div>
+
+            <div className="about-hero__visual-wrap">
+              <Reveal delay={0.15}>
+                <div className="about-hero-logo" aria-label="Soukhya Tech logo">
+                  <span className="about-hero-logo__orbit about-hero-logo__orbit--outer" aria-hidden="true" />
+                  <span className="about-hero-logo__orbit about-hero-logo__orbit--inner" aria-hidden="true" />
+                  <div className="about-hero-logo__disc">
+                    <img src={soukhyaMark} alt="Soukhya Tech" className="about-hero-logo__mark" />
+                  </div>
+                  {/* <span className="about-hero-logo__label">SOUKHYA TECH</span> */}
+                </div>
               </Reveal>
             </div>
 
