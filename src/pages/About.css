@@ -192,7 +192,7 @@
   font-weight: 700;
   letter-spacing: 0.16em;
   white-space: nowrap;
-}
+} */
 
 /* ------------------------------------------------------------
    2. VISION & MISSION
@@ -308,7 +308,7 @@
   color: var(--text-primary);
   font-size: var(--text-xs);
   font-weight: 600;
-} */
+}
 
 .about-hero-card {
   width: 100%;
