@@ -69,21 +69,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: clamp(3.5rem, 4.2vw, 4rem); /* 56px - 64px */
+  font-size: clamp(3.2rem, 4vw, 4.5rem); /* 52px - 72px */
   font-weight: 750;
   line-height: 1.1;
   letter-spacing: -0.025em;
 }
 
 h2 {
-  font-size: clamp(2.5rem, 3.2vw, 3rem); /* 40px - 48px */
+  font-size: clamp(2.4rem, 3vw, 3.2rem); /* 38px - 52px */
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
 }
 
 h3 {
-  font-size: clamp(1.375rem, 1.8vw, 1.625rem); /* 22px - 26px */
+  font-size: clamp(1.5rem, 1.8vw, 1.9rem); /* 24px - 30px */
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.015em;
@@ -280,7 +280,7 @@ p {
 /* ── Typography Scale Classes ── */
 .heading-display {
   font-family: var(--font-display);
-  font-size: clamp(3.5rem, 4.2vw, 4rem); /* 56px - 64px */
+  font-size: clamp(3.2rem, 4vw, 4.5rem); /* 52px - 72px */
   font-weight: 750;
   letter-spacing: -0.025em;
   line-height: 1.1;
@@ -289,7 +289,7 @@ p {
 
 .heading-xl {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 3.2vw, 3rem); /* 40px - 48px */
+  font-size: clamp(2.4rem, 3vw, 3.2rem); /* 38px - 52px */
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--primary-deep-blue);
@@ -298,7 +298,7 @@ p {
 
 .heading-lg {
   font-family: var(--font-display);
-  font-size: clamp(1.375rem, 1.8vw, 1.625rem); /* 22px - 26px */
+  font-size: clamp(1.5rem, 1.8vw, 1.9rem); /* 24px - 30px */
   font-weight: 700;
   letter-spacing: -0.015em;
   color: var(--primary-deep-blue);
@@ -328,7 +328,7 @@ p {
 }
 
 .text-brand-blue {
-  color: var(--brand-blue);
+  color: var(--primary-deep-blue);
 }
 
 .text-brand-indigo {

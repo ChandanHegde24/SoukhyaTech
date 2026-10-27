@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import earthPitImg from '../../assets/images/IES product.png';
 import digitalIntelImg from '../../assets/images/digital-intelligence.jpg';
-import docImg from '../../assets/images/digital-operation-center.jpg';
+import docImg from '../../assets/images/digital operating center.png';
 import './CoreTechnologyCards.css';
 
 const technologyModules = [
