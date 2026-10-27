@@ -29,7 +29,6 @@ export default function OurStrengths() {
         {/* Subtle section transition trace */}
         <div className="strengths-transition-trace" aria-hidden="true">
           <span className="strengths-transition-trace__line" />
-          <span className="strengths-transition-trace__dot" />
         </div>
 
         <div className="strengths-dna-layout">
@@ -89,12 +88,6 @@ export default function OurStrengths() {
                     }}
                   >
                     <div className="strength-dna-layer__content">
-                      {/* Left Number & Node */}
-                      <div className="strength-dna-layer__prefix">
-                        <span className="strength-dna-layer__num">0{index + 1}</span>
-                        <span className="strength-dna-layer__node" aria-hidden="true" />
-                      </div>
-
                       {/* Strength Title */}
                       {typeof strength === 'string' ? (
                         <h3 className="strength-dna-layer__title">{strength}</h3>

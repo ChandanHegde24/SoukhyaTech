@@ -416,13 +416,6 @@
   background: linear-gradient(90deg, #D9E5F0, #087DB9);
 }
 
-.strengths-transition-trace__dot {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: #087DB9;
-}
-
 /* Asymmetric 38% Left / 62% Right Layout */
 .strengths-dna-layout {
   display: flex;
@@ -713,31 +706,6 @@
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
-}
-
-.strength-dna-layer__num {
-  font-family: var(--font-mono, monospace);
-  font-size: 15px; /* 14-16px Numbered content */
-  font-weight: 700;
-  color: #7B8798;
-  transition: color 200ms ease;
-}
-
-.strength-dna-layer.is-active .strength-dna-layer__num {
-  color: #087DB9;
-}
-
-.strength-dna-layer__node {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #CBD5E1;
-  transition: background 200ms ease, box-shadow 200ms ease;
-}
-
-.strength-dna-layer.is-active .strength-dna-layer__node {
-  background: #087DB9;
-  box-shadow: 0 0 6px #087DB9;
 }
 
 .strength-dna-layer__title {
