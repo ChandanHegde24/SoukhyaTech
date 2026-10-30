@@ -13,14 +13,6 @@ const slidesData = [
     secondaryCTA: { label: 'Contact Us', to: '/contact' },
     type: 'ies',
   },
-  {
-    id: 'network',
-    index: 0,
-    words: ['VISIBILITY', 'CONTROL', 'EFFICIENCY'],
-    primaryCTA: { label: 'Know More', to: '/services' },
-    secondaryCTA: { label: 'Our Solutions', to: '/solutions' },
-    type: 'network',
-  },
 ];
 
 // Exact 7-second display duration
@@ -63,6 +55,8 @@ export default function Hero() {
 
   // 3. Exact 7000ms Timer with Hover Pause & Exact Remaining Time Resume
   useEffect(() => {
+    if (slidesData.length < 2) return;
+
     if (isTransitioning) {
       cancelAnimationFrame(animFrameRef.current);
       return;
@@ -299,7 +293,7 @@ export default function Hero() {
           3. MINIMALIST DUAL-NODE PROGRESS INDICATOR (●━━━━   ○)
              (7000ms display duration with pause & exact resume)
           ============================================================ */}
-      <div className="hero-cinematic__nav">
+      {slidesData.length > 1 && <div className="hero-cinematic__nav">
         <div className="container hero-cinematic__nav-inner">
           <div className="hero-cinematic__nodes" role="tablist" aria-label="Hero Slide Navigation">
             {slidesData.map((s, idx) => {
@@ -330,7 +324,7 @@ export default function Hero() {
             })}
           </div>
         </div>
-      </div>
+      </div>}
     </section>
   );
 }
