@@ -77,12 +77,17 @@
   border-radius: var(--radius-full);
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  transition: color 250ms ease, background 250ms ease;
+  transition: color 250ms ease, background 250ms ease, border-color 250ms ease, box-shadow 250ms ease, transform 250ms ease;
 }
 
 .navbar__link:hover {
-  color: #25A449; /* Hover Green: #25A449 */
-  background: rgba(37, 164, 73, 0.08);
+  color: #25A449;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(234, 244, 251, 0.42));
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  box-shadow: 0 8px 18px rgba(8, 125, 185, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px) saturate(135%);
+  -webkit-backdrop-filter: blur(12px) saturate(135%);
+  transform: translateY(-1px);
 }
 
 .navbar__link:focus-visible,
@@ -99,7 +104,11 @@
 
 .navbar__link--active:hover {
   color: #25A449;
-  background: rgba(37, 164, 73, 0.08);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(234, 244, 251, 0.42));
+  border-color: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 8px 18px rgba(8, 125, 185, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px) saturate(135%);
+  -webkit-backdrop-filter: blur(12px) saturate(135%);
 }
 
 .navbar__link-indicator {
@@ -243,8 +252,12 @@
 
 .navbar__mobile-link:hover {
   color: #25A449;
-  background: var(--section-bg);
-  border-color: var(--border-light);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.76), rgba(234, 244, 251, 0.48));
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 20px rgba(8, 125, 185, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px) saturate(135%);
+  -webkit-backdrop-filter: blur(12px) saturate(135%);
+  transform: translateY(-1px);
 }
 
 .navbar__mobile-link-index {
