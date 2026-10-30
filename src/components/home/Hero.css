@@ -46,17 +46,15 @@
   z-index: 1;
 }
 
-/* 100% Full-bleed edge-to-edge foreground image */
-.hero-cinematic__img {
+/* Full-bleed background video */
+.hero-cinematic__video {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center center;
   display: block;
-}
-
-.hero-cinematic__img--network {
-  object-position: center center;
 }
 
 /* Atmospheric Ambient Glow & Connected Engineering Linework */
@@ -396,7 +394,7 @@
     max-height: none;
   }
 
-  .hero-cinematic__img {
+  .hero-cinematic__video {
     object-position: 58% center;
   }
 

@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import hero1Img from '../../assets/images/image2.png';
-import hero2Img from '../../assets/images/image.png';
+import heroVideo from '../../assets/images/Herovid.mp4';
 import './Hero.css';
 
 const slidesData = [
@@ -12,8 +11,6 @@ const slidesData = [
     words: ['Intelligent Earth-Pit', 'Monitoring System', '(I-ES)'],
     primaryCTA: { label: 'Know More', to: '/product' },
     secondaryCTA: { label: 'Contact Us', to: '/contact' },
-    img: hero1Img,
-    alt: 'Intelligent Earth-Pit Monitoring System (I-ES) Hardware and Grounding Environment',
     type: 'ies',
   },
   {
@@ -22,8 +19,6 @@ const slidesData = [
     words: ['VISIBILITY', 'CONTROL', 'EFFICIENCY'],
     primaryCTA: { label: 'Know More', to: '/services' },
     secondaryCTA: { label: 'Our Solutions', to: '/solutions' },
-    img: hero2Img,
-    alt: 'Visibility, Control, and Efficiency Connected Digital Infrastructure',
     type: 'network',
   },
 ];
@@ -43,48 +38,13 @@ export default function Hero() {
   const [touchStart, setTouchStart] = useState(null);
 
   const heroRef = useRef(null);
-  const imageCache = useRef(new Set());
   const startTimeRef = useRef(Date.now());
   const elapsedBeforePauseRef = useRef(0);
   const animFrameRef = useRef(null);
 
-  // 1. Intelligent Image Preloading & Decoding with Image.decode()
-  const preloadAndDecode = useCallback(async (src) => {
-    if (imageCache.current.has(src)) return true;
-    try {
-      const img = new Image();
-      img.src = src;
-      if ('decode' in img) {
-        await img.decode();
-      } else {
-        await new Promise((resolve, reject) => {
-          img.onload = resolve;
-          img.onerror = reject;
-        });
-      }
-      imageCache.current.add(src);
-      return true;
-    } catch (e) {
-      imageCache.current.add(src); // Graceful fallback
-      return true;
-    }
-  }, []);
-
-  // Preload and decode both hero images immediately on mount
-  useEffect(() => {
-    slidesData.forEach((s) => preloadAndDecode(s.img));
-  }, [preloadAndDecode]);
-
   // 2. Safe Zero-Blank Transition Trigger
   const triggerTransition = useCallback(async (nextIdx, dir = 'next') => {
     if (isTransitioning || nextIdx === activeSlide) return;
-
-    const targetImg = slidesData[nextIdx].img;
-
-    // Ensure image is fully loaded and decoded BEFORE beginning transition
-    if (!imageCache.current.has(targetImg)) {
-      await preloadAndDecode(targetImg);
-    }
 
     setIsTransitioning(true);
     setTransitionDir(dir);
@@ -99,7 +59,7 @@ export default function Hero() {
       setIsTransitioning(false);
       startTimeRef.current = Date.now();
     }, TRANSITION_DURATION);
-  }, [activeSlide, isTransitioning, preloadAndDecode]);
+  }, [activeSlide, isTransitioning]);
 
   // 3. Exact 7000ms Timer with Hover Pause & Exact Remaining Time Resume
   useEffect(() => {
@@ -219,64 +179,10 @@ export default function Hero() {
           1. DOUBLE-BUFFERED PERSISTENT VISUAL CANVAS (ZERO BLANK)
           ============================================================ */}
       <div className="hero-cinematic__canvas" aria-hidden="true">
-        {slidesData.map((s, idx) => {
-          const isCurrent = activeSlide === idx;
-          const isPrevious = prevSlideIndex === idx && isTransitioning;
-
-          // Only render layers involved in current view or active transition
-          if (!isCurrent && !isPrevious) return null;
-
-          const zIndex = isCurrent ? 2 : 1;
-
-          return (
-            <motion.div
-              key={s.id}
-              className={`hero-cinematic__slide ${isCurrent ? 'is-active-layer' : 'is-under-layer'}`}
-              style={{
-                zIndex,
-                transform: `translate3d(${mouseOffset.x}px, ${mouseOffset.y}px, 0)`,
-              }}
-              initial={
-                isTransitioning && isCurrent
-                  ? {
-                    opacity: 0,
-                    scale: 1.025,
-                    clipPath:
-                      transitionDir === 'next'
-                        ? 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)'
-                        : 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)',
-                  }
-                  : { opacity: 1, scale: 1.0, clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' }
-              }
-              animate={{
-                opacity: 1,
-                scale: 1.0,
-                clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-              }}
-              transition={{ duration: 0.95, ease: [0.16, 1, 0.3, 1] }}
-            >
-              {/* FULL-WIDTH HIGH DEFINITION BASE IMAGE */}
-              <img
-                src={s.img}
-                alt={s.alt}
-                className={`hero-cinematic__img hero-cinematic__img--${s.type}`}
-                loading={idx === 0 ? 'eager' : 'lazy'}
-                decoding="async"
-                fetchPriority={idx === 0 ? 'high' : 'auto'}
-              />
-
-              {/* Atmospheric Ambient Glow */}
-              <div className="hero-cinematic__ambient" />
-
-              {/* Diagonal Data Sweep Wave during transition */}
-              {isTransitioning && isCurrent && (
-                <div className={`hero-cinematic__data-sweep sweep--${transitionDir}`} />
-              )}
-            </motion.div>
-          );
-        })}
-
-        {/* Soft Light Overlay */}
+        <video className="hero-cinematic__video" autoPlay muted loop playsInline preload="auto">
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        <div className="hero-cinematic__ambient" />
         <div className="hero-cinematic__light-overlay" />
       </div>
 
