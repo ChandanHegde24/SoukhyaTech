@@ -395,7 +395,7 @@
   }
 
   .hero-cinematic__video {
-    object-position: 58% center;
+    object-position: center center;
   }
 
   .hero-cinematic__container {
