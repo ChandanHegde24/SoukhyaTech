@@ -616,7 +616,7 @@
 
 /* Remove the animated pop rings that sit over the service illustrations. */
 .service-anim-container .audit-stage-ring,
-.service-anim-container .sec-scan-wave,
+
 .service-anim-container .sec-node-ring,
 .service-anim-container .net-node-highlight,
 .service-anim-container .cloud-node-glow,

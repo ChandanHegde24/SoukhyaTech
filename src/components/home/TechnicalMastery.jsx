@@ -311,11 +311,7 @@ function EngineeringBlueprint({ services, inView, reduceMotion }) {
           </g>
 
           {/* Circuit Lines */}
-          <path d="M502 405h60m10 0h55m10 0h60" className="engineering-core__circuit" />
-          <circle cx="502" cy="405" r="3" className="engineering-core__micro-node" />
-          <circle cx="572" cy="405" r="3" className="engineering-core__micro-node" />
-          <circle cx="637" cy="405" r="3" className="engineering-core__micro-node" />
-          <circle cx="707" cy="405" r="3" className="engineering-core__micro-node" />
+          <text x="615" y="408" textAnchor="middle" className="engineering-core__brand">SOUKHYA</text>
         </motion.g>
       </svg>
 
