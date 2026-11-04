@@ -774,8 +774,45 @@
    ------------------------------------------------------------ */
 .solution-lifecycle-section {
   padding: 64px 0;
-  border-bottom: 1px solid var(--border-light);
-  background: #FFFFFF;
+  border-bottom: 1px solid rgba(90, 181, 232, 0.18);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(63, 160, 224, 0.2), transparent 32%),
+    radial-gradient(circle at 88% 82%, rgba(121, 137, 239, 0.22), transparent 34%),
+    linear-gradient(135deg, #f3f3f0 0%, #f9faf8 52%, #f7f7f5 100%);
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.solution-lifecycle-section::before {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(155, 204, 228, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(115, 196, 236, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  content: '';
+  pointer-events: none;
+}
+
+.solution-lifecycle-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.solution-lifecycle-section .eyebrow {
+  color: #547f95;
+  background: rgba(115, 196, 236, 0.1);
+  border-color: rgba(115, 196, 236, 0.28);
+}
+
+.solution-lifecycle-section .heading-xl {
+  color: #2d2b59;
+  text-shadow: 0 4px 24px rgba(133, 89, 89, 0.28);
+}
+
+.solution-lifecycle-section .body-muted {
+  color: rgba(24, 30, 35, 0.76);
 }
 
 .solution-lifecycle-grid {
@@ -795,21 +832,26 @@
   bottom: 24px;
   left: 50%;
   width: 1px;
-  background: var(--border-medium);
+  background: rgba(115, 196, 236, 0.28);
   content: '';
-  background-color: #0072BC;
+  background-color: #2FA9E0;
+  box-shadow: 0 0 18px rgba(47, 169, 224, 0.45);
 }
 
 .lifecycle-step-card {
   z-index: 1;
-  border: 1px solid var(--border-light);
+  border: 1px solid rgba(115, 196, 236, 0.2);
   border-radius: var(--radius-xl);
   padding: var(--space-6);
   position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  transition: all var(--trans-base);
+  background: linear-gradient(145deg, rgba(20, 47, 69, 0.94), rgba(12, 30, 48, 0.94));
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  cursor: pointer;
+  transform-origin: center;
 }
 
 .lifecycle-step-card:nth-child(odd) {
@@ -827,10 +869,18 @@
 .lifecycle-step-card:nth-child(5) { grid-row: 5; }
 
 .lifecycle-step-card:hover {
-  background: #FFFFFF;
-  border-color: var(--brand-blue);
-  box-shadow: 0 12px 30px rgba(23, 32, 51, 0.07);
-  transform: translateY(-3px);
+  background: linear-gradient(145deg, rgba(73, 134, 181, 0.98), rgba(14, 38, 61, 0.98));
+  border-color: rgba(115, 196, 236, 0.7);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.3), 0 0 24px rgba(47, 169, 224, 0.12);
+  transform: translateY(-5px);
+}
+
+.lifecycle-step-card:active,
+.lifecycle-step-card:focus-visible {
+  outline: none;
+  border-color: #73C4EC;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.24), 0 0 0 3px rgba(115, 196, 236, 0.18), 0 0 30px rgba(47, 169, 224, 0.24);
+  animation: lifecycle-card-pop 420ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .lifecycle-step-card__top {
@@ -842,20 +892,21 @@
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   font-weight: 800;
-  color: var(--brand-indigo);
+  color: #73C4EC;
+  text-shadow: 0 0 14px rgba(115, 196, 236, 0.35);
 }
 
 .lifecycle-step-card__title {
   font-size: var(--text-sm);
   font-weight: 800;
-  color: var(--primary-deep-blue);
+  color: #FFFFFF;
   letter-spacing: 0.04em;
   line-height: 1.35;
 }
 
 .lifecycle-step-card__desc {
   font-size: var(--text-xs);
-  color: var(--text-secondary);
+  color: rgba(226, 239, 248, 0.72);
   line-height: 1.6;
 }
 
@@ -865,14 +916,21 @@
   right: -32px;
   width: 32px;
   height: 1px;
-  background: var(--border-medium);
+  background: rgba(115, 196, 236, 0.35);
   content: '';
-  background-color: #0072BC;
+  background-color: #2FA9E0;
+  box-shadow: 0 0 10px rgba(47, 169, 224, 0.5);
 }
 
 .lifecycle-step-card:nth-child(even)::before {
   right: auto;
   left: -32px;
+}
+
+@keyframes lifecycle-card-pop {
+  0% { transform: translateY(-5px) scale(1); }
+  45% { transform: translateY(-5px) scale(1.035); }
+  100% { transform: translateY(-5px) scale(1); }
 }
 
 /* ------------------------------------------------------------
