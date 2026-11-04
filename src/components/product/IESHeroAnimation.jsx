@@ -64,20 +64,20 @@ export default function IESHeroAnimation({ className = '', isInteractive = true 
           <defs>
             {/* Gradients */}
             <linearGradient id="cyanStream" x1="0%" y1="100%" x2="0%" y2="0%">
-              <stop offset="0%" stopColor="#087DB9" stopOpacity="0.2" />
-              <stop offset="50%" stopColor="#20A4D8" stopOpacity="0.85" />
-              <stop offset="100%" stopColor="#173B8F" stopOpacity="0.4" />
+              <stop offset="0%" stopColor="#0072BC" stopOpacity="0.2" />
+              <stop offset="50%" stopColor="#0072BC" stopOpacity="0.85" />
+              <stop offset="100%" stopColor="#2B3990" stopOpacity="0.4" />
             </linearGradient>
 
             <linearGradient id="orangeStream" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#E68324" stopOpacity="0.2" />
+              <stop offset="0%" stopColor="#F37023" stopOpacity="0.2" />
               <stop offset="60%" stopColor="#FFA000" stopOpacity="0.8" />
               <stop offset="100%" stopColor="#ED1C24" stopOpacity="0.4" />
             </linearGradient>
 
             <linearGradient id="cloudUplink" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#087DB9" stopOpacity="0.3" />
-              <stop offset="50%" stopColor="#20A4D8" stopOpacity="0.9" />
+              <stop offset="0%" stopColor="#0072BC" stopOpacity="0.3" />
+              <stop offset="50%" stopColor="#0072BC" stopOpacity="0.9" />
               <stop offset="100%" stopColor="#FFFFFF" stopOpacity="1" />
             </linearGradient>
 

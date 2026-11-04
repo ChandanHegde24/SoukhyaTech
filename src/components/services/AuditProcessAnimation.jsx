@@ -9,9 +9,9 @@ export default function AuditProcessAnimation() {
     <svg className="service-anim-svg audit-anim" viewBox="0 0 720 460" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
       <defs>
         <linearGradient id="auditArcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#087DB9" stopOpacity="0.2" />
-          <stop offset="50%" stopColor="#20A4D8" stopOpacity="0.85" />
-          <stop offset="100%" stopColor="#25A449" stopOpacity="0.9" />
+          <stop offset="0%" stopColor="#0072BC" stopOpacity="0.2" />
+          <stop offset="50%" stopColor="#0072BC" stopOpacity="0.85" />
+          <stop offset="100%" stopColor="#00A651" stopOpacity="0.9" />
         </linearGradient>
       </defs>
 

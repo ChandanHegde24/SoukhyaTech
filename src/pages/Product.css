@@ -40,8 +40,8 @@
   height: 650px;
   background:
     radial-gradient(circle at 60% 40%, rgba(8, 125, 185, 0.10) 0%, transparent 60%),
-    radial-gradient(circle at 20% 80%, rgba(32, 164, 216, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(37, 164, 73, 0.05) 0%, transparent 40%);
+    radial-gradient(circle at 20% 80%, rgba(0, 114, 188, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 166, 81, 0.05) 0%, transparent 40%);
   border-radius: 50%;
   filter: blur(50px);
   pointer-events: none;
@@ -67,7 +67,7 @@
 
 .product-hero__heading {
   margin: 0;
-  color: #173B8F;
+  color: #2B3990;
   letter-spacing: -0.02em;
 }
 
@@ -84,11 +84,11 @@
   position: relative;
   background-color: #F4F8FC;
   background-image:
-    radial-gradient(circle at 75% 45%, transparent 90px, rgba(8, 125, 185, 0.05) 91px, transparent 92px, transparent 180px, rgba(32, 164, 216, 0.045) 181px, transparent 182px),
+    radial-gradient(circle at 75% 45%, transparent 90px, rgba(8, 125, 185, 0.05) 91px, transparent 92px, transparent 180px, rgba(0, 114, 188, 0.045) 181px, transparent 182px),
     radial-gradient(circle at 20% 60%, rgba(8, 125, 185, 0.06) 0%, transparent 45%),
     linear-gradient(90deg, rgba(8, 125, 185, 0.025) 1px, transparent 1px),
     linear-gradient(rgba(8, 125, 185, 0.025) 1px, transparent 1px),
-    radial-gradient(circle at 1px 1px, rgba(32, 164, 216, 0.05) 1.2px, transparent 0);
+    radial-gradient(circle at 1px 1px, rgba(0, 114, 188, 0.05) 1.2px, transparent 0);
   background-size: 100% 100%, 100% 100%, 64px 64px, 64px 64px, 32px 32px;
   border-bottom: 1px solid rgba(8, 125, 185, 0.12);
 }

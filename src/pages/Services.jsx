@@ -42,11 +42,11 @@ function ServiceVisual({ service, index }) {
 
 /* ── Interactive Process Steps Visual ── */
 const processSteps = [
-  { step: '01', title: 'ASSESS', desc: 'IT & Security Governance Audit', color: '#087DB9' },
-  { step: '02', title: 'SECURE', desc: '24/7 SOC & Threat Defense', color: '#173B8F' },
-  { step: '03', title: 'CONNECT', desc: 'WAN, LAN & Network Mesh', color: '#25A449' },
-  { step: '04', title: 'MANAGE', desc: 'Multi-Cloud Lifecycle', color: '#E68324' },
-  { step: '05', title: 'MONITOR', desc: 'Remote Supervision & RMM', color: '#EC008C' },
+  { step: '01', title: 'ASSESS', desc: 'IT & Security Governance Audit', color: '#0072BC' },
+  { step: '02', title: 'SECURE', desc: '24/7 SOC & Threat Defense', color: '#2B3990' },
+  { step: '03', title: 'CONNECT', desc: 'WAN, LAN & Network Mesh', color: '#00A651' },
+  { step: '04', title: 'MANAGE', desc: 'Multi-Cloud Lifecycle', color: '#F37023' },
+  { step: '05', title: 'MONITOR', desc: 'Remote Supervision & RMM', color: '#E6007E' },
 ];
 
 export default function Services() {

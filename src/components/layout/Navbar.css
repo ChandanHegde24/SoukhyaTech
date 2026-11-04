@@ -73,7 +73,7 @@
   font-family: var(--font-display);
   font-size: 15px; /* 15px navigation menu */
   font-weight: 600; /* 500-600 */
-  color: #173B8F; /* Default Blue: #173B8F */
+  color: #2B3990; /* Default Blue: #2B3990 */
   border-radius: var(--radius-full);
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -81,7 +81,7 @@
 }
 
 .navbar__link:hover {
-  color: #25A449;
+  color: #00A651;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(234, 244, 251, 0.42));
   border: 1px solid rgba(255, 255, 255, 0.88);
   box-shadow: 0 8px 18px rgba(8, 125, 185, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.95);
@@ -98,12 +98,12 @@
 }
 
 .navbar__link--active {
-  color: #173B8F; /* Active: #173B8F */
+  color: #2B3990; /* Active: #2B3990 */
   font-weight: 700;
 }
 
 .navbar__link--active:hover {
-  color: #25A449;
+  color: #00A651;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(234, 244, 251, 0.42));
   border-color: rgba(255, 255, 255, 0.88);
   box-shadow: 0 8px 18px rgba(8, 125, 185, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.95);
@@ -118,18 +118,18 @@
   transform: translateX(-50%);
   width: 18px;
   height: 2.5px;
-  background: #173B8F;
+  background: #2B3990;
   border-radius: var(--radius-full);
 }
 
-/* ── CTA (Default: Blue #173B8F | Hover: Green #25A449) ── */
+/* ── CTA (Default: Blue #2B3990 | Hover: Green #00A651) ── */
 .navbar__cta {
   flex-shrink: 0;
   margin-left: auto;
   font-family: var(--font-display);
-  background: #173B8F;
-  color: #FFFFFF;
-  border: 1px solid #173B8F;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(0, 114, 188, 0.17));
+  color: #2B3990;
+  border: 1px solid rgba(255, 255, 255, 0.92);
   border-radius: var(--radius-full);
   padding: 0 var(--space-5);
   height: 42px;
@@ -140,15 +140,17 @@
               border-color 280ms cubic-bezier(0.16, 1, 0.3, 1),
               transform 280ms cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 280ms cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 12px rgba(23, 59, 143, 0.2);
+  -webkit-backdrop-filter: blur(18px) saturate(165%);
+  backdrop-filter: blur(18px) saturate(165%);
+  box-shadow: 0 8px 24px rgba(43, 57, 144, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.96);
 }
 
 .navbar__cta:hover {
-  background: #25A449;
-  border-color: #25A449;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.99), rgba(0, 114, 188, 0.28));
+  border-color: rgba(0, 114, 188, 0.4);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(37, 164, 73, 0.25);
-  color: #FFFFFF;
+  box-shadow: 0 12px 28px rgba(43, 57, 144, 0.2), inset 0 1px 0 #FFFFFF;
+  color: #2B3990;
 }
 
 /* ── Hamburger ── */
@@ -160,14 +162,20 @@
   gap: 5px;
   width: 40px;
   height: 40px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(0, 114, 188, 0.12));
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  backdrop-filter: blur(16px) saturate(160%);
+  box-shadow: 0 6px 18px rgba(43, 57, 144, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.95);
   cursor: pointer;
   transition: background var(--dur-fast) ease;
   flex-shrink: 0;
 }
 
 .navbar__hamburger:hover {
-  background: var(--section-bg);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(0, 114, 188, 0.24));
+  border-color: rgba(0, 114, 188, 0.35);
 }
 
 .hamburger-line {
@@ -237,7 +245,7 @@
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #173B8F;
+  color: #2B3990;
   border: 1px solid transparent;
   pointer-events: auto;
   touch-action: manipulation;
@@ -245,13 +253,13 @@
 }
 
 .navbar__mobile-link--active {
-  color: #173B8F;
+  color: #2B3990;
   background: var(--section-bg);
   border-color: var(--border-light);
 }
 
 .navbar__mobile-link:hover {
-  color: #25A449;
+  color: #00A651;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.76), rgba(234, 244, 251, 0.48));
   border-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 8px 20px rgba(8, 125, 185, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.95);

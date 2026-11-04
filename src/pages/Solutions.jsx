@@ -7,11 +7,11 @@ import { solutionShowcase } from '../data/solutions';
 import './Solutions.css';
 
 const technologyJourney = [
-  { step: '01', title: 'DEVICES & SENSORS', desc: 'Hardware design, embedded telemetry & rugged physical instrumentation', color: '#25A449' },
-  { step: '02', title: 'EDGE & GATEWAYS', desc: 'Secure local processing, OTA firmware management & protocol bridging', color: '#087DB9' },
-  { step: '03', title: 'CONNECTED CLOUD', desc: 'Scalable cloud infrastructure, device fleet orchestration & storage', color: '#173B8F' },
-  { step: '04', title: 'DECISION INTELLIGENCE', desc: 'AI-driven analytics, anomaly detection & operational dashboards', color: '#E68324' },
-  { step: '05', title: 'SUSTAINED VALUE', desc: 'Continuous uptime, reduced operational waste & asset longevity', color: '#EC008C' },
+  { step: '01', title: 'DEVICES & SENSORS', desc: 'Hardware design, embedded telemetry & rugged physical instrumentation', color: '#00A651' },
+  { step: '02', title: 'EDGE & GATEWAYS', desc: 'Secure local processing, OTA firmware management & protocol bridging', color: '#0072BC' },
+  { step: '03', title: 'CONNECTED CLOUD', desc: 'Scalable cloud infrastructure, device fleet orchestration & storage', color: '#2B3990' },
+  { step: '04', title: 'DECISION INTELLIGENCE', desc: 'AI-driven analytics, anomaly detection & operational dashboards', color: '#F37023' },
+  { step: '05', title: 'SUSTAINED VALUE', desc: 'Continuous uptime, reduced operational waste & asset longevity', color: '#E6007E' },
 ];
 
 /* ── Reusable Solution Visual Component ── */

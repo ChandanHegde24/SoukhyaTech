@@ -10,10 +10,10 @@ import './About.css';
 /* ── About Hero Interactive Geometric Network Visual ── */
 function EngineeringDnaVisual() {
   const steps = [
-    { num: '01', title: 'DEVICES', desc: 'Hardware Design & Sensors', color: '#25A449' },
-    { num: '02', title: 'DATA', desc: 'Edge Telemetry & Transmission', color: '#087DB9' },
-    { num: '03', title: 'INTELLIGENCE', desc: 'Predictive Models & Analytics', color: '#173B8F' },
-    { num: '04', title: 'OPERATIONS', desc: 'Automated Decisions & Action', color: '#E68324' },
+    { num: '01', title: 'DEVICES', desc: 'Hardware Design & Sensors', color: '#00A651' },
+    { num: '02', title: 'DATA', desc: 'Edge Telemetry & Transmission', color: '#0072BC' },
+    { num: '03', title: 'INTELLIGENCE', desc: 'Predictive Models & Analytics', color: '#2B3990' },
+    { num: '04', title: 'OPERATIONS', desc: 'Automated Decisions & Action', color: '#F37023' },
   ];
 
   return (

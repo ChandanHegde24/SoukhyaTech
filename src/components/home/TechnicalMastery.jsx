@@ -292,7 +292,7 @@ function EngineeringBlueprint({ services, inView, reduceMotion }) {
                 cx={service.node.x}
                 cy={service.node.y}
                 r="5"
-                fill={activeService === service.id ? '#087DB9' : '#94A3B8'}
+                fill={activeService === service.id ? '#0072BC' : '#94A3B8'}
               />
             ))}
 

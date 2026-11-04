@@ -5,14 +5,14 @@
 
 :root {
   /* ── Canonical Theme Tokens (Phase 7 Specification) ── */
-  --primary-blue:      #173B8F;
-  --technology-blue:   #087DB9;
-  --cyan:              #20A4D8;
-  --green:             #25A449;
+  --primary-blue:      #2B3990;
+  --technology-blue:   #0072BC;
+  --cyan:              #0072BC;
+  --green:             #00A651;
   --white:             #FFFFFF;
   --light-blue:        #F4F8FC;
   --very-light-blue:   #EAF4FB;
-  --heading:           #14213D;
+  --heading:           #2B3990;
   --body-text:         #53657D;
   --muted-text:        #7B8798;
   --border:            #D9E5F0;
@@ -27,16 +27,16 @@
   --green-highlight-bg:#EAF7EF;
 
   /* ── Core Brand Colors ── */
-  --primary-deep-blue: #173B8F;
-  --brand-indigo:      #173B8F;
-  --secondary-tech-blue:#087DB9;
-  --brand-blue:        #087DB9;
-  --brand-blue-light:  #20A4D8;
-  --cyan-accent:       #20A4D8;
-  --brand-cyan:        #20A4D8;
+  --primary-deep-blue: #2B3990;
+  --brand-indigo:      #2B3990;
+  --secondary-tech-blue:#0072BC;
+  --brand-blue:        #0072BC;
+  --brand-blue-light:  #0072BC;
+  --cyan-accent:       #0072BC;
+  --brand-cyan:        #0072BC;
 
   /* ── Text Colors (High Contrast) ── */
-  --text-primary:      #14213D;
+  --text-primary:      #2B3990;
   --text-secondary:    #53657D;
   --text-light:        #7B8798;
   --text-muted:        #7B8798;
@@ -45,15 +45,15 @@
   /* ── Borders & Surfaces ── */
   --border-light:      #D9E5F0;
   --border-medium:     #D9E5F0;
-  --border-focus:      #087DB9;
+  --border-focus:      #0072BC;
   --surface-white:     #FFFFFF;
 
   /* ── Logo Accent Colors (Used sparingly for highlights & nodes) ── */
-  --green:             #25A449;
-  --green-highlight:   #25A449;
-  --lime:              #A5CE39;
-  --orange:            #E68324;
-  --magenta:           #EC008C;
+  --green:             #00A651;
+  --green-highlight:   #00A651;
+  --lime:              #8DC63F;
+  --orange:            #F37023;
+  --magenta:           #E6007E;
   --red:               #ED1C24;
 
   /* ── Typography Scale ── */
@@ -114,7 +114,7 @@
   --shadow-card:       0 12px 40px rgba(20, 60, 110, 0.08);
   --shadow-hover:      0 20px 48px rgba(20, 60, 110, 0.12);
   --shadow-dropdown:   0 16px 36px rgba(20, 60, 110, 0.12);
-  --shadow-blue-glow:  0 8px 24px rgba(0, 124, 196, 0.25);
+  --shadow-blue-glow:  0 8px 24px rgba(0, 114, 188, 0.25);
 
   /* ── Transitions ── */
   --dur-fast:          150ms;

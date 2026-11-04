@@ -47,7 +47,7 @@ export const managedServices = [
     title: 'IT Audit & Advisory',
     chip: 'GOVERNANCE & VAPT',
     metric: 'PEOPLE · PROCESS · TECH',
-    accent: '#087DB9',
+    accent: '#0072BC',
     image: itAuditImage,
     paragraphs: [
       'Internationally recognized and trusted information security management standard that can be independently certified to cover People, Process and Technology. We help to create Cyber Security policy, IT and IS governance framework and VAPT audit with a suitable approach. The IT architecture framework which includes network, server, database and application, end user systems.',
@@ -59,7 +59,7 @@ export const managedServices = [
     title: 'Managed Security Services',
     chip: '24/7 SOC DEFENSE',
     metric: 'SIEM & THREAT ANALYTICS',
-    accent: '#173B8F',
+    accent: '#2B3990',
     image: managedSecurityImage,
     paragraphs: [
       'Our Managed Security Services provide comprehensive, round-the-clock protection for your IT environment, ensuring your business stays secure, resilient, and compliant in an evolving cyber threat landscape. We monitor your networks and systems 24/7 through our Security Operations Center, manage firewalls and endpoint security, detect and respond to threats in real-time, and maintain centralized log and SIEM analytics for proactive risk reduction.',
@@ -71,7 +71,7 @@ export const managedServices = [
     title: 'Managed Network Services',
     chip: 'INFRASTRUCTURE ORCHESTRATION',
     metric: 'WAN / LAN 99.99% UPTIME',
-    accent: '#25A449',
+    accent: '#00A651',
     image: managedNetworkImage,
     paragraphs: [
       'Our Managed Network Services ensure that your entire network infrastructure operates at peak performance, reliability, and security, allowing your teams to stay connected and productive at all times. We proactively monitor your network 24/7, manage routers, switches, firewalls, Wi-Fi, and WAN/LAN systems, and deliver rapid fault detection and resolution to minimize downtime.',
@@ -83,7 +83,7 @@ export const managedServices = [
     title: 'Managed Cloud Services',
     chip: 'MULTI-CLOUD LIFECYCLE',
     metric: 'HYBRID & PUBLIC CLOUD',
-    accent: '#087DB9',
+    accent: '#0072BC',
     image: managedCloudImage,
     paragraphs: [
       'Our Managed Cloud Services ensure seamless, secure, and optimized operation of your cloud environments across public, private, and hybrid platforms. We handle the full lifecycle of your cloud ecosystem, including deployment, configuration, resource management, performance tuning, and cost optimization to ensure maximum efficiency and scalability.',
@@ -95,7 +95,7 @@ export const managedServices = [
     title: 'Remote Monitoring and Management',
     chip: 'PROACTIVE SUPERVISION',
     metric: 'CONTINUOUS TELEMETRY',
-    accent: '#173B8F',
+    accent: '#2B3990',
     image: remoteMonitoringImage,
     paragraphs: [
       'Remote monitoring and management is the process of supervising and controlling IT systems by means of locally installed agents that can be accessed by a management service provider.',
