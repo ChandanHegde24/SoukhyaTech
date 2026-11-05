@@ -4,8 +4,8 @@ export const primaryNavigation = [
   { to: '/services',  label: 'Services' },
   { to: '/solutions', label: 'Solutions' },
   { to: '/product',   label: 'Product' },
-  { to: '/about',     label: 'About' },
-  { to: '/contact',   label: 'Contact' },
+  { to: '/about',     label: 'About Us' },
+  { to: '/contact',   label: 'Contact Us' },
 ];
 
 // Footer navigation — grouped columns used by Footer.jsx

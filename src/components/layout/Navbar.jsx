@@ -101,7 +101,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <Link to="/contact" className="navbar__cta btn btn-primary btn-sm">
-          Talk to an Expert
+          Get a Quote
         </Link>
 
         {/* Hamburger */}
@@ -167,7 +167,7 @@ export default function Navbar() {
                 className="btn btn-primary"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Talk to an Expert
+                Get a Quote
               </Link>
               <p className="navbar__mobile-contact">+91 97317 47999 · sales@soukhyatech.com</p>
             </motion.div>

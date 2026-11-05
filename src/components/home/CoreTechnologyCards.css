@@ -298,21 +298,21 @@
 }
 
 .core-tech-card__cta-arrow {
-  color: #FFFFFF;
+  color: var(--primary-deep-blue);
   transition: transform 250ms ease, color 200ms ease;
 }
 
 .core-tech-card__cta-btn:hover,
 .core-tech-card:hover .core-tech-card__cta-btn {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(0, 114, 188, 0.28));
-  color: #2B3990;
-  border-color: rgba(0, 114, 188, 0.38);
-  box-shadow: 0 12px 26px rgba(43, 57, 144, 0.2), inset 0 1px 0 #FFFFFF;
+  background: linear-gradient(135deg, var(--brand-blue), var(--cyan-accent));
+  color: #FFFFFF;
+  border-color: var(--cyan-accent);
+  box-shadow: 0 12px 26px rgba(19, 153, 213, 0.28);
 }
 
 .core-tech-card__cta-btn:hover .core-tech-card__cta-arrow,
 .core-tech-card:hover .core-tech-card__cta-btn .core-tech-card__cta-arrow {
-  color: #0072BC;
+  color: #FFFFFF;
   transform: translateX(4px);
 }
 

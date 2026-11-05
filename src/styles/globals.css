@@ -3,7 +3,7 @@
    Bright Enterprise Technology System
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap');
 
 /* ── Reset ── */
 *, *::before, *::after {
@@ -40,7 +40,7 @@ body {
 
 img, video {
   display: block;
-  max-width: 100%;
+  max-width: var(--container);
   height: auto;
 }
 
@@ -118,14 +118,14 @@ p {
 /* ── Containers (Edge-to-Edge Screen Fit) ── */
 .container {
   width: 100%;
-  max-width: 100%;
+  max-width: var(--container-wide);
   margin: 0 auto;
   padding: 0 clamp(1.25rem, 3.5vw, 3.5rem);
 }
 
 .container-wide {
   width: 100%;
-  max-width: 100%;
+  max-width: var(--container-sm);
   margin: 0 auto;
   padding: 0 clamp(1.25rem, 3.5vw, 3.5rem);
 }
@@ -363,21 +363,21 @@ p {
   white-space: nowrap;
   position: relative;
   text-decoration: none;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(0, 114, 188, 0.14));
-  color: #2B3990;
-  border: 1px solid rgba(255, 255, 255, 0.92);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(226, 242, 255, 0.94) 100%);
+  color: #173B78;
+  border: 1px solid rgba(0, 82, 160, 0.32);
   -webkit-backdrop-filter: blur(18px) saturate(165%);
   backdrop-filter: blur(18px) saturate(165%);
-  box-shadow: 0 8px 24px rgba(43, 57, 144, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  box-shadow: 0 5px 16px rgba(20, 53, 105, 0.18), inset 0 1px 0 rgba(255, 255, 255, 1), inset 0 -1px 0 rgba(0, 82, 160, 0.12);
 }
 
 .btn:hover,
 .btn:focus-visible {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(0, 114, 188, 0.24));
-  border-color: rgba(0, 114, 188, 0.38);
-  box-shadow: 0 12px 30px rgba(43, 57, 144, 0.2), inset 0 1px 0 rgba(255, 255, 255, 1);
+  background: linear-gradient(135deg, #FFFFFF 0%, #D9EEFF 100%);
+  border-color: rgba(0, 82, 160, 0.55);
+  box-shadow: 0 9px 22px rgba(20, 53, 105, 0.24), inset 0 1px 0 rgba(255, 255, 255, 1), inset 0 -1px 0 rgba(0, 82, 160, 0.16);
   transform: translateY(-2px);
-  color: #2B3990;
+  color: #173B78;
 }
 
 .btn:focus-visible {
@@ -388,30 +388,30 @@ p {
 /* Keep button variants in the same glass family while giving them a light brand tint. */
 .btn--primary,
 .btn-primary {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(43, 57, 144, 0.16));
+  background: linear-gradient(135deg, #FFFFFF 0%, #DCEBFF 100%);
 }
 
 .btn--primary:hover,
 .btn-primary:hover {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.99), rgba(43, 57, 144, 0.24));
+  background: linear-gradient(135deg, #FFFFFF 0%, #C9E1FF 100%);
 }
 
 .btn--secondary,
 .btn-secondary {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(0, 114, 188, 0.17));
-  border: 1px solid rgba(0, 114, 188, 0.24);
+  background: linear-gradient(135deg, #FFFFFF 0%, #DDF1FF 100%);
+  border: 1px solid rgba(0, 82, 160, 0.38);
 }
 
 .btn--secondary:hover,
 .btn-secondary:hover {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(0, 114, 188, 0.27));
+  background: linear-gradient(135deg, #FFFFFF 0%, #C9E8FF 100%);
 }
 
 .btn--ghost,
 .btn-ghost {
-  background: rgba(43, 57, 144, 0.08);
-  color: #2B3990;
-  border: 1px solid rgba(43, 57, 144, 0.25);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(220, 235, 255, 0.88));
+  color: #173B78;
+  border: 1px solid rgba(23, 59, 120, 0.34);
 }
 
 .btn--ghost:hover,

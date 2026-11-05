@@ -5,14 +5,14 @@
 
 :root {
   /* ── Canonical Theme Tokens (Phase 7 Specification) ── */
-  --primary-blue:      #2B3990;
-  --technology-blue:   #0072BC;
-  --cyan:              #0072BC;
+  --primary-blue:      #0B1F3A;
+  --technology-blue:   #1399D5;
+  --cyan:              #37C8F5;
   --green:             #00A651;
   --white:             #FFFFFF;
   --light-blue:        #F4F8FC;
   --very-light-blue:   #EAF4FB;
-  --heading:           #2d2b59;
+  --heading:           #0B1F3A;
   --body-text:         #53657D;
   --muted-text:        #7B8798;
   --border:            #D9E5F0;
@@ -27,16 +27,16 @@
   --green-highlight-bg:#EAF7EF;
 
   /* ── Core Brand Colors ── */
-  --primary-deep-blue: #2d2b59;
-  --brand-indigo:      #2B3990;
-  --secondary-tech-blue:#0072BC;
-  --brand-blue:        #0072BC;
-  --brand-blue-light:  #0072BC;
-  --cyan-accent:       #0072BC;
-  --brand-cyan:        #0072BC;
+  --primary-deep-blue: #0B1F3A;
+  --brand-indigo:      #0B1F3A;
+  --secondary-tech-blue:#1399D5;
+  --brand-blue:        #1399D5;
+  --brand-blue-light:  #37C8F5;
+  --cyan-accent:       #37C8F5;
+  --brand-cyan:        #37C8F5;
 
   /* ── Text Colors (High Contrast) ── */
-  --text-primary:      #2B3990;
+  --text-primary:      #0B1F3A;
   --text-secondary:    #53657D;
   --text-light:        #7B8798;
   --text-muted:        #7B8798;
@@ -105,9 +105,9 @@
   --radius-full:       999px;
 
   /* ── Layout (Full Screen Fit) ── */
-  --container:         100%;
-  --container-wide:    100%;
-  --container-sm:      100%;
+  --container:         1240px;
+  --container-wide:    1400px;
+  --container-sm:      760px;
 
   /* ── Enterprise Soft Shadows ── */
   --shadow-sm:         0 2px 4px rgba(20, 60, 110, 0.04);
