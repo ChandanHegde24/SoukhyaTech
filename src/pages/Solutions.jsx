@@ -171,7 +171,15 @@ export default function Solutions() {
 
           <div className="solution-lifecycle-grid">
             {technologyJourney.map((step, idx) => (
-              <Reveal key={step.step} delay={idx * 0.08} className="lifecycle-step-card">
+              <Reveal
+                key={step.step}
+                delay={idx * 0.08}
+                className="lifecycle-step-card"
+                style={{
+                  '--flow-delay': `${idx * 0.72}s`,
+                  '--step-color': step.color,
+                }}
+              >
                 <div className="lifecycle-step-card__top">
                   <span className="lifecycle-step-card__num">{step.step}</span>
                 </div>

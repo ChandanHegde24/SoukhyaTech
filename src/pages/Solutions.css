@@ -677,6 +677,26 @@
   margin-top: var(--space-2);
 }
 
+.solution-chapter__action .btn {
+  width: fit-content;
+  max-width: 100%;
+  min-height: 48px;
+  height: auto;
+  padding: 12px clamp(16px, 2.2vw, 24px);
+  white-space: normal;
+  text-align: left;
+  line-height: 1.35;
+}
+
+.solution-chapter__action .btn span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.solution-chapter__action .btn svg {
+  flex: 0 0 auto;
+}
+
 /* ------------------------------------------------------------
    5. REUSABLE SOLUTION VISUAL COMPONENT (IMAGE + FRAME)
    ------------------------------------------------------------ */
@@ -831,11 +851,19 @@
   top: 24px;
   bottom: 24px;
   left: 50%;
-  width: 1px;
-  background: rgba(115, 196, 236, 0.28);
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    rgba(28, 53, 76, 0.2),
+    rgba(42, 78, 108, 0.95) 48%,
+    rgba(28, 53, 76, 0.2)
+  );
+  background-size: 100% 180px;
+  animation: lifecycle-line-flow 3.2s ease-in-out infinite;
   content: '';
-  background-color: #2FA9E0;
-  box-shadow: 0 0 18px rgba(47, 169, 224, 0.45);
+  box-shadow: 0 0 14px rgba(42, 78, 108, 0.42);
+  transform: translateX(-50%);
+  opacity: 0.72;
 }
 
 .lifecycle-step-card {
@@ -852,6 +880,8 @@
   transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
   cursor: pointer;
   transform-origin: center;
+  isolation: isolate;
+  animation: lifecycle-card-receive 2.8s ease-in-out var(--flow-delay, 0s) infinite;
 }
 
 .lifecycle-step-card:nth-child(odd) {
@@ -915,16 +945,64 @@
   top: 28px;
   right: -32px;
   width: 32px;
-  height: 1px;
-  background: rgba(115, 196, 236, 0.35);
+  height: 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(28, 53, 76, 0.2) 0%,
+    rgba(144, 188, 207, 0.95) 48%,
+    rgba(63, 101, 126, 0.9) 58%,
+    rgba(28, 53, 76, 0.2) 100%
+  );
+  background-size: 220% 100%;
+  background-position: 100% 50%;
+  clip-path: polygon(0 42%, 72% 42%, 72% 0, 100% 50%, 72% 100%, 72% 58%, 0 58%);
   content: '';
-  background-color: #2FA9E0;
-  box-shadow: 0 0 10px rgba(47, 169, 224, 0.5);
+  filter: drop-shadow(0 0 5px rgba(42, 78, 108, 0.65));
+  transform: translateY(-50%);
+  animation: lifecycle-arrow-flow 2.8s ease-in-out var(--flow-delay, 0s) infinite;
 }
 
 .lifecycle-step-card:nth-child(even)::before {
   right: auto;
   left: -32px;
+  background: linear-gradient(
+    90deg,
+    rgba(63, 101, 126, 0.9) 0%,
+    rgba(144, 188, 207, 0.95) 48%,
+    rgba(28, 53, 76, 0.2) 100%
+  );
+  background-size: 220% 100%;
+  background-position: 0% 50%;
+  transform: translateY(-50%) rotate(180deg);
+  animation-name: lifecycle-arrow-flow-reverse;
+}
+
+@keyframes lifecycle-arrow-flow {
+  0%, 12% { background-position: 100% 50%; opacity: 0.35; }
+  48%, 76% { background-position: 0% 50%; opacity: 1; }
+  100% { background-position: -100% 50%; opacity: 0.35; }
+}
+
+@keyframes lifecycle-arrow-flow-reverse {
+  0%, 12% { background-position: 0% 50%; opacity: 0.35; }
+  48%, 76% { background-position: 100% 50%; opacity: 1; }
+  100% { background-position: 200% 50%; opacity: 0.35; }
+}
+
+@keyframes lifecycle-line-flow {
+  0%, 100% { background-position: 0 0; opacity: 0.55; }
+  50% { background-position: 0 90px; opacity: 1; }
+}
+
+@keyframes lifecycle-card-receive {
+  0%, 62%, 100% {
+    border-color: rgba(115, 196, 236, 0.2);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  }
+  76%, 86% {
+    border-color: color-mix(in srgb, var(--step-color, #73C4EC) 72%, white);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24), 0 0 26px color-mix(in srgb, var(--step-color, #2FA9E0) 34%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
 }
 
 @keyframes lifecycle-card-pop {
@@ -1021,5 +1099,19 @@
 
   .solution-chapter {
     padding: var(--space-12) 0;
+  }
+
+  .solution-chapter__action .btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .solution-lifecycle-grid::before,
+  .lifecycle-step-card,
+  .lifecycle-step-card::before {
+    animation: none;
+    opacity: 0.8;
   }
 }
