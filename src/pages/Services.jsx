@@ -42,11 +42,11 @@ function ServiceVisual({ service, index }) {
 
 /* ── Interactive Process Steps Visual ── */
 const processSteps = [
-  { step: '01', title: 'ASSESS', desc: 'IT & Security Governance Audit', color: '#0072BC' },
-  { step: '02', title: 'SECURE', desc: '24/7 SOC & Threat Defense', color: '#2B3990' },
-  { step: '03', title: 'CONNECT', desc: 'WAN, LAN & Network Mesh', color: '#00A651' },
-  { step: '04', title: 'MANAGE', desc: 'Multi-Cloud Lifecycle', color: '#F37023' },
-  { step: '05', title: 'MONITOR', desc: 'Remote Supervision & RMM', color: '#E6007E' },
+  { step: '01', title: 'ASSESS', desc: 'IT & Security Governance Audit', color: '#18C8E8' },
+  { step: '02', title: 'SECURE', desc: '24/7 SOC & Threat Defense', color: '#3563FF' },
+  { step: '03', title: 'CONNECT', desc: 'WAN, LAN & Network Mesh', color: '#19B879' },
+  { step: '04', title: 'MANAGE', desc: 'Multi-Cloud Lifecycle', color: '#E68324' },
+  { step: '05', title: 'MONITOR', desc: 'Remote Supervision & RMM', color: '#EC008C' },
 ];
 
 export default function Services() {
@@ -140,7 +140,7 @@ export default function Services() {
                       )}
 
                       <div className="service-chapter__action">
-                        <Link to="/contact" className="btn btn--secondary">
+                        <Link to="/contact" className="btn btn--primary">
                           <span>Consult on {service.title}</span>
                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />

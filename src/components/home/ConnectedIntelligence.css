@@ -1,16 +1,15 @@
 /* ============================================================
-   CONNECTED INTELLIGENCE — "CONNECTED FIELD" EDITORIAL SECTION
-   Compact IoT/IIoT Substrate: Dot Matrices, Grid Lines & Ambient Lights
-   Brand Palette: Deep Blue #2B3990 | Tech Blue #0072BC | Cyan #0072BC | Green #00A651
+   CONNECTED INTELLIGENCE — Midnight Aurora Brand Statement
+   Background: #EFF5FB | Text: #182B62
    ============================================================ */
 
 .connected-intel {
   position: relative;
   width: 100%;
-  background: linear-gradient(135deg, #F4F8FC 0%, #EAF4FB 50%, #F4F8FC 100%);
-  padding: 34px 0 32px;
-  border-top: 1px solid rgba(8, 125, 185, 0.15);
-  border-bottom: 1px solid rgba(8, 125, 185, 0.15);
+  background: var(--pure-white, #FFFFFF);
+  padding: 38px 0 36px;
+  border-top: 1px solid var(--soft-border);
+  border-bottom: 1px solid var(--soft-border);
   overflow: hidden;
 }
 
@@ -23,29 +22,27 @@
   z-index: 0;
 }
 
-/* Technical Matrix Grid */
 .connected-intel__grid-canvas {
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 1px 1px, rgba(8, 125, 185, 0.11) 1.5px, transparent 0),
-    linear-gradient(90deg, rgba(8, 125, 185, 0.03) 1px, transparent 1px),
-    linear-gradient(rgba(8, 125, 185, 0.03) 1px, transparent 1px);
+    radial-gradient(circle at 1px 1px, rgba(53, 99, 255, 0.07) 1.5px, transparent 0),
+    linear-gradient(90deg, rgba(53, 99, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(rgba(53, 99, 255, 0.02) 1px, transparent 1px);
   background-size: 28px 28px, 56px 56px, 56px 56px;
   opacity: 0.85;
 }
 
-/* Ambient Glow Orbs */
 .connected-intel__glow-left {
   position: absolute;
   top: 50%;
   left: -5%;
   transform: translateY(-50%);
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(8, 125, 185, 0.12) 0%, rgba(0, 114, 188, 0.05) 50%, transparent 70%);
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(53, 99, 255, 0.09) 0%, rgba(24, 200, 232, 0.03) 50%, transparent 70%);
   border-radius: 50%;
-  filter: blur(40px);
+  filter: blur(48px);
 }
 
 .connected-intel__glow-right {
@@ -53,11 +50,11 @@
   top: 50%;
   right: -5%;
   transform: translateY(-50%);
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(0, 166, 81, 0.08) 0%, rgba(0, 114, 188, 0.06) 50%, transparent 70%);
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(24, 200, 232, 0.08) 0%, rgba(53, 99, 255, 0.03) 50%, transparent 70%);
   border-radius: 50%;
-  filter: blur(40px);
+  filter: blur(48px);
 }
 
 /* ── Container & Statement Structure ── */
@@ -65,7 +62,7 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 100%;
+  max-width: var(--container-wide);
   margin: 0 auto;
   padding: 0 clamp(1.25rem, 3.5vw, 3.5rem);
   display: flex;
@@ -73,7 +70,6 @@
   align-items: center;
 }
 
-/* ── Statement Typography (Rich Brand Deep Blue) ── */
 .connected-intel__statement {
   display: flex;
   justify-content: center;
@@ -82,33 +78,25 @@
 }
 
 .connected-intel__text {
-  font-size: clamp(1.02rem, 1.25vw, 1.16rem); /* ~16.5px - 18.5px */
-  font-weight: 550;
-  color: #2B3990; /* Brand Deep Blue */
-  line-height: 1.62;
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 1.25vw, 1.2rem);
+  font-weight: 500;
+  color: var(--primary-indigo);
+  line-height: 1.65;
   letter-spacing: -0.01em;
   margin: 0;
   text-align: center;
   width: 100%;
-  max-width: 100%;
+  max-width: 1100px;
 }
 
-/* ------------------------------------------------------------
-   RESPONSIVE DESIGN BREAKPOINTS
-   ------------------------------------------------------------ */
+/* ── Responsive ── */
 @media (max-width: 768px) {
   .connected-intel {
-    padding: 26px 0 24px;
+    padding: 28px 0;
   }
-
   .connected-intel__text {
-    font-size: clamp(0.95rem, 3.2vw, 1.05rem);
+    font-size: 15px;
     line-height: 1.55;
-  }
-}
-
-@media (max-width: 480px) {
-  .connected-intel {
-    padding: 22px 0 20px;
   }
 }

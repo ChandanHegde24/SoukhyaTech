@@ -7,16 +7,17 @@
 .technical-mastery {
   position: relative;
   padding: 60px 0 64px;
-  background-color: #FFFFFF;
+  background-color: var(--midnight-navy, #081426);
   background-image:
-    linear-gradient(90deg, rgba(8, 125, 185, 0.05) 1px, transparent 1px),
-    linear-gradient(rgba(8, 125, 185, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 114, 188, 0.02) 1px, transparent 1px),
-    linear-gradient(rgba(0, 114, 188, 0.02) 1px, transparent 1px),
-    radial-gradient(circle at 80% 30%, rgba(8, 125, 185, 0.06) 0%, transparent 50%),
-    radial-gradient(circle at 20% 70%, rgba(0, 114, 188, 0.05) 0%, transparent 45%);
-  background-size: 48px 48px, 48px 48px, 12px 12px, 12px 12px, 100% 100%, 100% 100%;
-  border-bottom: 1px solid rgba(8, 125, 185, 0.12);
+    linear-gradient(90deg, rgba(24, 200, 232, 0.06) 1px, transparent 1px),
+    linear-gradient(rgba(24, 200, 232, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(53, 99, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(53, 99, 255, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at 80% 30%, rgba(24, 200, 232, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 20% 70%, rgba(53, 99, 255, 0.14) 0%, transparent 45%),
+    linear-gradient(145deg, #081426 0%, #0E1A33 45%, #182B62 100%);
+  background-size: 48px 48px, 48px 48px, 12px 12px, 12px 12px, 100% 100%, 100% 100%, 100% 100%;
+  border-bottom: 1px solid rgba(53, 99, 255, 0.25);
   overflow: hidden;
 }
 
@@ -26,12 +27,12 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(45deg, transparent 49.7%, rgba(8, 125, 185, 0.035) 50%, transparent 50.3%),
-    linear-gradient(-45deg, transparent 49.7%, rgba(8, 125, 185, 0.035) 50%, transparent 50.3%);
+    linear-gradient(45deg, transparent 49.7%, rgba(24, 200, 232, 0.04) 50%, transparent 50.3%),
+    linear-gradient(-45deg, transparent 49.7%, rgba(24, 200, 232, 0.04) 50%, transparent 50.3%);
   background-size: 192px 192px, 192px 192px;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.75;
+  opacity: 0.7;
 }
 
 .technical-mastery__layout {
@@ -52,7 +53,7 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 10px;
-  color: #0072BC;
+  color: var(--aurora-cyan, #18C8E8);
   font-family: var(--font-mono, monospace);
   font-size: 13px; /* 12-14px */
   font-weight: 700;
@@ -64,14 +65,14 @@
 .technical-mastery__eyebrow::before {
   width: 20px;
   height: 1px;
-  background: #0072BC;
+  background: var(--aurora-cyan);
   content: '';
 }
 
 .technical-mastery__eyebrow::after {
   width: 20px;
   height: 1px;
-  background: #0072BC;
+  background: var(--aurora-cyan);
   content: '';
 }
 
@@ -80,12 +81,12 @@
 }
 
 .technical-mastery__heading {
-  margin: 0 0 14px; /* H2 -> paragraph spacing: 16-22px */
+  margin: 0 0 var(--space-4); /* H2 -> paragraph spacing: 16px */
   font-size: clamp(2.4rem, 3.2vw, 3rem); /* 40px - 48px Section H2 */
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: var(--primary-deep-blue);
+  color: #FFFFFF !important;
 }
 
 .technical-mastery__description {
@@ -93,7 +94,7 @@
   max-width: 720px;
   font-size: clamp(17.5px, 1.2vw, 19px);
   line-height: 1.55;
-  color: #53657D;
+  color: #C8D8EC;
 }
 
 .engineering-blueprint {
@@ -123,7 +124,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #53657D;
+  color: #C8D8EC;
   font-family: var(--font-mono, monospace);
   letter-spacing: 0.13em;
 }
@@ -131,18 +132,18 @@
 .engineering-blueprint__meta-tag {
   font-size: 11px;
   font-weight: 700;
-  color: #7B8798;
+  color: #94A3B8;
   letter-spacing: 0.12em;
 }
 
 .engineering-blueprint__meta-fig {
   font-size: 14px;
   font-weight: 800;
-  color: #2B3990;
-  background: #EAF4FB;
+  color: #FFFFFF;
+  background: rgba(24, 43, 98, 0.75);
   padding: 4px 12px;
   border-radius: 6px;
-  border: 1px solid rgba(8, 125, 185, 0.25);
+  border: 1px solid rgba(53, 99, 255, 0.4);
   letter-spacing: 0.08em;
 }
 
@@ -151,8 +152,8 @@
   z-index: 0;
   inset: 12px;
   opacity: 0.56;
-  background-image: linear-gradient(90deg, transparent 49.9%, rgba(80, 110, 149, 0.12) 50%, transparent 50.1%),
-    linear-gradient(transparent 49.9%, rgba(80, 110, 149, 0.12) 50%, transparent 50.1%);
+  background-image: linear-gradient(90deg, transparent 49.9%, rgba(53, 99, 255, 0.2) 50%, transparent 50.1%),
+    linear-gradient(transparent 49.9%, rgba(53, 99, 255, 0.2) 50%, transparent 50.1%);
   background-size: 96px 96px;
   clip-path: inset(0 100% 0 0);
   transition: clip-path 480ms cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -170,8 +171,8 @@
   left: 0;
   width: 2px;
   opacity: 0;
-  background: linear-gradient(180deg, transparent, #0072BC 18%, #6bb5e1 50%, #2B3990 82%, transparent);
-  box-shadow: 0 0 12px rgba(0, 114, 188, 0.25);
+  background: linear-gradient(180deg, transparent, #18C8E8 18%, #3563FF 50%, var(--royal-indigo, #182B62) 82%, transparent);
+  box-shadow: 0 0 12px rgba(24, 200, 232, 0.35);
   pointer-events: none;
 }
 
@@ -218,26 +219,26 @@
 
 .engineering-blueprint__trace {
   fill: none;
-  stroke: #a9bbd0;
+  stroke: rgba(53, 99, 255, 0.45);
   stroke-width: 1.35;
   transition: stroke 220ms ease, filter 220ms ease, opacity 220ms ease;
 }
 
 .engineering-blueprint__traces .is-active .engineering-blueprint__trace {
-  stroke: #0072BC;
-  filter: drop-shadow(0 0 3px rgba(0, 114, 188, 0.35));
+  stroke: var(--aurora-cyan);
+  filter: drop-shadow(0 0 5px rgba(24, 200, 232, 0.75));
 }
 
 .engineering-blueprint__junction,
 .engineering-blueprint__port-light {
-  fill: #a9bbd0;
+  fill: rgba(53, 99, 255, 0.6);
   transition: fill 220ms ease, filter 220ms ease;
 }
 
 .engineering-blueprint__traces .is-active .engineering-blueprint__junction,
 .engineering-blueprint__port-light.is-active {
-  fill: #0072BC;
-  filter: drop-shadow(0 0 4px rgba(0, 114, 188, 0.75));
+  fill: var(--aurora-cyan);
+  filter: drop-shadow(0 0 5px rgba(24, 200, 232, 0.85));
 }
 
 .engineering-core {
@@ -246,35 +247,35 @@
 }
 
 .engineering-core__housing {
-  fill: #fbfdff;
-  stroke: #91a6bd;
+  fill: #0E1A33;
+  stroke: rgba(53, 99, 255, 0.55);
   stroke-width: 1.4;
   transition: stroke 250ms ease, filter 250ms ease;
 }
 
 .engineering-core__inner {
   fill: none;
-  stroke: #d6e1ed;
+  stroke: rgba(24, 200, 232, 0.25);
   stroke-width: 1;
 }
 
 .engineering-core.is-active .engineering-core__housing {
-  stroke: #5c8fb8;
-  filter: drop-shadow(0 0 8px rgba(0, 114, 188, 0.13));
+  stroke: var(--aurora-cyan);
+  filter: drop-shadow(0 0 12px rgba(24, 200, 232, 0.4));
 }
 
 .engineering-core__connectors,
 .engineering-core__ticks,
 .engineering-core__circuit {
   fill: none;
-  stroke: #9aadc2;
+  stroke: rgba(148, 163, 184, 0.5);
   stroke-width: 1.3;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
 .engineering-core__brand {
-  fill: #2B3990;
+  fill: #C8D8EC;
   font-family: var(--font-body, 'Ubuntu', sans-serif);
   font-size: 8px;
   font-weight: 700;
@@ -282,13 +283,13 @@
 }
 
 .engineering-core__label-plate {
-  fill: #f3f7fb;
-  stroke: #dae4ef;
+  fill: #182B62;
+  stroke: rgba(53, 99, 255, 0.45);
   stroke-width: 1;
 }
 
 .engineering-core__label {
-  fill: #2B3990;
+  fill: #FFFFFF;
   font-family: var(--font-body, 'Ubuntu', sans-serif);
   font-size: 13.5px;
   font-weight: 700;
@@ -296,52 +297,52 @@
 }
 
 .engineering-core__sensor-ring {
-  fill: rgba(0, 114, 188, 0.025);
-  stroke: #7396b8;
+  fill: rgba(53, 99, 255, 0.08);
+  stroke: rgba(53, 99, 255, 0.45);
   stroke-width: 1.25;
   transition: stroke 250ms ease, fill 250ms ease;
 }
 
 .engineering-core__sensor-ring--inner {
-  fill: rgba(43, 57, 144, 0.035);
+  fill: rgba(24, 43, 98, 0.035);
   stroke: #b0c1d4;
   stroke-dasharray: 2 4;
 }
 
 .engineering-core.is-active .engineering-core__sensor-ring {
-  stroke: #0072BC;
-  fill: rgba(0, 114, 188, 0.07);
+  stroke: #18C8E8;
+  fill: rgba(24, 200, 232, 0.12);
 }
 
 .engineering-core__sensor-core {
-  fill: #fff;
-  stroke: #2B3990;
+  fill: #081426;
+  stroke: var(--aurora-cyan);
   stroke-width: 1.4;
   transition: fill 250ms ease, filter 250ms ease;
 }
 
 .engineering-core.is-active .engineering-core__sensor-core {
-  fill: #eaf5fc;
-  filter: drop-shadow(0 0 7px rgba(0, 114, 188, 0.38));
+  fill: #0E1A33;
+  filter: drop-shadow(0 0 10px rgba(24, 200, 232, 0.65));
 }
 
 /* ── Center Icon Logo & Ring Animations ── */
 .engineering-core__logo-backdrop {
-  fill: #FFFFFF;
-  stroke: #2B3990;
+  fill: #081426;
+  stroke: var(--aurora-cyan);
   stroke-width: 1.6;
-  filter: drop-shadow(0 4px 12px rgba(43, 57, 144, 0.16));
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
   transition: stroke 300ms ease, filter 300ms ease;
 }
 
 .engineering-core.is-active .engineering-core__logo-backdrop {
-  stroke: #0072BC;
-  filter: drop-shadow(0 0 16px rgba(8, 125, 185, 0.45));
+  stroke: #18C8E8;
+  filter: drop-shadow(0 0 18px rgba(24, 200, 232, 0.6));
 }
 
 .engineering-core__logo-glow-ring {
   fill: none;
-  stroke: rgba(0, 114, 188, 0.45);
+  stroke: rgba(24, 200, 232, 0.55);
   stroke-width: 1.8;
   stroke-dasharray: 4 6;
   animation: coreRingRotate 14s linear infinite;
@@ -391,11 +392,11 @@
 
 .engineering-core__sensor-point,
 .engineering-core__micro-node {
-  fill: #0072BC;
+  fill: #087DB9;
 }
 
 .engineering-core__status-light {
-  fill: #00A651;
+  fill: #25A449;
 }
 
 .engineering-core__status-light--secondary {
@@ -425,21 +426,21 @@
   gap: 12px;
   padding: 12px 16px;
   border-radius: 10px;
-  border: 1px solid rgba(217, 229, 240, 0.75);
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(8px);
+  border: 1px solid rgba(53, 99, 255, 0.32);
+  background: rgba(14, 26, 51, 0.85);
+  backdrop-filter: blur(12px);
   color: inherit;
   text-align: left;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(20, 33, 61, 0.025);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .engineering-service:hover,
 .engineering-service.is-active {
-  background: #FFFFFF;
-  border-color: #0072BC;
-  box-shadow: 0 6px 20px rgba(8, 125, 185, 0.12);
+  background: rgba(24, 43, 98, 0.95);
+  border-color: var(--aurora-cyan);
+  box-shadow: 0 8px 24px rgba(24, 200, 232, 0.22);
 }
 
 .engineering-service::after {
@@ -454,7 +455,7 @@
 }
 
 .engineering-service__title {
-  color: var(--primary-deep-blue);
+  color: #FFFFFF;
   font-size: 18px;
   font-weight: 750;
   line-height: 1.25;
@@ -465,7 +466,7 @@
 .engineering-service__description {
   display: block;
   overflow: visible;
-  color: #4A5B73;
+  color: #C8D8EC;
   font-size: 15px;
   line-height: 1.5;
   font-weight: 400;
@@ -478,67 +479,77 @@
   height: 8px;
   margin-top: 0;
   align-self: center;
-  border: 1.5px solid #aebfd1;
+  border: 1.5px solid rgba(53, 99, 255, 0.6);
   border-radius: 50%;
-  background: #fff;
+  background: #081426;
   transition: background 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
   flex-shrink: 0;
 }
 
 .engineering-service.is-active .engineering-service__title,
 .engineering-service:hover .engineering-service__title {
-  color: var(--secondary-tech-blue);
+  color: var(--aurora-cyan);
 }
 
 .engineering-service.is-active .engineering-service__indicator,
 .engineering-service:hover .engineering-service__indicator {
-  border-color: #0072BC;
-  background: #0072BC;
-  box-shadow: 0 0 6px rgba(8, 125, 185, 0.6);
+  border-color: var(--aurora-cyan);
+  background: var(--aurora-cyan);
+  box-shadow: 0 0 10px rgba(24, 200, 232, 0.8);
 }
 
-/* ── Capsule Action Button CTA (Blue default, Green on hover) ── */
+/* ── Capsule Action Button CTA (Electric Blue -> Aurora Cyan) ── */
 .engineering-service__cta {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 5px 14px;
+  padding: 6px 16px;
   border-radius: var(--radius-full, 999px);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(0, 114, 188, 0.16));
-  border: 1px solid rgba(255, 255, 255, 0.92);
-  color: #2B3990;
+  background-color: #3563FF !important;
+  background-image: none !important;
+  border: 1.5px solid #3563FF !important;
+  color: #FFFFFF !important;
   font-family: var(--font-body, sans-serif);
   font-size: 13px;
   font-weight: 700;
   width: fit-content;
   letter-spacing: 0.02em;
-  transition: background 280ms cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 280ms cubic-bezier(0.16, 1, 0.3, 1),
-              color 280ms cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 280ms cubic-bezier(0.16, 1, 0.3, 1),
-              transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
-  backdrop-filter: blur(16px) saturate(160%);
-  box-shadow: 0 7px 18px rgba(43, 57, 144, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 14px rgba(53, 99, 255, 0.28);
   cursor: pointer;
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+
+.engineering-service__cta * {
+  color: #FFFFFF !important;
+  transition: color 200ms ease;
 }
 
 .engineering-service__cta-icon {
-  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1), color 200ms ease;
 }
 
 .engineering-service__cta:hover,
-.engineering-service__cta:focus-visible {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.99), rgba(0, 114, 188, 0.28));
-  border-color: rgba(0, 114, 188, 0.4);
-  color: #2B3990;
-  box-shadow: 0 11px 24px rgba(43, 57, 144, 0.2), inset 0 1px 0 #FFFFFF;
+.engineering-service__cta:focus-visible,
+.engineering-service__cta:active {
+  background-color: #18C8E8 !important;
+  background-image: none !important;
+  border-color: #18C8E8 !important;
+  color: #081426 !important;
+  box-shadow: 0 8px 22px rgba(24, 200, 232, 0.42);
   transform: translateX(2px);
 }
 
+.engineering-service__cta:hover *,
+.engineering-service__cta:focus-visible *,
+.engineering-service__cta:active * {
+  color: #081426 !important;
+}
+
 .engineering-service__cta:hover .engineering-service__cta-icon,
-.engineering-service__cta:focus-visible .engineering-service__cta-icon {
+.engineering-service__cta:focus-visible .engineering-service__cta-icon,
+.engineering-service__cta:active .engineering-service__cta-icon {
   transform: translateX(2.5px);
+  color: #081426 !important;
 }
 
 .engineering-blueprint__scale {
@@ -609,7 +620,7 @@
 
   .technical-mastery__heading {
     max-width: 520px;
-    margin-bottom: 12px;
+    margin-bottom: var(--space-4);
     font-size: clamp(2rem, 8vw, 2.6rem);
   }
 
@@ -658,8 +669,8 @@
     gap: 12px;
     padding: 14px 14px;
     border-radius: 12px;
-    background: #FFFFFF;
-    border: 1px solid #D9E5F0;
+    background: rgba(14, 26, 51, 0.92);
+    border: 1px solid rgba(53, 99, 255, 0.32);
   }
 
   .engineering-service::before,
@@ -670,6 +681,7 @@
   .engineering-service__title {
     font-size: 17px;
     font-weight: 750;
+    color: #FFFFFF;
   }
 
   .engineering-service__description {
@@ -677,7 +689,7 @@
     overflow: visible;
     font-size: 15px;
     line-height: 1.55;
-    color: #53657D;
+    color: #C8D8EC;
   }
 
   .engineering-service__cta {

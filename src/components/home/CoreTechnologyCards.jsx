@@ -31,7 +31,7 @@ const technologyModules = [
   },
   {
     id: 'digital-operation-center',
-    title: 'DIGITAL OPERATION CENTER',
+    title: 'Digital Operation Center',
     description:
       'Integrated platform to source and manage hybrid infrastructure environment that helps to manage the public cloud.',
     link: '/services',

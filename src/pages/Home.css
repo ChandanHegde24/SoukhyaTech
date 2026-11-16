@@ -19,36 +19,33 @@
 }
 
 .editorial-block--mastery {
-  background: #FFFFFF;
+  background: var(--midnight-navy, #081426);
+  padding: 0;
 }
 
 /* ── Section 02: Enterprise Solutions — "INTERCONNECTED SYSTEM" Background ── */
 .editorial-block--solutions {
-  background-color: #F4F8FC;
+  background-color: var(--ice-white, #EFF5FB);
   background-image:
-    radial-gradient(circle at 50% 50%, rgba(0, 114, 188, 0.08) 0%, rgba(8, 125, 185, 0.03) 45%, transparent 70%),
-    radial-gradient(circle at 50% 50%, transparent 140px, rgba(8, 125, 185, 0.04) 141px, transparent 142px, transparent 280px, rgba(0, 114, 188, 0.035) 281px, transparent 282px, transparent 440px, rgba(8, 125, 185, 0.025) 441px, transparent 442px),
-    linear-gradient(90deg, rgba(8, 125, 185, 0.025) 1px, transparent 1px),
-    linear-gradient(rgba(8, 125, 185, 0.025) 1px, transparent 1px),
-    radial-gradient(circle at 1px 1px, rgba(8, 125, 185, 0.05) 1px, transparent 0);
+    radial-gradient(circle at 50% 50%, rgba(53, 99, 255, 0.08) 0%, rgba(24, 200, 232, 0.03) 45%, transparent 70%),
+    radial-gradient(circle at 50% 50%, transparent 140px, rgba(24, 200, 232, 0.04) 141px, transparent 142px, transparent 280px, rgba(53, 99, 255, 0.035) 281px, transparent 282px, transparent 440px, rgba(24, 200, 232, 0.025) 441px, transparent 442px),
+    linear-gradient(90deg, rgba(53, 99, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(rgba(53, 99, 255, 0.025) 1px, transparent 1px),
+    radial-gradient(circle at 1px 1px, rgba(53, 99, 255, 0.05) 1px, transparent 0);
   background-size: 100% 100%, 100% 100%, 72px 72px, 72px 72px, 36px 36px;
-  border-top: 1px solid rgba(8, 125, 185, 0.12);
-  border-bottom: 1px solid rgba(8, 125, 185, 0.12);
+  border-top: 1px solid var(--soft-border);
+  border-bottom: 1px solid var(--soft-border);
   overflow: hidden;
 }
 
-/* ── Section 03: Our Strengths — "CONSTELLATION" Background ── */
+/* ── Section 03: Our Strengths — Clean Modern Background (No Stray Dots) ── */
 .editorial-block--strengths {
   background-color: #FFFFFF;
   background-image:
-    radial-gradient(circle at 80% 25%, transparent 180px, rgba(8, 125, 185, 0.04) 181px, transparent 182px),
-    radial-gradient(circle at 20% 75%, transparent 220px, rgba(0, 114, 188, 0.035) 221px, transparent 222px),
-    radial-gradient(circle at 78% 24%, rgba(0, 166, 81, 0.4) 3px, transparent 4px),
-    radial-gradient(circle at 22% 76%, rgba(0, 114, 188, 0.4) 3px, transparent 4px),
-    radial-gradient(circle at 1px 1px, rgba(8, 125, 185, 0.06) 1.2px, transparent 0),
-    linear-gradient(135deg, transparent 49.6%, rgba(8, 125, 185, 0.02) 50%, transparent 50.4%);
-  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 36px 36px, 96px 96px;
-  border-bottom: 1px solid rgba(8, 125, 185, 0.12);
+    radial-gradient(circle at 85% 20%, rgba(24, 200, 232, 0.035) 0%, transparent 50%),
+    radial-gradient(circle at 15% 80%, rgba(53, 99, 255, 0.03) 0%, transparent 50%);
+  background-size: 100% 100%, 100% 100%;
+  border-bottom: 1px solid var(--soft-border);
   overflow: hidden;
 }
 
@@ -56,15 +53,15 @@
 .editorial-main-heading {
   font-size: clamp(2.5rem, 3.2vw, 3rem); /* 40px - 48px Section H2 */
   font-weight: 700;
-  color: var(--primary-deep-blue);
+  color: var(--heading-color);
   line-height: 1.15;
   letter-spacing: -0.02em;
-  margin: 6px 0 16px; /* H2 -> paragraph spacing: 16-22px */
+  margin: 6px 0 var(--space-4); /* H2 -> paragraph spacing: 16px */
 }
 
 .editorial-main-desc {
   font-size: clamp(18px, 1.2vw, 19.5px); /* 18px - 20px Section Subheading */
-  color: #53657D;
+  color: var(--body-text, #454B5D);
   line-height: 1.55;
   margin: 0 0 16px;
   max-width: 680px;
@@ -76,7 +73,7 @@
   gap: 7px;
   font-size: 15px; /* 15-16px */
   font-weight: 600;
-  color: #0072BC;
+  color: var(--electric-blue, #3563FF);
   text-decoration: none;
   transition: color 200ms ease, transform 200ms ease;
   width: fit-content;
@@ -87,7 +84,7 @@
 }
 
 .editorial-inline-link:hover {
-  color: #2B3990;
+  color: var(--aurora-cyan, #18C8E8);
 }
 
 .editorial-inline-link:hover svg {
@@ -144,7 +141,7 @@
 .enterprise-signal-rail {
   position: relative;
   width: 3px;
-  background: #E2E8F0;
+  background: var(--soft-border);
   border-radius: 999px;
   margin: 12px 0;
   flex-shrink: 0;
@@ -155,7 +152,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(180deg, #0072BC, #2B3990);
+  background: var(--grad-aurora);
   border-radius: 999px;
   transition: transform 380ms cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -168,8 +165,8 @@
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: #0072BC;
-  box-shadow: 0 0 10px rgba(0, 114, 188, 0.75), 0 0 0 2px #FFFFFF;
+  background: var(--aurora-cyan);
+  box-shadow: 0 0 10px rgba(24, 200, 232, 0.75), 0 0 0 2px #FFFFFF;
 }
 
 /* Solution Index Rows */
@@ -191,11 +188,11 @@
 
 .solution-showcase-row:hover,
 .solution-showcase-row:focus-visible {
-  background: rgba(0, 114, 188, 0.03);
+  background: rgba(53, 99, 255, 0.04);
 }
 
 .solution-showcase-row.is-active {
-  background: rgba(0, 114, 188, 0.05);
+  background: rgba(53, 99, 255, 0.06);
 }
 
 .solution-showcase-row__head {
@@ -215,7 +212,7 @@
 }
 
 .solution-showcase-row.is-active .solution-showcase-row__num {
-  color: #0072BC;
+  color: var(--electric-blue);
 }
 
 .solution-showcase-row__title-wrap {
@@ -234,13 +231,13 @@
 }
 
 .solution-showcase-row.is-active .solution-showcase-row__code {
-  color: #0072BC;
+  color: var(--aurora-cyan);
 }
 
 .solution-showcase-row__title {
   font-size: clamp(1.375rem, 1.6vw, 1.5rem); /* 22px - 24px H3 */
   font-weight: 700;
-  color: var(--primary-deep-blue);
+  color: var(--heading-color);
   line-height: 1.25;
   margin: 0;
   letter-spacing: -0.015em;
@@ -248,7 +245,7 @@
 }
 
 .solution-showcase-row.is-active .solution-showcase-row__title {
-  color: var(--secondary-tech-blue);
+  color: var(--heading-color);
 }
 
 .solution-showcase-row__node {
@@ -262,8 +259,8 @@
 }
 
 .solution-showcase-row.is-active .solution-showcase-row__node {
-  background: #0072BC;
-  box-shadow: 0 0 8px rgba(0, 114, 188, 0.6);
+  background: var(--aurora-cyan);
+  box-shadow: 0 0 8px rgba(24, 200, 232, 0.6);
 }
 
 /* Expanded Narrative for Active Solution */
@@ -282,7 +279,7 @@
 .solution-showcase-row__desc {
   font-size: clamp(16px, 1.1vw, 17px); /* Matching Technical Mastery service description */
   font-weight: 400;
-  color: #4A5B73;
+  color: var(--slate-text);
   line-height: 1.65;
   margin: 0;
 }
@@ -297,9 +294,9 @@
   font-family: var(--font-mono, monospace);
   font-size: 12.5px;
   font-weight: 600;
-  color: #0072BC;
-  background: rgba(0, 114, 188, 0.08);
-  border: 1px solid rgba(0, 114, 188, 0.2);
+  color: var(--electric-blue);
+  background: rgba(53, 99, 255, 0.08);
+  border: 1px solid rgba(53, 99, 255, 0.2);
   padding: 4px 10px;
   border-radius: 9999px;
 }
@@ -310,7 +307,7 @@
   left: 12px;
   right: 12px;
   height: 1px;
-  background: #E8EEF5;
+  background: var(--soft-border);
 }
 
 .solution-showcase-row:last-child .solution-showcase-row__line {
@@ -332,14 +329,14 @@
   background: #FFFFFF;
   border-radius: var(--radius-2xl, 16px);
   overflow: hidden;
-  box-shadow: 0 16px 40px rgba(23, 32, 51, 0.06), 0 2px 8px rgba(43, 57, 144, 0.03);
-  border: 1px solid var(--border-light, #E2E8F0);
+  box-shadow: 0 16px 40px rgba(8, 20, 38, 0.06), 0 2px 8px rgba(53, 99, 255, 0.04);
+  border: 1px solid var(--soft-border);
   transition: all 0.3s ease;
 }
 
 .solution-visual-stage:hover {
-  border-color: rgba(0, 114, 188, 0.35);
-  box-shadow: 0 22px 50px rgba(23, 32, 51, 0.1), 0 4px 14px rgba(0, 114, 188, 0.08);
+  border-color: rgba(53, 99, 255, 0.35);
+  box-shadow: 0 22px 50px rgba(8, 20, 38, 0.1), 0 4px 14px rgba(24, 200, 232, 0.12);
 }
 
 .solution-visual-stage__canvas {
@@ -376,22 +373,22 @@
   align-items: center;
   justify-content: space-between;
   padding: 14px 20px;
-  background: #080D18;
-  border-top: 1px solid #2B3990;
+  background: var(--midnight-navy);
+  border-top: 1px solid var(--royal-indigo);
   z-index: 2;
 }
 
 .solution-visual-stage__caption-title {
   font-size: 15.5px;
   font-weight: 700;
-  color: #F4F8FC;
+  color: var(--pure-white);
 }
 
 .solution-visual-stage__meta {
   font-family: var(--font-mono, monospace);
   font-size: 12px;
   font-weight: 700;
-  color: #0072BC;
+  color: var(--technology-blue);
   letter-spacing: 0.06em;
 }
 
@@ -401,20 +398,6 @@
    - 35-40% Left: Editorial Introduction + Signature Engineering Mark
    - 60-65% Right: Layered Engineering DNA Panel (9 Integrated Layers)
    ============================================================ */
-
-/* Section Transition Trace */
-.strengths-transition-trace {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
-}
-
-.strengths-transition-trace__line {
-  height: 1px;
-  width: 48px;
-  background: linear-gradient(90deg, #D9E5F0, #0072BC);
-}
 
 /* Asymmetric 38% Left / 62% Right Layout */
 .strengths-dna-layout {
@@ -439,8 +422,8 @@
 .strengths-system-map {
   margin-top: 26px;
   padding: 15px 16px 13px;
-  background: #F4F8FC;
-  border: 1px solid #D9E5F0;
+  background: var(--warm-platinum);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -458,14 +441,14 @@
 }
 
 .strengths-system-map__eyebrow {
-  color: #2B3990;
+  color: var(--royal-indigo);
 }
 
 .strengths-system-map__status {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: #55708B;
+  color: var(--body-text);
   white-space: nowrap;
 }
 
@@ -473,8 +456,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #00A651;
-  box-shadow: 0 0 0 3px rgba(17, 155, 108, 0.12);
+  background: var(--brand-green);
+  box-shadow: 0 0 0 3px rgba(37, 164, 73, 0.16);
 }
 
 .strengths-system-map__flow {
@@ -491,7 +474,7 @@
   left: 13%;
   right: 13%;
   height: 1px;
-  background: linear-gradient(90deg, #0072BC, #2B3990, #00A651);
+  background: linear-gradient(90deg, var(--technology-blue), var(--royal-indigo), var(--brand-green));
 }
 
 .strengths-system-map__node {
@@ -501,7 +484,7 @@
   flex-direction: column;
   align-items: center;
   gap: 7px;
-  color: #31455B;
+  color: var(--heading-color);
   font-size: 12px;
   font-weight: 750;
   line-height: 1.2;
@@ -511,34 +494,34 @@
 .strengths-system-map__node-mark {
   width: 20px;
   height: 20px;
-  border: 4px solid #F4F8FC;
+  border: 4px solid var(--ice-white, #EFF5FB);
   border-radius: 50%;
   box-shadow: 0 0 0 1px currentColor;
 }
 
 .strengths-system-map__node-mark--device {
-  color: #0072BC;
-  background: #0072BC;
+  color: var(--electric-blue);
+  background: var(--electric-blue);
 }
 
 .strengths-system-map__node-mark--data {
-  color: #2B3990;
-  background: #2B3990;
+  color: var(--royal-indigo);
+  background: var(--royal-indigo);
 }
 
 .strengths-system-map__node-mark--decision {
-  color: #00A651;
-  background: #00A651;
+  color: var(--emerald-green);
+  background: var(--emerald-green);
 }
 
 .strengths-system-map__caption {
   padding-top: 10px;
-  border-top: 1px solid #E1EAF3;
-  color: #7B8798;
+  border-top: 1px solid var(--soft-border);
+  color: var(--body-text);
 }
 
 .strengths-system-map__caption strong {
-  color: #2B3990;
+  color: var(--royal-indigo);
   font-size: 11px;
 }
 
@@ -546,8 +529,8 @@
 .strengths-dna-signature {
   margin-top: 24px;
   padding: 18px 22px;
-  background: #F4F8FC;
-  border: 1px solid #D9E5F0;
+  background: var(--ice-white, #EFF5FB);
+  border: 1px solid var(--soft-border);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -564,15 +547,15 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #0072BC;
-  box-shadow: 0 0 6px #0072BC;
+  background: var(--aurora-cyan);
+  box-shadow: 0 0 6px var(--aurora-cyan);
 }
 
 .strengths-dna-signature__text {
   font-family: var(--font-mono, monospace);
   font-size: 13.5px;
   font-weight: 800;
-  color: #2B3990;
+  color: var(--royal-indigo);
   letter-spacing: 0.08em;
 }
 
@@ -623,7 +606,7 @@
 }
 
 .strengths-dna-panel__plus {
-  color: #0072BC;
+  color: var(--electric-blue, #3563FF);
   font-weight: 800;
 }
 
@@ -634,7 +617,7 @@
   font-family: var(--font-mono, monospace);
   font-size: 12px;
   font-weight: 700;
-  color: #0072BC;
+  color: var(--emerald-green, #19B879);
   letter-spacing: 0.06em;
 }
 
@@ -642,8 +625,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #0072BC;
-  box-shadow: 0 0 6px rgba(0, 114, 188, 0.6);
+  background: var(--emerald-green, #19B879);
+  box-shadow: 0 0 6px rgba(25, 184, 121, 0.6);
 }
 
 /* 9 Integrated Engineering Layers */
@@ -662,21 +645,23 @@
   padding: 0 22px 22px;
   cursor: pointer;
   border-radius: 0;
-  background: #fff;
-  box-shadow: 0 8px 24px rgba(17, 48, 82, 0.06);
+  background: #FFFFFF;
+  border: 1px solid var(--soft-border, #D7E2EF);
+  border-bottom: 3px solid transparent;
+  box-shadow: 0 8px 24px rgba(8, 20, 38, 0.05);
   outline: none;
-  transition: background 200ms ease, transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .strength-dna-layer:hover,
-.strength-dna-layer:focus-visible {
-  background: #fff;
+.strength-dna-layer:focus-visible,
+.strength-dna-layer.is-active,
+.strength-dna-layer:active {
+  background: #FFFFFF;
   transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(17, 48, 82, 0.12);
-}
-
-.strength-dna-layer.is-active {
-  background: #fff;
+  border-color: rgba(25, 184, 121, 0.45);
+  border-bottom-color: var(--emerald-green, #19B879);
+  box-shadow: 0 16px 36px rgba(25, 184, 121, 0.14), 0 0 0 1px rgba(25, 184, 121, 0.22);
 }
 
 .strength-dna-layer__content {
@@ -692,8 +677,18 @@
   width: 64px;
   height: 64px;
   place-items: center;
-  color: #fff;
-  background: var(--primary-deep-blue, #2B3990);
+  color: #FFFFFF;
+  background: var(--royal-indigo, #182B62);
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.strength-dna-layer:hover .strength-dna-layer__icon,
+.strength-dna-layer:focus-visible .strength-dna-layer__icon,
+.strength-dna-layer.is-active .strength-dna-layer__icon,
+.strength-dna-layer:active .strength-dna-layer__icon {
+  background: var(--emerald-green, #19B879);
+  box-shadow: 0 6px 18px rgba(25, 184, 121, 0.38);
+  transform: scale(1.05);
 }
 
 .strength-dna-layer__icon svg { width: 32px; height: 32px; }
@@ -711,18 +706,19 @@
 .strength-dna-layer__title {
   font-size: clamp(17.5px, 1.2vw, 19px); /* Matched to Technical Mastery service title scale */
   font-weight: 650;
-  color: var(--primary-deep-blue);
+  color: var(--heading-color);
   line-height: 1.32;
   margin: 0;
   flex: 1;
-  transition: color 200ms ease, transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  transition: color 250ms ease, transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.strength-dna-layer__title { text-transform: uppercase; }
-
-.strength-dna-layer.is-active .strength-dna-layer__title {
-  color: var(--secondary-tech-blue);
-  font-weight: 750;
+.strength-dna-layer:hover .strength-dna-layer__title,
+.strength-dna-layer:focus-visible .strength-dna-layer__title,
+.strength-dna-layer.is-active .strength-dna-layer__title,
+.strength-dna-layer:active .strength-dna-layer__title {
+  color: var(--heading-color);
   transform: translateX(4px);
 }
 
@@ -748,17 +744,17 @@
 }
 
 .strength-dna-layer.is-active .strength-dna-layer__tag {
-  color: #0072BC;
+  color: var(--green-accent, #25A449);
 }
 
 .strength-dna-layer__arrow {
   color: #94A3B8;
   font-size: 15px;
-  transition: transform 200ms ease, color 200ms ease;
+  transition: transform 250ms ease, color 250ms ease;
 }
 
 .strength-dna-layer.is-active .strength-dna-layer__arrow {
-  color: #0072BC;
+  color: var(--green-accent, #25A449);
   transform: translateX(3px);
 }
 
@@ -766,10 +762,10 @@
 .strength-dna-layer__signal-track {
   position: absolute;
   bottom: 0;
-  left: 12px;
-  right: 12px;
-  height: 1px;
-  background: #E8EEF5;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: transparent;
   overflow: hidden;
 }
 
@@ -779,13 +775,16 @@
   left: 0;
   right: 0;
   height: 100%;
-  background: linear-gradient(90deg, #0072BC, #2B3990);
+  background: var(--green-accent, #25A449);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.strength-dna-layer.is-active .strength-dna-layer__signal-line {
+.strength-dna-layer:hover .strength-dna-layer__signal-line,
+.strength-dna-layer:focus-visible .strength-dna-layer__signal-line,
+.strength-dna-layer.is-active .strength-dna-layer__signal-line,
+.strength-dna-layer:active .strength-dna-layer__signal-line {
   transform: scaleX(1);
 }
 

@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
+import { contactInfo } from '../../data/contact';
 import './CTA.css';
 
 export default function CTA({
@@ -80,20 +81,27 @@ export default function CTA({
             )}
           </div>
 
-          <div className="cta-section__contact-inline">
-            <a href="tel:+919731747999" className="cta-section__contact-item">
+          <div className="cta-section__contact-block">
+            <a
+              href={`tel:${contactInfo.phone.replace(/\s/g, '')}`}
+              className="cta-section__contact-item"
+              aria-label={`Call Soukhya Tech at ${contactInfo.phone}`}
+            >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2Z"/>
               </svg>
-              <span>+91 97317 47999</span>
+              <span>{contactInfo.phone}</span>
             </a>
-            <span className="cta-section__contact-divider" aria-hidden="true">·</span>
-            <a href="mailto:sales@soukhyatech.com" className="cta-section__contact-item">
-              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <a
+              href={`mailto:${contactInfo.email}`}
+              className="cta-section__contact-item"
+              aria-label={`Email Soukhya Tech at ${contactInfo.email}`}
+            >
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" strokeWidth="1.3"/>
                 <path d="m1 5 7 4.5L15 5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
               </svg>
-              <span>sales@soukhyatech.com</span>
+              <span>{contactInfo.email}</span>
             </a>
           </div>
         </motion.div>

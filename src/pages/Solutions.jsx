@@ -7,11 +7,11 @@ import { solutionShowcase } from '../data/solutions';
 import './Solutions.css';
 
 const technologyJourney = [
-  { step: '01', title: 'DEVICES & SENSORS', desc: 'Hardware design, embedded telemetry & rugged physical instrumentation', color: '#00A651' },
-  { step: '02', title: 'EDGE & GATEWAYS', desc: 'Secure local processing, OTA firmware management & protocol bridging', color: '#0072BC' },
-  { step: '03', title: 'CONNECTED CLOUD', desc: 'Scalable cloud infrastructure, device fleet orchestration & storage', color: '#2B3990' },
-  { step: '04', title: 'DECISION INTELLIGENCE', desc: 'AI-driven analytics, anomaly detection & operational dashboards', color: '#F37023' },
-  { step: '05', title: 'SUSTAINED VALUE', desc: 'Continuous uptime, reduced operational waste & asset longevity', color: '#E6007E' },
+  { step: '01', title: 'DEVICES & SENSORS', desc: 'Hardware design, embedded telemetry & rugged physical instrumentation', color: '#19B879' },
+  { step: '02', title: 'EDGE & GATEWAYS', desc: 'Secure local processing, OTA firmware management & protocol bridging', color: '#18C8E8' },
+  { step: '03', title: 'CONNECTED CLOUD', desc: 'Scalable cloud infrastructure, device fleet orchestration & storage', color: '#3563FF' },
+  { step: '04', title: 'DECISION INTELLIGENCE', desc: 'AI-driven analytics, anomaly detection & operational dashboards', color: '#E68324' },
+  { step: '05', title: 'SUSTAINED VALUE', desc: 'Continuous uptime, reduced operational waste & asset longevity', color: '#EC008C' },
 ];
 
 /* ── Reusable Solution Visual Component ── */
@@ -131,7 +131,7 @@ export default function Solutions() {
                       </div>
 
                       <div className="solution-chapter__action">
-                        <Link to="/contact" className="btn btn--secondary">
+                        <Link to="/contact" className="btn btn--primary">
                           <span>Consult on {solution.shortTitle}</span>
                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />

@@ -21,16 +21,11 @@ const strengthIcons = {
    - 60-65% Right: Layered Engineering DNA Panel (9 Integrated Layers + Signal Line)
    ============================================================ */
 export default function OurStrengths() {
-  const [activeIdx, setActiveIdx] = useState(0);
+  const [activeIdx, setActiveIdx] = useState(null);
 
   return (
     <section className="editorial-block editorial-block--strengths" aria-labelledby="our-strengths-title">
       <div className="container">
-        {/* Subtle section transition trace */}
-        <div className="strengths-transition-trace" aria-hidden="true">
-          <span className="strengths-transition-trace__line" />
-        </div>
-
         <div className="strengths-dna-layout">
           {/* Left Column (35-40%): Editorial Introduction */}
           <motion.div
@@ -69,6 +64,7 @@ export default function OurStrengths() {
               className="strengths-dna-layers"
               role="list"
               aria-label="Why Choose Soukhya Strengths List"
+              onMouseLeave={() => setActiveIdx(null)}
             >
               {whyChooseSoukhya.map((strength, index) => {
                 const isActive = activeIdx === index;
@@ -79,7 +75,11 @@ export default function OurStrengths() {
                     tabIndex={0}
                     className={`strength-dna-layer ${isActive ? 'is-active' : ''}`}
                     onMouseEnter={() => setActiveIdx(index)}
+                    onMouseLeave={() => setActiveIdx(null)}
                     onFocus={() => setActiveIdx(index)}
+                    onBlur={() => setActiveIdx(null)}
+                    onTouchStart={() => setActiveIdx(index)}
+                    onTouchEnd={() => setTimeout(() => setActiveIdx(null), 1200)}
                     onKeyDown={(e) => {
                       if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault();

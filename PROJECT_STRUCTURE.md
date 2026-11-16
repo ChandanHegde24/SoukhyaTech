@@ -95,7 +95,6 @@ This document maps out every page view, component composition, data source, visu
 - **Assets**:
   - `src/assets/images/IES product.png`
   - `src/assets/images/IES benifit.png`
-  - `src/assets/images/earth-pit-monitoring.jpg`
   - `src/assets/images/digital-intelligence.jpg`
   - `src/assets/images/digital-operation-center.jpg`
 

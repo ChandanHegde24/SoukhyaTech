@@ -43,8 +43,8 @@ export default function ProductShowcase() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.12, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            Intelligent Earth Pit&nbsp;
-            <span className="text-brand-blue">Monitoring System (I-ES)</span>
+            <span className="product-showcase__title-line">Intelligent Earth Pit</span>
+            <span className="product-showcase__title-line">Monitoring System (I-ES)</span>
           </motion.h2>
 
           <motion.p
