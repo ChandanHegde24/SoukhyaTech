@@ -87,12 +87,12 @@ export default function Navbar() {
               role="listitem"
               className={`navbar__link ${isActive(to) ? 'navbar__link--active' : ''}`}
             >
-              {label}
+              <span className="navbar__link-text">{label}</span>
               {isActive(to) && (
                 <motion.span
                   className="navbar__link-indicator"
                   layoutId="nav-indicator"
-                  transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                  transition={{ type: 'spring', stiffness: 420, damping: 32 }}
                 />
               )}
             </Link>

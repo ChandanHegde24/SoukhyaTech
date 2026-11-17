@@ -10,7 +10,9 @@
   --heading-color: #182B62;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -42,7 +44,8 @@ body {
   min-height: 100svh;
 }
 
-img, video {
+img,
+video {
   display: block;
   max-width: 100%;
   height: auto;
@@ -61,11 +64,17 @@ button {
   background: none;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
-h1, h2, h3, h4, h5, h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .section-title,
 .section-heading,
 .page-title,
@@ -374,10 +383,10 @@ p {
   box-sizing: border-box;
   touch-action: manipulation;
   transition: background-color 250ms cubic-bezier(0.16, 1, 0.3, 1),
-              color 250ms cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 250ms cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1),
-              transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+    color 250ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 250ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Small Button Variant */
@@ -425,10 +434,10 @@ p {
   border: 1px solid var(--btn-primary-border, #3563FF) !important;
   box-shadow: var(--btn-primary-shadow, 0 4px 14px rgba(53, 99, 255, 0.22));
   transition: background-color 250ms cubic-bezier(0.16, 1, 0.3, 1),
-              color 250ms cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 250ms cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1),
-              transform 250ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+    color 250ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 250ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 250ms cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .btn--primary *,
@@ -562,10 +571,10 @@ p {
   border: 1.5px solid var(--btn-secondary-border, #3563FF) !important;
   box-shadow: var(--btn-secondary-shadow, 0 2px 8px rgba(53, 99, 255, 0.08));
   transition: background-color 250ms cubic-bezier(0.16, 1, 0.3, 1),
-              color 250ms cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 250ms cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1),
-              transform 250ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+    color 250ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 250ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 250ms cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .btn--secondary *,
@@ -706,8 +715,8 @@ p {
   will-change: transform;
 }
 
-.btn:hover > svg:last-child:not(.spinner),
-.btn:hover > span:last-child[aria-hidden="true"],
+.btn:hover>svg:last-child:not(.spinner),
+.btn:hover>span:last-child[aria-hidden="true"],
 .cta-btn-primary:hover svg,
 .cta-btn-secondary:hover svg,
 .hero-cinematic__btn-primary:hover span[aria-hidden="true"],
@@ -761,6 +770,7 @@ p {
 
 /* ── 6. ACCESSIBILITY & PREFERS-REDUCED-MOTION ── */
 @media (prefers-reduced-motion: reduce) {
+
   .btn,
   .btn *,
   .btn--primary,
@@ -786,14 +796,16 @@ p {
   border: 1px solid var(--soft-border);
   border-radius: var(--radius-xl);
   padding: var(--space-8);
-  box-shadow: var(--shadow-card);
-  transition: all var(--trans-base);
+  box-shadow: 0 4px 16px rgba(8, 20, 38, 0.04);
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 300ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card:hover {
-  border-color: var(--electric-blue);
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-3px);
+  border-color: rgba(53, 99, 255, 0.35);
+  box-shadow: 0 16px 36px rgba(8, 20, 38, 0.08), 0 0 0 1px rgba(53, 99, 255, 0.15);
+  transform: translateY(-4px);
 }
 
 /* ── Chips & Badges ── */
@@ -867,13 +879,16 @@ p {
 ::-webkit-scrollbar {
   width: 7px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--ice-white);
 }
+
 ::-webkit-scrollbar-thumb {
   background: #C4D3E5;
   border-radius: var(--radius-full);
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #9BB2CC;
 }

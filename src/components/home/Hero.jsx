@@ -8,14 +8,31 @@ export default function Hero() {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.defaultMuted = true;
-      videoRef.current.muted = true;
-      const playPromise = videoRef.current.play();
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.defaultMuted = true;
+    video.muted = true;
+    video.playsInline = true;
+
+    const attemptPlay = () => {
+      const playPromise = video.play();
       if (playPromise !== undefined) {
         playPromise.catch(() => {});
       }
+    };
+
+    if (video.readyState >= 2) {
+      attemptPlay();
+    } else {
+      video.addEventListener('loadeddata', attemptPlay, { once: true });
+      video.addEventListener('canplay', attemptPlay, { once: true });
     }
+
+    return () => {
+      video.removeEventListener('loadeddata', attemptPlay);
+      video.removeEventListener('canplay', attemptPlay);
+    };
   }, []);
 
   return (
@@ -24,6 +41,7 @@ export default function Hero() {
         <video
           ref={videoRef}
           className="hero-cinematic__video"
+          src={heroVideo}
           autoPlay
           muted
           loop
@@ -44,6 +62,9 @@ export default function Hero() {
                 Monitoring System <span className="hero-headline-highlight">(I-ES)</span>
               </span>
             </h1>
+            <p className="hero-cinematic__description">
+              Monitor earth pit resistance, current and voltage in real time to identify potential faults early and improve electrical safety.
+            </p>
             <div className="hero-cinematic__actions">
               <Link to="/product" className="btn btn--primary hero-cinematic__btn-primary">
                 Know More <span aria-hidden="true">→</span>
