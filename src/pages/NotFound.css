@@ -1,0 +1,106 @@
+/* ============================================================
+   404 NOT FOUND PAGE — SOUKHYA TECH
+   Midnight Aurora Enterprise Styling
+   ============================================================ */
+
+.not-found-page {
+  background: var(--white);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: calc(var(--hero-nav-offset, 100px) + 40px) 24px 80px;
+}
+
+.not-found-page__ambient {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(53, 99, 255, 0.08) 0%, rgba(24, 200, 232, 0.04) 50%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+.not-found-page__container {
+  max-width: 680px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+.not-found-page__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(53, 99, 255, 0.08);
+  border: 1px solid rgba(53, 99, 255, 0.2);
+  border-radius: var(--radius-full, 9999px);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--brand-indigo, #182B62);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.not-found-page__code {
+  font-size: clamp(4rem, 12vw, 7.5rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--brand-indigo, #182B62);
+  margin-bottom: 16px;
+  font-family: var(--font-display, var(--font-sans));
+  background: linear-gradient(135deg, #182B62 0%, #3563FF 60%, #18C8E8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.not-found-page__heading {
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 800;
+  color: var(--heading-color, #182B62);
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+
+.not-found-page__desc {
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  line-height: 1.65;
+  color: var(--text-secondary, #4A5568);
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.not-found-page__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.not-found-page__support {
+  padding-top: 24px;
+  border-top: 1px solid var(--border-light, #E2E8F0);
+  font-size: 13px;
+  color: var(--text-muted, #718096);
+}
+
+.not-found-page__support a {
+  color: var(--brand-blue, #3563FF);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+

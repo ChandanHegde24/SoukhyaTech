@@ -224,6 +224,13 @@
   font-size: clamp(1rem, 1.2vw, 1.125rem);
   color: var(--text-secondary);
   line-height: 1.75;
+  text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
+  hyphens: none;
+  -webkit-hyphens: none;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 /* Benefits Container */
@@ -456,5 +463,14 @@
 
   .product-showcase__benefits-wrap {
     padding: var(--space-4);
+  }
+}
+
+@media (max-width: 768px) {
+  .product-showcase__desc {
+    text-align: left;
+    text-align-last: left;
+    hyphens: none;
+    -webkit-hyphens: none;
   }
 }

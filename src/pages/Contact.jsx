@@ -16,21 +16,100 @@ export default function Contact() {
     inquiryType: inquiryTypes[0],
     message: '',
   });
+  const [errors, setErrors] = useState({});
+  const [submitError, setSubmitError] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const validateForm = () => {
+    const nextErrors = {};
+    const trimmedName = formData.name.trim();
+    if (!trimmedName || trimmedName.length < 2) {
+      nextErrors.name = 'Please provide your full name (minimum 2 characters).';
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const trimmedEmail = formData.email.trim();
+    if (!trimmedEmail || !emailRegex.test(trimmedEmail)) {
+      nextErrors.email = 'Please provide a valid business email address.';
+    }
+
+    const trimmedPhone = formData.phone.trim();
+    if (trimmedPhone && !/^[+0-9\s\-()]{7,20}$/.test(trimmedPhone)) {
+      nextErrors.phone = 'Please provide a valid phone number (e.g. +91 97317 47999).';
+    }
+
+    const trimmedMessage = formData.message.trim();
+    if (!trimmedMessage || trimmedMessage.length < 10) {
+      nextErrors.message = 'Please provide a brief message (minimum 10 characters).';
+    }
+
+    return nextErrors;
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    if (errors[name]) {
+      setErrors((prev) => {
+        const updated = { ...prev };
+        delete updated[name];
+        return updated;
+      });
+    }
+    if (submitError) {
+      setSubmitError(null);
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitError(null);
+
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    setErrors({});
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    try {
+      const endpoint = import.meta.env.VITE_CONTACT_API_URL;
+      if (endpoint) {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name.trim(),
+            email: formData.email.trim(),
+            phone: formData.phone.trim(),
+            company: formData.company.trim(),
+            inquiryType: formData.inquiryType,
+            message: formData.message.trim(),
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error(`Server returned error code: ${response.status}`);
+        }
+      } else {
+        // Controlled transmission latency for client-only / static deployment
+        await new Promise((resolve) => setTimeout(resolve, 600));
+      }
+
       setIsSubmitted(true);
-    }, 700);
+    } catch (err) {
+      setSubmitError(
+        'Unable to transmit your inquiry at this moment. Please reach out directly to sales@soukhyatech.com or call +91 97317 47999.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(
@@ -115,6 +194,8 @@ export default function Contact() {
                         className="btn btn--secondary"
                         onClick={() => {
                           setIsSubmitted(false);
+                          setErrors({});
+                          setSubmitError(null);
                           setFormData({
                             name: '',
                             email: '',
@@ -129,7 +210,18 @@ export default function Contact() {
                       </button>
                     </div>
                   ) : (
-                    <form className="contact-form" onSubmit={handleSubmit}>
+                    <form className="contact-form" onSubmit={handleSubmit} noValidate>
+                      {submitError && (
+                        <div className="form-status-alert form-status-alert--error" role="alert">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="8" x2="12" y2="12" />
+                            <line x1="12" y1="16" x2="12.01" y2="16" />
+                          </svg>
+                          <span>{submitError}</span>
+                        </div>
+                      )}
+
                       {/* Inquiry Type Selector */}
                       <div className="form-group">
                         <label className="form-label" htmlFor="inquiryType">
@@ -162,10 +254,17 @@ export default function Contact() {
                             name="name"
                             required
                             placeholder="Your Name"
-                            className="form-input"
+                            className={`form-input ${errors.name ? 'form-input--error' : ''}`}
+                            aria-invalid={errors.name ? 'true' : 'false'}
+                            aria-describedby={errors.name ? 'name-error' : undefined}
                             value={formData.name}
                             onChange={handleChange}
                           />
+                          {errors.name && (
+                            <p id="name-error" className="form-error-msg" role="alert">
+                              {errors.name}
+                            </p>
+                          )}
                         </div>
                         <div className="form-group">
                           <label className="form-label" htmlFor="email">
@@ -177,10 +276,17 @@ export default function Contact() {
                             name="email"
                             required
                             placeholder="name@company.com"
-                            className="form-input"
+                            className={`form-input ${errors.email ? 'form-input--error' : ''}`}
+                            aria-invalid={errors.email ? 'true' : 'false'}
+                            aria-describedby={errors.email ? 'email-error' : undefined}
                             value={formData.email}
                             onChange={handleChange}
                           />
+                          {errors.email && (
+                            <p id="email-error" className="form-error-msg" role="alert">
+                              {errors.email}
+                            </p>
+                          )}
                         </div>
                       </div>
 
@@ -195,10 +301,17 @@ export default function Contact() {
                             id="phone"
                             name="phone"
                             placeholder="+91 97317 47999"
-                            className="form-input"
+                            className={`form-input ${errors.phone ? 'form-input--error' : ''}`}
+                            aria-invalid={errors.phone ? 'true' : 'false'}
+                            aria-describedby={errors.phone ? 'phone-error' : undefined}
                             value={formData.phone}
                             onChange={handleChange}
                           />
+                          {errors.phone && (
+                            <p id="phone-error" className="form-error-msg" role="alert">
+                              {errors.phone}
+                            </p>
+                          )}
                         </div>
                         <div className="form-group">
                           <label className="form-label" htmlFor="company">
@@ -219,17 +332,25 @@ export default function Contact() {
                       {/* Message */}
                       <div className="form-group">
                         <label className="form-label" htmlFor="message">
-                          Message
+                          Message *
                         </label>
                         <textarea
                           id="message"
                           name="message"
                           rows="4"
+                          required
                           placeholder="How can we help your team?"
-                          className="form-textarea"
+                          className={`form-textarea ${errors.message ? 'form-textarea--error' : ''}`}
+                          aria-invalid={errors.message ? 'true' : 'false'}
+                          aria-describedby={errors.message ? 'message-error' : undefined}
                           value={formData.message}
                           onChange={handleChange}
                         ></textarea>
+                        {errors.message && (
+                          <p id="message-error" className="form-error-msg" role="alert">
+                            {errors.message}
+                          </p>
+                        )}
                       </div>
 
                       {/* Submit */}

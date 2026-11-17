@@ -32,6 +32,9 @@ export default function ProductShowcase() {
               src={iesProductImage}
               alt="I-ES earth-pit monitoring device with live resistance, current, and voltage readings"
               loading="lazy"
+              decoding="async"
+              width="640"
+              height="400"
             />
           </motion.div>
 
@@ -69,6 +72,9 @@ export default function ProductShowcase() {
               src={iesBenefitsImage}
               alt="I-ES mobile app screens for earth-pit monitoring, active pits, and alarms"
               loading="lazy"
+              decoding="async"
+              width="640"
+              height="400"
             />
           </motion.div>
 

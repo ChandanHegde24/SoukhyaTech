@@ -91,6 +91,12 @@
   font-size: clamp(15px, 1.2vw, 19px);
   line-height: 1.62;
   max-width: 650px;
+  text-align: left;
+  hyphens: none;
+  -webkit-hyphens: none;
+  text-align: left;
+  hyphens: none;
+  -webkit-hyphens: none;
 }
 
 @media (max-width: 640px) {

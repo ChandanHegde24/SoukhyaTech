@@ -14,10 +14,13 @@ const MainLayout = ({ children }) => {
 
   return (
     <div className="app-layout">
+      <a href="#main-content" className="skip-to-content">
+        Skip to main content
+      </a>
       <SEO />
       <GlobalScrollProgress />
       <Navbar />
-      <main className="main-content">
+      <main id="main-content" className="main-content" tabIndex="-1">
         <motion.div
           key={location.pathname}
           className="page-transition-wrapper"

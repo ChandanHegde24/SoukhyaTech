@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import MainLayout from '../layouts/MainLayout';
 import { routeDefinitions } from './routeDefinitions';
+import NotFound from '../pages/NotFound';
 
 function PageRouteTracker() {
   const { pathname, hash } = useLocation();
@@ -33,6 +34,7 @@ const AppRoutes = () => {
           {routeDefinitions.map(({ path, Page }) => (
             <Route key={path} path={path} element={<Page />} />
           ))}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </MainLayout>
     </Router>

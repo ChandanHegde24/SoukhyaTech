@@ -164,7 +164,7 @@ export default function Solutions() {
             <h2 id="lifecycle-title" className="heading-xl">
               From Connectivity to Operational Intelligence
             </h2>
-            <p className="body-muted mx-auto max-w-xl">
+            <p className="body-muted solution-lifecycle-subtitle mx-auto max-w-xl">
               Our engineering lifecycle orchestrates custom hardware instrumentation, real-time edge processing, and high-performance infrastructure into actionable decision intelligence.
             </p>
           </Reveal>

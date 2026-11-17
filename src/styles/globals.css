@@ -24,6 +24,28 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Accessibility: Skip to Content */
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 24px;
+  background: var(--brand-indigo, #182B62);
+  color: #FFFFFF;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  z-index: 9999;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: top 0.2s ease;
+}
+
+.skip-to-content:focus {
+  top: 16px;
+  outline: 3px solid var(--brand-cyan, #18C8E8);
+}
+
 body {
   width: 100%;
   min-width: 320px;
@@ -36,6 +58,8 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  hyphens: none;
+  -webkit-hyphens: none;
 }
 
 #root,
@@ -120,6 +144,8 @@ p {
   color: var(--slate-grey);
   text-align: left;
   max-width: 720px;
+  hyphens: none;
+  -webkit-hyphens: none;
 }
 
 /* ── App Layout ── */
@@ -340,6 +366,60 @@ p {
   color: var(--slate-grey);
   line-height: var(--leading-relaxed);
   max-width: 680px;
+}
+
+/* ============================================================
+   TYPOGRAPHY — Editorial Paragraph Justification Utility
+   Applied strictly to suitable long-form informational narrative paragraphs
+   ============================================================ */
+.text-justify,
+.body-justified {
+  text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
+  hyphens: none;
+  -webkit-hyphens: none;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  /* On tablet/mobile narrow viewports, fall back to natural left alignment to prevent uneven word gaps */
+  .text-justify,
+  .body-justified,
+  .text-justify-mobile-left {
+    text-align: left !important;
+    text-align-last: left !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+  }
+}
+
+/* ============================================================
+   TYPOGRAPHY — Editorial Paragraph Justification Utility
+   Applied strictly to suitable long-form informational narrative paragraphs
+   ============================================================ */
+.text-justify,
+.body-justified {
+  text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
+  hyphens: none;
+  -webkit-hyphens: none;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  /* On tablet/mobile narrow viewports, fall back to natural left alignment to prevent uneven word gaps */
+  .text-justify,
+  .body-justified,
+  .text-justify-mobile-left {
+    text-align: left !important;
+    text-align-last: left !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+  }
 }
 
 .text-brand-blue {

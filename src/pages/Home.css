@@ -65,6 +65,12 @@
   line-height: 1.55;
   margin: 0 0 16px;
   max-width: 680px;
+  text-align: left;
+  hyphens: none;
+  -webkit-hyphens: none;
+  text-align: left;
+  hyphens: none;
+  -webkit-hyphens: none;
 }
 
 .editorial-inline-link {
@@ -282,6 +288,12 @@
   color: var(--slate-text);
   line-height: 1.65;
   margin: 0;
+  text-align: left;
+  hyphens: none;
+  -webkit-hyphens: none;
+  text-align: left;
+  hyphens: none;
+  -webkit-hyphens: none;
 }
 
 .solution-showcase-row__tags {

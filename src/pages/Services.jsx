@@ -176,7 +176,7 @@ export default function Services() {
             <h2 id="journey-title" className="heading-xl">
               From Infrastructure to Intelligence
             </h2>
-            <p className="body-muted mx-auto max-w-xl">
+            <p className="body-muted process-journey-subtitle mx-auto max-w-xl">
               Our 5 interconnected service capabilities provide an uninterrupted pipeline from initial security audit to predictive operational intelligence.
             </p>
           </Reveal>

@@ -94,6 +94,9 @@
   color: #C5D6EA;
   line-height: 1.62;
   max-width: 680px;
+  text-align: left;
+  hyphens: none;
+  -webkit-hyphens: none;
 }
 
 .cta-section__actions-group {

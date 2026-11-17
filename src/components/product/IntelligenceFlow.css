@@ -29,6 +29,9 @@
   font-size: var(--text-base);
   color: var(--text-secondary);
   line-height: 1.7;
+  text-align: left;
+  hyphens: none;
+  -webkit-hyphens: none;
 }
 
 /* ── Track (vertical timeline) ── */
@@ -170,6 +173,9 @@
   font-size: var(--text-base);
   color: var(--text-secondary);
   line-height: 1.7;
+  text-align: left;
+  hyphens: none;
+  -webkit-hyphens: none;
 }
 
 .intel-flow__card-bar {

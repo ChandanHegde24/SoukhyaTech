@@ -472,6 +472,12 @@
   font-weight: 400;
   margin: 2px 0 6px 0;
   transition: color 200ms ease;
+  text-align: left;
+  hyphens: none;
+  -webkit-hyphens: none;
+  text-align: left;
+  hyphens: none;
+  -webkit-hyphens: none;
 }
 
 .engineering-service__indicator {

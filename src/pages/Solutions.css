@@ -150,6 +150,9 @@
   font-size: clamp(15px, 1.2vw, 19px);
   line-height: 1.62;
   max-width: 650px;
+  text-align: left;
+  hyphens: none;
+  -webkit-hyphens: none;
 }
 
 /* Solutions Hero Card Component */
@@ -670,6 +673,13 @@
   color: var(--text-secondary);
   line-height: 1.8;
   font-size: var(--text-base);
+  text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
+  hyphens: none;
+  -webkit-hyphens: none;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .solution-chapter__tags {
@@ -847,8 +857,13 @@
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
-.solution-lifecycle-section .body-muted {
+.solution-lifecycle-section .body-muted,
+.solution-lifecycle-subtitle {
   color: #C8D8EC;
+  text-align: left;
+  hyphens: none;
+  -webkit-hyphens: none;
+  line-height: 1.68;
 }
 
 .solution-lifecycle-grid {
@@ -1159,6 +1174,15 @@
   .solution-chapter__action .btn {
     width: 100%;
     justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .solution-chapter__text {
+    text-align: left;
+    text-align-last: left;
+    hyphens: none;
+    -webkit-hyphens: none;
   }
 }
 

@@ -77,6 +77,9 @@ export default function CoreTechnologyCards() {
                   alt={item.imageAlt}
                   className="core-tech-card__image"
                   loading="lazy"
+                  decoding="async"
+                  width="480"
+                  height="270"
                 />
                 <div className="core-tech-card__visual-overlay" aria-hidden="true" />
               </div>
