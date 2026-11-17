@@ -16,11 +16,6 @@ export default function ProductShowcase() {
       <div className="product-showcase__ambient-glow" aria-hidden="true" />
 
       <div className="container product-showcase__inner">
-        {/* Large Chapter Watermark Number */}
-        <div className="product-showcase__watermark" aria-hidden="true">
-          01
-        </div>
-
         <div className="product-showcase__product-row">
           <motion.div
             className="product-showcase__image product-showcase__image--product"

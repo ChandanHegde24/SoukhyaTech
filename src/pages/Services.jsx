@@ -95,11 +95,6 @@ export default function Services() {
               }`}
             >
               <div className="container service-chapter__container">
-                {/* Watermark Chapter Index */}
-                <div className="service-chapter__watermark" aria-hidden="true">
-                  0{idx + 1}
-                </div>
-
                 <div className="service-chapter__grid">
                   {/* Text Column */}
                   <div className="service-chapter__text-col">

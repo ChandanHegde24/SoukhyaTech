@@ -604,22 +604,12 @@
   background-size: 100% 100%, 100% 100%, 36px 36px;
 }
 
-/* Watermarks */
+/* Watermarks (Removed) */
 .about-overview__watermark,
 .about-mission__watermark,
 .about-vision__watermark,
 .about-strengths__watermark {
-  position: absolute;
-  top: 10px;
-  right: var(--space-8);
-  font-family: var(--font-mono);
-  font-size: clamp(6rem, 12vw, 11rem);
-  font-weight: 900;
-  line-height: 1;
-  color: rgba(43, 57, 144, 0.035);
-  user-select: none;
-  pointer-events: none;
-  z-index: 0;
+  display: none !important;
 }
 
 .about-section__badge {

@@ -585,22 +585,7 @@
 }
 
 .solution-chapter__watermark {
-  position: absolute;
-  top: 10px;
-  right: var(--space-8);
-  font-family: var(--font-mono);
-  font-size: clamp(6rem, 12vw, 11rem);
-  font-weight: 900;
-  line-height: 1;
-  color: rgba(43, 57, 144, 0.035);
-  user-select: none;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.solution-chapter--reversed .solution-chapter__watermark {
-  right: auto;
-  left: var(--space-8);
+  display: none !important;
 }
 
 .solution-chapter__grid {

@@ -90,10 +90,6 @@ export default function About() {
           ============================================================ */}
       <section id="about-overview" className="about-section about-section--overview section section--bg" aria-labelledby="overview-heading">
         <div className="container">
-          <div className="about-overview__watermark" aria-hidden="true">
-            01
-          </div>
-
           <div className="about-overview__grid">
             <div className="about-overview__text-col">
               <Reveal>

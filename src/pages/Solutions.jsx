@@ -95,11 +95,6 @@ export default function Solutions() {
               }`}
             >
               <div className="container solution-chapter__container">
-                {/* Large Low-Opacity Watermark Number */}
-                <div className="solution-chapter__watermark" aria-hidden="true">
-                  0{idx + 1}
-                </div>
-
                 <div className="solution-chapter__grid">
                   {/* Text Column */}
                   <div className="solution-chapter__text-col">
