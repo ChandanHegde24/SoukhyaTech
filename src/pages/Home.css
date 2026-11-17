@@ -835,6 +835,31 @@
   }
 }
 
+/* Mobile ordering (<= 768px): Strictly 1. Image -> 2. Heading -> 3. Description -> 4. CTA */
+@media (max-width: 768px) {
+  .solutions-showcase-arena {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .solutions-showcase-visual-col {
+    order: 1 !important;
+  }
+
+  .solutions-showcase-rail-col {
+    order: 2 !important;
+  }
+
+  .solution-visual-stage {
+    min-height: 260px;
+  }
+
+  .solution-visual-stage__canvas {
+    min-height: 240px;
+  }
+}
+
 @media (max-width: 640px) {
   .editorial-block {
     padding: 40px 0 46px;

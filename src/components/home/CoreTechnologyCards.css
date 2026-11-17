@@ -284,3 +284,26 @@
     height: 190px;
   }
 }
+
+@media (max-width: 480px) {
+  .core-tech-card__visual-wrap {
+    height: clamp(160px, 48vw, 190px);
+  }
+  .core-tech-card__body {
+    padding: 20px 16px 18px;
+  }
+  .core-tech-card__title {
+    font-size: 1.15rem;
+  }
+  .core-tech-card__description {
+    font-size: 14.5px;
+    margin-bottom: 16px;
+  }
+  .core-tech-card__footer {
+    padding-top: 14px;
+  }
+  .core-tech-card__cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

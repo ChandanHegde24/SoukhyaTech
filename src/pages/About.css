@@ -16,10 +16,12 @@
    ------------------------------------------------------------ */
 .about-hero {
   position: relative;
-  padding: var(--hero-nav-offset) 0 var(--space-10);
+  min-height: auto;
+  padding: var(--hero-nav-offset) 0 clamp(32px, 5vw, 48px);
   background: linear-gradient(180deg, #FFFFFF 0%, #EFF5FB 85%, #EFF5FB 100%);
   border-bottom: 1px solid var(--border-color);
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .about-hero__bg-grid {
@@ -52,36 +54,44 @@
 .about-hero__container {
   position: relative;
   z-index: 2;
+  width: 100%;
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  padding-left: max(clamp(1.25rem, 3.5vw, 3.5rem), env(safe-area-inset-left, 0px));
+  padding-right: max(clamp(1.25rem, 3.5vw, 3.5rem), env(safe-area-inset-right, 0px));
+  box-sizing: border-box;
 }
 
 .about-hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 720px);
+  grid-template-columns: minmax(0, 780px);
   align-items: start;
+  width: 100%;
 }
 
 .about-hero__content {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
-  max-width: 680px;
+  gap: clamp(12px, 2vw, 16px);
+  max-width: 720px;
+  width: 100%;
 }
 
 .about-hero__heading {
-  font-size: clamp(3.5rem, 4.2vw, 4rem);
-  /* 56px - 64px Hero H1 */
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
   font-weight: 750;
-  line-height: 1.1;
+  line-height: 1.15;
   color: var(--heading-color);
   letter-spacing: -0.025em;
-  margin: var(--space-2) 0 var(--space-4);
+  margin: var(--space-2) 0 var(--space-3);
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .about-hero__desc {
   color: var(--text-secondary);
-  font-size: clamp(18px, 1.2vw, 19.5px);
-  /* 18px - 20px */
-  line-height: 1.6;
+  font-size: clamp(15px, 1.2vw, 19px);
+  line-height: 1.62;
   max-width: 650px;
 }
 
@@ -993,17 +1003,17 @@
 
 @media (max-width: 640px) {
   .about-hero {
-    padding: var(--hero-nav-offset) 0 var(--space-10);
+    padding: var(--hero-nav-offset) 0 clamp(24px, 6vw, 36px);
   }
 
   .about-hero__heading {
-    font-size: clamp(2rem, 8vw, 2.75rem);
-    line-height: 1.15;
+    font-size: clamp(1.85rem, 6.8vw, 2.45rem);
+    line-height: 1.18;
   }
 
   .about-hero__desc {
-    font-size: 16.5px;
-    line-height: 1.55;
+    font-size: 15px;
+    line-height: 1.58;
   }
 
   .about-nav-bar__label {
@@ -1032,5 +1042,11 @@
 
   .dna-step__arrow {
     display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .about-hero__heading {
+    font-size: clamp(1.65rem, 7.5vw, 1.85rem);
   }
 }

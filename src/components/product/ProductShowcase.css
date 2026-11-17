@@ -373,6 +373,59 @@
   }
 }
 
+/* Mobile ordering (<= 768px): Strictly 1. Image -> 2. Heading -> 3. Description -> 4. Buttons */
+@media (max-width: 768px) {
+  .product-showcase__product-row,
+  .product-showcase__benefits-row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .product-showcase__product-row .product-showcase__image {
+    order: 1 !important;
+    width: 100%;
+  }
+
+  .product-showcase__product-row .product-showcase__copy {
+    order: 2 !important;
+    width: 100%;
+  }
+
+  .product-showcase__benefits-row .product-showcase__image {
+    order: 1 !important;
+    width: 100%;
+  }
+
+  .product-showcase__benefits-row .product-showcase__benefits-copy {
+    order: 2 !important;
+    width: 100%;
+  }
+
+  .product-showcase__image img {
+    width: 100%;
+    height: auto;
+    max-height: clamp(240px, 62vw, 380px);
+    object-fit: contain;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-showcase__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .product-showcase__actions .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 @media (max-width: 640px) {
   .product-showcase {
     padding: var(--hero-nav-offset) 0 var(--space-12);

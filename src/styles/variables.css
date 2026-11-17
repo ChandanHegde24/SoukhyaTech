@@ -210,21 +210,21 @@
   --z-navbar:            100;
   --z-modal:             300;
 
-  /* ── Navbar ── */
+  /* ── Navbar & Hero Nav Offset ── */
   --navbar-height:       76px;
   --nav-height:          76px;
-  --hero-nav-offset:     calc(var(--navbar-height) + var(--space-8));
+  --hero-nav-offset:     calc(var(--navbar-height) + 14px + env(safe-area-inset-top, 0px) + clamp(20px, 3.2vw, 32px));
 }
 
 @media (max-width: 900px) {
   :root {
-    --hero-nav-offset: calc(var(--navbar-height) + var(--space-6));
+    --hero-nav-offset: calc(var(--navbar-height) + 10px + env(safe-area-inset-top, 0px) + 20px);
   }
 }
 
 @media (max-width: 480px) {
   :root {
-    --hero-nav-offset: calc(var(--navbar-height) + var(--space-4));
+    --hero-nav-offset: calc(var(--navbar-height) + 10px + env(safe-area-inset-top, 0px) + 16px);
   }
 }
 

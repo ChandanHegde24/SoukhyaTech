@@ -14,11 +14,13 @@
    1. EDITORIAL CONTACT HERO
    ------------------------------------------------------------ */
 .contact-hero {
-  padding: var(--hero-nav-offset) 0 var(--space-10);
   position: relative;
+  min-height: auto;
+  padding: var(--hero-nav-offset) 0 clamp(32px, 5vw, 48px);
   background: linear-gradient(180deg, #FFFFFF 0%, #EFF5FB 85%, #EFF5FB 100%);
   border-bottom: 1px solid var(--border-color);
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .contact-hero__bg-grid {
@@ -51,19 +53,27 @@
 .contact-hero__container {
   position: relative;
   z-index: 2;
+  width: 100%;
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  padding-left: max(clamp(1.25rem, 3.5vw, 3.5rem), env(safe-area-inset-left, 0px));
+  padding-right: max(clamp(1.25rem, 3.5vw, 3.5rem), env(safe-area-inset-right, 0px));
+  box-sizing: border-box;
 }
 
 .contact-hero__grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 780px);
   align-items: start;
+  width: 100%;
 }
 
 .contact-hero__content {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
-  max-width: 640px;
+  gap: clamp(12px, 2vw, 16px);
+  max-width: 720px;
+  width: 100%;
 }
 
 .breadcrumb-nav {
@@ -130,22 +140,24 @@
 }
 
 .contact-hero__heading {
-  font-size: clamp(3.5rem, 4.2vw, 4rem); /* 56px - 64px Hero H1 */
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
   font-weight: 750;
-  line-height: 1.1;
+  line-height: 1.15;
   color: var(--heading-color);
   letter-spacing: -0.025em;
-  margin: var(--space-2) 0 var(--space-4);
+  margin: var(--space-2) 0 var(--space-3);
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .contact-hero__tagline {
-  font-size: clamp(16px, 1.1vw, 18px);
-  line-height: 1.55;
+  font-size: clamp(13px, 1.1vw, 17px);
+  line-height: 1.5;
   color: #087DB9; /* Distinct vibrant Technology Blue */
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.025em;
-  margin-bottom: var(--space-3);
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-2);
 }
 
 .contact-hero__prompt {
@@ -698,7 +710,16 @@
 
 @media (max-width: 640px) {
   .contact-hero {
-    padding: var(--hero-nav-offset) 0 var(--space-12);
+    padding: var(--hero-nav-offset) 0 clamp(24px, 6vw, 36px);
+  }
+
+  .contact-hero__heading {
+    font-size: clamp(1.85rem, 6.8vw, 2.45rem);
+    line-height: 1.18;
+  }
+
+  .contact-hero__tagline {
+    font-size: 13.5px;
   }
 
   .contact-main-section {
@@ -711,5 +732,15 @@
 
   .contact-card {
     padding: var(--space-6);
+  }
+}
+
+@media (max-width: 360px) {
+  .contact-hero__heading {
+    font-size: clamp(1.65rem, 7.5vw, 1.85rem);
+  }
+
+  .contact-hero__tagline {
+    font-size: 12.5px;
   }
 }
