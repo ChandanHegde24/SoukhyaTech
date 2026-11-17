@@ -96,9 +96,6 @@
   text-align: left;
   hyphens: none;
   -webkit-hyphens: none;
-  text-align: left;
-  hyphens: none;
-  -webkit-hyphens: none;
 }
 
 /* ------------------------------------------------------------
@@ -200,9 +197,6 @@
   color: var(--text-secondary);
   font-size: var(--text-lg);
   line-height: 1.68;
-  text-align: left;
-  hyphens: none;
-  -webkit-hyphens: none;
   text-align: left;
   hyphens: none;
   -webkit-hyphens: none;
@@ -642,16 +636,7 @@
   line-height: 1.68;
   font-size: var(--text-base);
   /* 17px */
-  text-align: justify;
-  text-align-last: left;
-  text-justify: inter-word;
-  hyphens: none;
-  -webkit-hyphens: none;
-  word-break: normal;
-  overflow-wrap: break-word;
-  text-align: justify;
-  text-align-last: left;
-  text-justify: inter-word;
+  text-align: left;
   hyphens: none;
   -webkit-hyphens: none;
   word-break: normal;
@@ -796,9 +781,6 @@
   text-align: left;
   hyphens: none;
   -webkit-hyphens: none;
-  text-align: left;
-  hyphens: none;
-  -webkit-hyphens: none;
 }
 
 .mission-points-grid {
@@ -883,9 +865,6 @@
   color: var(--text-secondary);
   line-height: 1.68;
   font-size: clamp(18px, 1.2vw, 19.5px);
-  text-align: left;
-  hyphens: none;
-  -webkit-hyphens: none;
   text-align: left;
   hyphens: none;
   -webkit-hyphens: none;
@@ -1110,15 +1089,6 @@
 
   .dna-step__arrow {
     display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-overview__paragraph {
-    text-align: left;
-    text-align-last: left;
-    hyphens: none;
-    -webkit-hyphens: none;
   }
 }
 

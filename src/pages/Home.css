@@ -68,9 +68,6 @@
   text-align: left;
   hyphens: none;
   -webkit-hyphens: none;
-  text-align: left;
-  hyphens: none;
-  -webkit-hyphens: none;
 }
 
 .editorial-inline-link {
@@ -288,9 +285,6 @@
   color: var(--slate-text);
   line-height: 1.65;
   margin: 0;
-  text-align: left;
-  hyphens: none;
-  -webkit-hyphens: none;
   text-align: left;
   hyphens: none;
   -webkit-hyphens: none;

@@ -395,33 +395,6 @@ p {
   }
 }
 
-/* ============================================================
-   TYPOGRAPHY — Editorial Paragraph Justification Utility
-   Applied strictly to suitable long-form informational narrative paragraphs
-   ============================================================ */
-.text-justify,
-.body-justified {
-  text-align: justify;
-  text-align-last: left;
-  text-justify: inter-word;
-  hyphens: none;
-  -webkit-hyphens: none;
-  word-break: normal;
-  overflow-wrap: break-word;
-}
-
-@media (max-width: 768px) {
-  /* On tablet/mobile narrow viewports, fall back to natural left alignment to prevent uneven word gaps */
-  .text-justify,
-  .body-justified,
-  .text-justify-mobile-left {
-    text-align: left !important;
-    text-align-last: left !important;
-    hyphens: none !important;
-    -webkit-hyphens: none !important;
-  }
-}
-
 .text-brand-blue {
   color: var(--primary-indigo);
 }
