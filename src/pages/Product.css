@@ -104,6 +104,13 @@
     padding: var(--hero-nav-offset) 0 clamp(24px, 6vw, 36px);
   }
 
+  .product-hero__grid,
+  .product-hero__content {
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+  }
+
   .product-hero__heading {
     font-size: clamp(1.85rem, 6.8vw, 2.45rem);
     line-height: 1.18;
@@ -112,6 +119,7 @@
   .product-hero__desc {
     font-size: 15px;
     line-height: 1.58;
+    text-align: center;
   }
 }
 

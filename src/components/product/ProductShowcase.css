@@ -420,6 +420,8 @@
   .product-showcase__product-row .product-showcase__copy {
     order: 2 !important;
     width: 100%;
+    align-items: center;
+    text-align: center;
   }
 
   .product-showcase__benefits-row .product-showcase__image {
@@ -430,6 +432,26 @@
   .product-showcase__benefits-row .product-showcase__benefits-copy {
     order: 2 !important;
     width: 100%;
+    text-align: center;
+  }
+
+  .product-showcase__title,
+  .product-showcase__desc,
+  .product-showcase__benefits-intro {
+    text-align: center;
+  }
+
+  .product-showcase__title-line {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .product-showcase__benefits-header {
+    justify-content: center;
+  }
+
+  .product-showcase__actions {
+    justify-content: center;
   }
 
   .product-showcase__image img {
@@ -468,8 +490,8 @@
 
 @media (max-width: 768px) {
   .product-showcase__desc {
-    text-align: left;
-    text-align-last: left;
+    text-align: center;
+    text-align-last: center;
     hyphens: none;
     -webkit-hyphens: none;
   }
