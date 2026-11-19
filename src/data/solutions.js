@@ -1,8 +1,8 @@
 // Solutions Page & Showcase Data
 
-import customIoTSolutionsImage from '../assets/images/Custom IoT Solutions for Connected Industries.png';
-import smartSystemsImage from '../assets/images/Smart Systems.png';
-import dataCenterSolutionsImage from '../assets/images/Data Center Solutions.png';
+import customIoTSolutionsImage from '../assets/images/Custom IoT Solutions for Connected Industries.webp';
+import smartSystemsImage from '../assets/images/Smart Systems.webp';
+import dataCenterSolutionsImage from '../assets/images/Data Center Solutions.webp';
 
 export const rawSolutions = [
   {

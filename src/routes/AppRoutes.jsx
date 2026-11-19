@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import MainLayout from '../layouts/MainLayout';
 import { routeDefinitions } from './routeDefinitions';
-import NotFound from '../pages/NotFound';
+
+const NotFound = lazy(() => import('../pages/NotFound'));
 
 function PageRouteTracker() {
   const { pathname, hash } = useLocation();
@@ -30,12 +31,14 @@ const AppRoutes = () => {
     <Router>
       <PageRouteTracker />
       <MainLayout>
-        <Routes>
-          {routeDefinitions.map(({ path, Page }) => (
-            <Route key={path} path={path} element={<Page />} />
-          ))}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Suspense fallback={<div className="page-route-fallback" style={{ minHeight: '60vh' }} aria-hidden="true" />}>
+          <Routes>
+            {routeDefinitions.map(({ path, Page }) => (
+              <Route key={path} path={path} element={<Page />} />
+            ))}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </MainLayout>
     </Router>
   );

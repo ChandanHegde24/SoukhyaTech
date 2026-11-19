@@ -3,7 +3,7 @@
    "Midnight Aurora" Technology-Inspired Color System
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+/* Fonts are loaded via high-priority preconnected <link> in index.html to prevent render-blocking CSS @import */
 
 /* ── Reset ── */
 :root {

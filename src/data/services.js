@@ -1,10 +1,10 @@
 // Services Page Static Content & Detailed Offerings
 
-import itAuditImage from '../assets/images/IT Audit & Advisory.png';
-import managedSecurityImage from '../assets/images/Managed Security Services.png';
-import managedNetworkImage from '../assets/images/Managed Network Services.png';
-import managedCloudImage from '../assets/images/Managed Cloud Services.png';
-import remoteMonitoringImage from '../assets/images/Remote Monitoring and Management.png';
+import itAuditImage from '../assets/images/IT Audit & Advisory.webp';
+import managedSecurityImage from '../assets/images/Managed Security Services.webp';
+import managedNetworkImage from '../assets/images/Managed Network Services.webp';
+import managedCloudImage from '../assets/images/Managed Cloud Services.webp';
+import remoteMonitoringImage from '../assets/images/Remote Monitoring and Management.webp';
 
 export const expertServices = [
   {

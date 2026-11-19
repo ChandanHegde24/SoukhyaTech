@@ -57,6 +57,14 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+    <!-- Performance: DNS Prefetch & Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" />
+
+    <!-- Performance: Preload Above-the-Fold LCP Hero Poster -->
+    <link rel="preload" as="image" href="/hero-poster.webp" type="image/webp" fetchpriority="high" />
+
 
     <!-- Theme Color & Design Tokens -->
     <meta name="theme-color" content="#081426" />

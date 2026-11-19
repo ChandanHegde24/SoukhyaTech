@@ -13,12 +13,22 @@ import './Home.css';
 export default function Home() {
   useDocumentTitle('Home');
 
-  // Preload all solution images for instantaneous, 0-blank-frame switching
+  // Defer preloading solution images to idle time so critical Hero FCP/LCP is never blocked
   useEffect(() => {
-    homeSolutionShowcase.map(({ img }) => img).forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
+    const preloadSolutions = () => {
+      homeSolutionShowcase.map(({ img }) => img).forEach((src) => {
+        const img = new Image();
+        img.src = src;
+      });
+    };
+
+    if ('requestIdleCallback' in window) {
+      const handle = window.requestIdleCallback(preloadSolutions, { timeout: 2000 });
+      return () => window.cancelIdleCallback(handle);
+    } else {
+      const timer = setTimeout(preloadSolutions, 1200);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   return (

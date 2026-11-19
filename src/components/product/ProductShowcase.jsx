@@ -2,8 +2,8 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { productContent } from '../../data/product';
-import iesProductImage from '../../assets/images/IES product.png';
-import iesBenefitsImage from '../../assets/images/IES benifit.png';
+import iesProductImage from '../../assets/images/IES product.webp';
+import iesBenefitsImage from '../../assets/images/IES benifit.webp';
 import './ProductShowcase.css';
 
 export default function ProductShowcase() {

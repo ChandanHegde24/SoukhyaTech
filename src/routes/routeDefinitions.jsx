@@ -1,10 +1,13 @@
+import React, { lazy } from 'react';
 import Home from '../pages/Home.jsx';
-import About from '../pages/About.jsx';
-import Services from '../pages/Services.jsx';
-import Solutions from '../pages/Solutions.jsx';
-import Product from '../pages/Product.jsx';
-import Contact from '../pages/Contact.jsx';
 import { primaryNavigation } from '../data/navigation.js';
+
+// Route-based code splitting for secondary pages to reduce initial JavaScript payload
+const About = lazy(() => import('../pages/About.jsx'));
+const Services = lazy(() => import('../pages/Services.jsx'));
+const Solutions = lazy(() => import('../pages/Solutions.jsx'));
+const Product = lazy(() => import('../pages/Product.jsx'));
+const Contact = lazy(() => import('../pages/Contact.jsx'));
 
 const pageConfigByPath = {
   '/': { Page: Home, title: 'Home' },

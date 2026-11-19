@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
-import earthPitImg from '../../assets/images/IES product.png';
-import digitalIntelImg from '../../assets/images/digital-intelligence.jpg';
-import docImg from '../../assets/images/digital operating center.png';
+import earthPitImg from '../../assets/images/IES product.webp';
+import digitalIntelImg from '../../assets/images/digital-intelligence.webp';
+import docImg from '../../assets/images/digital operating center.webp';
 import './CoreTechnologyCards.css';
 
 const technologyModules = [

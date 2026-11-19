@@ -1,11 +1,15 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import heroVideo from '../../assets/images/Herovid.mp4';
+import heroVideoMp4 from '../../assets/images/hero-video.mp4';
+import heroVideoWebm from '../../assets/images/hero-video.webm';
+import heroPosterWebp from '../../assets/images/hero-poster.webp';
+import heroPosterJpg from '../../assets/images/hero-poster.jpg';
 import './Hero.css';
 
 export default function Hero() {
   const videoRef = useRef(null);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -15,12 +19,26 @@ export default function Hero() {
     video.muted = true;
     video.playsInline = true;
 
+    const handlePlaying = () => {
+      setIsVideoPlaying(true);
+    };
+
     const attemptPlay = () => {
       const playPromise = video.play();
       if (playPromise !== undefined) {
-        playPromise.catch(() => {});
+        playPromise
+          .then(() => {
+            setIsVideoPlaying(true);
+          })
+          .catch(() => {
+            // Autoplay restricted (e.g. mobile battery saver).
+            // Graceful degradation: pristine poster remains visible.
+            setIsVideoPlaying(false);
+          });
       }
     };
+
+    video.addEventListener('playing', handlePlaying);
 
     if (video.readyState >= 2) {
       attemptPlay();
@@ -30,6 +48,7 @@ export default function Hero() {
     }
 
     return () => {
+      video.removeEventListener('playing', handlePlaying);
       video.removeEventListener('loadeddata', attemptPlay);
       video.removeEventListener('canplay', attemptPlay);
     };
@@ -40,15 +59,17 @@ export default function Hero() {
       <div className="hero-cinematic__canvas" aria-hidden="true">
         <video
           ref={videoRef}
-          className="hero-cinematic__video"
-          src={heroVideo}
+          className={`hero-cinematic__video ${isVideoPlaying ? 'hero-cinematic__video--playing' : ''}`}
+          poster={heroPosterWebp}
           autoPlay
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
         >
-          <source src={heroVideo} type="video/mp4" />
+          <source src={heroVideoWebm} type="video/webm" />
+          <source src={heroVideoMp4} type="video/mp4" />
+          <img src={heroPosterJpg} alt="" className="hero-cinematic__poster-fallback" />
         </video>
         <div className="hero-cinematic__overlay" />
       </div>
