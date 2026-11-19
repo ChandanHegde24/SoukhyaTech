@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import Reveal from '../components/common/Reveal';
 import './NotFound.css';
 
 export default function NotFound() {
+  useDocumentTitle('Page Not Found');
+
   return (
     <div className="not-found-page" role="main">
       <div className="not-found-page__ambient" aria-hidden="true" />

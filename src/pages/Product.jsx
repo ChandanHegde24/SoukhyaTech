@@ -1,55 +1,28 @@
 import React from 'react';
-import Breadcrumb from '../components/common/Breadcrumb';
-import Reveal from '../components/common/Reveal';
-import CTA from '../components/common/CTA';
+import useDocumentTitle from '../hooks/useDocumentTitle';
+import ProductHero from '../components/product/ProductHero';
 import ProductShowcase from '../components/product/ProductShowcase';
 import IntelligenceFlow from '../components/product/IntelligenceFlow';
+import CTA from '../components/common/CTA';
 import './Product.css';
 
 export default function Product() {
+  useDocumentTitle('Product');
+
   return (
     <div className="product-page">
-      {/* ============================================================
-          1. EDITORIAL HERO SECTION (Aligned with Services / Solutions / About)
-          ============================================================ */}
-      <section className="product-hero section section--white" aria-labelledby="product-hero-title">
-        <div className="product-hero__bg-grid" aria-hidden="true" />
-        <div className="product-hero__bg-ambient" aria-hidden="true" />
+      {/* 1. Editorial Hero Section */}
+      <ProductHero />
 
-        <div className="container product-hero__container">
-          <div className="product-hero__grid">
-            <div className="product-hero__content">
-              <Reveal>
-                <Breadcrumb currentPage="Product" />
-
-                <h1 id="product-hero-title" className="heading-display product-hero__heading">
-                  Our Product
-                </h1>
-
-                <p className="body-large product-hero__desc">
-                  I-ES, continuous real-time monitoring and safety infrastructure engineered to prevent electrical hazards and protect critical enterprise assets.
-                </p>
-              </Reveal>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================================
-          2. FLAGSHIP PRODUCT SHOWCASE CHAPTER (I-ES)
-          ============================================================ */}
+      {/* 2. Flagship Product Showcase Chapter (I-ES) */}
       <section className="product-flagship-section" aria-label="Flagship Product Chapter">
         <ProductShowcase />
       </section>
 
-      {/* ============================================================
-          3. CONNECTED INTELLIGENCE LIFECYCLE STORY
-          ============================================================ */}
+      {/* 3. Connected Intelligence Lifecycle Story */}
       <IntelligenceFlow />
 
-      {/* ============================================================
-          4. CALL TO ACTION SECTION
-          ============================================================ */}
+      {/* 4. Call to Action Section */}
       <CTA
         eyebrow="Have any questions?"
         heading="Securing Assets, Protecting People, Driving Efficiency..."

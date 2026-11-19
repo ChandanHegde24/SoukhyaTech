@@ -1,0 +1,14 @@
+# Apache configuration for the Vite single-page application
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Serve existing files and directories directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Route all other requests to index.html
+  RewriteRule ^ index.html [L]
+</IfModule>

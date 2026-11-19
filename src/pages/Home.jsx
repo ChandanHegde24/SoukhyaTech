@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import Hero from '../components/home/Hero';
 import ConnectedIntelligence from '../components/home/ConnectedIntelligence';
 import CoreTechnologyCards from '../components/home/CoreTechnologyCards';
@@ -10,6 +11,8 @@ import { homeSolutionShowcase } from '../data/solutions';
 import './Home.css';
 
 export default function Home() {
+  useDocumentTitle('Home');
+
   // Preload all solution images for instantaneous, 0-blank-frame switching
   useEffect(() => {
     homeSolutionShowcase.map(({ img }) => img).forEach((src) => {

@@ -111,3 +111,12 @@ export const managedServices = [
       'Remote system monitoring services are a modern approach to IT maintenance and support and of utmost importance to prevent the risk of downtime as a downtime can cause the entire system to collapse.',
   },
 ];
+
+export const processSteps = [
+  { step: '01', title: 'ASSESS', desc: 'IT & Security Governance Audit', color: '#18C8E8' },
+  { step: '02', title: 'SECURE', desc: '24/7 SOC & Threat Defense', color: '#3563FF' },
+  { step: '03', title: 'CONNECT', desc: 'WAN, LAN & Network Mesh', color: '#19B879' },
+  { step: '04', title: 'MANAGE', desc: 'Multi-Cloud Lifecycle', color: '#E68324' },
+  { step: '05', title: 'MONITOR', desc: 'Remote Supervision & RMM', color: '#EC008C' },
+];
+

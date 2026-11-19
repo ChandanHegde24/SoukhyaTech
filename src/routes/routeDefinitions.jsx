@@ -4,23 +4,23 @@ import Services from '../pages/Services.jsx';
 import Solutions from '../pages/Solutions.jsx';
 import Product from '../pages/Product.jsx';
 import Contact from '../pages/Contact.jsx';
-import { primaryNavigation } from '../config/navigation.js';
+import { primaryNavigation } from '../data/navigation.js';
 
-const pagesByPath = {
-  '/': Home,
-  '/about': About,
-  '/services': Services,
-  '/solutions': Solutions,
-  '/product': Product,
-  '/contact': Contact,
+const pageConfigByPath = {
+  '/': { Page: Home, title: 'Home' },
+  '/services': { Page: Services, title: 'Services' },
+  '/solutions': { Page: Solutions, title: 'Solutions' },
+  '/product': { Page: Product, title: 'Product' },
+  '/about': { Page: About, title: 'About' },
+  '/contact': { Page: Contact, title: 'Contact' },
 };
 
 export const routeDefinitions = primaryNavigation.map(({ to: path }) => {
-  const Page = pagesByPath[path];
+  const config = pageConfigByPath[path];
 
-  if (!Page) {
+  if (!config) {
     throw new Error(`Navigation path "${path}" does not have a page component.`);
   }
 
-  return { path, Page };
+  return { path, Page: config.Page, title: config.title };
 });

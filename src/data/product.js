@@ -17,3 +17,52 @@ export const productContent = {
     'Improve the safety of personnel & electrical assets',
   ],
 };
+
+export const intelligenceFlowStages = [
+  {
+    number: '01',
+    id: 'monitoring',
+    label: 'MONITORING',
+    color: 'var(--green)',
+    title: 'Continuous 24x7 Grounding Supervision',
+    description:
+      'I-ES connects directly to electrical earthing infrastructure to provide non-stop, automated telemetry across installations without requiring intermittent manual testing.',
+  },
+  {
+    number: '02',
+    id: 'analysis',
+    label: 'ANALYSIS',
+    color: 'var(--brand-blue)',
+    title: 'Resistance, Current & Voltage Tracking',
+    description:
+      'Continuously measures and evaluates critical earthing parameters in real time — tracking earth resistance values, leakage currents, and voltage potential fluctuations.',
+  },
+  {
+    number: '03',
+    id: 'identification',
+    label: 'DETECTION',
+    color: 'var(--brand-indigo)',
+    title: 'Advance Fault Identification & Anomaly Detection',
+    description:
+      'Diagnostic intelligence evaluates parameter trends to identify grounding degradation, soil resistance shifts, and leakage spikes well before they become critical hazards.',
+  },
+  {
+    number: '04',
+    id: 'alerts',
+    label: 'WARNING',
+    color: 'var(--orange)',
+    title: 'Early Warnings & Immediate Notifications',
+    description:
+      'Automated multi-channel alerts notify engineering teams the moment thresholds are breached, pinpointing exact Earth Pit locations requiring attention.',
+  },
+  {
+    number: '05',
+    id: 'safety',
+    label: 'PROTECTION',
+    color: 'var(--cyan-accent)',
+    title: 'Safer Operations, Reduced Costs & Asset Longevity',
+    description:
+      'Supports timely rectification to manage the end-to-end lifecycle of Earth Pits, drastically reducing unplanned downtime, replacement costs, and hazard risks for personnel and electrical assets.',
+  },
+];
+

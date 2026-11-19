@@ -28,8 +28,8 @@ export const aboutContent = {
 };
 
 export const engineeringDnaSteps = [
-  { num: '01', title: 'DEVICES', desc: 'Hardware Design & Sensors', color: '#25A449' },
-  { num: '02', title: 'DATA', desc: 'Edge Telemetry & Transmission', color: '#087DB9' },
-  { num: '03', title: 'INTELLIGENCE', desc: 'Predictive Models & Analytics', color: '#2C3694' },
+  { num: '01', title: 'DEVICES', desc: 'Hardware Design & Sensors', color: '#19B879' },
+  { num: '02', title: 'DATA', desc: 'Edge Telemetry & Transmission', color: '#18C8E8' },
+  { num: '03', title: 'INTELLIGENCE', desc: 'Predictive Models & Analytics', color: '#3563FF' },
   { num: '04', title: 'OPERATIONS', desc: 'Automated Decisions & Action', color: '#E68324' },
 ];

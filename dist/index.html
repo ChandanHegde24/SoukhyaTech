@@ -5,7 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary Meta -->
-    <title>IoT, IIoT &amp; Managed IT Solutions for Connected Industries | Soukhya Tech</title>
+    <title>Home | Soukhya Tech</title>
+    <script>
+      (function () {
+        var titles = {
+          '/': 'Home',
+          '/services': 'Services',
+          '/solutions': 'Solutions',
+          '/about': 'About',
+          '/product': 'Product',
+          '/contact': 'Contact'
+        };
+        var pathname = window.location.pathname.replace(/\/$/, '') || '/';
+        if (titles[pathname]) {
+          document.title = titles[pathname] + ' | Soukhya Tech';
+        }
+      })();
+    </script>
     <meta name="description" content="Soukhya Tech delivers secure IoT and IIoT solutions, managed IT, cybersecurity, cloud, and digital operations services for connected industries." />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://soukhyatech.com/" />
@@ -67,7 +83,7 @@
       }
     }
     </script>
-    <script type="module" crossorigin src="/assets/index-Db0qOK7e.js"></script>
+    <script type="module" crossorigin src="/assets/index-Dy_3iYGr.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-CLN-DSB4.css">
   </head>
   <body>

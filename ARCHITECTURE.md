@@ -1,22 +1,43 @@
-# Soukhya Tech code guide
+# Soukhya Tech — Clean Architecture Code Guide
 
-## Where to make changes
+This guide provides immediate instructions for developers and maintainers working with the Soukhya Tech website.
 
-- `src/pages/`: page composition and page-only behavior.
-- `src/components/`: reusable visual sections. `shared/` contains building blocks used by multiple pages.
-- `src/data/siteContent.js`: business copy, product information, and content lists.
-- `src/config/`: application settings that affect multiple areas, including navigation and contact form options.
-- `src/routes/routeDefinitions.jsx`: every route and its page component.
-- `src/styles/`: global tokens and shared utility styles. Component and page styles stay beside their JSX files.
+---
 
-## Common edits
+## Architecture Principles
 
-- Add or rename a primary navigation item in `src/config/navigation.js`.
-- Add a route in `src/routes/routeDefinitions.jsx`, then add its navigation item only when it should be visible in the menu.
-- Update business contact details in `src/data/siteContent.js`.
-- Update Contact form categories in `src/config/contact.js`.
-- Use `components/shared/Reveal` and `components/shared/Breadcrumb` instead of creating page-local copies.
+1. **Declarative Page Orchestrators**:
+   Pages in `src/pages/` are lightweight orchestrators (~30-40 lines) responsible solely for composing section components and injecting SEO metadata.
+2. **Domain-Isolated Components**:
+   Components specific to a route live in `src/components/<domain>/` (e.g., `src/components/about/`, `src/components/services/`, etc.).
+3. **Decoupled Data Modules**:
+   Static content, product specifications, navigation links, and copy reside in `src/data/`. JSX files should never hardcode large text blocks or business lists.
+4. **Reusable UI Primitives**:
+   Shared design system primitives (buttons, typography wrappers, social links, breadcrumbs, animations) reside in `src/components/common/`.
 
-## Validation
+---
 
-Run `npm run build` after code changes. Vite reports unresolved imports and production build issues.
+## Where to Make Changes
+
+| Task | File(s) to Modify |
+| :--- | :--- |
+| **Change Header/Footer Links** | `src/data/navigation.js` |
+| **Edit Home Page Content** | `src/data/home.js` |
+| **Edit Services Copy & Stages** | `src/data/services.js` |
+| **Edit Solutions Copy & Lifecycle** | `src/data/solutions.js` |
+| **Edit About Page DNA & Mission/Vision** | `src/data/about.js` |
+| **Edit Flagship Product (I-ES) Specs** | `src/data/product.js` |
+| **Update Contact Info & Form Categories**| `src/data/contact.js` |
+| **Form Validation Rules** | `src/utils/formValidation.js` |
+| **Add/Modify Global Colors & Theme Tokens**| `src/styles/variables.css` |
+| **Add New Route/Page** | `src/routes/routeDefinitions.jsx` & `src/pages/` |
+
+---
+
+## Verification & Build
+
+Always run a build check after editing files:
+```bash
+npm run build
+```
+Vite will validate all imports, assets, and React dependencies.
