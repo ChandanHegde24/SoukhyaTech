@@ -317,8 +317,12 @@ When submitted with valid inputs:
 
 The application compiles to a static Single Page Application (SPA). To support client-side routing on production web servers:
 
-### Apache / cPanel / Shared Hosting
-The project includes `.htaccess` in the root:
+### Apache / cPanel / GoDaddy Shared Hosting
+The project includes `.htaccess` in the root and bundles all build assets into `dist.zip`:
+1. Upload `dist.zip` to your GoDaddy cPanel File Manager in the `public_html/` root directory.
+2. Extract `dist.zip` directly into `public_html/`.
+3. Verify the root contains `index.html`, `.htaccess`, `favicon.ico`, `favicon.svg`, `favicon-96x96.png`, and `apple-touch-icon.png`.
+
 ```apache
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -329,6 +333,14 @@ The project includes `.htaccess` in the root:
   RewriteRule . /index.html [L]
 </IfModule>
 ```
+
+### Favicon & Google Search Optimization
+The application uses the official Soukhya Tech brand mark across all favicon formats:
+- `/favicon.svg`: Scalable vector icon for modern desktop browsers.
+- `/favicon-96x96.png`: High-DPI icon optimized for Google Search results (multiple of 48px).
+- `/favicon.ico`: Multi-size binary (16x16, 32x32, 48x48) for legacy browsers and direct `/favicon.ico` crawlers.
+- `/apple-touch-icon.png`: 180x180 square icon with white background for iOS Safari home screens.
+- `robots.txt`: Explicitly permits crawling of all site assets.
 
 ### Vercel
 The project includes `vercel.json` configured for SPA rewrites:
