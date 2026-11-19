@@ -20,6 +20,17 @@
 }
 
 .product-showcase__watermark {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-8);
+  font-family: var(--font-mono);
+  font-size: clamp(80px, 12vw, 150px);
+  font-weight: 900;
+  color: rgba(24, 43, 98, 0.035);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
   display: none !important;
 }
 

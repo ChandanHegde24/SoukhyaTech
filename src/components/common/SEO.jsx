@@ -4,7 +4,8 @@ import { contactInfo, socialLinks } from '../../data/contact';
 
 const SITE_URL = 'https://soukhyatech.com';
 const SITE_NAME = 'Soukhya Tech';
-const DEFAULT_IMAGE = `${SITE_URL}/logo.png`;
+const LOGO_URL = `${SITE_URL}/logo.png`;
+const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`;
 
 const pageMetadata = {
   '/': {
@@ -85,12 +86,21 @@ function SEO() {
     setMetaTag('property', 'og:title', `${metadata.title} | ${SITE_NAME}`);
     setMetaTag('property', 'og:description', metadata.description);
     setMetaTag('property', 'og:image', DEFAULT_IMAGE);
+    setMetaTag('property', 'og:image:secure_url', DEFAULT_IMAGE);
+    setMetaTag('property', 'og:image:type', 'image/png');
+    setMetaTag('property', 'og:image:width', '1200');
+    setMetaTag('property', 'og:image:height', '630');
+    setMetaTag('property', 'og:image:alt', `${SITE_NAME} Logo`);
     setMetaTag('property', 'og:site_name', SITE_NAME);
+    setMetaTag('property', 'og:locale', 'en_US');
     setMetaTag('name', 'twitter:card', 'summary_large_image');
+    setMetaTag('name', 'twitter:url', canonicalUrl);
     setMetaTag('name', 'twitter:title', `${metadata.title} | ${SITE_NAME}`);
     setMetaTag('name', 'twitter:description', metadata.description);
     setMetaTag('name', 'twitter:image', DEFAULT_IMAGE);
+    setMetaTag('name', 'twitter:image:alt', `${SITE_NAME} Logo`);
     setLinkTag('canonical', canonicalUrl);
+    setLinkTag('image_src', DEFAULT_IMAGE);
 
     const structuredData = {
       '@context': 'https://schema.org',
@@ -100,7 +110,8 @@ function SEO() {
           '@id': `${SITE_URL}/#organization`,
           name: SITE_NAME,
           url: SITE_URL,
-          logo: DEFAULT_IMAGE,
+          logo: LOGO_URL,
+          image: DEFAULT_IMAGE,
           email: contactInfo.email,
           telephone: contactInfo.phone,
           sameAs: Object.values(socialLinks),
