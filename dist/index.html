@@ -52,9 +52,15 @@
     <link rel="image_src" href="https://soukhyatech.com/og-image.png" />
 
     <!-- Favicon & Touch Icons -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!--
+      Keep the crawlable PNG first. Google Search requires a square favicon
+      whose dimensions are a multiple of 48px; this 96x96 asset meets that
+      requirement and is more broadly supported by crawlers than the SVG.
+    -->
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" sizes="any" href="/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- Performance: DNS Prefetch & Preconnect for Google Fonts -->
